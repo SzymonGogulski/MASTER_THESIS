@@ -12,7 +12,7 @@
 
 
 \usepackage[utf8]{inputenc}
-\usepackage[OT4]{fontenc}
+\usepackage[T1]{fontenc}
 
 %--------------------------------------
 % Strona tytułowa
@@ -82,8 +82,10 @@
 % Literatura
 %--------------------------------------
 
-\bibliographystyle{plain}{\raggedright\sloppy\small\bibliography{bibliografia}}
-
+{\raggedright\sloppy\small
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+}
 %--------------------------------------
 % Dodatki
 %--------------------------------------

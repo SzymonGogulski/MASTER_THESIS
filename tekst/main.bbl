@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{fourmilab-ENT}
+{Fourmilab}.
+\newblock Ent: A pseudorandom number sequence test program.
+
+\bibitem{NIST-SP-800-22}
+Andrew Rukhin, Juan Soto, James Nechvatal, Miles Smid, Elaine Barker, Stefan Leigh, Mark Levenson, Mark Vangel, David Banks, N.~Heckert, James Dray, San Vo, and Lawrence Bassham.
+\newblock Nist sp 800-22: A statistical test suite for random and pseudorandom number generators for cryptographic applications.
+\newblock {\em NIST Information Technology Laboratory}, 2010.
+
+\bibitem{2016Sreekumar-Ramesh}
+Lakshmi Sreekumar and P.~Ramesh.
+\newblock Selection of an optimum entropy source design for a true random number generator.
+\newblock {\em Procedia Technology}, 2016.
+
+\bibitem{neoTRNG}
+{stnolting}.
+\newblock neotrng: A true random number generator for fpgas, 2016.
+
+\bibitem{NIST-SP-800-90B}
+Meltem~S{\"o}nmez Turan, Elaine Barker, John Kelsey, Kerry McKay, Mary Baish, and Michael Boyle.
+\newblock Nist sp 800-90b: Recommendation for the entropy sources used for random bit generation.
+\newblock {\em NIST Information Technology Laboratory}, 2018.
+
+\end{thebibliography}

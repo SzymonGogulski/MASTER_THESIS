@@ -43,11 +43,28 @@
 
 \section{Zapotrzebowanie na niezawodne źródła losowości}
 
-\noindent Generatory liczb losowych stanowią podstawę dla algorytmów nowoczesnej kryptografii~\cite{2016Sreekumar-Ramesh}. Generowanie par kluczy kryptograficznych oraz tworzenie podpisów cyfrowych nie byłyby możliwe bez odpowiednich źródeł losowości. Równocześnie generatory liczb losowych nie spełniające metryk statystycznych oraz miar losowości będą osłabiać skuteczność algorytmów. Przesłanki te stanowią motywację do podjęcia badań związanych z oceną dostępnych generatorów. 
+\noindent Generatory liczb losowych stanowią podstawę dla algorytmów nowoczesnej 
+kryptografii~\cite{2016Sreekumar-Ramesh}. Generowanie par kluczy kryptograficznych 
+oraz tworzenie podpisów cyfrowych nie byłyby możliwe bez odpowiednich źródeł 
+losowości. Równocześnie generatory liczb losowych nie spełniające metryk 
+statystycznych oraz miar losowości będą osłabiać skuteczność algorytmów. 
+Przesłanki te stanowią motywację do podjęcia badań związanych z oceną dostępnych generatorów. 
 
 \section{Cel pracy}
 
-Celem tej pracy magisterskiej jest implentacja oraz badanie generatorów losowości bazujących na oscylatorach pierścieniowych. Badane moduły będą implementowane w postaci układów cyfrowych realizowanych na płytach deweloperskich wyposażonych w układy FPGA. Na kryteria oceny generatorów będą składać się zbiór testów statystycznych związany z publikacją NIST SP 800-22~\cite{NIST-SP-800-22}, zbiór testów do oceny entropii związany z publikacją NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do oceny generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. Wraz z wynikami testów zestawione zostaną informacje o zajętość sprzętowej poszczególnych implementacji. Poszczególne badane moduły będą stanowić modyfikację bazowego modułu neoTRNG przedstawionego w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą obszary: ilościowe (ilość zastosowanych oscylatorów), korekcji źródła (wpływ korektora Von-Neumana), metod post-processing'u
+Celem tej pracy magisterskiej jest implentacja oraz badanie generatorów losowości 
+bazujących na oscylatorach pierścieniowych. Badane moduły będą implementowane w postaci 
+układów cyfrowych realizowanych na płytach deweloperskich wyposażonych w układy FPGA. 
+Na kryteria oceny generatorów będą składać się zbiór testów statystycznych związany z 
+publikacją NIST SP 800-22~\cite{NIST-SP-800-22}, zbiór testów do oceny entropii 
+związany z publikacją NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do 
+oceny generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. Wraz z wynikami 
+testów zestawione zostaną informacje o zajętość sprzętowej poszczególnych 
+implementacji. Poszczególne badane moduły będą stanowić modyfikację bazowego 
+modułu neoTRNG przedstawionego w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą 
+obszary: ilościowe (ilość zastosowanych oscylatorów), korekcji źródła 
+(wpływ korektora Von-Neumana), metod post-processing'u (kompresja entropii), 
+fizycznego rozmieszczenia w FPGA 
 
 \begin{enumerate}
     \item Zestaw wszystkie założenia pracy
