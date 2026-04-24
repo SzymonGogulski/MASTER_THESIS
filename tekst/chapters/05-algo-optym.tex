@@ -1,0 +1,16 @@
+% 3. Faza Algorytmiczna i Optymalizacja Ekstrakcji
+% • Wybór najbardziej efektywnej metody post-processingu (tzw. wybielania) przy stałej
+% liczbie źródeł (np. 64 RO).
+% • Modyfikacja jednostki próbkowania (Sampling Unit) i implementacja wymiennych
+% modułów:
+% • XOR (rozwiązanie o najniższym koszcie sprzętowym).
+% • CRC (standardowa metoda zaimplementowana w neoTRNG).
+% • Toeplitz Extractor
+% • AES-256 lub sha256
+% • Pomiary wydajnościowe: przepustowość wyjściowa (Bitrate w Mbps), dodatkowe
+% zużycie zasobów przez sam ekstraktor, pełna weryfikacja statystyczna NIST 800-22.
+% • TABELA 2: Efektywność post-processingu i współczynnik $\eta$.
+% • Zawartość: Typ ekstraktora | Dodatkowe LUT | Przepustowość [Mbps] |
+% Wynik NIST 800-22 (Pass/Fail) | Współczynnik $\eta$ (Efektywność).
+
+\chapter{Faza algorytmiczna i optymalizacja ekstrakcji}

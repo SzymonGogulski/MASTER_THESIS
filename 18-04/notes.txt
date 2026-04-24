@@ -1,0 +1,4 @@
+sudo stty -F /dev/ttyUSB0 115200 raw -echo
+sudo xxd /dev/ttyUSB0
+
+$ sudo cat /dev/ttyUSB0 | pv -r > /dev/null

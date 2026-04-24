@@ -1,0 +1,206 @@
+\documentclass{beamer}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{svg}
+\usepackage{animate}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{xcolor}
+\usetheme{Madrid}
+\usecolortheme{default}
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Praca dyplomowa magisterska] %optional
+{Analiza wykorzystania oscylatorów pierścieniowych jako źródła losowości w układach FPGA}
+\subtitle{}
+\author[Szymon Gogulski] % (optional)
+{Szymon~Gogulski
+\newline
+\newline
+Promotor: dr inż. Michał Melosik
+\newline
+\newline
+Informatyka - Przetwarzanie Brzegowe
+}
+\institute[PP] % (optional)
+{Politechnika Poznańska}
+\date[Poznań 2026] % (optional)
+{Praca dyplomowa Magisterska
+\newline
+Poznań 2026}
+\logo{\includegraphics[height=0.6cm]{pp_logo.pdf}}
+\begin{document}
+\frame{\titlepage}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Agenda}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+\section{Cel pracy}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Cel pracy}
+
+\Large
+\begin{itemize}
+    \item Zbadać możliwości zastosowania oscylatorów pierścieniowych, jako źródło entropii.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\section{Wprowadzenie}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wprowadzenie}
+
+
+    \begin{figure}[H]
+      \includegraphics[width=0.75\textwidth]{figures/modle_zrodla.png}
+      \caption{Model źródła entropii}
+    \end{figure}
+
+\stepcounter{footnote}\footnotetext[\value{footnote}]{\href{https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf}{NIST SP 800-90B}}
+
+\end{frame}
+%---------------------------------------------------------
+\section{Testy bazowe}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Testy bazowe}
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{mermaid/png/2.png}
+      \caption{Architektura modułu neoTRNG}
+    \end{figure}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{4 przypadki bazowe}
+
+\Large
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+  & de-biasing & sampling \\ 
+ \hline
+ RTL 1 & \colorbox{green}{TAK} & \colorbox{green}{TAK} \\ 
+ \hline
+ RTL 2 & \colorbox{green}{TAK} & \colorbox{red}{NIE} \\ 
+ \hline
+ RTL 3 & \colorbox{red}{NIE} & \colorbox{green}{TAK} \\
+ \hline
+ RTL 4 & \colorbox{red}{NIE} & \colorbox{red}{NIE} \\  
+ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Porównanie zajętości}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+  & LUT & FF \\ 
+ \hline
+ RTL 1 & ... & ... \\ 
+ \hline
+ RTL 2 & ... & ... \\ 
+ \hline
+ RTL 3 & ... & ... \\
+ \hline
+ RTL 4 & ... & ... \\  
+ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Porównanie bitrate}
+
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+  & KiB/s \\ 
+ \hline
+ UART 921600bps & 90.5 \\ 
+ \hline
+ RTL 1 & 84 \\ 
+ \hline
+ RTL 2 & ... \\ 
+ \hline
+ RTL 3 & ... \\
+ \hline
+ RTL 4 & ... \\  
+ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wyniki testów ENT, NIST SP 800-22, NIST SP 800-90B}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+  & ENT & NIST SP 800-22 & NIST SP 800-90B \\ 
+ \hline
+ RTL 1 & ... & ... & ... \\ 
+ \hline
+ RTL 2 & ... & ... & ... \\ 
+ \hline
+ RTL 3 & ... & ... & ... \\
+ \hline
+ RTL 4 & ... & ... & ... \\  
+ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%---------------------------------------------------------
+\section{Analiza rozmieszczenia}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Analiza rozmieszczenia}
+
+
+\end{frame}
+%---------------------------------------------------------
+\section{Faza algorytmiczna i optymalizacja ekstrakcji}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
+
+
+\end{frame}
+%---------------------------------------------------------
+\section{Faza odporności i monitorowania online}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Faza odporności i monitorowania online}
+
+
+\end{frame}
+%---------------------------------------------------------
+\section{NeoTRNG na FPGA dla RPI}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Faza odporności i monitorowania online}
+
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{}
+\centering{\Huge{\textbf{Dziękuję za uwagę}}}
+\end{frame}
+%---------------------------------------------------------
+\end{document}

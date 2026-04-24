@@ -1,0 +1,8 @@
+\babel@toc {polish}{}\relax 
+\beamer@sectionintoc {1}{Cel pracy}{3}{0}{1}
+\beamer@sectionintoc {2}{Wprowadzenie}{4}{0}{2}
+\beamer@sectionintoc {3}{Testy bazowe}{5}{0}{3}
+\beamer@sectionintoc {4}{Analiza rozmieszczenia}{10}{0}{4}
+\beamer@sectionintoc {5}{Faza algorytmiczna i optymalizacja ekstrakcji}{11}{0}{5}
+\beamer@sectionintoc {6}{Faza odporności i monitorowania online}{12}{0}{6}
+\beamer@sectionintoc {7}{NeoTRNG na FPGA dla RPI}{13}{0}{7}
