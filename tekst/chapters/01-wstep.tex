@@ -52,25 +52,45 @@ Przesłanki te stanowią motywację do podjęcia badań związanych z oceną dos
 
 \section{Cel pracy}
 
-Celem tej pracy magisterskiej jest implentacja oraz badanie generatorów losowości 
+\noindent Celem tej pracy magisterskiej jest implentacja oraz badanie generatorów losowości 
 bazujących na oscylatorach pierścieniowych. Badane moduły będą implementowane w postaci 
 układów cyfrowych realizowanych na płytach deweloperskich wyposażonych w układy FPGA. 
 Na kryteria oceny generatorów będą składać się zbiór testów statystycznych związany z 
 publikacją NIST SP 800-22~\cite{NIST-SP-800-22}, zbiór testów do oceny entropii 
 związany z publikacją NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do 
-oceny generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. Wraz z wynikami 
-testów zestawione zostaną informacje o zajętość sprzętowej poszczególnych 
+oceny generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. 
+
+Wraz z wynikami testów zestawione zostaną informacje o zajętość sprzętowej poszczególnych 
 implementacji. Poszczególne badane moduły będą stanowić modyfikację bazowego 
 modułu neoTRNG przedstawionego w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą 
 obszary: ilościowe (ilość zastosowanych oscylatorów), korekcji źródła 
-(wpływ korektora Von-Neumana), metod post-processing'u (kompresja entropii), 
-fizycznego rozmieszczenia w FPGA 
+(wpływ korektora Von-Neumana), metod post-processing'u oraz 
+fizycznego rozmieszczenia w FPGA. 
 
-\begin{enumerate}
-    \item Zestaw wszystkie założenia pracy
-    \item Przedstaw badane obszary projektowanego źródła (zajętość, testy, analiza rozmieszczenia ...)
-\end{enumerate}
+Osobna faza odporności i monitorowania przetestuje zastosowanie modułów testowych 
+(Health Test) oraz wpływ warunków środowiskowych na jakość badanego źródła entropii.
+
+Dodatkowy etap implementacyjny porówna zastosowanie neoTRNG jako generator entropii dla 
+komputera jednopłytkowego RPI oraz zestawi to rozwiązanie z komercyjnym modułem Quantis.
+
+% \begin{enumerate}
+%     \item Zestaw wszystkie założenia pracy
+%     \item Przedstaw badane obszary projektowanego źródła (zajętość, testy, analiza rozmieszczenia ...)
+% \end{enumerate}
 
 \section{Charakterystyka literatury}
 
-Tekst~\cite{NIST-SP-800-90B}
+Poszczególne badania zostana przeprowadzone stosując rekomendacje branżowe odnośnie 
+projektowania źródeł entropii oraz publikacje akademickie związane z tematem. 
+
+\section{Układ pracy}
+
+Struktura pracy podzielona jest osiem rozdziałów oraz osobną sekcję z załącznikami.
+Rozdział pierwszy wyjaśnia motywację podjęcia badań w obszarze generatorów entropii 
+oraz zestawia założenia i cele pracy dyplomowej. Rodział drugi skupia się na wyjaśnieniu 
+podstaw teorertycznych, w ramach których omówione zostaną podstawowe definicje 
+związane z tematyką pracy, przedstawiona zostanie architektura badanego źródła entropii, 
+a także objaśnione zostaną szczegóły metod korekcji źródła, kompresji entropii oraz 
+metody badania źródła entropii (zestawy testów oraz moduły testowe). Rodział trzeci 
+będzie stanowić rozpoczęcie prac badawczych: zbadany zostanie wpływ stosowania 
+korekcji źródła oraz kompresji entropii na poziom entropii oraz zajętość układu. 

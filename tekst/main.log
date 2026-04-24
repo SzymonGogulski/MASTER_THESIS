@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  24 APR 2026 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  24 APR 2026 16:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -600,7 +600,7 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
 (epstopdf)             \includegraphics on input line 41.
 Package epstopdf Info: Output file is already uptodate.
-<wit/sygnet-pp-eps-converted-to.pdf, id=72, 1391.1975pt x 278.03876pt>
+<wit/sygnet-pp-eps-converted-to.pdf, id=120, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
 Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 41.
@@ -621,29 +621,29 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 
-]) (./chapters/03-testy-bazowe.tex [2
+] [2]) (./chapters/03-testy-bazowe.tex [3
 
-]) (./chapters/04-analiza-rozmieszczenia.tex [3
+] [4]) (./chapters/04-analiza-rozmieszczenia.tex [5
 
-]) (./chapters/05-algo-optym.tex [4
+]) (./chapters/05-algo-optym.tex [6
 
-]) (./chapters/06-odpornosc-monitoring.tex [5
+]) (./chapters/06-odpornosc-monitoring.tex [7
 
-]) (./chapters/07-neoTRNG-RPI.tex [6
+]) (./chapters/07-neoTRNG-RPI.tex [8
 
-]) (./chapters/08-zakonczenie.tex [7
+]) (./chapters/08-zakonczenie.tex [9
 
-]) (./main.bbl [8
+]) (./main.bbl [10
 
 ]
 bibitemlist
-) [9
+) [11
 
-] (./chapters/zalacznik.tex) [10
+] (./chapters/zalacznik.tex) [12
 
 
 ]
-<wit/logo-pp.pdf, id=187, 422.57875pt x 422.57875pt>
+<wit/logo-pp.pdf, id=254, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
 Package pdftex.def Info: wit/logo-pp.pdf  used on input line 103.
@@ -652,7 +652,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 103.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 103.
- [11
+ [13
 
  <./wit/logo-pp.pdf>]
 \tf@toc=\write6
@@ -670,21 +670,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4C993C37607A56C2C39119E091041F47;3340.
+(rerunfilecheck)             Checksum: 196EA154EDF266FE5731A55137705302;4874.
  ) 
 Here is how much of TeX's memory you used:
- 14273 strings out of 476074
- 222996 string characters out of 5793136
- 1932975 words of memory out of 5000000
- 36029 multiletter control sequences out of 15000+600000
- 570452 words of font info for 57 fonts, out of 8000000 for 9000
+ 14303 strings out of 476074
+ 223447 string characters out of 5793136
+ 1936975 words of memory out of 5000000
+ 36045 multiletter control sequences out of 15000+600000
+ 571235 words of font info for 58 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
- 99i,12n,107p,518b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>
-Output written on main.pdf (15 pages, 176037 bytes).
+ 99i,12n,107p,407b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>
+Output written on main.pdf (17 pages, 197665 bytes).
 PDF statistics:
- 625 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 757 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
