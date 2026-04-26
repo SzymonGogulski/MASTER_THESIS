@@ -3,22 +3,22 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Apr 23 12:28:48 2026
-# Process ID         : 8194
+# Start of session at: Sun Apr 26 16:38:34 2026
+# Process ID         : 38923
 # Current directory  : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1
-# Command line       : vivado -log oscillator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source oscillator.tcl
-# Log file           : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1/oscillator.vds
+# Command line       : vivado -log top1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top1.tcl
+# Log file           : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1/top1.vds
 # Journal file       : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1/vivado.jou
 # Running On         : szymon
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 7 4700U with Radeon Graphics
-# CPU Frequency      : 2553.017 MHz
+# CPU Frequency      : 1839.077 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 8
 # Host memory        : 16155 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20450 MB
-# Available Virtual  : 14863 MB
+# Available Virtual  : 12024 MB
 #-----------------------------------------------------------
-source oscillator.tcl -notrace
+source top1.tcl -notrace

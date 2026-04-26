@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log oscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source oscillator.tcl
+EAStep vivado -log top1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top1.tcl

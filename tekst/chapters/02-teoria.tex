@@ -13,31 +13,68 @@
 
 Projektowanie sprzętowych generatorów liczb losowych wiąże się z syntezą wiedzy z wielu 
 dziedzin: elektroniki cyfrowej, fizyki, przetwarzania sygnałów, kryptografii oraz teorii 
-informacji.  
+informacji. W niniejszej części przedstawiono najważniejsze pojęcia związane z tematyką pracy. 
+Wyjaśnione zostaną zarówno pojęcia fundamentalne jak losowość według Shannon'a 
+jak również złożone zagadnienia architektury źródła entropii. 
 
 \section{Entropia Shannon'a}
 
+\begin{enumerate}
+    \item Wstaw podręcznikową definicję, pamiętaj o \textbackslash cite
+    \item porównaj dwa sygnały, 01010101010101010101, i 11001011101110100011 za pomocą ENT
+\end{enumerate}
+
+
 \section{PRNG a TRNG}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/ch2/nist_source_schematic.png}
+    \caption{Model źródła entropii. Źródło:~\cite{NIST-SP-800-90B}}
+    \label{fig:model_zrodla_entropii_nist}
+\end{figure}
+
+\begin{enumerate}
+    \item Omów różnicę między PRNG i TRNG, najlepiej na podstawie źródła
+    \item Podkreśl znaczenie pochodzenia szumu ze źródła analogowego
+    \item Opisz model źródła nist
+\end{enumerate}
+
+
 \section{Oscylator pierścieniowy}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=\textwidth]{figures/ch2/schematic.svg}
+    \caption{Przykład prostego oscylatora pierścieniowego.}
+    \label{fig:oscylator_3xNOT}
+\end{figure}
+
 
 \begin{enumerate}
     \item Opisz oscylator pierścieniowy/ (pętlę kombinatoryczną z bramką NOT)
     \item przedstaw najprostszy przykład: RTL, układ, symulację, widok z oscyloskopu.
+    \item sprawdz czy tak prosty przykład będzie generować sygnał losowy
 \end{enumerate}
 
 \section{Architektura modułu neoTRNG}
 
-\begin{enumerate}
-    \item wstaw zdjęcie architektury z repo neoTRNG
-\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ch2/neotrng_architecture.png}
+    \caption{Architektura neoTRNG. Źródło:~\cite{neoTRNG}}
+    \label{fig:architektura_neotrng}
+\end{figure}
 
+\begin{enumerate}
+    \item Opisz elementy składowe modułu
+\end{enumerate}
 
 \section{Korekcja źródła}
 
 \subsection{Korektor Von-Neumanna}
 
-\section{Kompresja entropii}
+\section{Metody przetwarzania końcowego}
 
 \subsection{XOR}
 
@@ -47,10 +84,6 @@ informacji.
 
 \subsection{AES-256}
 
-\begin{enumerate}
-    \item opisz de-basing
-    \item opisz sampling + entropy compression (? spectral distribution)
-\end{enumerate}
 
 \section{Metody badania źródeł entropii}
 
@@ -61,4 +94,15 @@ informacji.
 \subsection{NIST SP 800-90B}
 
 
+\section{Moduły testowe}
 
+\subsection{RCT}
+
+\subsection{APT}
+
+
+\section{Sprzęt}
+
+\subsection{Digilent CoraZ7-07S}
+
+\subsection{Digilent Nexys 4 DDR}

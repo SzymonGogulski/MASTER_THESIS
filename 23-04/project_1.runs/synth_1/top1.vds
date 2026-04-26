@@ -1,16 +1,26 @@
-
-*** Running vivado
-    with args -log top1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top1.tcl
-
-
-****** Vivado v2025.1 (64-bit)
-  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
-  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
-  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Sun Apr 26 16:38:35 2026
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Apr 26 16:38:34 2026
+# Process ID         : 38923
+# Current directory  : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1
+# Command line       : vivado -log top1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top1.tcl
+# Log file           : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1/top1.vds
+# Journal file       : /home/szymon/Desktop/magister/23-04/project_1.runs/synth_1/vivado.jou
+# Running On         : szymon
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 4700U with Radeon Graphics
+# CPU Frequency      : 1839.077 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 16155 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20450 MB
+# Available Virtual  : 12024 MB
+#-----------------------------------------------------------
 source top1.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/szymon/Desktop/magister/23-04/project_1.srcs/utils_1/imports/synth_1/oscillator.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/szymon/Desktop/magister/23-04/project_1.srcs/utils_1/imports/synth_1/oscillator.dcp for incremental synthesis

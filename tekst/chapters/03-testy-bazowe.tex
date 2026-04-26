@@ -44,3 +44,20 @@
 % CRC (z obecnym de-biasing))
 
 \chapter{Testy bazowe}
+
+W niniejszym rozdziale przeanalizowano wpływ zastosowania korekcji źródła oraz 
+przetwarzania końcowego na poziom generowanej entropii w domyślnej implementacji 
+neoTRNG. Rozważane elementy architektury zostały przedstawione na rysunku 
+\ref{fig:architektura_neotrng} jako moduły „de-biasing” oraz „sampling”. W 
+implementacji bazowej zastosowano korektor von Neumanna oraz mechanizm kompresji 
+entropii oparty na CRC. W ramach przeprowadzonych testów porównano cztery 
+warianty konfiguracji generatora:
+
+\begin{enumerate}
+    \item moduł z korektorem von Neumanna oraz CRC (domyślny),
+    \item moduł z korektorem von Neumanna bez CRC,
+    \item moduł bez korektora z aktywnym CRC,
+    \item moduł bez korektora i bez CRC.
+\end{enumerate}
+
+\section{Modyfikacja}

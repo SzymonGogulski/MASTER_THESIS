@@ -43,54 +43,75 @@
 
 \section{Zapotrzebowanie na niezawodne źródła losowości}
 
-\noindent Generatory liczb losowych stanowią podstawę dla algorytmów nowoczesnej 
+\noindent Generatory liczb losowych stanowią podstawę algorytmów współczesnej 
 kryptografii~\cite{2016Sreekumar-Ramesh}. Generowanie par kluczy kryptograficznych 
 oraz tworzenie podpisów cyfrowych nie byłyby możliwe bez odpowiednich źródeł 
-losowości. Równocześnie generatory liczb losowych nie spełniające metryk 
-statystycznych oraz miar losowości będą osłabiać skuteczność algorytmów. 
-Przesłanki te stanowią motywację do podjęcia badań związanych z oceną dostępnych generatorów. 
+losowości. Jednocześnie generatory liczb losowych, które nie spełniają 
+wymagań statystycznych oraz miar losowości, mogą znacząco osłabiać 
+bezpieczeństwo stosowanych algorytmów. Przesłanki te stanowią motywację 
+do podjęcia badań nad oceną dostępnych generatorów.
+
 
 \section{Cel pracy}
 
-\noindent Celem tej pracy magisterskiej jest implentacja oraz badanie generatorów losowości 
-bazujących na oscylatorach pierścieniowych. Badane moduły będą implementowane w postaci 
-układów cyfrowych realizowanych na płytach deweloperskich wyposażonych w układy FPGA. 
-Na kryteria oceny generatorów będą składać się zbiór testów statystycznych związany z 
-publikacją NIST SP 800-22~\cite{NIST-SP-800-22}, zbiór testów do oceny entropii 
-związany z publikacją NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do 
-oceny generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. 
+\noindent Celem niniejszej pracy magisterskiej jest implementacja oraz analiza 
+generatorów losowości bazujących na oscylatorach pierścieniowych. 
+Badane moduły będą implementowane jako układy cyfrowe realizowane 
+na płytach deweloperskich wyposażonych w układy FPGA. 
 
-Wraz z wynikami testów zestawione zostaną informacje o zajętość sprzętowej poszczególnych 
-implementacji. Poszczególne badane moduły będą stanowić modyfikację bazowego 
-modułu neoTRNG przedstawionego w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą 
-obszary: ilościowe (ilość zastosowanych oscylatorów), korekcji źródła 
-(wpływ korektora Von-Neumana), metod post-processing'u oraz 
-fizycznego rozmieszczenia w FPGA. 
+Kryteria oceny generatorów obejmować będą zestaw testów statystycznych 
+zdefiniowanych w publikacji NIST SP 800-22~\cite{NIST-SP-800-22}, 
+zestaw testów do oceny entropii opisany w publikacji 
+NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do oceny 
+generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. Wraz z wynikami testów 
+zestawione zostaną informacje o zajętości 
+zasobów sprzętowych poszczególnych implementacji. Badane moduły będą 
+stanowić modyfikacje bazowego rozwiązania neoTRNG przedstawionego 
+w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą aspekty takie jak: 
+liczba zastosowanych oscylatorów, zastosowanie korekcji źródła 
+(np. korektor Von Neumanna), metody przetwarzania końcowego 
+(post-processing) oraz fizyczne rozmieszczenie elementów w strukturze FPGA. 
 
-Osobna faza odporności i monitorowania przetestuje zastosowanie modułów testowych 
-(Health Test) oraz wpływ warunków środowiskowych na jakość badanego źródła entropii.
+Osobna faza badań obejmie analizę odporności oraz mechanizmów monitorowania, 
+w tym zastosowanie modułów testowych (Health Tests) oraz wpływ warunków 
+środowiskowych na jakość badanego źródła entropii.
 
-Dodatkowy etap implementacyjny porówna zastosowanie neoTRNG jako generator entropii dla 
-komputera jednopłytkowego RPI oraz zestawi to rozwiązanie z komercyjnym modułem Quantis.
+Dodatkowy etap implementacyjny obejmie porównanie zastosowania neoTRNG 
+jako generatora entropii dla komputera jednopłytkowego Raspberry Pi 
+z rozwiązaniem komercyjnym, takim jak moduł Quantis.
 
-% \begin{enumerate}
-%     \item Zestaw wszystkie założenia pracy
-%     \item Przedstaw badane obszary projektowanego źródła (zajętość, testy, analiza rozmieszczenia ...)
-% \end{enumerate}
 
 \section{Charakterystyka literatury}
 
-Poszczególne badania zostana przeprowadzone stosując rekomendacje branżowe odnośnie 
-projektowania źródeł entropii oraz publikacje akademickie związane z tematem. 
+\noindent Badania zostaną przeprowadzone w oparciu o rekomendacje branżowe dotyczące 
+projektowania źródeł entropii oraz publikacje naukowe związane z analizowaną tematyką.
 
 \section{Układ pracy}
 
-Struktura pracy podzielona jest osiem rozdziałów oraz osobną sekcję z załącznikami.
-Rozdział pierwszy wyjaśnia motywację podjęcia badań w obszarze generatorów entropii 
-oraz zestawia założenia i cele pracy dyplomowej. Rodział drugi skupia się na wyjaśnieniu 
-podstaw teorertycznych, w ramach których omówione zostaną podstawowe definicje 
-związane z tematyką pracy, przedstawiona zostanie architektura badanego źródła entropii, 
-a także objaśnione zostaną szczegóły metod korekcji źródła, kompresji entropii oraz 
-metody badania źródła entropii (zestawy testów oraz moduły testowe). Rodział trzeci 
-będzie stanowić rozpoczęcie prac badawczych: zbadany zostanie wpływ stosowania 
-korekcji źródła oraz kompresji entropii na poziom entropii oraz zajętość układu. 
+\noindent Struktura pracy obejmuje osiem rozdziałów oraz dodatkową sekcję załączników. 
+
+Rozdział pierwszy przedstawia motywację podjęcia badań w obszarze generatorów 
+entropii oraz określa założenia i cele pracy. 
+
+Rozdział drugi koncentruje się na podstawach teoretycznych, omówione zostaną 
+definicje związane z tematyką pracy, architektura badanego źródła entropii, a 
+także metody korekcji źródła, metody przetwarzania końcowego oraz techniki oceny 
+(testy statystyczne i moduły testowe). 
+
+Rozdział trzeci rozpoczyna część badawczą pracy i obejmuje analizę wpływu 
+korekcji źródła oraz metod przetwarzania końcowego na poziom entropii 
+i zajętość zasobów sprzętowych.
+
+Rozdział czwarty poświęcony jest analizie wpływu fizycznego rozmieszczenia 
+oscylatorów w strukturze układu na poziom entropii.
+
+Rozdział piąty przedstawia porównanie różnych metod przetwarzania końcowego.
+
+Rozdział szósty rozszerza zakres badań o zagadnienia związane z monitorowaniem 
+działania źródła oraz wpływem warunków środowiskowych.
+
+Rozdział siódmy omawia dodatkowe aspekty implementacyjne oraz zawiera porównanie 
+modułu wykorzystującego oscylatory pierścieniowe z komercyjnym generatorem Quantis.
+
+Rozdział ósmy kończy pracę i podsumowuje najważniejsze wnioski wynikające z 
+przeprowadzonych badań.
