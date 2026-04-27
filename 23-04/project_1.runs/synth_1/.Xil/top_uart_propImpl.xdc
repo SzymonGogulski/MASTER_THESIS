@@ -3,3 +3,5 @@ set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN H16 [get_ports clk]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G15 [get_ports tx]
+set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property ALLOW_COMBINATIONAL_LOOPS TRUE [get_nets -hierarchical *ring_osc*]
