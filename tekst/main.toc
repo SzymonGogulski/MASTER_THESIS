@@ -35,4 +35,6 @@
 \contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{10}{chapter.7}%
 \contentsline {chapter}{\chapternumberline {8}Zakończenie}{11}{chapter.8}%
 \contentsline {chapter}{Literatura}{12}{chapter*.4}%
-\contentsline {appendix}{\chapternumberline {A}Pytania}{13}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{13}{appendix.A}%
+\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{13}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Pytania}{20}{appendix.B}%

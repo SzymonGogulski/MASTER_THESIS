@@ -61,3 +61,17 @@ warianty konfiguracji generatora:
 \end{enumerate}
 
 \section{Modyfikacja}
+
+\noindent Testy przeprowadzono na zmodyfikowanej module neoTRNG. Moduł został rozszerzony 
+o dwa parametry generyczne \textit{ENABLE\_VON\_NEUMANN} oraz \textit{ENABLE\_CRC}. Zmodyfikowany 
+plik znajduje się w załączniku A neoTRNG\_mod\_1.vhd.
+
+Każdy z przypadków został uruchomiony na sprzęcie, wyniki zostały zapisane do plików:
+
+\begin{enumerate}
+    \item ch3\_VN\_CRC.bin
+    \item ch3\_nVN\_CRC.bin
+    \item ch3\_VN\_nCRC.bin
+    \item ch3\_nVN\_nCRC.bin
+\end{enumerate}
+

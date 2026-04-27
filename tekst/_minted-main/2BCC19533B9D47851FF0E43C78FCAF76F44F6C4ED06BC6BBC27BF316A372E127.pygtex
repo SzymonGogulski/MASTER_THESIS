@@ -1,0 +1,273 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library}\PYG{+w}{ }\PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{use}\PYG{+w}{ }\PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{use}\PYG{+w}{ }\PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{entity}\PYG{+w}{ }\PYG{n+nc}{neoTRNG}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{  }\PYG{k}{generic}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{           }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}INV\PYGZus{}START}\PYG{+w}{       }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{4095}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}\PYG{+w}{        }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{4096}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{            }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{true}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ENABLE\PYGZus{}CRC}\PYG{+w}{          }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{true}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{port}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{clk\PYGZus{}i}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{enable\PYGZus{}i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{valid\PYGZus{}o}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}o}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{k}{end}\PYG{+w}{ }\PYG{k}{entity}\PYG{p}{;}
+
+\PYG{k}{architecture}\PYG{+w}{ }\PYG{n+nc}{neoTRNG\PYGZus{}rtl}\PYG{+w}{ }\PYG{k}{of}\PYG{+w}{ }\PYG{n+nc}{neoTRNG}\PYG{+w}{ }\PYG{k}{is}
+
+\PYG{+w}{  }\PYG{k}{function}\PYG{+w}{ }\PYG{n}{clog2\PYGZus{}f}\PYG{p}{(}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{n+na}{\PYGZsq{}high}\PYG{+w}{ }\PYG{k}{loop}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{**}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{loop}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{function}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{component}\PYG{+w}{ }\PYG{n+nc}{neoTRNG\PYGZus{}cell}
+\PYG{+w}{    }\PYG{k}{generic}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{      }\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{port}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{      }\PYG{n}{clk\PYGZus{}i}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{en\PYGZus{}i}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{en\PYGZus{}o}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{rnd\PYGZus{}o}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{component}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}in}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}rnd}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}sum}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}sreg}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}state}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}data}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} raw bitstream / bypass von neumann \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{raw\PYGZus{}valid}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{raw\PYGZus{}data}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} selected stream after optional debiasing}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{selected\PYGZus{}valid}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{selected\PYGZus{}data}\PYG{+w}{     }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}en}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}cnt}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{clog2\PYGZus{}f}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{k}{constant}\PYG{+w}{ }\PYG{n}{poly\PYGZus{}c}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}00000111\PYGZdq{}}\PYG{p}{;}
+
+\PYG{k}{begin}
+
+\PYG{+w}{  }\PYG{k}{assert}\PYG{+w}{ }\PYG{n}{false}
+\PYG{+w}{    }\PYG{n}{report}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}[neoTRNG] The neoTRNG (v3.4) \PYGZhy{} A Tiny and Platform\PYGZhy{}Independent True Random Number Generator, \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}github.com/stnolting/neoTRNG\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{severity}\PYG{+w}{ }\PYG{n}{note}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{assert}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV\PYGZus{}START}\PYG{+w}{ }\PYG{k}{mod}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/=}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{    }\PYG{n}{report}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}[neoTRNG] Number of inverters in first cell [NUM\PYGZus{}INV\PYGZus{}START] has to be odd!\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{severity}\PYG{+w}{ }\PYG{n}{error}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{assert}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{**}\PYG{+w}{ }\PYG{n}{clog2\PYGZus{}f}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}
+\PYG{+w}{    }\PYG{n}{report}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}[neoTRNG] Number of pre\PYGZhy{}processed raw bits [NUM\PYGZus{}RAW\PYGZus{}BITS] has to be a power of 2!\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{severity}\PYG{+w}{ }\PYG{n}{error}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{assert}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{SIM\PYGZus{}MODE}
+\PYG{+w}{    }\PYG{n}{report}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}[neoTRNG] Simulation\PYGZhy{}mode enabled (NO TRUE/PHYSICAL RANDOM)!\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{severity}\PYG{+w}{ }\PYG{n}{warning}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n+nc}{entropy\PYGZus{}cell\PYGZus{}gen}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{generate}
+\PYG{+w}{    }\PYG{n}{neoTRNG\PYGZus{}cell\PYGZus{}inst}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{neoTRNG\PYGZus{}cell}
+\PYG{+w}{      }\PYG{k}{generic}\PYG{+w}{ }\PYG{k}{map}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{        }\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{  }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{NUM\PYGZus{}INV\PYGZus{}START}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{),}
+\PYG{+w}{        }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{SIM\PYGZus{}MODE}
+\PYG{+w}{      }\PYG{p}{)}
+\PYG{+w}{      }\PYG{k}{port}\PYG{+w}{ }\PYG{k}{map}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{        }\PYG{n}{clk\PYGZus{}i}\PYG{+w}{  }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{en\PYGZus{}i}\PYG{+w}{   }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}in}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+\PYG{+w}{        }\PYG{n}{en\PYGZus{}o}\PYG{+w}{   }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+\PYG{+w}{        }\PYG{n}{rnd\PYGZus{}o}\PYG{+w}{  }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}rnd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{generate}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{cell\PYGZus{}en\PYGZus{}in}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}en}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n+nc}{combine}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{cell\PYGZus{}rnd}\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{variable}\PYG{+w}{ }\PYG{n}{tmp\PYGZus{}v}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{n}{tmp\PYGZus{}v}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{loop}
+\PYG{+w}{      }\PYG{n}{tmp\PYGZus{}v}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{tmp\PYGZus{}v}\PYG{+w}{ }\PYG{k}{xor}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}rnd}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{loop}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{cell\PYGZus{}sum}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{tmp\PYGZus{}v}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} John von Neumann Randomness Extractor (De\PYGZhy{}Biasing) \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{n+nc}{debiasing}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{debias\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{      }\PYG{n}{debias\PYGZus{}state}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{elsif}\PYG{+w}{ }\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{        }\PYG{n}{debias\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}sreg}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}sum}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} start operation when last cell is enabled and process in every second cycle \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{        }\PYG{n}{debias\PYGZus{}state}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{not}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}state}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{p}{(}\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{else}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} VON NEUMANN DISABLED, ignore debias\PYGZus{}state \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{        }\PYG{n}{debias\PYGZus{}state}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{debias\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}state}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{debias\PYGZus{}sreg}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{xor}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}sreg}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{));}
+\PYG{+w}{  }\PYG{n}{debias\PYGZus{}data}\PYG{+w}{  }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}sreg}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} bypassed signals \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{n}{raw\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{p}{(}\PYG{n}{cell\PYGZus{}en\PYGZus{}out}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{raw\PYGZus{}data}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{cell\PYGZus{}sum}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{selected\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}valid}\PYG{+w}{ }\PYG{k}{when}\PYG{+w}{ }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{n}{raw\PYGZus{}valid}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{selected\PYGZus{}data}\PYG{+w}{  }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{debias\PYGZus{}data}\PYG{+w}{  }\PYG{k}{when}\PYG{+w}{ }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{n}{raw\PYGZus{}data}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Sampling Control \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{  }\PYG{n+nc}{sampling\PYGZus{}control}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sample\PYGZus{}en}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{sample\PYGZus{}cnt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{      }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+
+
+\PYG{+w}{    }\PYG{k}{elsif}\PYG{+w}{ }\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sample\PYGZus{}en}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{enable\PYGZus{}i}\PYG{p}{;}
+
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{ENABLE\PYGZus{}CRC}\PYG{+w}{ }\PYG{k}{then}
+
+\PYG{+w}{        }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} CRC ENABLED \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sample\PYGZus{}en}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{or}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sample\PYGZus{}cnt}\PYG{p}{(}\PYG{n}{sample\PYGZus{}cnt}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}\PYG{+w}{ }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} start new iteration}
+\PYG{+w}{          }\PYG{n}{sample\PYGZus{}cnt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{          }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{elsif}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{selected\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}\PYG{+w}{ }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} valid raw random bit}
+\PYG{+w}{          }\PYG{n}{sample\PYGZus{}cnt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{k+kt}{unsigned}\PYG{p}{(}\PYG{n}{sample\PYGZus{}cnt}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{          }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} CRC\PYGZhy{}style sampling shift\PYGZhy{}register to mix random stream \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{sample\PYGZus{}sreg}\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{xor}\PYG{+w}{ }\PYG{n}{selected\PYGZus{}data}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}\PYG{+w}{ }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} feedback bit}
+\PYG{+w}{            }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{xor}\PYG{+w}{ }\PYG{n}{poly\PYGZus{}c}\PYG{p}{;}
+\PYG{+w}{          }\PYG{k}{else}
+\PYG{+w}{            }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{          }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+
+\PYG{+w}{      }\PYG{k}{else}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} CRC DISABLED \PYGZhy{}\PYGZhy{}}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} no counter usage at all}
+\PYG{+w}{        }\PYG{n}{sample\PYGZus{}cnt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sample\PYGZus{}en}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{selected\PYGZus{}valid}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{          }\PYG{n}{sample\PYGZus{}sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}sreg}\PYG{p}{(}\PYG{n}{sample\PYGZus{}sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{selected\PYGZus{}data}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+
+\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{data\PYGZus{}o}\PYG{+w}{  }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}sreg}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{valid\PYGZus{}o}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sample\PYGZus{}cnt}\PYG{p}{(}\PYG{n}{sample\PYGZus{}cnt}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{when}\PYG{+w}{ }\PYG{n}{ENABLE\PYGZus{}CRC}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{n}{selected\PYGZus{}valid}\PYG{p}{;}
+
+\PYG{k}{end}\PYG{+w}{ }\PYG{k}{architecture}\PYG{p}{;}
+
+\PYG{k}{library}\PYG{+w}{ }\PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{use}\PYG{+w}{ }\PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{entity}\PYG{+w}{ }\PYG{n+nc}{neoTRNG\PYGZus{}cell}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{  }\PYG{k}{generic}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{port}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{clk\PYGZus{}i}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{en\PYGZus{}i}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{  }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{en\PYGZus{}o}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{rnd\PYGZus{}o}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{out}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{k}{end}\PYG{+w}{ }\PYG{k}{entity}\PYG{p}{;}
+
+\PYG{k}{architecture}\PYG{+w}{ }\PYG{n+nc}{neoTRNG\PYGZus{}cell\PYGZus{}rtl}\PYG{+w}{ }\PYG{k}{of}\PYG{+w}{ }\PYG{n+nc}{neoTRNG\PYGZus{}cell}\PYG{+w}{ }\PYG{k}{is}
+
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{sreg}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{latch}\PYG{+w}{   }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{inv\PYGZus{}in}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{inv\PYGZus{}out}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{signal}\PYG{+w}{ }\PYG{n}{sync}\PYG{+w}{    }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{std\PYGZus{}ulogic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+
+\PYG{k}{begin}
+
+\PYG{+w}{  }\PYG{n+nc}{en\PYGZus{}shift\PYGZus{}reg}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{elsif}\PYG{+w}{ }\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sreg}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sreg}\PYG{p}{(}\PYG{n}{sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{en\PYGZus{}i}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{en\PYGZus{}o}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sreg}\PYG{p}{(}\PYG{n}{sreg}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nc}{ring\PYGZus{}osc\PYGZus{}gen}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{generate}
+
+\PYG{+w}{    }\PYG{n}{latch}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{+w}{           }\PYG{k}{when}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{en\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{     }\PYG{k}{else}
+\PYG{+w}{                }\PYG{n}{latch}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{      }\PYG{k}{when}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sreg}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{                }\PYG{n}{inv\PYGZus{}out}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{inverter\PYGZus{}phy}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{ }\PYG{k}{generate}
+\PYG{+w}{      }\PYG{n}{inv\PYGZus{}out}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{inv\PYGZus{}in}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{generate}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{inverter\PYGZus{}sim}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{ }\PYG{k}{generate}
+\PYG{+w}{      }\PYG{n+nc}{inverter\PYGZus{}sim\PYGZus{}ff}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}
+\PYG{+w}{      }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{          }\PYG{n}{inv\PYGZus{}out}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{elsif}\PYG{+w}{ }\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{          }\PYG{n}{inv\PYGZus{}out}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{inv\PYGZus{}in}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{generate}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{generate}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{inv\PYGZus{}in}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{latch}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{k}{downto}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{latch}\PYG{p}{(}\PYG{n}{NUM\PYGZus{}INV}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nc}{synchronizer}\PYG{o}{:}\PYG{+w}{ }\PYG{k}{process}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rstn\PYGZus{}i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sync}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{others}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{elsif}\PYG{+w}{ }\PYG{n}{rising\PYGZus{}edge}\PYG{p}{(}\PYG{n}{clk\PYGZus{}i}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{      }\PYG{n}{sync}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sync}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{latch}\PYG{p}{(}\PYG{n}{latch}\PYG{n+na}{\PYGZsq{}left}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}\PYG{+w}{ }\PYG{k}{process}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{rnd\PYGZus{}o}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{sync}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{k}{end}\PYG{+w}{ }\PYG{k}{architecture}\PYG{p}{;}
+
+\end{Verbatim}

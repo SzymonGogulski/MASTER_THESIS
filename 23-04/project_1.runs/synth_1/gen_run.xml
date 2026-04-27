@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1777214312" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/oscillator.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="top1_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top1.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top1_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top1_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top1_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top1.vds"/>
-  <File Type="REPORTS-TCL" Name="top1_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="top1_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="top1.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1777247321" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/oscillator.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="top_uart_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="top_uart.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="top_uart_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="top_uart_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_uart_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="top_uart.vds"/>
+  <File Type="REPORTS-TCL" Name="top_uart_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="top_uart_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="top_uart.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/oscillator.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/top1.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/neoTRNG.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../neoTRNG/rtl/neoTRNG.vhd"/>
         <Attr Name="ImportTime" Val="1777037394"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -34,6 +21,19 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_uart.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/oscillator.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top1.vhd">
+      <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,7 +41,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top1"/>
+      <Option Name="TopModule" Val="top_uart"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

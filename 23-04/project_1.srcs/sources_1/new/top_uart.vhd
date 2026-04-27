@@ -19,10 +19,12 @@ architecture Behavioral of top_uart is
     -- TRNG component
     component neoTRNG
         generic (
-            NUM_CELLS     : natural range 1 to 99   := 3;
-            NUM_INV_START : natural range 3 to 99   := 5;
-            NUM_RAW_BITS  : natural range 1 to 4096 := 64;
-            SIM_MODE      : boolean                 := false
+            NUM_CELLS           : natural range 1 to 99   := 3;
+            NUM_INV_START       : natural range 3 to 99   := 5;
+            NUM_RAW_BITS        : natural range 1 to 4096 := 64;
+            SIM_MODE            : boolean                 := false;
+            ENABLE_VON_NEUMANN  : boolean                 := true;
+            ENABLE_CRC          : boolean                 := true
         );
         port (
             clk_i    : in  std_ulogic;

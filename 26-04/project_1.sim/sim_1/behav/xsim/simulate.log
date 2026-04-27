@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: Simulation Finished
+Time: 105 ns  Iteration: 0  Process: /shift_reg_tb/stim_proc  File: /home/szymon/Desktop/magister/26-04/project_1.srcs/sim_1/new/shift_reg_tb.vhd
+$finish called at time : 105 ns : File "/home/szymon/Desktop/magister/26-04/project_1.srcs/sim_1/new/shift_reg_tb.vhd" Line 59
