@@ -1,0 +1,18 @@
+\frametitle{NIST SP 800-90B}
+
+
+\begin{minted}[highlightlines={2, 5, 8, 11}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
+H_original: 7.487619
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
+H_original: 7.487620
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
+H_original: 6.738274
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
+H_original: 5.623910
+\end{minted}
+
+

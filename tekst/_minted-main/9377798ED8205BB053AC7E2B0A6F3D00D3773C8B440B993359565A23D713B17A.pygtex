@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZti{}/tools/SP800\PYGZhy{}90B\PYGZus{}EntropyAssessment/cpp\PYGZdl{}\PYG{+w}{ }./ea\PYGZus{}non\PYGZus{}iid\PYG{+w}{ }\PYGZti{}/Desktop/magister/data/ch3\PYGZus{}VN\PYGZus{}CRC.bin\PYG{+w}{ }\PYG{l+m}{8}
+H\PYGZus{}original:\PYG{+w}{ }\PYG{l+m}{7}.487619
+H\PYGZus{}bitstring:\PYG{+w}{ }\PYG{l+m}{0}.936772
+min\PYG{o}{(}H\PYGZus{}original,\PYG{+w}{ }\PYG{l+m}{8}\PYG{+w}{ }X\PYG{+w}{ }H\PYGZus{}bitstring\PYG{o}{)}:\PYG{+w}{ }\PYG{l+m}{7}.487619
+\end{Verbatim}

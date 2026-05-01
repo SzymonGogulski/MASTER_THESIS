@@ -29,12 +29,15 @@
 \contentsline {subsection}{\numberline {2.9.2}Digilent Nexys 4 DDR}{5}{subsection.2.9.2}%
 \contentsline {chapter}{\chapternumberline {3}Testy bazowe}{6}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Modyfikacja}{6}{section.3.1}%
-\contentsline {chapter}{\chapternumberline {4}Analiza rozmieszczenia}{7}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}Faza algorytmiczna i optymalizacja ekstrakcji}{8}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Faza odporności i monitorowanie online}{9}{chapter.6}%
-\contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{10}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Zakończenie}{11}{chapter.8}%
-\contentsline {chapter}{Literatura}{12}{chapter*.4}%
-\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{13}{appendix.A}%
-\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{13}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Pytania}{20}{appendix.B}%
+\contentsline {section}{\numberline {3.2}ENT}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}NIST SP 800-22}{7}{section.3.3}%
+\contentsline {section}{\numberline {3.4}NIST SP 800-90B}{7}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {4}Analiza rozmieszczenia}{8}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5}Faza algorytmiczna i optymalizacja ekstrakcji}{9}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Faza odporności i monitorowanie online}{10}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{11}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {8}Zakończenie}{12}{chapter.8}%
+\contentsline {chapter}{Literatura}{13}{chapter*.4}%
+\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{14}{appendix.A}%
+\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{14}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Pytania}{21}{appendix.B}%

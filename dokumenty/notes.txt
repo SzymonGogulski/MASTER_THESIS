@@ -5,3 +5,7 @@ sudo xxd /dev/ttyUSB0
 $ sudo cat /dev/ttyUSB0 | pv -r > /dev/null
 
 sudo stty -F /dev/ttyUSB0 flush
+
+~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_nCRC.bin
+
+

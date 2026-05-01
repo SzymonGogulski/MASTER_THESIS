@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{svg}
 \usepackage{xcolor}
+\usepackage{minted}
 \usetheme{Madrid}
 \usecolortheme{default}
 %------------------------------------------------------------
@@ -60,6 +61,19 @@ Poznań 2026}
     \begin{figure}[H]
       \includegraphics[width=0.75\textwidth]{figures/modle_zrodla.png}
       \caption{Model źródła entropii}
+    \end{figure}
+
+\stepcounter{footnote}\footnotetext[\value{footnote}]{\href{https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf}{NIST SP 800-90B}}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wprowadzenie}
+
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{figures/oscylator.png}
+      \caption{Prosty oscylator pierścieniowy}
     \end{figure}
 
 \stepcounter{footnote}\footnotetext[\value{footnote}]{\href{https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf}{NIST SP 800-90B}}
@@ -145,24 +159,55 @@ Poznań 2026}
 
 \end{frame}
 %---------------------------------------------------------
-\begin{frame}
-\frametitle{Wyniki testów ENT, NIST SP 800-22, NIST SP 800-90B}
+\begin{frame}[fragile]
+\frametitle{ENT}
 
-\begin{center}
-\begin{tabular}{ |c|c|c|c| } 
- \hline
-  & ENT & NIST SP 800-22 & NIST SP 800-90B \\ 
- \hline
- RTL 1 & ... & ... & ... \\ 
- \hline
- RTL 2 & ... & ... & ... \\ 
- \hline
- RTL 3 & ... & ... & ... \\
- \hline
- RTL 4 & ... & ... & ... \\  
- \hline
-\end{tabular}
-\end{center}
+\begin{minted}[highlightlines={2, 5, 8, 11},linenos, breaklines]{bash}
+~/tools/ent/src$ ./ent ch3_VN_CRC.bin 
+Entropy = 7.999983 bits per byte.
+
+~/tools/ent/src$ ./ent ch3_nVN_CRC.bin 
+Entropy = 7.999981 bits per byte.
+
+~/tools/ent/src$ ./ent ch3_VN_nCRC.bin 
+Entropy = 7.893073 bits per byte.
+
+~/tools/ent/src$ ./ent ch3_nVN_nCRC.bin 
+Entropy = 7.341919 bits per byte.
+\end{minted}
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{NIST SP 800-22}
+
+
+\begin{enumerate}
+    \item finalAnalysisReport\_ch3\_VN\_CRC.txt
+    \item finalAnalysisReport\_ch3\_nVN\_CRC.txt
+    \item finalAnalysisReport\_ch3\_VN\_nCRC.txt
+    \item finalAnalysisReport\_ch3\_nVN\_nCRC.txt
+\end{enumerate}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{NIST SP 800-90B}
+
+
+\begin{minted}[highlightlines={2, 5, 8, 11}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
+H_original: 7.487619
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
+H_original: 7.487620
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
+H_original: 6.738274
+
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
+H_original: 5.623910
+\end{minted}
+
 
 \end{frame}
 %---------------------------------------------------------
@@ -171,6 +216,15 @@ Poznań 2026}
 \begin{frame}
 \frametitle{Analiza rozmieszczenia}
 
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{mermaid/png/2.png}
+      \caption{Architektura modułu neoTRNG}
+    \end{figure}
+
+
+\Large
+
+\textbf{Jak rozmieszczenie komórek entropii w fizycznym układzie (floorplan) wpłynie na entropię?}
 
 \end{frame}
 %---------------------------------------------------------
@@ -179,6 +233,8 @@ Poznań 2026}
 \begin{frame}
 \frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
 
+\Large
+\textbf{Porównanie innych metod post-processing'u}
 
 \end{frame}
 %---------------------------------------------------------
@@ -187,14 +243,20 @@ Poznań 2026}
 \begin{frame}
 \frametitle{Faza odporności i monitorowania online}
 
+\Large
+\textbf{Rozszerzenie zakresu badań o zagadnienia związane z monitorowaniem 
+działania źródła oraz wpływem warunków środowiskowych.}
 
 \end{frame}
 %---------------------------------------------------------
 \section{NeoTRNG na FPGA dla RPI}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Faza odporności i monitorowania online}
+\frametitle{NeoTRNG na FPGA dla RPI}
 
+\Large
+\textbf{Dodatkowe aspekty implementacyjne oraz porównanie 
+modułu wykorzystującego oscylatory pierścieniowe z komercyjnym generatorem Quantis.}
 
 \end{frame}
 %---------------------------------------------------------
