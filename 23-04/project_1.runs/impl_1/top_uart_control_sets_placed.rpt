@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Mon Apr 27 02:54:03 2026
+| Date         : Sat May  2 22:30:53 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_control_sets -verbose -file top_uart_control_sets_placed.rpt
 | Design       : top_uart
@@ -61,9 +61,9 @@ Table of Contents
 | No           | No                    | No                     |              15 |            4 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               9 |            2 |
+| Yes          | No                    | No                     |               9 |            3 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              12 |            4 |
+| Yes          | Yes                   | No                     |              12 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -75,8 +75,8 @@ Table of Contents
 +----------------+--------------------+---------------------+------------------+----------------+--------------+
 |  clk_IBUF_BUFG | tx_reg_i_1_n_0     |                     |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG | bit_idx[3]_i_2_n_0 | bit_idx[3]_i_1_n_0  |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | busy               | uart_cnt[7]_i_1_n_0 |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG | tx_buffer0         |                     |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG | tx_buffer0         |                     |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | busy               | uart_cnt[7]_i_1_n_0 |                2 |              8 |         4.00 |
 |  clk_IBUF_BUFG |                    |                     |                4 |             15 |         3.75 |
 +----------------+--------------------+---------------------+------------------+----------------+--------------+
 

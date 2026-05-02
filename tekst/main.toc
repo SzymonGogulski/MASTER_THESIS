@@ -40,4 +40,5 @@
 \contentsline {chapter}{Literatura}{13}{chapter*.4}%
 \contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{14}{appendix.A}%
 \contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{14}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Pytania}{21}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}Raport}{21}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {C}Notatki}{22}{appendix.C}%

@@ -218,6 +218,19 @@ architecture neoTRNG_cell_rtl of neoTRNG_cell is
   signal inv_out : std_ulogic_vector(NUM_INV - 1 downto 0); 
   signal sync    : std_ulogic_vector(1 downto 0);           
 
+  attribute dont_touch : string;
+  attribute keep : string;
+
+  -- Apply to the oscillator signals to prevent optimization
+  attribute dont_touch of latch   : signal is "true";
+  attribute keep       of latch   : signal is "true";
+  
+  attribute dont_touch of inv_in  : signal is "true";
+  attribute keep       of inv_in  : signal is "true";
+  
+  attribute dont_touch of inv_out : signal is "true";
+  attribute keep       of inv_out : signal is "true";
+
 begin
 
   en_shift_reg: process (rstn_i, clk_i)

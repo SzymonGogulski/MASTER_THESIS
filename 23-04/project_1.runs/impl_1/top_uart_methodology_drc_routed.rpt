@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Mon Apr 27 02:54:14 2026
+| Date         : Sat May  2 22:31:04 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_methodology -file top_uart_methodology_drc_routed.rpt -pb top_uart_methodology_drc_routed.pb -rpx top_uart_methodology_drc_routed.rpx
 | Design       : top_uart
@@ -215,17 +215,17 @@ Related violations: <none>
 
 TIMING-23#1 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sync[0]_i_1/I0 and trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sync[0]_i_1/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst/I0 and trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst/O to disable the timing loop
 Related violations: <none>
 
 TIMING-23#2 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sync[0]_i_1__0/I0 and trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sync[0]_i_1__0/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst/I0 and trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst/O to disable the timing loop
 Related violations: <none>
 
 TIMING-23#3 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sync[0]_i_1__1/I0 and trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sync[0]_i_1__1/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst/I0 and trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst/O to disable the timing loop
 Related violations: <none>
 
 

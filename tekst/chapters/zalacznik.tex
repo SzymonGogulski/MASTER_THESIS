@@ -9,25 +9,61 @@
 % • Dokumentacja Fotograficzna: zdjęcie fizycznego stanowiska (FPGA, pMOD SD,
 % setup do testów temperaturowych).
 
-\chapter{Pytania}
+\chapter{Raport}
 
 \textbf{Pytania}
 \begin{enumerate}
-    \item Jak dodać informację o licencji neoTRNG?
-    \item czy można cytować repozytorium github?
-    \item czy dodać spis fragmentów kodu tak jak spis rysunków/tabel?
-    \item Jak powiedzieć de-biasing/ sampling po polsku?
-    \item Ile MiB danych do wykonania testów? (zbierałem 10MiB)
-    \item NIST SP 800-90B używać testów IID czy non-IID?
-    \item kto jest autorem neoTRNG
-    \item publikajce naukowe do uwzględnienia w pracy - sugestie lub wymagania 
+    \item Kwestia sprzętu: trzymać się swojego czy czekać na Nexys 4?
+        \begin{itemize}
+            \item Obecnie pracuję na swoim. Zależnie od decyzji dr. Kropidłowskiego pozostanę przy swoim rozwiązaniu lub powtórzę testy na Nexys.
+        \end{itemize}
+
+    \item Jak dodać w tekście informację o licencji neoTRNG?
+
+    \item Czy można cytować README repozytorium GitHub?
+
+    \item Czy dodać spis fragmentów kodu tak jak spis rysunków i tabel?
+
+    \item Jak powiedzieć de-biasing / sampling po polsku?
+        \begin{itemize}
+            \item W tekście użyłem: de-biasing → korekcja źródła / post-processing -> przetwarzanie końcowe / sampling → próbkowanie / CRC → kompresja entropii.
+        \end{itemize}
+
+    \item Ile MiB danych do wykonania testów? (zbierałem 10 MiB)
+        \begin{itemize}
+            \item Będę zbierać po 100 MiB.
+        \end{itemize}
+
+    \item NIST SP 800-90B: używać testów IID czy non-IID?
+        \begin{itemize}
+            \item Wykonywałem testy non-IID, ewentualnie będą do poprawy.
+        \end{itemize}
+
+    \item Kto jest autorem neoTRNG?
+    
+    \item Jak zestawić dane z testów?
+        \begin{itemize}
+            \item Wyniki testów zestawię jak w Pańskim artykule. Pozostaje kwestia rozkładów C — ustaliliśmy, że jeszcze się Pan nad tym zastanowi.
+        \end{itemize}
+
+    \item Publikacje naukowe do uwzględnienia w pracy – sugestie lub wymagania
+
 \end{enumerate}
+
+\textbf{Notatki}
+\begin{enumerate}
+    \item Najwięcej interwencji z Pańskiej strony będzie wymagał wstęp do pracy. Na razie przygotowałem wstępny zarys, jednak brakuje mu sprecyzowania najważniejszych kwestii oraz nadania tonu reszcie pracy.
+
+    \item W rozdziale teoretycznym wybrałem zagadnienia, które mogłyby być uwzględnione. Ewentualnie proszę o informację, czego brakuje, a co jest zbędne.
+\end{enumerate}
+
+\chapter{Notatki}
 
 \textbf{Do zrobienia}
 \begin{enumerate}
-    \item dodaj załącznik B z kodem źródłowym
-    \item przerób wykresy .png na .svg
-    \item popraw schematy .svg z vivado
+    \item Dodaj załącznik B z kodem źródłowym
+    \item Przerób wykresy .png na .svg
+    \item Popraw schematy .svg z Vivado
 \end{enumerate}
 
 % \chapter{Składanie dokumentu w systemie \LaTeX}

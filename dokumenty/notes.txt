@@ -2,10 +2,14 @@ lsof /dev/ttyUSB0
 sudo stty -F /dev/ttyUSB0 921600 raw -echo
 sudo xxd /dev/ttyUSB0
 
-$ sudo cat /dev/ttyUSB0 | pv -r > /dev/null
+sudo cat /dev/ttyUSB0 | pv -r > /dev/null
 
 sudo stty -F /dev/ttyUSB0 flush
 
 ~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_nCRC.bin
 
+dd if=/dev/ttyUSB0 of=file.bin bs=1M count=100 status=progress
 
+VN CRC
+$ sudo cat /dev/ttyUSB0 | pv -r > /dev/null
+[83.0KiB/s]
