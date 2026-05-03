@@ -10,6 +10,4 @@ sudo stty -F /dev/ttyUSB0 flush
 
 dd if=/dev/ttyUSB0 of=file.bin bs=1M count=100 status=progress
 
-VN CRC
-$ sudo cat /dev/ttyUSB0 | pv -r > /dev/null
-[83.0KiB/s]
+/home/szymon/Desktop/magister/data/ch3/02_05/nVN_CRC.bin
