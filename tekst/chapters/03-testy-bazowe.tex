@@ -75,30 +75,85 @@ Każdy z przypadków testowych uruchomiono na sprzęcie, a uzyskane wyniki zapis
     \item ch3/nVN\_nCRC.bin
 \end{enumerate}
 
+\section{ENT}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_VN_CRC.bin 
+Entropy = 7.999983 bits per byte.
+\end{minted}
+
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_CRC.bin 
+Entropy = 7.999981 bits per byte.
+\end{minted}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_VN_nCRC.bin 
+Entropy = 7.893073 bits per byte.
+\end{minted}
+
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_nCRC.bin 
+Entropy = 7.341919 bits per byte.
+\end{minted}
+
 \section{NIST SP 800-22}
 
 \begin{table}[h!]
 \centering
 \caption{NIST SP 800-22 Statistical Test Results}
 \label{tab:nist_results}
-\begin{tabular}{|l|r|}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{Statistical Test} & \textbf{Pass Ratio} \\ \hline
-Frequency & 100/100 \\ \hline
-BlockFrequency & 98/100 \\ \hline
-CumulativeSums & 100/100 \\ \hline
-CumulativeSums & 99/100 \\ \hline
-Runs & 99/100 \\ \hline
-LongestRun & 99/100 \\ \hline
-Rank & 98/100 \\ \hline
-FFT & 97/100 \\ \hline
-NonOverlappingTemplate (148 tests) & 14717/14800 \\ \hline
-OverlappingTemplate & 99/100 \\ \hline
-Universal & 99/100 \\ \hline
-ApproximateEntropy & 100/100 \\ \hline
-RandomExcursions (8 tests) & 495/504 \\ \hline
-RandomExcursionsVariant (18 tests) & 1121/1134 \\ \hline
-Serial (2 tests) & 199/200 \\ \hline
-LinearComplexity & 100/100 \\ \hline
+\textbf{Statistical Test} & \textbf{VN\_CRC} & \textbf{nVN\_CRC} & \textbf{VN\_nCRC} & \textbf{nVN\_nCRC} \\ \hline
+Frequency & 100/100 & & & \\ \hline
+BlockFrequency & 98/100 & & &  \\ \hline
+CumulativeSums & 199/200 & & &  \\ \hline
+Runs & 99/100 & & &  \\ \hline
+LongestRun & 99/100 & & &  \\ \hline
+Rank & 98/100 & & &  \\ \hline
+FFT & 97/100 & & &  \\ \hline
+NonOverlappingTemplate & 14717/14800 & & &  \\ \hline
+OverlappingTemplate & 99/100 & & &  \\ \hline
+Universal & 99/100 & & &  \\ \hline
+ApproximateEntropy & 100/100 & & &  \\ \hline
+RandomExcursions & 495/504 & & &  \\ \hline
+RandomExcursionsVariant & 1121/1134 & & &  \\ \hline
+Serial & 199/200 & & &  \\ \hline
+LinearComplexity & 100/100 & & &  \\ \hline
 \end{tabular}
 \end{table}
+
+
+
+\section{NIST SP 800-90B}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
+H_original: 7.487619
+H_bitstring: 0.936772
+min(H_original, 8 X H_bitstring): 7.487619
+\end{minted}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
+H_original: 7.487620
+H_bitstring: 0.941993
+min(H_original, 8 X H_bitstring): 7.487620
+\end{minted}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
+H_original: 6.738274
+H_bitstring: 0.647253
+min(H_original, 8 X H_bitstring): 5.178024
+\end{minted}
+
+\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
+~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
+H_original: 5.623910
+H_bitstring: 0.504719
+min(H_original, 8 X H_bitstring): 4.037752
+\end{minted}

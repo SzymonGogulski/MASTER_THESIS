@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  3 MAY 2026 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  6 MAY 2026 22:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -782,7 +782,7 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
 (epstopdf)             \includegraphics on input line 44.
 Package epstopdf Info: Output file is already uptodate.
-<wit/sygnet-pp-eps-converted-to.pdf, id=167, 1391.1975pt x 278.03876pt>
+<wit/sygnet-pp-eps-converted-to.pdf, id=175, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
 Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 44.
@@ -804,14 +804,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]) (./chapters/02-teoria.tex [2]
-<figures/ch2/nist_source_schematic.png, id=267, 889.3225pt x 611.28375pt>
+<figures/ch2/nist_source_schematic.png, id=277, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
 Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 32.
 (pdftex.def)             Requested size: 319.5pt x 219.60493pt.
 Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 48.
  (./svg-inkscape/schematic_svg-tex.pdf_tex
-<./svg-inkscape/schematic_svg-tex.pdf, id=272, page=1, 416.71994pt x 111.85147pt>
+<./svg-inkscape/schematic_svg-tex.pdf, id=282, page=1, 416.71994pt x 111.85147pt>
 File: ./svg-inkscape/schematic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/schematic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on input line 56.
@@ -824,7 +824,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) h
                                                   \__shipout_drop_firstpage_...
 l.52 
       <./figures/ch2/nist_source_schematic.png>]
-<figures/ch2/neotrng_architecture.png, id=286, 519.03pt x 169.506pt>
+<figures/ch2/neotrng_architecture.png, id=296, 519.03pt x 169.506pt>
 File: figures/ch2/neotrng_architecture.png Graphic file (type png)
 <use figures/ch2/neotrng_architecture.png>
 Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 64.
@@ -840,65 +840,85 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) h
                                                   \__shipout_drop_firstpage_...
 l.46 \chapter
              {Testy bazowe} <./svg-inkscape/schematic_svg-tex.pdf> <./figures/ch2/neotrng_architecture.png>] [5]
+\openout4 = `main.pyg'.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ (./_minted-main/default.pygstyle) (./_minted-main/58E233348147C363C07383469B5CED2DD3773C8B440B993359565A23D713B17A.pygtex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+))
+\openout4 = `main.pyg'.
 
-) (./chapters/04-analiza-rozmieszczenia.tex [6
+ (./_minted-main/E25058F5D0FD3F19B774C88949DBFB20D3773C8B440B993359565A23D713B17A.pygtex)
+\openout4 = `main.pyg'.
 
-] [7
+ (./_minted-main/E4874CDF76FAE12CB2265EA88204968FD3773C8B440B993359565A23D713B17A.pygtex [6
+
+])
+\openout4 = `main.pyg'.
+
+ (./_minted-main/82748C33DB94E483322E2AD3595E121CD3773C8B440B993359565A23D713B17A.pygtex)
+\openout4 = `main.pyg'.
+
+ (./_minted-main/9377798ED8205BB053AC7E2B0A6F3D00D3773C8B440B993359565A23D713B17A.pygtex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\openout4 = `main.pyg'.
+
+ (./_minted-main/02FCD66FF7E6356232DC419FB8CBEF6FD3773C8B440B993359565A23D713B17A.pygtex)
+\openout4 = `main.pyg'.
+
+ (./_minted-main/CA1832956E74D0CFD796A2D452DE5C02D3773C8B440B993359565A23D713B17A.pygtex)
+\openout4 = `main.pyg'.
+
+ (./_minted-main/9730C092B4CC146AA1F6449F5700E25FD3773C8B440B993359565A23D713B17A.pygtex [7
 pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.20 \chapter
-             {Analiza rozmieszczenia}]) (./chapters/05-algo-optym.tex [8
+l.6 \end{Verbatim}
+                  ])) (./chapters/04-analiza-rozmieszczenia.tex [8]) (./chapters/05-algo-optym.tex [9
 
-]) (./chapters/06-odpornosc-monitoring.tex [9
+]) (./chapters/06-odpornosc-monitoring.tex [10
 
-]) (./chapters/07-neoTRNG-RPI.tex [10
+]) (./chapters/07-neoTRNG-RPI.tex [11
 
-]) (./chapters/08-zakonczenie.tex [11
+]) (./chapters/08-zakonczenie.tex [12
 
-]) (./main.bbl [12
+]) (./main.bbl [13
 
 ]
 bibitemlist
-) [13
+) [14
 
 ] (./chapters/zalacznik-A.tex
 \openout4 = `main.pyg'.
 
- (./_minted-main/default.pygstyle) (./_minted-main/2BCC19533B9D47851FF0E43C78FCAF76F44F6C4ED06BC6BBC27BF316A372E127.pygtex
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
+ (./_minted-main/2BCC19533B9D47851FF0E43C78FCAF76F44F6C4ED06BC6BBC27BF316A372E127.pygtex
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [14
+) [15
 
 
-]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 77.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 77.
- [15] [16] [17]
+] [16] [17] [18]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 166.
- [18] [19])) (./chapters/zalacznik.tex [20] [21
+ [19] [20])) (./chapters/zalacznik.tex [21] [22
 
-]) [22
+]) [23
 
 ]
-<wit/logo-pp.pdf, id=414, 422.57875pt x 422.57875pt>
+<wit/logo-pp.pdf, id=428, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
 Package pdftex.def Info: wit/logo-pp.pdf  used on input line 108.
 (pdftex.def)             Requested size: 42.67946pt x 42.67912pt.
- [23
+ [24
 
  <./wit/logo-pp.pdf>]
 \tf@toc=\write8
@@ -916,23 +936,23 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 39A913EF13BD5644B18E9C54F3F967DA;6486.
+(rerunfilecheck)             Checksum: 006608AE1FCA604EEAEDB46803B3D04F;6736.
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 19634 strings out of 476074
- 341443 string characters out of 5793136
- 1967975 words of memory out of 5000000
- 41169 multiletter control sequences out of 15000+600000
+ 19700 strings out of 476074
+ 346388 string characters out of 5793136
+ 1968975 words of memory out of 5000000
+ 41208 multiletter control sequences out of 15000+600000
  576259 words of font info for 69 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
- 99i,12n,107p,1002b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on main.pdf (27 pages, 418156 bytes).
+ 99i,12n,107p,1002b,859s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+Output written on main.pdf (28 pages, 422844 bytes).
 PDF statistics:
- 1176 PDF objects out of 1200 (max. 8388607)
- 464 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1200 PDF objects out of 1200 (max. 8388607)
+ 478 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 379 words of extra memory for PDF output out of 10000 (max. 10000000)
 

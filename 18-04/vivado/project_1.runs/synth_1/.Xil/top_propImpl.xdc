@@ -1,5 +1,0 @@
-set_property SRC_FILE_INFO {cfile:/home/szymon/Desktop/magister/18-04/vivado/project_1.srcs/constrs_1/imports/szybki/physical.xdc rfile:../../../project_1.srcs/constrs_1/imports/szybki/physical.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN H16 [get_ports clk]
-set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN G15 [get_ports tx]
