@@ -8,6 +8,7 @@ set_property PACKAGE_PIN G15 [get_ports tx]
 #set_property ALLOW_COMBINATIONAL_LOOPS TRUE [get_nets -hierarchical *ring_osc*]
 #set_property DONT_TOUCH TRUE [get_cells -hierarchical *latch_reg*]
 
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical *inv_in*]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical *inv_out*]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical *latch*]
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets -hierarchical *inv_in*]
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets -hierarchical *inv_out*]
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets -hierarchical *latch*]
+

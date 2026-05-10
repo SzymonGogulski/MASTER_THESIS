@@ -45,7 +45,7 @@
 
 \chapter{Testy bazowe}
 
-W niniejszym rozdziale przeanalizowano wpływ zastosowania korekcji źródła oraz 
+\noindent W niniejszym rozdziale przeanalizowano wpływ zastosowania korekcji źródła oraz 
 przetwarzania końcowego na poziom generowanej entropii w domyślnej implementacji 
 neoTRNG. Rozważane elementy architektury zostały przedstawione na rysunku 
 \ref{fig:architektura_neotrng} jako moduły „de-biasing” oraz „sampling”. W 
@@ -60,69 +60,131 @@ warianty konfiguracji generatora:
     \item moduł bez korektora i bez CRC.
 \end{enumerate}
 
+Zbadane zostały kolejno moduły z:
+
+\begin{enumerate}
+    \item trzema pętlami oscylatorów po 5, 7 oraz 9 inwerterów,
+    \item trzema pętlami oscylatorów po 3, 5 oraz 7 inwerterów,
+    \item dwiema pętlami oscylatorów po 3 i 5 inwerterów.
+\end{enumerate}
+
 \section{Modyfikacja}
 
 \noindent Testy przeprowadzono na zmodyfikowanym module neoTRNG. Moduł rozszerzono o dwa parametry generyczne
- \textit{ENABLE\_VON\_NEUMANN} oraz \textit{ENABLE\_CRC}. Zmodyfikowany plik źródłowy znajduje się w załączniku
+ \textit{ENABLE\_VON\_NEUMANN} oraz \textit{ENABLE\_CRC} w celu łatwej konfiguracji. Zmodyfikowany plik źródłowy znajduje się w załączniku
   A neoTRNG\_mod\_1.vhd.
 
 Każdy z przypadków testowych uruchomiono na sprzęcie, a uzyskane wyniki zapisano w odpowiednich plikach.
 
-\begin{enumerate}
-    \item ch3/VN\_CRC.bin
-    \item ch3/nVN\_CRC.bin
-    \item ch3/VN\_nCRC.bin
-    \item ch3/nVN\_nCRC.bin
-\end{enumerate}
 
 \section{ENT}
 
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_VN_CRC.bin 
-Entropy = 7.999983 bits per byte.
-\end{minted}
-
-
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_CRC.bin 
-Entropy = 7.999981 bits per byte.
-\end{minted}
-
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_VN_nCRC.bin 
-Entropy = 7.893073 bits per byte.
-\end{minted}
-
-
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_nCRC.bin 
-Entropy = 7.341919 bits per byte.
-\end{minted}
+\begin{table}[H]
+\centering
+\caption{ENT: Entropy bits per byte.}
+\label{tab:ch3_ent}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
+\textbf{true/true}      & 7.999998 & 7.999998 & 7.999997 \\ \hline
+\textbf{true/false}     & 7.928600 & 7.856006 & 7.368478 \\ \hline
+\textbf{false/true}     & 7.999988 & 7.999995 & 7.999742 \\ \hline
+\textbf{false/false}    & 7.404643 & 7.921076 & 7.617650 \\ \hline
+\end{tabular}
+\end{table}
 
 \section{NIST SP 800-22}
 
-\begin{table}[h!]
+\begin{flushleft}
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
+\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
+\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\end{flushleft}
+
+\begin{table}[H]
 \centering
-\caption{NIST SP 800-22 Statistical Test Results}
-\label{tab:nist_results}
-\begin{tabular}{|l|c|c|c|c|}
+\caption{3 RO : 5 - 7 - 9}
+\label{tab:nist_22_3RO_21I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
 \hline
-\textbf{Statistical Test} & \textbf{VN\_CRC} & \textbf{nVN\_CRC} & \textbf{VN\_nCRC} & \textbf{nVN\_nCRC} \\ \hline
-Frequency & 100/100 & & & \\ \hline
-BlockFrequency & 98/100 & & &  \\ \hline
-CumulativeSums & 199/200 & & &  \\ \hline
-Runs & 99/100 & & &  \\ \hline
-LongestRun & 99/100 & & &  \\ \hline
-Rank & 98/100 & & &  \\ \hline
-FFT & 97/100 & & &  \\ \hline
-NonOverlappingTemplate & 14717/14800 & & &  \\ \hline
-OverlappingTemplate & 99/100 & & &  \\ \hline
-Universal & 99/100 & & &  \\ \hline
-ApproximateEntropy & 100/100 & & &  \\ \hline
-RandomExcursions & 495/504 & & &  \\ \hline
-RandomExcursionsVariant & 1121/1134 & & &  \\ \hline
-Serial & 199/200 & & &  \\ \hline
-LinearComplexity & 100/100 & & &  \\ \hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  98/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+BlockFrequency          &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     &  99/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+LongestRun              & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Rank                    &  99/100 &     &  99/100 &     &  99/100 &     &  99/100 &     \\ \hline
+FFT                     & 100/100 &     &   2/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &   8/148 & sp  & 148/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Universal               &  97/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     7/8 & sp  &     1/8 & sp  &     8/8 & sp  &     2/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Serial                  &  98/100 &     &  95/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{3 RO : 3 - 5 - 7}
+\label{tab:nist_22_3RO_15I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  98/100 &     &  96/100 &     &  98/100 &     &  94/100 & *   \\ \hline
+BlockFrequency          & 100/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+CumulativeSums          &  98/100 &     &  93/100 & *   &  99/100 &     &  93/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     &  93/100 & *   &  98/100 &     &  95/100 & *   \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  98/100 &     &  84/100 & *   \\ \hline
+LongestRun              &  99/100 &     &   0/100 & *   &  99/100 &     &  77/100 & *   \\ \hline
+Rank                    &  99/100 &     &  98/100 &     & 100/100 &     &  97/100 &     \\ \hline
+FFT                     &  98/100 &     &   0/100 & *   &  99/100 &     &   7/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &   0/148 & sp  & 148/148 & sp  &  11/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &   0/100 & *   &  99/100 &     &   1/100 & *   \\ \hline
+Universal               &  98/100 &     &   0/100 & *   &  96/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/8 & sp  &     8/8 & sp  &     4/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  20/100 & *   &  99/100 &     &  94/100 & *   \\ \hline
+LinearComplexity        &  97/100 &     &  98/100 &     & 100/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{2 RO : 3 - 5}
+\label{tab:nist_22_2RO_8I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     & 100/100 &     &  98/100 &     &  14/100 & *   \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  98/100 &     &   0/100 & *   \\ \hline
+CumulativeSums          & 100/100 &     & 100/100 &     &  98/100 &     &  14/100 & *   \\ \hline
+CumulativeSums          & 100/100 &     & 100/100 &     &  98/100 &     &  15/100 & *   \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LongestRun              &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Rank                    &  99/100 &     &  99/100 &     &  99/100 &     &  99/100 &     \\ \hline
+FFT                     & 100/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  &   8/148 & sp  & 148/148 & sp  &   4/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Universal               &  98/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/8 & sp  &     8/8 & sp  &     0/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        &  98/100 &     & 100/100 &     & 100/100 &     & 100/100 &     \\ \hline
 \end{tabular}
 \end{table}
 
@@ -130,30 +192,47 @@ LinearComplexity & 100/100 & & &  \\ \hline
 
 \section{NIST SP 800-90B}
 
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
-H_original: 7.487619
-H_bitstring: 0.936772
-min(H_original, 8 X H_bitstring): 7.487619
-\end{minted}
 
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
-H_original: 7.487620
-H_bitstring: 0.941993
-min(H_original, 8 X H_bitstring): 7.487620
-\end{minted}
 
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
-H_original: 6.738274
-H_bitstring: 0.647253
-min(H_original, 8 X H_bitstring): 5.178024
-\end{minted}
+\begin{table}[H]
+\centering
+\caption{NIST SP 800-90: Non-IID entropy assessment}
+\label{tab:ch3_NIST_SP_800_90}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
 
-\begin{minted}[highlightlines={2}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
-H_original: 5.623910
-H_bitstring: 0.504719
-min(H_original, 8 X H_bitstring): 4.037752
-\end{minted}
+\textbf{true/true} &  
+\shortstack{$H_{orig}=7.918$ \\ $H_{bit}=0.941$} & 
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} & 
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+
+\textbf{true/false} &
+\shortstack{$H_{orig}=6.653213$ \\ $H_{bit}=0.754510$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+
+\textbf{false/true} &
+\shortstack{$H_{orig}=7.915044$ \\ $H_{bit}=0.941182$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+
+\textbf{false/false} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
+\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+

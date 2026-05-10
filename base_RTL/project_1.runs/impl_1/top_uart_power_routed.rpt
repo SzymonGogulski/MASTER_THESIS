@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Sat May  9 22:44:47 2026
+| Date             : Sun May 10 23:39:03 2026
 | Host             : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file top_uart_power_routed.rpt -pb top_uart_power_summary_routed.pb -rpx top_uart_power_routed.rpx
 | Design           : top_uart
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.090        |
+| Total On-Chip Power (W)  | 1.140        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.985        |
+| Dynamic (W)              | 1.034        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 72.4         |
-| Junction Temperature (C) | 37.6         |
+| Max Ambient (C)          | 71.8         |
+| Junction Temperature (C) | 38.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.141 |      116 |       --- |             --- |
-|   LUT as Logic |     0.123 |       49 |     14400 |            0.34 |
+| Slice Logic    |     0.166 |      134 |       --- |             --- |
+|   LUT as Logic |     0.148 |       59 |     14400 |            0.41 |
 |   Register     |     0.011 |       36 |     28800 |            0.13 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       10 |       --- |             --- |
-| Signals        |     0.136 |       92 |       --- |             --- |
+| Signals        |     0.160 |      110 |       --- |             --- |
 | I/O            |     0.708 |        2 |       100 |            2.00 |
 | Static Power   |     0.106 |          |           |                 |
-| Total          |     1.090 |          |           |                 |
+| Total          |     1.140 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.286 |       0.281 |      0.005 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.336 |       0.330 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.033 |       0.026 |      0.007 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.200 |       0.199 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,11 +144,11 @@ Table of Contents
 +-------------------------------------------+-----------+
 | Name                                      | Power (W) |
 +-------------------------------------------+-----------+
-| top_uart                                  |     0.985 |
-|   trng_inst                               |     0.149 |
-|     entropy_cell_gen[0].neoTRNG_cell_inst |     0.021 |
-|     entropy_cell_gen[1].neoTRNG_cell_inst |     0.036 |
-|     entropy_cell_gen[2].neoTRNG_cell_inst |     0.045 |
+| top_uart                                  |     1.034 |
+|   trng_inst                               |     0.196 |
+|     entropy_cell_gen[0].neoTRNG_cell_inst |     0.034 |
+|     entropy_cell_gen[1].neoTRNG_cell_inst |     0.047 |
+|     entropy_cell_gen[2].neoTRNG_cell_inst |     0.056 |
 +-------------------------------------------+-----------+
 
 

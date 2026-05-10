@@ -18,3 +18,33 @@
 % generowanego szumu.
 
 \chapter{Analiza rozmieszczenia}
+
+\noindent W architekturze neoTRNG zdefiniowano odrębny moduł komórki entropii.
+Pojedyncza komórka stanowi pojedynczą pętlę inwerterów tworzącą oscylator pierścieniowy.
+W ramach całego generatora możliwa jest implementacja wielu takich komórek. Każda z nich
+stanowi niezależne źródło entropii, a generowane sygnały są następnie łączone z wykorzystaniem operacji XOR.
+
+Podstawą generowania entropii przez oscylator pierścieniowy jest wykorzystanie niedoskonałości
+wewnętrznych układu FPGA oraz wpływu czynników fizycznych, takich jak zmiany temperatury.
+W obrębie pojedynczego układu FPGA mogą występować lokalne różnice temperatur, które potencjalnie
+wpływają na poziom generowanej entropii. Regiony charakteryzujące się większym wykorzystaniem
+zasobów logicznych powinny osiągać wyższe temperatury niż obszary mniej obciążone.
+
+W ramach kolejnego eksperymentu zostanie przeanalizowany wpływ fizycznego rozmieszczenia
+komórek entropii w strukturze układu FPGA. Rozważone zostaną przypadki, w których komórki
+umieszczone są bezpośrednio obok siebie, jak również konfiguracje, w których znajdują się
+na przeciwległych krańcach układu.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ch4/distributed.png}
+    \caption{Rozproszone komórki entropii.}
+    \label{fig:distributed_cells_ch4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ch4/localized.png}
+    \caption{Zgrupowane komórki entropii.}
+    \label{fig:localized_cells_ch4}
+\end{figure}
