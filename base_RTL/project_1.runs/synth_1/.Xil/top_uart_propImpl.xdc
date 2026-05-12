@@ -4,17 +4,15 @@ set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN H16 [get_ports clk]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G15 [get_ports tx]
-set_property src_info {type:XDC file:2 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:2 line:2 export:INPUT save:INPUT read:READ} [current_design]
 create_pblock pblock_1
 add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
-resize_pblock [get_pblocks pblock_1] -add {SLICE_X14Y51:SLICE_X21Y60}
-set_property src_info {type:XDC file:2 line:22 export:INPUT save:INPUT read:READ} [current_design]
+resize_pblock [get_pblocks pblock_1] -add {SLICE_X0Y97:SLICE_X5Y99}
+set_property src_info {type:XDC file:2 line:5 export:INPUT save:INPUT read:READ} [current_design]
 create_pblock pblock_2
 add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst}]]
-resize_pblock [get_pblocks pblock_2] -add {SLICE_X22Y40:SLICE_X27Y49}
-resize_pblock [get_pblocks pblock_2] -add {RAMB18_X1Y16:RAMB18_X1Y19}
-resize_pblock [get_pblocks pblock_2] -add {RAMB36_X1Y8:RAMB36_X1Y9}
-set_property src_info {type:XDC file:2 line:27 export:INPUT save:INPUT read:READ} [current_design]
+resize_pblock [get_pblocks pblock_2] -add {SLICE_X38Y96:SLICE_X43Y99}
+set_property src_info {type:XDC file:2 line:8 export:INPUT save:INPUT read:READ} [current_design]
 create_pblock pblock_3
 add_cells_to_pblock [get_pblocks pblock_3] [get_cells -quiet [list {trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst}]]
-resize_pblock [get_pblocks pblock_3] -add {SLICE_X14Y40:SLICE_X21Y49}
+resize_pblock [get_pblocks pblock_3] -add {SLICE_X38Y0:SLICE_X43Y3}

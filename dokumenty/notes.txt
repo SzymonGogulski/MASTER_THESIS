@@ -8,6 +8,6 @@ sudo stty -F /dev/ttyUSB0 flush
 
 ~/tools/ent/src$ ./ent ~/Desktop/magister/data/ch3_nVN_nCRC.bin
 
-dd if=/dev/ttyUSB0 of=file.bin bs=1M count=100 status=progress
+sudo dd if=/dev/ttyUSB0 of=true_true.bin bs=1M count=100 status=progress iflag=fullblock
 
 /home/szymon/Desktop/magister/data/ch3/02_05/nVN_CRC.bin
