@@ -192,8 +192,6 @@ LinearComplexity        &  98/100 &     & 100/100 &     & 100/100 &     & 100/10
 
 \section{NIST SP 800-90B}
 
-
-
 \begin{table}[H]
 \centering
 \caption{NIST SP 800-90: Non-IID entropy assessment}
@@ -203,29 +201,75 @@ LinearComplexity        &  98/100 &     & 100/100 &     & 100/100 &     & 100/10
 \textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
 
 \textbf{true/true} &  
-\shortstack{$H_{orig}=7.918$ \\ $H_{bit}=0.941$} & 
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} & 
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=7.918$ \\ $H_{bit}=0.941$} & 
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} & 
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
 
 \textbf{true/false} &
-\shortstack{$H_{orig}=6.653213$ \\ $H_{bit}=0.754510$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=6.653213$ \\ $H_{bit}=0.754510$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
 
 \textbf{false/true} &
-\shortstack{$H_{orig}=7.915044$ \\ $H_{bit}=0.941182$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=7.915044$ \\ $H_{bit}=0.941182$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
 
 \textbf{false/false} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} &
-\shortstack{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
+\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
 \end{tabular}
 \end{table}
 
 
+\section{Zużycie zasobów}
 
+\begin{minted}[highlightlines={}, linenos, breaklines, breakanywhere]{bash}
++-------------------------+------+-------+------------+-----------+-------+
+|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
++-------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs              |   69 |     0 |          0 |     14400 |  0.48 |
+|   LUT as Logic          |   69 |     0 |          0 |     14400 |  0.48 |
+|   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
+| Slice Registers         |   46 |     0 |          0 |     28800 |  0.16 |
+|   Register as Flip Flop |   46 |     0 |          0 |     28800 |  0.16 |
+|   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
+| F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
+| F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
++-------------------------+------+-------+------------+-----------+-------+
+* Warning! LUT value is adjusted to account for LUT combining.
+\end{minted}
+
+\begin{table}[H]
+\centering
+\caption{Zużycie zasobów układu.}
+\label{tab:resource_utilization_ch3}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$LUT=69$ \\ $FF=46$} & 
+\makecell{$LUT=50$ \\ $FF=46$} & 
+\makecell{$LUT=44$ \\ $FF=44$} \\ \hline
+
+\textbf{true/false} &
+\makecell{$LUT=65$ \\ $FF=39$} &
+\makecell{$LUT=49$ \\ $FF=39$} &
+\makecell{$LUT=36$ \\ $FF=37$} \\ \hline
+
+\textbf{false/true} &
+\makecell{$LUT=72$ \\ $FF=43$} &
+\makecell{$LUT=61$ \\ $FF=43$} &
+\makecell{$LUT=37$ \\ $FF=41$} \\ \hline
+
+\textbf{false/false} &
+\makecell{$LUT=57$ \\ $FF=36$} &
+\makecell{$LUT=49$ \\ $FF=36$} &
+\makecell{$LUT=35$ \\ $FF=34$} \\ \hline
+\end{tabular}
+\end{table}
 
 
 

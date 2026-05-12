@@ -32,13 +32,14 @@
 \contentsline {section}{\numberline {3.2}ENT}{6}{section.3.2}%
 \contentsline {section}{\numberline {3.3}NIST SP 800-22}{7}{section.3.3}%
 \contentsline {section}{\numberline {3.4}NIST SP 800-90B}{8}{section.3.4}%
-\contentsline {chapter}{\chapternumberline {4}Analiza rozmieszczenia}{9}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}Faza algorytmiczna i optymalizacja ekstrakcji}{12}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Faza odporności i monitorowanie online}{13}{chapter.6}%
-\contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{14}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Zakończenie}{15}{chapter.8}%
-\contentsline {chapter}{Literatura}{16}{chapter*.4}%
-\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{17}{appendix.A}%
-\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{17}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Raport}{24}{appendix.B}%
-\contentsline {appendix}{\chapternumberline {C}Notatki}{25}{appendix.C}%
+\contentsline {section}{\numberline {3.5}Zużycie zasobów}{8}{section.3.5}%
+\contentsline {chapter}{\chapternumberline {4}Analiza rozmieszczenia}{10}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5}Faza algorytmiczna i optymalizacja ekstrakcji}{13}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Faza odporności i monitorowanie online}{14}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{15}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {8}Zakończenie}{16}{chapter.8}%
+\contentsline {chapter}{Literatura}{17}{chapter*.4}%
+\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{18}{appendix.A}%
+\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{18}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Raport}{19}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {C}Notatki}{20}{appendix.C}%

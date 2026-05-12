@@ -9,3 +9,20 @@
 % Alarm (Tak/Nie) | Opóźnienie reakcji | Skuteczność ekstraktora w warunkach
 % stresu.
 \chapter{Faza odporności i monitorowanie online}
+
+\noindent Według zaleceń dotyczących projektowania źródeł entropii wykorzystywanych do 
+generowania bitów losowych\cite{NIST-SP-800-90B}, model źródła entropii można rozpatrywać 
+jako system składający się z trzech części składowych: analogowego źródła szumu, metod przetwarzania szumu (omówionych w poprzednim rozdziale) 
+oraz mechanizmów monitorowania i uodporniania pracy generatora, które stanowią przedmiot niniejszego rozdziału. 
+
+Omówione oraz zaprezentowanie zostaną implementacje modułów testowych:
+
+\begin{enumerate}
+    \item RCT (Repetition Count Test) - test liczby powtórzeń,
+    \item APT (Adaptive Proportion Test) - adaptacyjny test proporcji.
+\end{enumerate}
+
+Moduły zostaną przetestowane względem ich reakcji na zmienne warunki 
+środowiskowe.
+
+
