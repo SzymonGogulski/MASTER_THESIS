@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Fri May 15 15:42:11 2026
-# Process ID         : 45408
+# Start of session at: Sat May 16 20:05:59 2026
+# Process ID         : 37023
 # Current directory  : /home/szymon/Desktop/magister/base_RTL/project_1.runs/synth_1
 # Command line       : vivado -log top_uart.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_uart.tcl
 # Log file           : /home/szymon/Desktop/magister/base_RTL/project_1.runs/synth_1/top_uart.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 7 4700U with Radeon Graphics
-# CPU Frequency      : 1213.754 MHz
+# CPU Frequency      : 1861.388 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 8
 # Host memory        : 16155 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20450 MB
-# Available Virtual  : 13390 MB
+# Available Virtual  : 11036 MB
 #-----------------------------------------------------------
 source top_uart.tcl -notrace

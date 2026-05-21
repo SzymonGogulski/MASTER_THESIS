@@ -42,6 +42,7 @@
 #add_cells_to_pblock [get_pblocks pblock_6] [get_cells -quiet [list {trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst}]]
 #resize_pblock [get_pblocks pblock_6] -add {SLICE_X40Y25:SLICE_X43Y29}
 
+# LOCALIZED 6
 create_pblock pblock_1
 add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
 resize_pblock [get_pblocks pblock_1] -add {SLICE_X26Y47:SLICE_X31Y49}

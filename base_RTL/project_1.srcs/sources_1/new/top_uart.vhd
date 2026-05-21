@@ -38,8 +38,8 @@ begin
             NUM_INV_START       => 5,
             NUM_RAW_BITS        => 64,
             SIM_MODE            => false,
-            ENABLE_VON_NEUMANN  => true,
-            ENABLE_CRC          => true
+            ENABLE_VON_NEUMANN  => false,
+            ENABLE_CRC          => false
         )
         port map (
             clk_i    => clk,
