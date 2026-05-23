@@ -1,7 +1,7 @@
-Running: xsim.dir/toeplitz_tb_behav/xsimk -simmode gui -wdb toeplitz_tb_behav.wdb -simrunnum 0 -socket 44029
+Running: xsim.dir/toeplitz_tb_behav/xsimk -simmode gui -wdb toeplitz_tb_behav.wdb -simrunnum 0 -socket 50841
 Design successfully loaded
 Design Loading Memory Usage: 178996 KB (Peak: 179048 KB)
-Design Loading CPU Usage: 1460 ms
+Design Loading CPU Usage: 1180 ms
 Simulation completed
 Simulation Memory Usage: 268932 KB (Peak: 318264 KB)
-Simulation CPU Usage: 1480 ms
+Simulation CPU Usage: 1190 ms
