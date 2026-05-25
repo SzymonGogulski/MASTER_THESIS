@@ -37,14 +37,204 @@ na przeciwległych krańcach układu.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/ch4/distributed.png}
-    \caption{Rozproszone komórki entropii.}
+    \includegraphics[width=0.9\textwidth]{figures/ch4/distributed 2.png}
+    \caption{Rozproszone komórki entropii 3RO.}
     \label{fig:distributed_cells_ch4}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/ch4/localized.png}
-    \caption{Zgrupowane komórki entropii.}
+    \includegraphics[width=0.9\textwidth]{figures/ch4/localized_2.png}
+    \caption{Zgrupowane komórki entropii 3RO.}
     \label{fig:localized_cells_ch4}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/ch4/6D2.png}
+    \caption{Rozproszone komórki entropii 6RO.}
+    \label{fig:distributed_cells_ch4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/ch4/6DL.png}
+    \caption{Zgrupowane komórki entropii 6RO.}
+    \label{fig:localized_cells_ch4}
+\end{figure}
+
+\section{ENT}
+
+\begin{table}[H]
+\centering
+\caption{ENT: Entropy bits per byte.}
+\label{tab:ch4_ent}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 21I L} & \textbf{3RO 21I D} & \textbf{6RO 60I L} & \textbf{6RO 60I D}\\ \hline
+\textbf{true/true}      & 7.999998 & 7.999998 & 7.999998 & 7.999998 \\ \hline
+\textbf{true/false}     & 7.983296 & 7.830736 & 7.998855 & 7.999509 \\ \hline
+\textbf{false/true}     & 7.999988 & 7.999923 & 7.999998 & 7.999998 \\ \hline
+\textbf{false/false}    & 7.803761 & 7.914758 & 7.999704 & 7.998995 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{NIST SP 800-90B}
+
+\begin{table}[H]
+\centering
+\caption{NIST SP 800-90: Non-IID entropy assessment}
+\label{tab:ch4_NIST_SP_800_90}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 21I L} & \textbf{3RO 21I D} & \textbf{6RO 60I L} & \textbf{6RO 60I D} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$H_{orig}=7.920709$ \\ $H_{bit}=0.938182$} & 
+\makecell{$H_{orig}=7.464863$ \\ $H_{bit}=0.942745$} & 
+\makecell{$H_{orig}=7.915044$ \\ $H_{bit}=0.941182$} & 
+\makecell{$H_{orig}=7.927649$ \\ $H_{bit}=0.941182$} \\ \hline
+
+\textbf{true/false} &
+\makecell{$H_{orig}=7.472761$ \\ $H_{bit}=0.909623$} &
+\makecell{$H_{orig}=6.207777$ \\ $H_{bit}=0.613501$} &
+\makecell{$H_{orig}=7.809146$ \\ $H_{bit}=0.845833$} & 
+\makecell{$H_{orig}=7.879265$ \\ $H_{bit}=0.876039$} \\ \hline
+
+\textbf{false/true} &
+\makecell{$H_{orig}=7.909022$ \\ $H_{bit}=0.942745$} &
+\makecell{$H_{orig}=7.916658$ \\ $H_{bit}=0.939662$} &
+\makecell{$H_{orig}=7.926010$ \\ $H_{bit}=0.939020$} & 
+\makecell{$H_{orig}=7.464863$ \\ $H_{bit}=0.936741$} \\ \hline
+
+\textbf{false/false} &
+\makecell{$H_{orig}=6.571477$ \\ $H_{bit}=0.564097$} &
+\makecell{$H_{orig}=6.410998$ \\ $H_{bit}=0.705383$} &
+\makecell{$H_{orig}=7.858099$ \\ $H_{bit}=0.935365$} & 
+\makecell{$H_{orig}=7.836317$ \\ $H_{bit}=0.941182$} \\ \hline
+\end{tabular}
+\end{table}
+
+\section{NIST SP 800-22}
+
+\begin{flushleft}
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
+\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
+\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\end{flushleft}
+
+\begin{table}[H]
+\centering
+\caption{3 RO 21I L}
+\label{tab:nist_22_3RO_21I_L}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+BlockFrequency          & 100/100 &     &  18/100 & *   &  97/100 &     &  37/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+CumulativeSums          &  99/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+Runs                    &  97/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LongestRun              &  98/100 &     &  85/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Rank                    & 100/100 &     & 100/100 &     & 100/100 &     &  99/100 &     \\ \hline
+FFT                     & 100/100 &     &  95/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &  26/148 & sp  & 148/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     &  98/100 &     &  81/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Universal               & 100/100 &     &  73/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   &  95/100 & *   &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     0/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  98/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  98/100 &     &  99/100 &     &  24/100 & *   \\ \hline
+LinearComplexity        & 100/100 &     &  99/100 &     & 100/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{3 RO 21I D}
+\label{tab:nist_22_3RO_21I_D}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     & 100/100 &     &  96/100 &     &  99/100 &     \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  99/100 &     &   9/100 & *   \\ \hline
+CumulativeSums          & 100/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     &  98/100 &     \\ \hline
+Runs                    &  98/100 &     &   0/100 & *   & 100/100 &     &  56/100 & *   \\ \hline
+LongestRun              & 100/100 &     &   0/100 & *   & 100/100 &     &  19/100 & *   \\ \hline
+Rank                    &  99/100 &     & 100/100 &     &  98/100 &     &  99/100 &     \\ \hline
+FFT                     &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 146/148 & sp  &   1/148 & sp  & 148/148 & sp  &   1/148 & sp  \\ \hline
+OverlappingTemplate     &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Universal               &  97/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/8 & sp  &     8/8 & sp  &     2/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        &  99/100 &     &  97/100 &     &  99/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{6 RO 60I L}
+\label{tab:nist_22_3RO_21I_L}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     &  98/100 &     & 100/100 &     &  99/100 &     \\ \hline
+BlockFrequency          & 100/100 &     &  79/100 & *   &  99/100 &     &  97/100 &     \\ \hline
+CumulativeSums          &  98/100 &     &  98/100 &     &  99/100 &     &  98/100 &     \\ \hline
+CumulativeSums          &  99/100 &     &  98/100 &     & 100/100 &     &  99/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  96/100 &     & 100/100 &     \\ \hline
+LongestRun              & 100/100 &     &  91/100 & *   & 100/100 &     &  98/100 &     \\ \hline
+Rank                    &  99/100 &     &  99/100 &     & 100/100 &     & 100/100 &     \\ \hline
+FFT                     & 100/100 &     &  96/100 &     &  99/100 &     & 100/100 &     \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  & 111/148 & sp  & 148/148 & sp  & 140/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &  81/100 & *   &  97/100 &     &  98/100 &     \\ \hline
+Universal               & 100/100 &     &  98/100 &     &  98/100 &     &  99/100 &     \\ \hline
+ApproximateEntropy      &  99/100 &     &  26/100 & *   &  99/100 &     &  62/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     7/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  & 100/100 &     &  97/100 &     & 100/100 &     &  98/100 &     \\ \hline
+Serial                  &  99/100 &     & 100/100 &     & 100/100 &     &  99/100 &     \\ \hline
+LinearComplexity        & 100/100 &     &  98/100 &     &  98/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{6 RO 60I D}
+\label{tab:nist_22_3RO_21I_L}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     &  99/100 &     &  98/100 &     & 100/100 &     \\ \hline
+BlockFrequency          &  98/100 &     &  92/100 & *   & 100/100 &     &  67/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     &  99/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          & 100/100 &     &  99/100 &     &  98/100 &     & 100/100 &     \\ \hline
+Runs                    &  99/100 &     &   0/100 & *   &  97/100 &     &  99/100 &     \\ \hline
+LongestRun              & 100/100 &     &  98/100 &     &  98/100 &     &  97/100 &     \\ \hline
+Rank                    &  99/100 &     &  99/100 &     & 100/100 &     &  99/100 &     \\ \hline
+FFT                     &  96/100 &     &  98/100 &     &  99/100 &     &  97/100 &     \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  & 129/148 & sp  & 147/148 & sp  & 128/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &  88/100 & *   &  97/100 &     &  89/100 & *   \\ \hline
+Universal               &  99/100 &     &  99/100 &     &  99/100 &     &  99/100 &     \\ \hline
+ApproximateEntropy      & 100/100 &     &  85/100 & *   &  99/100 &     &  77/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &  97/100 &     & 100/100 &     &  97/100 &     \\ \hline
+Serial                  & 100/100 &     &  97/100 &     & 100/100 &     &  99/100 &     \\ \hline
+LinearComplexity        & 100/100 &     &  99/100 &     &  99/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}

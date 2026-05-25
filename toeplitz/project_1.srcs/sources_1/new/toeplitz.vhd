@@ -3,6 +3,7 @@
 --
 -- Toeplitz extractor, top level module
 -- Rok Zitko, March-April 2022 -> Translated to VHDL 2026
+-- Modified to include data valid flow control.
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -15,11 +16,12 @@ entity toeplitz is
         L  : integer := 128                                 -- num of output bits
     );
     port (
-        clk      : in  std_logic;
-        reset    : in  std_logic;
-        data     : in  std_logic;                           -- input raw data
-        q        : out std_logic_vector(L-1 downto 0);      -- output corrected data
-        qstrobe  : out std_logic                            -- output valid signal
+        clk       : in  std_logic;
+        reset     : in  std_logic;
+        data      : in  std_logic;                            -- input raw data
+        data_valid: in  std_logic;                            -- high when input data is valid
+        q         : out std_logic_vector(L-1 downto 0);      -- output corrected data
+        qstrobe   : out std_logic                            -- output valid signal
     );
 end entity toeplitz;
 
@@ -59,11 +61,12 @@ begin
             L  => L
         )
         port map (
-            clk   => clk,
-            reset => reset,
-            rrow0 => rrow0,
-            col0  => col0,
-            col   => col
+            clk         => clk,
+            reset       => reset,
+            data_valid  => data_valid,
+            rrow0       => rrow0,
+            col0        => col0,
+            col         => col
         );
 
     -- Main synchronous process
@@ -78,21 +81,26 @@ begin
                 y       <= (others => '0');
                 cnt     <= 0;
             else
-                -- Compute ynew combinationally based on current y and col
-                for i in 0 to L-1 loop
-                    ynew(i) := y(i) xor (data and col(i));
-                end loop;
+                -- Default assignment to prevent latching strobe behavior
+                qstrobe <= '0';
 
-                -- Counter and output logic
-                if cnt < (N - 1) then
-                    cnt     <= cnt + 1;
-                    qstrobe <= '0';
-                    y       <= ynew;
-                else
-                    cnt     <= 0;
-                    qstrobe <= '1';
-                    q       <= ynew;
-                    y       <= (others => '0');
+                -- Only process data when the input bit is valid
+                if data_valid = '1' then
+                    -- Compute ynew combinationally based on current y and col
+                    for i in 0 to L-1 loop
+                        ynew(i) := y(i) xor (data and col(i));
+                    end loop;
+
+                    -- Counter and output logic
+                    if cnt < (N - 1) then
+                        cnt <= cnt + 1;
+                        y   <= ynew;
+                    else
+                        cnt     <= 0;
+                        qstrobe <= '1';
+                        q       <= ynew;
+                        y       <= (others => '0');
+                    end if;
                 end if;
             end if;
         end if;

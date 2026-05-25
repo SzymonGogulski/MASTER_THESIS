@@ -53,91 +53,67 @@ entity neoTRNG is
   generic (
     NUM_CELLS     : natural range 1 to 255;  -- number of ring-oscillator cells, min 1
     NUM_INV_START : natural range 3 to 4095; -- number of inverters in first ring-oscillator cell, has to be odd
-    NUM_RAW_BITS  : natural range 8 to 4096; -- number of raw bits per random sample byte (has to be a power of 2)
     SIM_MODE      : boolean                  -- enable simulation mode (no physical random if enabled!)
   );
   port (
     clk_i    : in  std_ulogic; -- module clock
-    rstn_i   : in  std_ulogic; -- module reset, low-active, async, optional
+    rstn_i   : in  std_ulogic; -- module reset, high-active, async
     enable_i : in  std_ulogic; -- module enable (high-active)
     valid_o  : out std_ulogic; -- data_o is valid when set (high for one cycle)
-    data_o   : out std_ulogic_vector(7 downto 0) -- random data byte output
+    data_o   : out std_ulogic_vector(127 downto 0) -- 128-bit random data block output
   );
 end neoTRNG;
 
 architecture neoTRNG_rtl of neoTRNG is
 
-  -- round_up[log2(x)] --
-  function clog2_f(x : natural) return natural is
-  begin
-    for i in 0 to 31 loop
-      if (2**i >= x) then
-        return i;
-      end if;
-    end loop;
-    return 0;
-  end function clog2_f;
-
   -- entropy source cell --
   component neoTRNG_cell
     generic (
-      NUM_INV  : natural; -- number of inverters, has to be odd, min 3
-      SIM_MODE : boolean  -- enable simulation mode (no physical random if enabled!)
+      NUM_INV  : natural;
+      SIM_MODE : boolean
     );
     port (
-      clk_i  : in  std_ulogic; -- clock
-      rstn_i : in  std_ulogic; -- reset, low-active, async, optional
-      en_i   : in  std_ulogic; -- enable-chain input
-      en_o   : out std_ulogic; -- enable-chain output
-      rnd_o  : out std_ulogic  -- random data (sync)
+      clk_i  : in  std_ulogic;
+      rstn_i : in  std_ulogic;
+      en_i   : in  std_ulogic;
+      en_o   : out std_ulogic;
+      rnd_o  : out std_ulogic
     );
   end component;
 
   -- entropy cell interconnect --
-  signal cell_en_in  : std_ulogic_vector(NUM_CELLS-1 downto 0); -- enable-sreg input
-  signal cell_en_out : std_ulogic_vector(NUM_CELLS-1 downto 0); -- enable-sreg output
-  signal cell_rnd    : std_ulogic_vector(NUM_CELLS-1 downto 0); -- cell random output
-  signal cell_sum    : std_ulogic; -- combined random data
-
-  -- de-biasing --
-  signal debias_sreg  : std_ulogic_vector(1 downto 0); -- sample buffer
-  signal debias_state : std_ulogic; -- process de-biasing every second cycle
-  signal debias_valid : std_ulogic; -- result bit valid
-  signal debias_data  : std_ulogic; -- result bit
+  signal cell_en_in  : std_ulogic_vector(NUM_CELLS-1 downto 0);
+  signal cell_en_out : std_ulogic_vector(NUM_CELLS-1 downto 0);
+  signal cell_rnd    : std_ulogic_vector(NUM_CELLS-1 downto 0);
+  signal cell_sum    : std_ulogic;
 
   -- sampling control --
-  signal sample_en   : std_ulogic; -- global enable
-  signal sample_sreg : std_ulogic_vector(7 downto 0); -- shift-register / de-serializer
-  signal sample_cnt  : std_ulogic_vector(clog2_f(NUM_RAW_BITS) downto 0); -- bits-per-sample counter
-
-  -- CRC polynomial (tap mask) --
-  constant poly_c : std_ulogic_vector(7 downto 0) := "00000111"; -- CRC-8: x^8 + x^2 + x^1 + x^0
+  signal sample_en   : std_ulogic;
+  signal raw_valid   : std_ulogic;
+  
+  -- Toeplitz extractor interface signals --
+  signal toeplitz_q      : std_logic_vector(127 downto 0);
+  signal toeplitz_strobe : std_logic;
 
 begin
 
   -- Configuration Checks -------------------------------------------------------------------
-  -- -------------------------------------------------------------------------------------------
   assert false report
-    "[neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, " &
-    "github.com/stnolting/neoTRNG" severity note;
+    "[neoTRNG] The neoTRNG (v3.4 modified) integrated with Toeplitz Extractor Post-Processing" severity note;
 
   assert (NUM_INV_START mod 2) /= 0 report
     "[neoTRNG] Number of inverters in first cell [NUM_INV_START] has to be odd!" severity error;
-
-  assert 2**clog2_f(NUM_RAW_BITS) = NUM_RAW_BITS report
-    "[neoTRNG] Number of pre-processed raw bits [NUM_RAW_BITS] has to be a power of 2!" severity error;
 
   assert not SIM_MODE report
     "[neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!" severity warning;
 
 
   -- Entropy Source -------------------------------------------------------------------------
-  -- -------------------------------------------------------------------------------------------
   entropy_cell_gen:
   for i in 0 to NUM_CELLS-1 generate
     neoTRNG_cell_inst: neoTRNG_cell
     generic map (
-      NUM_INV  => NUM_INV_START + (2*i), -- increasing (odd) ring-oscillator length
+      NUM_INV  => NUM_INV_START + (2*i),
       SIM_MODE => SIM_MODE
     )
     port map (
@@ -164,55 +140,58 @@ begin
   end process combine;
 
 
-  -- John von Neumann Randomness Extractor (De-Biasing) -------------------------------------
-  -- -------------------------------------------------------------------------------------------
-  debiasing: process(rstn_i, clk_i)
+  -- Sampling and Flow Control --------------------------------------------------------------
+  flow_control: process(rstn_i, clk_i)
   begin
-    if (rstn_i = '0') then
-      debias_sreg  <= (others => '0');
-      debias_state <= '0';
-    elsif rising_edge(clk_i) then
-      debias_sreg <= debias_sreg(0) & cell_sum;
-      -- start operation when last cell is enabled and process in every second cycle --
-      debias_state <= (not debias_state) and cell_en_out(cell_en_out'left);
-    end if;
-  end process debiasing;
-
-  -- check groups of two non-overlapping bits from the random stream for edges --
-  debias_valid <= debias_state and (debias_sreg(1) xor debias_sreg(0));
-  debias_data  <= debias_sreg(0);
-
-
-  -- Sampling Control -----------------------------------------------------------------------
-  -- -------------------------------------------------------------------------------------------
-  sampling_control: process(rstn_i, clk_i)
-  begin
-    if (rstn_i = '0') then
-      sample_en   <= '0';
-      sample_cnt  <= (others => '0');
-      sample_sreg <= (others => '0');
+    if (rstn_i = '1') then
+      sample_en <= '0';
+      raw_valid <= '0';
     elsif rising_edge(clk_i) then
       sample_en <= enable_i;
-      if (sample_en = '0') or (sample_cnt(sample_cnt'left) = '1') then -- start new iteration
-        sample_cnt  <= (others => '0');
-        sample_sreg <= (others => '0');
-      elsif (debias_valid = '1') then -- valid raw random bit
-        sample_cnt <= std_ulogic_vector(unsigned(sample_cnt) + 1);
-        -- CRC-style sampling shift-register to mix random stream --
-        if ((sample_sreg(sample_sreg'left) xor debias_data) = '1') then -- feedback bit
-          sample_sreg <= (sample_sreg(sample_sreg'left-1 downto 0) & '0') xor poly_c;
-        else
-          sample_sreg <= (sample_sreg(sample_sreg'left-1 downto 0) & '0');
-        end if;
+      
+      -- Pulse valid signal only when cell pipeline is filled up and module is enabled
+      if (sample_en = '1') and (cell_en_out(cell_en_out'left) = '1') then
+        raw_valid <= '1';
+      else
+        raw_valid <= '0';
       end if;
     end if;
-  end process sampling_control;
+  end process flow_control;
 
-  -- TRNG output stream --
-  data_o  <= sample_sreg;
-  valid_o <= sample_cnt(sample_cnt'left);
 
-end neoTRNG_rtl;
+  -- Toeplitz Random Extractor Core --------------------------------------------------------
+  toeplitz_inst : entity work.toeplitz
+    generic map (
+      BS => 64,  -- Block Size internal parameter
+      N  => 256, -- Number of input bits consumed per block
+      L  => 128  -- Number of output bits extracted per block
+    )
+    port map (
+      clk        => clk_i,
+      reset      => rstn_i,
+      data       => std_logic(cell_sum),
+      data_valid => std_logic(raw_valid),
+      q          => toeplitz_q,
+      qstrobe    => toeplitz_strobe
+    );
+
+
+  -- Output Registration --------------------------------------------------------------------
+  output_mapping: process(rstn_i, clk_i)
+  begin
+    if (rstn_i = '1') then
+      data_o  <= (others => '0');
+      valid_o <= '0';
+    elsif rising_edge(clk_i) then
+      valid_o <= std_ulogic(toeplitz_strobe);
+      
+      if toeplitz_strobe = '1' then
+        data_o <= std_ulogic_vector(toeplitz_q);
+      end if;
+    end if;
+  end process output_mapping;
+
+end architecture neoTRNG_rtl;
 
 
 -- ================================================================================================ --
@@ -257,7 +236,7 @@ begin
 
   en_shift_reg: process(rstn_i, clk_i)
   begin
-    if (rstn_i = '0') then
+    if (rstn_i = '1') then
       sreg <= (others => '0');
     elsif rising_edge(clk_i) then
       sreg <= sreg(sreg'left-1 downto 0) & en_i;
@@ -292,7 +271,7 @@ begin
     if SIM_MODE generate -- for SIMULATION ONLY!
       inverter_sim_ff: process(rstn_i, clk_i) -- this will NOT generate true random numbers
       begin
-        if (rstn_i = '0') then
+        if (rstn_i = '1') then
           inv_out(i) <= '0';
         elsif rising_edge(clk_i) then
           inv_out(i) <= not inv_in(i);
@@ -312,7 +291,7 @@ begin
 
   synchronizer: process(rstn_i, clk_i)
   begin
-    if (rstn_i = '0') then
+    if (rstn_i = '1') then
       sync <= (others => '0');
     elsif rising_edge(clk_i) then
       sync <= sync(0) & latch(latch'left);

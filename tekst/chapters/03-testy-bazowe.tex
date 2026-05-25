@@ -202,44 +202,44 @@ LinearComplexity        &  98/100 &     & 100/100 &     & 100/100 &     & 100/10
 
 \textbf{true/true} &  
 \makecell{$H_{orig}=7.918$ \\ $H_{bit}=0.941$} & 
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} & 
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=7.918681$ \\ $H_{bit}=0.936741$} & 
+\makecell{$H_{orig}=7.924784$ \\ $H_{bit}=0.939662$} \\ \hline
 
 \textbf{true/false} &
 \makecell{$H_{orig}=6.653213$ \\ $H_{bit}=0.754510$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=6.141773$ \\ $H_{bit}=0.588405$} &
+\makecell{$H_{orig}=5.917353$ \\ $H_{bit}=0.517436$} \\ \hline
 
 \textbf{false/true} &
 \makecell{$H_{orig}=7.915044$ \\ $H_{bit}=0.941182$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=7.914641$ \\ $H_{bit}=0.939662$} &
+\makecell{$H_{orig}=7.882725$ \\ $H_{bit}=0.941182$} \\ \hline
 
 \textbf{false/false} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} &
-\makecell{$H_{orig}=$ \\ $H_{bit}=$} \\ \hline
+\makecell{$H_{orig}=3.684854$ \\ $H_{bit}=0.529446$} &
+\makecell{$H_{orig}=6.703078$ \\ $H_{bit}=0.740036$} &
+\makecell{$H_{orig}=6.339803$ \\ $H_{bit}=0.506256$} \\ \hline
 \end{tabular}
 \end{table}
 
 
 \section{Zużycie zasobów}
 
-\begin{minted}[highlightlines={}, linenos, breaklines, breakanywhere]{bash}
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs              |   69 |     0 |          0 |     14400 |  0.48 |
-|   LUT as Logic          |   69 |     0 |          0 |     14400 |  0.48 |
-|   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         |   46 |     0 |          0 |     28800 |  0.16 |
-|   Register as Flip Flop |   46 |     0 |          0 |     28800 |  0.16 |
-|   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
-+-------------------------+------+-------+------------+-----------+-------+
-* Warning! LUT value is adjusted to account for LUT combining.
-\end{minted}
+% \begin{minted}[highlightlines={}, linenos, breaklines, breakanywhere]{bash}
+% +-------------------------+------+-------+------------+-----------+-------+
+% |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
+% +-------------------------+------+-------+------------+-----------+-------+
+% | Slice LUTs              |   69 |     0 |          0 |     14400 |  0.48 |
+% |   LUT as Logic          |   69 |     0 |          0 |     14400 |  0.48 |
+% |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
+% | Slice Registers         |   46 |     0 |          0 |     28800 |  0.16 |
+% |   Register as Flip Flop |   46 |     0 |          0 |     28800 |  0.16 |
+% |   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
+% | F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
+% | F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
+% +-------------------------+------+-------+------------+-----------+-------+
+% * Warning! LUT value is adjusted to account for LUT combining.
+% \end{minted}
 
 \begin{table}[H]
 \centering

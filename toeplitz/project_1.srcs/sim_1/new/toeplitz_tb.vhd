@@ -19,11 +19,12 @@ architecture sim of toeplitz_tb is
             L  : integer := 128
         );
         port (
-            clk      : in  std_logic;
-            reset    : in  std_logic;
-            data     : in  std_logic;
-            q        : out std_logic_vector(L-1 downto 0);
-            qstrobe  : out std_logic
+            clk         : in  std_logic;
+            reset       : in  std_logic;
+            data        : in  std_logic;
+            data_valid  : in std_logic;
+            q           : out std_logic_vector(L-1 downto 0);
+            qstrobe     : out std_logic
         );
     end component;
 
@@ -34,11 +35,12 @@ architecture sim of toeplitz_tb is
     constant L_G        : integer := 128;
 
     -- 3. Signal Declarations to connect to UUT
-    signal clk      : std_logic := '0';
-    signal reset    : std_logic := '1';
-    signal data     : std_logic := '0';
-    signal q        : std_logic_vector(L_G-1 downto 0);
-    signal qstrobe  : std_logic;
+    signal clk          : std_logic := '0';
+    signal reset        : std_logic := '1';
+    signal data         : std_logic := '0';
+    signal data_valid   : std_logic := '1';
+    signal q            : std_logic_vector(L_G-1 downto 0);
+    signal qstrobe      : std_logic;
 
     -- Simulation control flag
     signal sim_done : boolean := false;
@@ -58,11 +60,12 @@ begin
             L  => L_G
         )
         port map (
-            clk      => clk,
-            reset    => reset,
-            data     => data,
-            q        => q,
-            qstrobe  => qstrobe
+            clk         => clk,
+            reset       => reset,
+            data        => data,
+            data_valid  => data_valid,
+            q           => q,
+            qstrobe     => qstrobe
         );
 
     -- 5. Clock Generation Process
@@ -83,20 +86,23 @@ begin
         -- Hold reset active for 4 clock cycles
         reset <= '1';
         data  <= '0';
+        data_valid <= '0';
         wait for CLK_PERIOD * 4;
         
         -- Release reset on a falling edge to avoid setup/hold violations
         wait until falling_edge(clk);
         reset <= '0';
         report "System Reset Released. Starting Data Transmission..." severity note;
-
+        
         -- Loop to stream all N bits (MSB to LSB)
         for i in N_G-1 downto 0 loop
+            data_valid <= '1';
             data <= TEST_DATA_STREAM(i);
             wait until falling_edge(clk); 
         end loop;
 
         -- Clear data line after transmission is finished
+        data_valid <= '0';
         data <= '0';
 
         -- Wait a few more clock cycles to capture the output strobe and result
