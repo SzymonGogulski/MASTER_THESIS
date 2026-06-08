@@ -34,8 +34,8 @@ begin
     -- TRNG always ON (no throttling!)
     trng_inst : entity work.neoTRNG
         generic map (
-            NUM_CELLS           => 6,
-            NUM_INV_START       => 5,
+            NUM_CELLS           => 2,
+            NUM_INV_START       => 3,
             NUM_RAW_BITS        => 64,
             SIM_MODE            => false,
             ENABLE_VON_NEUMANN  => false,

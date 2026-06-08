@@ -15,8 +15,9 @@ architecture Behavioral of aes_ctr is
     constant BAUD_RATE : integer := 921600;
     constant CLK_FREQ  : integer := 125_000_000;
     constant BAUD_DIV  : integer := CLK_FREQ / BAUD_RATE;
-    -- Reseed the aes_enc after every <N_OUTPUT> block transmitted via UART
-    constant N_OUTPUT  : integer := 16;
+    
+    -- CHANGED: Reseed after 65536 blocks to achieve exactly 1 MiB stream per seed
+    constant N_OUTPUT  : integer := 65536;
     
     -- State Machine Definition
     type state_type is (
@@ -29,11 +30,16 @@ architecture Behavioral of aes_ctr is
     );
     signal state : state_type := ST_RESET;
 
+
+
     -- neoTRNG signals
     signal trng_enable  : std_ulogic := '0';
     signal trng_valid   : std_ulogic;
-    signal trng_data    : std_ulogic_vector(127 downto 0);
+    -- CHANGED: Updated TRNG data width to match 224-bit output
+    signal trng_data    : std_ulogic_vector(223 downto 0);
     signal rstn_n_trng  : std_ulogic := '0';
+
+
 
     -- aes_enc signals
     signal aes_start      : std_logic := '0';
@@ -42,10 +48,18 @@ architecture Behavioral of aes_ctr is
     signal aes_ciphertext : std_logic_vector(127 downto 0);
     signal aes_done       : std_logic;
 
-    -- Counter registers
-    signal ctr_reg        : unsigned(127 downto 0) := (others => '0');
+
+
+    -- Counter & Composition registers
+    -- CHANGED: Segregated structure -> 96-bit fixed Nonce + 32-bit Counter
+    signal nonce_reg      : std_logic_vector(95 downto 0) := (others => '0');
+    signal ctr_reg        : unsigned(31 downto 0) := (others => '0');
+    
+    -- CHANGED: Increased range up to 65536 for 1 MiB blocks
     signal block_cnt      : integer range 0 to N_OUTPUT := 0;
     signal byte_cnt       : integer range 0 to 15 := 0;
+
+
 
     -- UART interface signals
     signal uart_tx_data  : std_logic_vector(7 downto 0) := (others => '0');
@@ -56,8 +70,6 @@ architecture Behavioral of aes_ctr is
     -- Buffer to hold active ciphertext block during transmission
     signal tx_buffer     : std_logic_vector(127 downto 0) := (others => '0');
 
-    -- Simple inline UART TX component description 
-    -- (Assumes standard start bit, 8 data bits, 1 stop bit architecture)
     component simple_uart_tx is
         generic (
             BAUD_DIV : integer
@@ -77,11 +89,11 @@ begin
     -- Release reset immediately 
     rstn_n_trng <= '1';
 
-    -- 1. neoTRNG Instance
+    -- 1. neoTRNG Instance (224-bit Output Modified Version)
     trng_inst : entity work.neoTRNG
         generic map (
-            NUM_CELLS     => 3,
-            NUM_INV_START => 5,
+            NUM_CELLS     => 2,
+            NUM_INV_START => 3,
             SIM_MODE      => false
         )
         port map (
@@ -104,7 +116,6 @@ begin
         );
 
     -- 3. UART Transmitter Instantiation
-    -- (Ensure you have a basic UART transmitter implementation in your design directory)
     uart_inst : simple_uart_tx
         generic map (
             BAUD_DIV => BAUD_DIV
@@ -122,57 +133,64 @@ begin
     process(clk)
     begin
         if rising_edge(clk) then
-            -- Default assignments
-            aes_start     <= '1';
+            -- FIXED: Default assignment to '0' so ST_START_AES can successfully strobe it low
+            aes_start     <= '0';
             uart_tx_start <= '0';
 
             case state is
 
                 when ST_RESET =>
-                    trng_enable <= '1'; -- Turn on TRNG to fetch initial seed key
+                    trng_enable <= '1'; -- Turn on TRNG to fetch initial seed key & nonce
                     block_cnt   <= 0;
                     ctr_reg     <= (others => '0');
                     state       <= ST_WAIT_TRNG;
 
                 when ST_WAIT_TRNG =>
                     if trng_valid = '1' then
-                        aes_key     <= std_logic_vector(trng_data); -- Seed new key
-                        trng_enable <= '0';                         -- Turn off TRNG to conserve power
-                        block_cnt   <= 0;                           -- Reset block counter for the new key
+                        -- CHANGED: Key gets upper 128 bits (223 down to 96)
+                        aes_key     <= std_logic_vector(trng_data(223 downto 96)); 
+                        -- CHANGED: Nonce gets lower 96 bits (95 down to 0)
+                        nonce_reg   <= std_logic_vector(trng_data(95 downto 0));
+                        
+                        trng_enable <= '0'; -- Turn off TRNG to conserve power
+                        block_cnt   <= 0;   -- Reset block count tracking
+                        ctr_reg     <= (others => '0'); -- Reset 32-bit stream offset block counter
                         state       <= ST_START_AES;
                     end if;
 
                 when ST_START_AES =>
-                    aes_plaintext <= std_logic_vector(ctr_reg);     -- Feed current counter value
-                    aes_start     <= '0';                           -- Strobe start
+                    -- CHANGED: Plaintext layout = [ 96-bit Nonce ] & [ 32-bit Counter ]
+                    aes_plaintext <= nonce_reg & std_logic_vector(ctr_reg);
+                    aes_start     <= '0'; -- Strobe low for one clock cycle (default assignment handles returning high)
                     state         <= ST_WAIT_AES;
 
                 when ST_WAIT_AES =>
+                    -- Pull start high for remaining encryption execution cycles
+                    aes_start <= '1';
                     if aes_done = '1' then
                         tx_buffer <= aes_ciphertext;                -- Snapshot ciphertext block
-                        ctr_reg   <= ctr_reg + 1;                   -- Safely increment the 128-bit counter
+                        ctr_reg   <= ctr_reg + 1;                   -- Increment 32-bit keystream counter
                         byte_cnt  <= 0;                             -- Ready to transmit byte 0
                         state     <= ST_LOAD_UART;
                     end if;
 
                 when ST_LOAD_UART =>
-                    -- Serialize MSB-first out of the 128-bit text block (Byte 15 down to 0)
-                    -- To change to LSB-first, modify slice range to: (byte_cnt*8+7 downto byte_cnt*8)
+                    -- Serialize MSB-first out of the 128-bit text block
                     uart_tx_data  <= tx_buffer(127 - (byte_cnt * 8) downto 120 - (byte_cnt * 8));
                     uart_tx_start <= '1';
                     state         <= ST_WAIT_UART;
 
                 when ST_WAIT_UART =>
-                    -- Wait for the UART engine to complete shifting out the current frame
-                    if uart_tx_done = '1' or (uart_tx_busy = '0' and uart_tx_start = '0') then
+                    -- Process handshake safely depending on UART IP finish flag
+                    if uart_tx_done = '1' then
                         if byte_cnt = 15 then
                             -- Entire 128-bit block (16 bytes) transmitted
                             if block_cnt = (N_OUTPUT - 1) then
-                                -- We've sent N_OUTPUT blocks; trigger a reseed cycle
+                                -- 65,536 blocks sent (1 MiB total data payload); reseed cycle triggered
                                 trng_enable <= '1';
                                 state       <= ST_WAIT_TRNG;
                             else
-                                -- Process next sequential block under the same key
+                                -- Process next sequential block under the same key/nonce context
                                 block_cnt <= block_cnt + 1;
                                 state     <= ST_START_AES;
                             end if;

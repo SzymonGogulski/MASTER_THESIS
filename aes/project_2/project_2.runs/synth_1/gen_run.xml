@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1780691552" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/aes_ctr.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1780946618" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/aes_ctr.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="aes_ctr_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="aes_ctr.dcp"/>
   <File Type="RDS-UTIL-PB" Name="aes_ctr_utilization_synth.pb"/>
@@ -128,6 +128,7 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="aes_ctr"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -157,9 +158,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

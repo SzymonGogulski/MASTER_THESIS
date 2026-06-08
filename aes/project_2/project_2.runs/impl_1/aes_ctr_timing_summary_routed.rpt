@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Jun  5 22:34:01 2026
+| Date         : Mon Jun  8 21:24:55 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file aes_ctr_timing_summary_routed.rpt -pb aes_ctr_timing_summary_routed.pb -rpx aes_ctr_timing_summary_routed.rpx -warn_on_violation
 | Design       : aes_ctr
@@ -45,7 +45,7 @@ Rule       Severity          Description                                 Violati
 ---------  ----------------  ------------------------------------------  ----------  
 TIMING-17  Critical Warning  Non-clocked sequential cell                 1000        
 SYNTH-6    Warning           Timing of a RAM block might be sub-optimal  2           
-TIMING-20  Warning           Non-clocked latch                           21          
+TIMING-20  Warning           Non-clocked latch                           8           
 LATCH-1    Advisory          Existing latches in the design              1           
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
@@ -56,10 +56,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (1144)
+1. checking no_clock (1321)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (2141)
+4. checking unconstrained_internal_endpoints (2430)
 5. checking no_input_delay (0)
 6. checking no_output_delay (1)
 7. checking multiple_clock (0)
@@ -69,19 +69,15 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (1144)
+1. checking no_clock (1321)
 ---------------------------
- There are 1123 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 1313 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[0]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[1]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[3]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[0]/Q (HIGH)
 
@@ -92,28 +88,6 @@ Table of Contents
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[3]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[4]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[5]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[0]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[1]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[2]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[3]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[4]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[5]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[6]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[7]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg_reg[8]/Q (HIGH)
 
 
 2. checking constant_clock (0)
@@ -126,9 +100,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (2141)
+4. checking unconstrained_internal_endpoints (2430)
 ---------------------------------------------------
- There are 2141 pins that are not constrained for maximum delay. (HIGH)
+ There are 2430 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -187,7 +161,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                 2142          inf        0.000                      0                 2142           NA           NA                      NA                    NA  
+        inf        0.000                      0                 2431          inf        0.000                      0                 2431           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -256,239 +230,241 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          2142 Endpoints
-Min Delay          2142 Endpoints
+Max Delay          2431 Endpoints
+Min Delay          2431 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[100]/D
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[119]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.598ns  (logic 0.890ns (9.272%)  route 8.708ns (90.728%))
+  Data Path Delay:        10.830ns  (logic 1.116ns (10.305%)  route 9.714ns (89.695%))
   Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         7.170     9.474    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X27Y83         LUT5 (Prop_lut5_I1_O)        0.124     9.598 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[100]_i_1/O
-                         net (fo=1, routed)           0.000     9.598    aes_ctr_inst/reg_inst/D[100]
-    SLICE_X27Y83         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[100]/D
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         8.447    10.706    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X22Y41         LUT5 (Prop_lut5_I1_O)        0.124    10.830 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[119]_i_1/O
+                         net (fo=1, routed)           0.000    10.830    aes_ctr_inst/reg_inst/D[119]
+    SLICE_X22Y41         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[119]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[99]/D
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[113]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.441ns  (logic 0.890ns (9.427%)  route 8.551ns (90.573%))
+  Data Path Delay:        10.666ns  (logic 1.116ns (10.463%)  route 9.550ns (89.537%))
   Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         7.013     9.317    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X30Y82         LUT5 (Prop_lut5_I1_O)        0.124     9.441 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[99]_i_1/O
-                         net (fo=1, routed)           0.000     9.441    aes_ctr_inst/reg_inst/D[99]
-    SLICE_X30Y82         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[99]/D
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         8.283    10.542    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X22Y41         LUT5 (Prop_lut5_I1_O)        0.124    10.666 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[113]_i_1/O
+                         net (fo=1, routed)           0.000    10.666    aes_ctr_inst/reg_inst/D[113]
+    SLICE_X22Y41         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[113]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[122]/D
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[116]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.300ns  (logic 0.890ns (9.570%)  route 8.410ns (90.430%))
+  Data Path Delay:        10.479ns  (logic 1.116ns (10.650%)  route 9.363ns (89.350%))
   Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.872     9.176    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X30Y84         LUT5 (Prop_lut5_I1_O)        0.124     9.300 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[122]_i_1/O
-                         net (fo=1, routed)           0.000     9.300    aes_ctr_inst/reg_inst/D[122]
-    SLICE_X30Y84         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[122]/D
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         8.095    10.355    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X24Y40         LUT5 (Prop_lut5_I1_O)        0.124    10.479 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[116]_i_1/O
+                         net (fo=1, routed)           0.000    10.479    aes_ctr_inst/reg_inst/D[116]
+    SLICE_X24Y40         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[116]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[123]/D
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[118]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.298ns  (logic 0.890ns (9.572%)  route 8.408ns (90.428%))
+  Data Path Delay:        10.440ns  (logic 1.116ns (10.689%)  route 9.324ns (89.311%))
   Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.870     9.174    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X30Y84         LUT5 (Prop_lut5_I1_O)        0.124     9.298 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[123]_i_1/O
-                         net (fo=1, routed)           0.000     9.298    aes_ctr_inst/reg_inst/D[123]
-    SLICE_X30Y84         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[123]/D
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         8.057    10.316    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X22Y41         LUT5 (Prop_lut5_I1_O)        0.124    10.440 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[118]_i_1/O
+                         net (fo=1, routed)           0.000    10.440    aes_ctr_inst/reg_inst/D[118]
+    SLICE_X22Y41         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[118]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[105]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.278ns  (logic 0.890ns (9.593%)  route 8.388ns (90.407%))
-  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.850     9.154    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X28Y84         LUT5 (Prop_lut5_I1_O)        0.124     9.278 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[105]_i_1/O
-                         net (fo=1, routed)           0.000     9.278    aes_ctr_inst/reg_inst/D[105]
-    SLICE_X28Y84         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[105]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[101]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.272ns  (logic 0.890ns (9.599%)  route 8.382ns (90.401%))
-  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.844     9.148    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X31Y84         LUT5 (Prop_lut5_I1_O)        0.124     9.272 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[101]_i_1/O
-                         net (fo=1, routed)           0.000     9.272    aes_ctr_inst/reg_inst/D[101]
-    SLICE_X31Y84         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[101]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[96]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        9.268ns  (logic 0.890ns (9.602%)  route 8.378ns (90.398%))
-  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.840     9.144    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X29Y85         LUT5 (Prop_lut5_I1_O)        0.124     9.268 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[96]_i_1/O
-                         net (fo=1, routed)           0.000     9.268    aes_ctr_inst/reg_inst/D[96]
-    SLICE_X29Y85         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[96]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[98]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.925ns  (logic 0.890ns (9.972%)  route 8.035ns (90.028%))
-  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.497     8.801    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X29Y84         LUT5 (Prop_lut5_I1_O)        0.124     8.925 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[98]_i_1/O
-                         net (fo=1, routed)           0.000     8.925    aes_ctr_inst/reg_inst/D[98]
-    SLICE_X29Y84         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[98]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
   Destination:            aes_ctr_inst/reg_inst/current_stata_reg[121]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.777ns  (logic 0.890ns (10.140%)  route 7.887ns (89.860%))
+  Data Path Delay:        10.207ns  (logic 1.116ns (10.934%)  route 9.091ns (89.066%))
   Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y72         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/C
-    SLICE_X24Y72         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]/Q
-                         net (fo=6, routed)           0.868     1.386    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[5]_0
-    SLICE_X24Y73         LUT4 (Prop_lut4_I0_O)        0.124     1.510 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
-                         net (fo=1, routed)           0.670     2.180    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
-    SLICE_X24Y73         LUT5 (Prop_lut5_I4_O)        0.124     2.304 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
-                         net (fo=128, routed)         6.349     8.653    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
-    SLICE_X28Y85         LUT5 (Prop_lut5_I1_O)        0.124     8.777 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[121]_i_1/O
-                         net (fo=1, routed)           0.000     8.777    aes_ctr_inst/reg_inst/D[121]
-    SLICE_X28Y85         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[121]/D
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.823    10.083    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X25Y39         LUT5 (Prop_lut5_I1_O)        0.124    10.207 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[121]_i_1/O
+                         net (fo=1, routed)           0.000    10.207    aes_ctr_inst/reg_inst/D[121]
+    SLICE_X25Y39         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[121]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 FSM_onehot_state_reg[3]/C
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            ctr_reg_reg[124]/CE
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[123]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.559ns  (logic 0.897ns (10.480%)  route 7.662ns (89.520%))
-  Logic Levels:           3  (FDRE=1 LUT4=1 LUT6=1)
+  Data Path Delay:        10.203ns  (logic 1.116ns (10.938%)  route 9.087ns (89.062%))
+  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X38Y73         FDRE                         0.000     0.000 r  FSM_onehot_state_reg[3]/C
-    SLICE_X38Y73         FDRE (Prop_fdre_C_Q)         0.478     0.478 r  FSM_onehot_state_reg[3]/Q
-                         net (fo=4, routed)           1.671     2.149    aes_ctr_inst/controller_inst/reg_inst/FSM_onehot_state_reg[0][2]
-    SLICE_X24Y73         LUT6 (Prop_lut6_I4_O)        0.295     2.444 f  aes_ctr_inst/controller_inst/reg_inst/tx_buffer[127]_i_3/O
-                         net (fo=1, routed)           0.999     3.442    aes_ctr_inst/controller_inst/reg_inst/tx_buffer[127]_i_3_n_0
-    SLICE_X23Y73         LUT4 (Prop_lut4_I3_O)        0.124     3.566 r  aes_ctr_inst/controller_inst/reg_inst/tx_buffer[127]_i_1/O
-                         net (fo=258, routed)         4.993     8.559    tx_buffer
-    SLICE_X33Y90         FDRE                                         r  ctr_reg_reg[124]/CE
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.819    10.079    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X24Y38         LUT5 (Prop_lut5_I1_O)        0.124    10.203 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[123]_i_1/O
+                         net (fo=1, routed)           0.000    10.203    aes_ctr_inst/reg_inst/D[123]
+    SLICE_X24Y38         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[123]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[114]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.202ns  (logic 1.116ns (10.939%)  route 9.086ns (89.061%))
+  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.818    10.078    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X25Y39         LUT5 (Prop_lut5_I1_O)        0.124    10.202 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[114]_i_1/O
+                         net (fo=1, routed)           0.000    10.202    aes_ctr_inst/reg_inst/D[114]
+    SLICE_X25Y39         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[114]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[124]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.195ns  (logic 1.116ns (10.947%)  route 9.079ns (89.053%))
+  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.811    10.071    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X24Y38         LUT5 (Prop_lut5_I1_O)        0.124    10.195 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[124]_i_1/O
+                         net (fo=1, routed)           0.000    10.195    aes_ctr_inst/reg_inst/D[124]
+    SLICE_X24Y38         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[124]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[126]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.193ns  (logic 1.116ns (10.949%)  route 9.077ns (89.051%))
+  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.809    10.069    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X23Y38         LUT5 (Prop_lut5_I1_O)        0.124    10.193 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[126]_i_1/O
+                         net (fo=1, routed)           0.000    10.193    aes_ctr_inst/reg_inst/D[126]
+    SLICE_X23Y38         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[126]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            aes_ctr_inst/reg_inst/current_stata_reg[117]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.189ns  (logic 1.116ns (10.953%)  route 9.073ns (89.047%))
+  Logic Levels:           4  (FDRE=1 LUT4=1 LUT5=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y37         FDRE                         0.000     0.000 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/C
+    SLICE_X38Y37         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]/Q
+                         net (fo=9, routed)           0.815     1.333    aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[7]_0
+    SLICE_X38Y37         LUT4 (Prop_lut4_I3_O)        0.146     1.479 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5/O
+                         net (fo=1, routed)           0.452     1.932    aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_5_n_0
+    SLICE_X38Y37         LUT5 (Prop_lut5_I4_O)        0.328     2.260 r  aes_ctr_inst/controller_inst/reg_inst/current_stata[127]_i_3/O
+                         net (fo=128, routed)         7.805    10.065    aes_ctr_inst/key_schedule_inst/reg_inst/current_stata_reg[127]_1
+    SLICE_X24Y40         LUT5 (Prop_lut5_I1_O)        0.124    10.189 r  aes_ctr_inst/key_schedule_inst/reg_inst/current_stata[117]_i_1/O
+                         net (fo=1, routed)           0.000    10.189    aes_ctr_inst/reg_inst/D[117]
+    SLICE_X24Y40         FDRE                                         r  aes_ctr_inst/reg_inst/current_stata_reg[117]/D
   -------------------------------------------------------------------    -------------------
 
 
@@ -498,173 +474,173 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 trng_inst/sample_sreg_reg[101]/C
+  Source:                 trng_inst/data_reg_reg[170]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            trng_inst/data_reg_reg[102]/D
+  Destination:            aes_key_reg[74]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.201ns  (logic 0.128ns (63.592%)  route 0.073ns (36.408%))
+  Data Path Delay:        0.187ns  (logic 0.128ns (68.470%)  route 0.059ns (31.530%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X21Y80         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[101]/C
-    SLICE_X21Y80         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[101]/Q
-                         net (fo=2, routed)           0.073     0.201    trng_inst/p_0_in__0[102]
-    SLICE_X20Y80         FDRE                                         r  trng_inst/data_reg_reg[102]/D
+    SLICE_X41Y44         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[170]/C
+    SLICE_X41Y44         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/data_reg_reg[170]/Q
+                         net (fo=1, routed)           0.059     0.187    trng_data[170]
+    SLICE_X40Y44         FDRE                                         r  aes_key_reg[74]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/sample_sreg_reg[123]/C
+  Source:                 trng_inst/sample_sreg_reg[222]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            trng_inst/data_reg_reg[124]/D
+  Destination:            trng_inst/data_reg_reg[223]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.201ns  (logic 0.128ns (63.592%)  route 0.073ns (36.408%))
+  Data Path Delay:        0.187ns  (logic 0.128ns (68.470%)  route 0.059ns (31.530%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y84         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[123]/C
-    SLICE_X23Y84         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[123]/Q
-                         net (fo=2, routed)           0.073     0.201    trng_inst/p_0_in__0[124]
-    SLICE_X22Y84         FDRE                                         r  trng_inst/data_reg_reg[124]/D
+    SLICE_X23Y49         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[222]/C
+    SLICE_X23Y49         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[222]/Q
+                         net (fo=1, routed)           0.059     0.187    trng_inst/p_0_in__0[223]
+    SLICE_X22Y49         FDRE                                         r  trng_inst/data_reg_reg[223]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/sample_sreg_reg[46]/C
+  Source:                 trng_inst/data_reg_reg[169]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            trng_inst/data_reg_reg[47]/D
+  Destination:            aes_key_reg[73]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.203ns  (logic 0.141ns (69.447%)  route 0.062ns (30.553%))
+  Data Path Delay:        0.193ns  (logic 0.128ns (66.390%)  route 0.065ns (33.610%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y75         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[46]/C
-    SLICE_X26Y75         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/sample_sreg_reg[46]/Q
-                         net (fo=2, routed)           0.062     0.203    trng_inst/p_0_in__0[47]
-    SLICE_X27Y75         FDRE                                         r  trng_inst/data_reg_reg[47]/D
+    SLICE_X41Y44         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[169]/C
+    SLICE_X41Y44         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/data_reg_reg[169]/Q
+                         net (fo=1, routed)           0.065     0.193    trng_data[169]
+    SLICE_X40Y44         FDRE                                         r  aes_key_reg[73]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/sample_sreg_reg[109]/C
+  Source:                 nonce_reg_reg[88]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            trng_inst/data_reg_reg[110]/D
+  Destination:            aes_plaintext_reg[120]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.206ns  (logic 0.128ns (62.108%)  route 0.078ns (37.892%))
+  Data Path Delay:        0.193ns  (logic 0.128ns (66.390%)  route 0.065ns (33.610%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y82         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[109]/C
-    SLICE_X23Y82         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[109]/Q
-                         net (fo=2, routed)           0.078     0.206    trng_inst/p_0_in__0[110]
-    SLICE_X22Y82         FDRE                                         r  trng_inst/data_reg_reg[110]/D
+    SLICE_X23Y40         FDRE                         0.000     0.000 r  nonce_reg_reg[88]/C
+    SLICE_X23Y40         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  nonce_reg_reg[88]/Q
+                         net (fo=1, routed)           0.065     0.193    p_0_in[120]
+    SLICE_X22Y40         FDRE                                         r  aes_plaintext_reg[120]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/sample_sreg_reg[108]/C
+  Source:                 trng_inst/data_reg_reg[12]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            trng_inst/data_reg_reg[109]/D
+  Destination:            nonce_reg_reg[12]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.210ns  (logic 0.141ns (67.004%)  route 0.069ns (32.996%))
+  Data Path Delay:        0.195ns  (logic 0.141ns (72.269%)  route 0.054ns (27.731%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y82         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[108]/C
-    SLICE_X23Y82         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/sample_sreg_reg[108]/Q
-                         net (fo=2, routed)           0.069     0.210    trng_inst/p_0_in__0[109]
-    SLICE_X22Y82         FDRE                                         r  trng_inst/data_reg_reg[109]/D
+    SLICE_X39Y58         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[12]/C
+    SLICE_X39Y58         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/data_reg_reg[12]/Q
+                         net (fo=1, routed)           0.054     0.195    trng_data[12]
+    SLICE_X38Y58         FDRE                                         r  nonce_reg_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/data_reg_reg[127]/C
+  Source:                 trng_inst/data_reg_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_key_reg[127]/D
+  Destination:            nonce_reg_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.237ns  (logic 0.141ns (59.450%)  route 0.096ns (40.550%))
+  Data Path Delay:        0.198ns  (logic 0.141ns (71.038%)  route 0.057ns (28.962%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y80         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[127]/C
-    SLICE_X23Y80         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/data_reg_reg[127]/Q
-                         net (fo=1, routed)           0.096     0.237    trng_data[127]
-    SLICE_X25Y80         FDRE                                         r  aes_key_reg[127]/D
+    SLICE_X41Y57         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[2]/C
+    SLICE_X41Y57         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/data_reg_reg[2]/Q
+                         net (fo=1, routed)           0.057     0.198    trng_data[2]
+    SLICE_X40Y57         FDRE                                         r  nonce_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/data_reg_reg[112]/C
+  Source:                 trng_inst/data_reg_reg[106]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_key_reg[112]/D
+  Destination:            aes_key_reg[10]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.238ns  (logic 0.141ns (59.277%)  route 0.097ns (40.723%))
+  Data Path Delay:        0.199ns  (logic 0.141ns (70.682%)  route 0.058ns (29.318%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y85         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[112]/C
-    SLICE_X27Y85         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/data_reg_reg[112]/Q
-                         net (fo=1, routed)           0.097     0.238    trng_data[112]
-    SLICE_X26Y85         FDRE                                         r  aes_key_reg[112]/D
+    SLICE_X41Y44         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[106]/C
+    SLICE_X41Y44         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  trng_inst/data_reg_reg[106]/Q
+                         net (fo=1, routed)           0.058     0.199    trng_data[106]
+    SLICE_X40Y44         FDRE                                         r  aes_key_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/data_reg_reg[118]/C
+  Source:                 trng_inst/sample_sreg_reg[162]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_key_reg[118]/D
+  Destination:            trng_inst/data_reg_reg[163]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.241ns  (logic 0.128ns (53.025%)  route 0.113ns (46.975%))
+  Data Path Delay:        0.202ns  (logic 0.128ns (63.428%)  route 0.074ns (36.572%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y85         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[118]/C
-    SLICE_X27Y85         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/data_reg_reg[118]/Q
-                         net (fo=1, routed)           0.113     0.241    trng_data[118]
-    SLICE_X26Y85         FDRE                                         r  aes_key_reg[118]/D
+    SLICE_X39Y34         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[162]/C
+    SLICE_X39Y34         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[162]/Q
+                         net (fo=2, routed)           0.074     0.202    trng_inst/p_0_in__0[163]
+    SLICE_X38Y34         FDRE                                         r  trng_inst/data_reg_reg[163]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/data_reg_reg[98]/C
+  Source:                 trng_inst/sample_sreg_reg[73]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_key_reg[98]/D
+  Destination:            trng_inst/data_reg_reg[74]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.241ns  (logic 0.128ns (53.025%)  route 0.113ns (46.975%))
+  Data Path Delay:        0.202ns  (logic 0.128ns (63.428%)  route 0.074ns (36.572%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X21Y79         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[98]/C
-    SLICE_X21Y79         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/data_reg_reg[98]/Q
-                         net (fo=1, routed)           0.113     0.241    trng_data[98]
-    SLICE_X20Y79         FDRE                                         r  aes_key_reg[98]/D
+    SLICE_X25Y34         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[73]/C
+    SLICE_X25Y34         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[73]/Q
+                         net (fo=2, routed)           0.074     0.202    trng_inst/p_0_in__0[74]
+    SLICE_X24Y34         FDRE                                         r  trng_inst/data_reg_reg[74]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 trng_inst/data_reg_reg[126]/C
+  Source:                 trng_inst/sample_sreg_reg[144]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            aes_key_reg[126]/D
+  Destination:            trng_inst/data_reg_reg[145]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.242ns  (logic 0.128ns (52.976%)  route 0.114ns (47.024%))
+  Data Path Delay:        0.203ns  (logic 0.128ns (63.195%)  route 0.075ns (36.805%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y84         FDRE                         0.000     0.000 r  trng_inst/data_reg_reg[126]/C
-    SLICE_X22Y84         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/data_reg_reg[126]/Q
-                         net (fo=1, routed)           0.114     0.242    trng_data[126]
-    SLICE_X22Y83         FDRE                                         r  aes_key_reg[126]/D
+    SLICE_X29Y54         FDRE                         0.000     0.000 r  trng_inst/sample_sreg_reg[144]/C
+    SLICE_X29Y54         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  trng_inst/sample_sreg_reg[144]/Q
+                         net (fo=2, routed)           0.075     0.203    trng_inst/p_0_in__0[145]
+    SLICE_X28Y54         FDRE                                         r  trng_inst/data_reg_reg[145]/D
   -------------------------------------------------------------------    -------------------
 
 

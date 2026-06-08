@@ -13,7 +13,7 @@ entity neoTRNG is
 		rstn_i : in std_ulogic; -- module reset, low-active, async, optional
 		enable_i : in std_ulogic; -- module enable (high-active)
 		valid_o : out std_ulogic; -- data_o is valid when set (high for one cycle)
-		data_o : out std_ulogic_vector(127 downto 0) -- block of random data
+		data_o : out std_ulogic_vector(223 downto 0) -- block of random data
 	);
 end neoTRNG;
 
@@ -42,10 +42,10 @@ architecture neoTRNG_rtl of neoTRNG is
 
 	-- sampling control --
 	signal sample_en : std_ulogic; -- global enable
-	signal sample_sreg : std_ulogic_vector(127 downto 0); -- shift-register / de-serializer
-	signal sample_cnt : integer range 0 to 128;
+	signal sample_sreg : std_ulogic_vector(223 downto 0); -- shift-register / de-serializer
+	signal sample_cnt : integer range 0 to 224;
 	signal valid_reg : std_ulogic;
-	signal data_reg : std_ulogic_vector(127 downto 0);
+	signal data_reg : std_ulogic_vector(223 downto 0);
 
 begin
 
@@ -106,11 +106,11 @@ begin
                 -- collect data when cell_en_out(cell_en_out'left) goes high
                 if (cell_en_out(cell_en_out'left) = '1') then
 
-                    sample_sreg <= sample_sreg(126 downto 0) & cell_sum;
+                    sample_sreg <= sample_sreg(222 downto 0) & cell_sum;
                     
-                    if (sample_cnt = 127) then
+                    if (sample_cnt = 223) then
                         valid_reg  <= '1';
-						data_reg   <= sample_sreg(126 downto 0) & cell_sum;
+						data_reg   <= sample_sreg(222 downto 0) & cell_sum;
                         sample_cnt <= 0;
                     else
                         sample_cnt <= sample_cnt + 1;

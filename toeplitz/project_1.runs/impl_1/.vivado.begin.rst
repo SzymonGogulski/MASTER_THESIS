@@ -1,45 +1,25 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="7891" HostCore="8" HostMemory="15776932">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="16655" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="13078" HostCore="8" HostMemory="15776932">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="22451" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="13351" HostCore="8" HostMemory="15776932">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="27790" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="13604" HostCore="8" HostMemory="15776932">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="33544" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="13866" HostCore="8" HostMemory="15776932">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="18965" HostCore="8" HostMemory="15776932">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="24074" HostCore="8" HostMemory="15776932">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="25585" HostCore="8" HostMemory="15776932">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="30403" HostCore="8" HostMemory="15776932">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="48918" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Jun  5 22:33:49 2026
+| Date         : Mon Jun  8 21:24:42 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_control_sets -verbose -file aes_ctr_control_sets_placed.rpt
 | Design       : aes_ctr
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    36 |
-|    Minimum number of control sets                        |    36 |
+| Total control sets                                       |    23 |
+|    Minimum number of control sets                        |    23 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   180 |
+| Unused register locations in slices containing registers |    83 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    36 |
-| >= 0 to < 4        |    22 |
-| >= 4 to < 6        |     4 |
+| Total control sets |    23 |
+| >= 0 to < 4        |     9 |
+| >= 4 to < 6        |     2 |
 | >= 6 to < 8        |     1 |
-| >= 8 to < 10       |     2 |
+| >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     7 |
+| >= 16              |     8 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             305 |          135 |
+| No           | No                    | No                     |             286 |          132 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              25 |           22 |
-| Yes          | No                    | No                     |             677 |          221 |
+| No           | Yes                   | No                     |              12 |            9 |
+| Yes          | No                    | No                     |             970 |          293 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             133 |           34 |
+| Yes          | Yes                   | No                     |              49 |           10 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,41 +74,28 @@ Table of Contents
 |                          Clock Signal                          |                           Enable Signal                           |                                   Set/Reset Signal                                   | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------+----------------+--------------+
 |  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg[0]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                                                 | uart_inst/tx_out_i_1_n_0                                          |                                                                                      |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[7]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[6]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[5]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[4]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[3]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[2]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[1]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sreg[0]       |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/cell_en_out_2 |                                                                   | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_1                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[4]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/en_o          |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[5]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
 |  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg[1]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg[2]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg[3]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg_reg[6]_0 |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[0]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[1]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[2]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
-|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[3]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[4]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/cell_en_out_1 |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[0]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[1]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[2]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sreg[3]       |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sreg_reg[2]_0                        |                1 |              1 |         1.00 |
+|  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/cell_en_out_0 |                                                                   | trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/ring_osc_gen[0].latch_reg[0]_i_2_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | uart_inst/tx_out_i_1_n_0                                          |                                                                                      |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                                                 |                                                                   | aes_ctr_inst/controller_inst/reg_inst/current_stata[7]_i_1__0_n_0                    |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                                                 | uart_inst/E[0]                                                    |                                                                                      |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                                                 | uart_inst/tx_done_reg_0                                           |                                                                                      |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG                                                 | uart_inst/baud_cnt                                                | uart_inst/baud_cnt[4]_i_1_n_0                                                        |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/tx_done_reg[0]              |                                                                                      |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/E[0]                        |                                                                                      |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG                                                 | uart_inst/tx_reg[7]_i_1_n_0                                       |                                                                                      |                3 |              8 |         2.67 |
 |  clk_IBUF_BUFG                                                 | uart_tx_start                                                     |                                                                                      |                8 |              8 |         1.00 |
-|  clk_IBUF_BUFG                                                 | trng_inst/aes_key                                                 |                                                                                      |               27 |            128 |         4.74 |
-|  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/tx_buffer                   | trng_enable0                                                                         |               32 |            128 |         4.00 |
-|  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/tx_buffer                   |                                                                                      |               64 |            128 |         2.00 |
-|  clk_IBUF_BUFG                                                 | trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sample_cnt_reg[5] |                                                                                      |               29 |            128 |         4.41 |
-|  clk_IBUF_BUFG                                                 | aes_plaintext                                                     |                                                                                      |               55 |            128 |         2.33 |
-|  clk_IBUF_BUFG                                                 | trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sample_sreg       |                                                                                      |               29 |            134 |         4.62 |
-|  clk_IBUF_BUFG                                                 |                                                                   |                                                                                      |              135 |            305 |         2.26 |
+|  clk_IBUF_BUFG                                                 | uart_inst/tx_reg                                                  |                                                                                      |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                                 | uart_inst/baud_cnt                                                |                                                                                      |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                                 | uart_inst/tx_done_reg_1                                           | trng_inst/FSM_onehot_state_reg[0]                                                    |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[1]_1[0]   | trng_enable0                                                                         |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG                                                 | aes_ctr_inst/controller_inst/reg_inst/current_stata_reg[1]_0      |                                                                                      |               60 |            128 |         2.13 |
+|  clk_IBUF_BUFG                                                 | aes_plaintext                                                     |                                                                                      |               48 |            128 |         2.67 |
+|  clk_IBUF_BUFG                                                 | trng_inst/aes_key                                                 |                                                                                      |               57 |            224 |         3.93 |
+|  clk_IBUF_BUFG                                                 | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sample_cnt_reg[7] |                                                                                      |               62 |            224 |         3.61 |
+|  clk_IBUF_BUFG                                                 | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sample_sreg       |                                                                                      |               49 |            231 |         4.71 |
+|  clk_IBUF_BUFG                                                 |                                                                   |                                                                                      |              132 |            286 |         2.17 |
 +----------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

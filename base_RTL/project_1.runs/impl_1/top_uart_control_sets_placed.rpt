@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Sat May 16 20:06:59 2026
+| Date         : Mon Jun  8 15:34:38 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_control_sets -verbose -file top_uart_control_sets_placed.rpt
 | Design       : top_uart
@@ -45,9 +45,9 @@ Table of Contents
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     1 |
+| >= 16              |     0 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |            9 |
+| No           | No                    | No                     |              13 |            6 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               8 |            2 |
+| Yes          | No                    | No                     |               8 |            1 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              13 |            4 |
+| Yes          | Yes                   | No                     |              13 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +----------------+---------------+---------------------+------------------+----------------+--------------+
 |  clk_IBUF_BUFG | tx_reg        | p_0_in              |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG | bit_idx       | p_0_in              |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | p_0_in        |                     |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | busy          | uart_cnt[7]_i_1_n_0 |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG |               |                     |                9 |             21 |         2.33 |
+|  clk_IBUF_BUFG | busy          | uart_cnt[7]_i_1_n_0 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | p_0_in        |                     |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG |               |                     |                6 |             13 |         2.17 |
 +----------------+---------------+---------------------+------------------+----------------+--------------+
 
 

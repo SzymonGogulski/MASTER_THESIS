@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Mon May 25 21:25:42 2026
+| Date         : Mon Jun  8 19:05:03 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -447,7 +447,7 @@ Slack:                    inf
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X41Y81         LUT1                         0.000     0.000 r  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sync[0]_i_1/O
-                         net (fo=2, routed)           0.000     0.000    trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_4
+                         net (fo=2, routed)           0.000     0.000    trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_2
     SLICE_X41Y81         FDRE                                         r  trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/sync_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
@@ -463,7 +463,7 @@ Slack:                    inf
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X41Y81         LUT1                         0.000     0.000 r  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sync[0]_i_1__1/O
-                         net (fo=2, routed)           0.125     0.125    trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_8
+                         net (fo=2, routed)           0.125     0.125    trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_6
     SLICE_X41Y81         FDRE                                         r  trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/sync_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
@@ -581,7 +581,7 @@ Slack:                    inf
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X41Y81         LUT1                         0.000     0.000 r  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sync[0]_i_1__0/O
-                         net (fo=2, routed)           0.211     0.211    trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_6
+                         net (fo=2, routed)           0.211     0.211    trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_4
     SLICE_X41Y81         FDRE                                         r  trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sync_reg[0]/D
   -------------------------------------------------------------------    -------------------
 

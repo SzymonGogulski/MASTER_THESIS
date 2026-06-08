@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Fri Jun  5 22:34:02 2026
+| Date             : Mon Jun  8 21:24:56 2026
 | Host             : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file aes_ctr_power_routed.rpt -pb aes_ctr_power_summary_routed.pb -rpx aes_ctr_power_routed.rpx
 | Design           : aes_ctr
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 51.899 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 51.147                           |
-| Device Static (W)        | 0.751                            |
-| Effective TJA (C/W)      | 11.5                             |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 4.284        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 4.087        |
+| Device Static (W)        | 0.198        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 35.6         |
+| Junction Temperature (C) | 74.4         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    27.145 |     2935 |       --- |             --- |
-|   LUT as Logic |    25.683 |     1222 |     14400 |            8.49 |
-|   F7/F8 Muxes  |     1.093 |      408 |     17600 |            2.32 |
-|   Register     |     0.312 |     1140 |     28800 |            3.96 |
-|   CARRY4       |     0.050 |       32 |      4400 |            0.73 |
+| Slice Logic    |     1.013 |     3197 |       --- |             --- |
+|   LUT as Logic |     0.948 |     1276 |     14400 |            8.86 |
+|   F7/F8 Muxes  |     0.032 |      408 |     17600 |            2.32 |
+|   Register     |     0.015 |     1317 |     28800 |            4.57 |
+|   CARRY4       |     0.012 |       12 |      4400 |            0.27 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       21 |       --- |             --- |
-| Signals        |    23.234 |     1723 |       --- |             --- |
-| Block RAM      |     0.254 |        1 |        50 |            2.00 |
-| I/O            |     0.515 |        2 |       100 |            2.00 |
-| Static Power   |     0.751 |          |           |                 |
-| Total          |    51.899 |          |           |                 |
+|   Others       |     0.000 |       18 |       --- |             --- |
+| Signals        |     0.892 |     1899 |       --- |             --- |
+| Block RAM      |     0.111 |        1 |        50 |            2.00 |
+| I/O            |     2.071 |        2 |       100 |            2.00 |
+| Static Power   |     0.198 |          |           |                 |
+| Total          |     4.284 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,20 +73,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    50.748 |      50.617 |      0.130 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.059 |       0.019 |      0.040 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.146 |       0.145 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     2.033 |       2.010 |      0.023 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.091 |       0.076 |      0.015 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.586 |       0.585 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.032 |       0.019 |      0.013 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.011 |       0.010 |      0.002 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.083 |       0.000 |      0.083 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -147,35 +147,33 @@ Table of Contents
 +-------------------------------------------+-----------+
 | Name                                      | Power (W) |
 +-------------------------------------------+-----------+
-| aes_ctr                                   |    51.147 |
-|   aes_ctr_inst                            |    50.033 |
-|     controller_inst                       |     0.226 |
-|       reg_inst                            |     0.226 |
-|     key_schedule_inst                     |    42.223 |
-|       reg_inst                            |    42.223 |
-|     reg_inst                              |     0.952 |
-|     sub_byte_inst                         |     6.631 |
-|       gen[0].sbox_inst                    |     0.404 |
-|       gen[10].sbox_inst                   |     0.402 |
-|       gen[11].sbox_inst                   |     0.382 |
-|       gen[12].sbox_inst                   |     0.387 |
-|       gen[13].sbox_inst                   |     0.394 |
-|       gen[14].sbox_inst                   |     0.425 |
-|       gen[15].sbox_inst                   |     0.475 |
-|       gen[1].sbox_inst                    |     0.474 |
-|       gen[2].sbox_inst                    |     0.434 |
-|       gen[3].sbox_inst                    |     0.368 |
-|       gen[4].sbox_inst                    |     0.406 |
-|       gen[5].sbox_inst                    |     0.377 |
-|       gen[6].sbox_inst                    |     0.459 |
-|       gen[7].sbox_inst                    |     0.405 |
-|       gen[8].sbox_inst                    |     0.443 |
-|       gen[9].sbox_inst                    |     0.395 |
-|   trng_inst                               |     0.091 |
-|     entropy_cell_gen[0].neoTRNG_cell_inst |     0.009 |
-|     entropy_cell_gen[1].neoTRNG_cell_inst |     0.008 |
-|     entropy_cell_gen[2].neoTRNG_cell_inst |     0.019 |
-|   uart_inst                               |     0.206 |
+| aes_ctr                                   |     4.087 |
+|   aes_ctr_inst                            |     1.453 |
+|     controller_inst                       |     0.016 |
+|       reg_inst                            |     0.016 |
+|     key_schedule_inst                     |     1.200 |
+|       reg_inst                            |     1.200 |
+|     reg_inst                              |     0.017 |
+|     sub_byte_inst                         |     0.220 |
+|       gen[0].sbox_inst                    |     0.015 |
+|       gen[10].sbox_inst                   |     0.013 |
+|       gen[11].sbox_inst                   |     0.012 |
+|       gen[12].sbox_inst                   |     0.012 |
+|       gen[13].sbox_inst                   |     0.012 |
+|       gen[14].sbox_inst                   |     0.014 |
+|       gen[15].sbox_inst                   |     0.013 |
+|       gen[1].sbox_inst                    |     0.013 |
+|       gen[2].sbox_inst                    |     0.015 |
+|       gen[3].sbox_inst                    |     0.011 |
+|       gen[4].sbox_inst                    |     0.014 |
+|       gen[5].sbox_inst                    |     0.012 |
+|       gen[6].sbox_inst                    |     0.014 |
+|       gen[7].sbox_inst                    |     0.013 |
+|       gen[8].sbox_inst                    |     0.026 |
+|       gen[9].sbox_inst                    |     0.011 |
+|   trng_inst                               |     0.111 |
+|     entropy_cell_gen[1].neoTRNG_cell_inst |     0.011 |
+|   uart_inst                               |     0.278 |
 +-------------------------------------------+-----------+
 
 

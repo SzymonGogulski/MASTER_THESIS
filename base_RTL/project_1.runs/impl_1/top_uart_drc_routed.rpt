@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Sat May 16 20:07:09 2026
+| Date         : Mon Jun  8 15:34:49 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_drc -file top_uart_drc_routed.rpt -pb top_uart_drc_routed.pb -rpx top_uart_drc_routed.rpx
 | Design       : top_uart
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 7
+             Checks found: 3
 +---------+----------+----------------------------+--------+
 | Rule    | Severity | Description                | Checks |
 +---------+----------+----------------------------+--------+
-| LUTLP-2 | Warning  | Combinatorial Loop Allowed | 6      |
+| LUTLP-2 | Warning  | Combinatorial Loop Allowed | 2      |
 | ZPS7-1  | Warning  | PS7 block required         | 1      |
 +---------+----------+----------------------------+--------+
 
@@ -36,120 +36,33 @@ Table of Contents
 -----------------
 LUTLP-2#1 Warning
 Combinatorial Loop Allowed  
-15 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__0,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__1,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__2,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_1,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_2,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_3,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_4,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_5,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst__0,
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst__1
-trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst__2.
-Related violations: <none>
-
-LUTLP-2#2 Warning
-Combinatorial Loop Allowed  
-21 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst,
+15 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__0,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__1,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__2,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__4,
-trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_in_inst__5,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_1,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_2,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_3,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_4,
 trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_5,
-trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_6,
-trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inferred_i_7,
-trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inst
- (the first 15 of 21 listed).
+trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inst,
+trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inst__0,
+trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inst__1
+trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/inv_out_inst__2.
 Related violations: <none>
 
-LUTLP-2#3 Warning
+LUTLP-2#2 Warning
 Combinatorial Loop Allowed  
-27 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__0,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__1,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__2,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__4,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__5,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__6,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_in_inst__7,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_1,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_2,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_3,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_4,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_5,
-trng_inst/entropy_cell_gen[2].neoTRNG_cell_inst/inv_out_inferred_i_6
- (the first 15 of 27 listed).
-Related violations: <none>
-
-LUTLP-2#4 Warning
-Combinatorial Loop Allowed  
-33 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__0,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__1,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__2,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__4,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__5,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__6,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__7,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__8,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_in_inst__9,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_out_inferred_i_1,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_out_inferred_i_2,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_out_inferred_i_3,
-trng_inst/entropy_cell_gen[3].neoTRNG_cell_inst/inv_out_inferred_i_4
- (the first 15 of 33 listed).
-Related violations: <none>
-
-LUTLP-2#5 Warning
-Combinatorial Loop Allowed  
-39 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__0,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__1,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__10,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__11,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__2,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__4,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__5,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__6,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__7,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__8,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_in_inst__9,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_out_inferred_i_1,
-trng_inst/entropy_cell_gen[4].neoTRNG_cell_inst/inv_out_inferred_i_2
- (the first 15 of 39 listed).
-Related violations: <none>
-
-LUTLP-2#6 Warning
-Combinatorial Loop Allowed  
-45 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__0,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__1,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__10,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__11,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__12,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__13,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__2,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__3,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__4,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__5,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__6,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__7,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__8,
-trng_inst/entropy_cell_gen[5].neoTRNG_cell_inst/inv_in_inst__9
- (the first 15 of 45 listed).
+9 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__0,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_in_inst__1,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_1,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_2,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inferred_i_3,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst,
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst__0
+trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst/inv_out_inst__1.
 Related violations: <none>
 
 ZPS7-1#1 Warning

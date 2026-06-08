@@ -35,8 +35,8 @@ begin
     -- TRNG Core instantiation (Generics updated for Toeplitz integration)
     trng_inst : entity work.neoTRNG
         generic map (
-            NUM_CELLS     => 3,
-            NUM_INV_START => 5,
+            NUM_CELLS     => 3,	
+            NUM_INV_START => 3,
             SIM_MODE      => false
         )
         port map (
