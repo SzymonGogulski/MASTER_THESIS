@@ -90,124 +90,40 @@ Poznań 2026}
       \caption{Architektura modułu neoTRNG}
     \end{figure}
 
+    \textbf{Jak ilość RO, inwerterów, zastosowanie korektora von Neumanna i wielomianu CRC wpłynie na entropię źródła?}
+
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{4 przypadki bazowe}
+\frametitle{Testy bazowe}
 
 \Large
 
-\begin{center}
-\begin{tabular}{ |c|c|c| } 
- \hline
-  & de-biasing & sampling \\ 
- \hline
- RTL 1 & \colorbox{green}{TAK} & \colorbox{green}{TAK} \\ 
- \hline
- RTL 2 & \colorbox{green}{TAK} & \colorbox{red}{NIE} \\ 
- \hline
- RTL 3 & \colorbox{red}{NIE} & \colorbox{green}{TAK} \\
- \hline
- RTL 4 & \colorbox{red}{NIE} & \colorbox{red}{NIE} \\  
- \hline
-\end{tabular}
-\end{center}
+  \textbf{Konfiguracje RO:}
+  \begin{itemize}
+    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów, 
+    \item 3 RO $\Rightarrow$ 3,5 i 7 inwerterów,
+    \item 3 RO $\Rightarrow$ 5,7 i 9 inwerterów.
+  \end{itemize}
+
+  \vspace{5mm}
+
+  \textbf{dla każdej konfiguracji zebrano dane:}
+  \begin{itemize}
+    \item bezpośrednio ze źdródła,
+    \item po korekcji korektorem von Neumanna,
+    \item po kompresji entropii wielomianem CRC,
+    \item po korekcji korektorem von Neumanna i kompresji entropii wielomianem CRC.
+  \end{itemize}
 
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Porównanie zajętości}
+\frametitle{Testy bazowe}
 
-\begin{center}
-\begin{tabular}{ |c|c|c| } 
- \hline
-  & LUT & FF \\ 
- \hline
- RTL 1 & ... & ... \\ 
- \hline
- RTL 2 & ... & ... \\ 
- \hline
- RTL 3 & ... & ... \\
- \hline
- RTL 4 & ... & ... \\  
- \hline
-\end{tabular}
-\end{center}
+\Large
 
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Porównanie bitrate}
-
-\begin{center}
-\begin{tabular}{ |c|c| } 
- \hline
-  & KiB/s \\ 
- \hline
- UART 921600bps & 90.5 \\ 
- \hline
- RTL 1 & 84 \\ 
- \hline
- RTL 2 & ... \\ 
- \hline
- RTL 3 & ... \\
- \hline
- RTL 4 & ... \\  
- \hline
-\end{tabular}
-\end{center}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}[fragile]
-\frametitle{ENT}
-
-\begin{minted}[highlightlines={2, 5, 8, 11},linenos, breaklines]{bash}
-~/tools/ent/src$ ./ent ch3_VN_CRC.bin 
-Entropy = 7.999983 bits per byte.
-
-~/tools/ent/src$ ./ent ch3_nVN_CRC.bin 
-Entropy = 7.999981 bits per byte.
-
-~/tools/ent/src$ ./ent ch3_VN_nCRC.bin 
-Entropy = 7.893073 bits per byte.
-
-~/tools/ent/src$ ./ent ch3_nVN_nCRC.bin 
-Entropy = 7.341919 bits per byte.
-\end{minted}
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{NIST SP 800-22}
-
-
-\begin{enumerate}
-    \item finalAnalysisReport\_ch3\_VN\_CRC.txt
-    \item finalAnalysisReport\_ch3\_nVN\_CRC.txt
-    \item finalAnalysisReport\_ch3\_VN\_nCRC.txt
-    \item finalAnalysisReport\_ch3\_nVN\_nCRC.txt
-\end{enumerate}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}[fragile]
-\frametitle{NIST SP 800-90B}
-
-
-\begin{minted}[highlightlines={2, 5, 8, 11}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
-H_original: 7.487619
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
-H_original: 7.487620
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
-H_original: 6.738274
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
-H_original: 5.623910
-\end{minted}
-
+\textbf{Łącznie 12 zestawów danych po 100 MB}
 
 \end{frame}
 %---------------------------------------------------------
@@ -228,35 +144,139 @@ H_original: 5.623910
 
 \end{frame}
 %---------------------------------------------------------
+\begin{frame}
+\frametitle{Analiza rozmieszczenia}
+
+    \begin{figure}[H]
+      \includegraphics[width=0.75\textwidth]{figures/ch4/6DL.png}
+      \caption{Zlokalizowanie komórki entropii}
+    \end{figure}
+
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Analiza rozmieszczenia}
+
+    \begin{figure}[H]
+      \includegraphics[width=0.75\textwidth]{figures/ch4/6D2.png}
+      \caption{Rozproszone komórki entropii}
+    \end{figure}
+
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Analiza rozmieszczenia}
+
+  \textbf{Konfiguracje RO:}
+  \begin{itemize} 
+    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów,
+    \item 3 RO $\Rightarrow$ 5, 7 i 9 inwerterów,
+    \item 6 RO $\Rightarrow$ 5 ,7, 9, 11, 13 i 15 inwerterów.
+  \end{itemize}
+
+  \vspace{5mm}
+
+  \textbf{W ramach każdej konfiguracji rozpatrzono przypadek zlokalizowany i rozproszony.}
+
+  \vspace{5mm}
+
+  \textbf{dla każdego przypadku zebrano dane:}
+  \begin{itemize}
+    \item bezpośrednio ze źdródła,
+    \item po korekcji korektorem von Neumanna,
+    \item po kompresji entropii wielomianem CRC,
+    \item po korekcji korektorem von Neumanna i kompresji entropii wielomianem CRC.
+  \end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Analiza rozmieszczenia}
+
+  \Large
+  \textbf{Łącznie 24 zestawy danych po 100MB.}
+
+
+\end{frame}
+%---------------------------------------------------------
 \section{Faza algorytmiczna i optymalizacja ekstrakcji}
 %---------------------------------------------------------
 \begin{frame}
 \frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
 
 \Large
-\textbf{Porównanie innych metod post-processing'u}
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{mermaid/png/2.png}
+      \caption{Architektura modułu neoTRNG}
+    \end{figure}
+
+\textbf{Jak inne metody post-processing'u wpłytną na źródło entropii?}
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
+
+\Large
+
+  \textbf{Zbadane metody post-processing'u:}
+  \begin{itemize}
+    \item ekstraktor Toeplitz'a,
+    \item AES-CTR.
+  \end{itemize}
+
 
 \end{frame}
 %---------------------------------------------------------
-\section{Faza odporności i monitorowania online}
-%---------------------------------------------------------
 \begin{frame}
-\frametitle{Faza odporności i monitorowania online}
+\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
 
 \Large
-\textbf{Rozszerzenie zakresu badań o zagadnienia związane z monitorowaniem 
-działania źródła oraz wpływem warunków środowiskowych.}
+
+\textbf{Konfiguracje RO:}
+  \begin{itemize} 
+    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów,
+    \item 3 RO $\Rightarrow$ 3, 5 i 7 inwerterów,
+  \end{itemize}
+
+  \vspace{5mm}
+  \textbf{Każdą konfigurację zbadano dla post-processing'u ekstaktorem Toeplitz'a i AES-CTR}
 
 \end{frame}
 %---------------------------------------------------------
-\section{NeoTRNG na FPGA dla RPI}
-%---------------------------------------------------------
 \begin{frame}
-\frametitle{NeoTRNG na FPGA dla RPI}
+\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
 
 \Large
-\textbf{Dodatkowe aspekty implementacyjne oraz porównanie 
-modułu wykorzystującego oscylatory pierścieniowe z komercyjnym generatorem Quantis.}
+
+\textbf{Łącznie 4 zestawy po 100MB}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Podsumowując}
+
+\Large
+
+\textbf{Łącznie około 4GB danych}
+
+\vspace{5mm}
+
+\begin{table}[H]
+\centering
+\Large % Zapewnia dobrą widoczność na slajdzie
+\begin{tabular}{l | c}
+\textbf{Etap projektu} & \textbf{Stan realizacji / Wynik} \\ 
+\hline \hline
+Implementacja          & 100\% \\ 
+Zbieranie danych       & 100\% \\ 
+Testy NIST             & 28/40 \\ 
+Treść pracy            & 40\% \\ 
+\hline
+\end{tabular}
+\caption{Aktualny status realizacji projektu}
+\end{table}
 
 \end{frame}
 %---------------------------------------------------------

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1780946618">
+  <File Type="PL_UNMASK_RCDO_FILE" Name="aes_ctr_pld_unmask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="aes_ctr_pld_unmask_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="aes_ctr_pld_mask.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="aes_ctr_pld_markers.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="aes_ctr_pld_clear.rcdo"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="aes_ctr_pld_unmask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="aes_ctr_pld_shutdown.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="aes_ctr_pld_mask.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="aes_ctr_pld_markers.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="aes_ctr_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="aes_ctr_pld.rnpi"/>
+  <File Type="BOOT_RNPI_FILE" Name="aes_ctr_boot.rnpi"/>
+  <File Type="MARKER-RNPI-FILE" Name="aes_ctr_markers.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="aes_ctr_pld.rcdo"/>
+  <File Type="MARKER-RCDO-FILE" Name="aes_ctr_markers.rcdo"/>
+  <File Type="RCDO-FILE" Name="aes_ctr.rcdo"/>
+  <File Type="PL-LTX-FILE" Name="aes_ctr_pld.ltx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="aes_ctr_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-MSK" Name="aes_ctr.msk"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="aes_ctr_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="aes_ctr_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="aes_ctr_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="aes_ctr_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="aes_ctr_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="aes_ctr_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="aes_ctr_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC" Name="aes_ctr_drc_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="aes_ctr_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="aes_ctr_power_routed.rpx"/>
+  <File Type="ROUTE-PWR" Name="aes_ctr_power_routed.rpt"/>
+  <File Type="BG-DRC" Name="aes_ctr.drc"/>
+  <File Type="ROUTE-STATUS-PB" Name="aes_ctr_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="aes_ctr_route_status.rpt"/>
+  <File Type="BITSTR-BMM" Name="aes_ctr_bd.bmm"/>
+  <File Type="ROUTE-TIMING-RPX" Name="aes_ctr_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="aes_ctr_timing_summary_routed.rpt"/>
+  <File Type="BG-BGN" Name="aes_ctr.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="aes_ctr_methodology_drc_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="aes_ctr_reports.tcl"/>
+  <File Type="PA-TCL" Name="aes_ctr.tcl"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="aes_ctr_methodology_drc_routed.rpt"/>
+  <File Type="PLACE-CTRL" Name="aes_ctr_control_sets_placed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="aes_ctr_timing_summary_postroute_physopted.rpt"/>
+  <File Type="BITSTR-MMI" Name="aes_ctr.mmi"/>
+  <File Type="BITSTR-NKY" Name="aes_ctr.nky"/>
+  <File Type="PLACE-UTIL" Name="aes_ctr_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="aes_ctr_utilization_placed.pb"/>
+  <File Type="OPT-DRC" Name="aes_ctr_drc_opted.rpt"/>
+  <File Type="PLACE-IO" Name="aes_ctr_io_placed.rpt"/>
+  <File Type="BG-BIN" Name="aes_ctr.bin"/>
+  <File Type="BITSTR-RBT" Name="aes_ctr.rbt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="aes_ctr_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="aes_ctr_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="aes_ctr_bus_skew_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="aes_ctr.vdi"/>
+  <File Type="PDI-FILE" Name="aes_ctr.pdi"/>
+  <File Type="BG-BIT" Name="aes_ctr.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="aes_ctr.sysdef"/>
+  <File Type="MMI-FILE" Name="aes_ctr.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="aes_ctr.ltx"/>
+  <File Type="BIF-FILE" Name="aes_ctr.bif"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BOOT-LTX-FILE" Name="aes_ctr_boot.ltx"/>
+  <File Type="OPT-HWDEF" Name="aes_ctr.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="aes_ctr_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="aes_ctr_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="aes_ctr_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="aes_ctr_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="aes_ctr_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="aes_ctr_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="aes_ctr_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="aes_ctr_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="aes_ctr_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="aes_ctr_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="aes_ctr_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="aes_ctr_postroute_physopt_bb.dcp"/>
+  <File Type="BOOT-PDI-FILE" Name="aes_ctr_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="aes_ctr_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="aes_ctr.rcfi"/>
+  <File Type="CFI_FILE" Name="aes_ctr.cfi"/>
+  <File Type="RNPI_FILE" Name="aes_ctr.rnpi"/>
+  <File Type="NPI_FILE" Name="aes_ctr.npi"/>
+  <File Type="RBD_FILE" Name="aes_ctr.rbd"/>
+  <File Type="ROUTE-RQS" Name="aes_ctr_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="aes_ctr_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="BOOT-BIF-FILE" Name="aes_ctr_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="aes_ctr_pld.bif"/>
+  <File Type="LTX-FILE" Name="aes_ctr.ltx"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/add_round_key.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/add_round_key.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/neoTRNG.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/reg.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sbox.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/sbox.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sub_byte.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/sub_byte.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/shift_rwos.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/shift_rwos.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/gfmult_by2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/gfmult_by2.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/column_calculator.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/column_calculator.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/mix_columns.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/mix_columns.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/controller.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/key_sch_round_function.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/key_sch_round_function.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/key_schedule.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/key_schedule.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/aes_enc.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/aes_enc.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/simple_uart_tx.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/aes_ctr.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="aes_ctr"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/physical.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/aes_ctr.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>

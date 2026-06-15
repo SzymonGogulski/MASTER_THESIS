@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Tue Jun  9 11:12:34 2026
+# Process ID         : 38371
+# Current directory  : /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.runs/synth_1
+# Command line       : vivado -log top_uart.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_uart.tcl
+# Log file           : /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.runs/synth_1/top_uart.vds
+# Journal file       : /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.runs/synth_1/vivado.jou
+# Running On         : szymon
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 4700U with Radeon Graphics
+# CPU Frequency      : 4191.481 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 16155 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20450 MB
+# Available Virtual  : 13741 MB
+#-----------------------------------------------------------
+source top_uart.tcl -notrace

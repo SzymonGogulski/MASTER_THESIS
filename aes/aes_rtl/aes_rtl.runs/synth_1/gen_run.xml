@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1780946618" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/aes_ctr.dcp">
+  <File Type="RDS-DCP" Name="aes_ctr.dcp"/>
+  <File Type="RDS-RDS" Name="aes_ctr.vds"/>
+  <File Type="REPORTS-TCL" Name="aes_ctr_reports.tcl"/>
+  <File Type="PA-TCL" Name="aes_ctr.tcl"/>
+  <File Type="RDS-UTIL" Name="aes_ctr_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="aes_ctr_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/add_round_key.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/add_round_key.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/neoTRNG.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/reg.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sbox.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/sbox.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sub_byte.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/sub_byte.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/shift_rwos.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/shift_rwos.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/gfmult_by2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/gfmult_by2.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/column_calculator.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/column_calculator.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/mix_columns.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/mix_columns.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/controller.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/key_sch_round_function.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/key_sch_round_function.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/key_schedule.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/key_schedule.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/aes_enc.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AES-VHDL/AES-ENC/RTL/aes_enc.vhd"/>
+        <Attr Name="ImportTime" Val="1780659922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/simple_uart_tx.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/aes_ctr.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="aes_ctr"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/physical.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/aes_ctr.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

@@ -1,7 +1,0 @@
-Running: xsim.dir/neoTRNG_tb_behav/xsimk -simmode gui -wdb neoTRNG_tb_behav.wdb -simrunnum 0 -socket 51785
-Design successfully loaded
-Design Loading Memory Usage: 179040 KB (Peak: 179092 KB)
-Design Loading CPU Usage: 1170 ms
-Simulation completed
-Simulation Memory Usage: 268976 KB (Peak: 318308 KB)
-Simulation CPU Usage: 1210 ms

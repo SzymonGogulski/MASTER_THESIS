@@ -1,7 +1,0 @@
-Running: xsim.dir/test_enc_behav/xsimk -simmode gui -wdb test_enc_behav.wdb -simrunnum 0 -socket 56941
-Design successfully loaded
-Design Loading Memory Usage: 179088 KB (Peak: 179088 KB)
-Design Loading CPU Usage: 1200 ms
-Simulation completed
-Simulation Memory Usage: 269024 KB (Peak: 318356 KB)
-Simulation CPU Usage: 1220 ms

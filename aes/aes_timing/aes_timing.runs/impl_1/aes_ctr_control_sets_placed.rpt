@@ -1,0 +1,89 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date         : Tue Jun  9 12:42:25 2026
+| Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_control_sets -verbose -file aes_ctr_control_sets_placed.rpt
+| Design       : aes_ctr
+| Device       : xc7z007s
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    11 |
+|    Minimum number of control sets                        |    11 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    24 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    11 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              22 |           10 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              32 |           10 |
+| Yes          | No                    | No                     |              65 |           15 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              49 |           13 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                            Enable Signal                            |                        Set/Reset Signal                        | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | uart_inst/tx_out_i_1_n_0                                            |                                                                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                                                     | aes_ctr_inst/controller_inst/reg_inst/current_stata[7]_i_1_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | uart_tx_start                                                       |                                                                |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | uart_inst/baud_cnt                                                  |                                                                |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | uart_inst/tx_reg                                                    |                                                                |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG | trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst/sample_sreg         |                                                                |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | aes_ctr_inst/controller_inst/reg_inst/FSM_sequential_state_reg[0]_0 | trng_inst/valid_reg_reg_0                                      |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG |                                                                     |                                                                |               10 |             23 |         2.30 |
+|  clk_IBUF_BUFG |                                                                     | block_rate_counter                                             |                9 |             28 |         3.11 |
+|  clk_IBUF_BUFG | aes_ctr_inst/controller_inst/reg_inst/aes_done                      | block_rate_counter                                             |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | block_rate_counter                                                  |                                                                |                6 |             32 |         5.33 |
++----------------+---------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
+
+
