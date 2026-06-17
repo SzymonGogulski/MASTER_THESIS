@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/szymon/Desktop/magister/base_RTL/project_1.runs/synth_1/top_uart.tcl"
+  variable script "/home/szymon/Desktop/magister/base_RTL/project_base/project_base.runs/synth_1/top_uart.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,26 +56,28 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 set_param general.usePosixSpawnForFork 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/szymon/Desktop/magister/base_RTL/project_1.cache/wt [current_project]
-set_property parent.project_path /home/szymon/Desktop/magister/base_RTL/project_1.xpr [current_project]
+set_property webtalk.parent_dir /home/szymon/Desktop/magister/base_RTL/project_base/project_base.cache/wt [current_project]
+set_property parent.project_path /home/szymon/Desktop/magister/base_RTL/project_base/project_base.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {/home/szymon/.Xilinx/Vivado/2025.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:cora-z7-07s:part0:1.1 [current_project]
-set_property ip_output_repo /home/szymon/Desktop/magister/base_RTL/project_1.cache/ip [current_project]
+set_property ip_output_repo /home/szymon/Desktop/magister/base_RTL/project_base/project_base.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/szymon/Desktop/magister/base_RTL/project_1.srcs/sources_1/imports/rtl/neoTRNG.vhd
-  /home/szymon/Desktop/magister/base_RTL/project_1.srcs/sources_1/new/top_uart.vhd
+  /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/sources_1/imports/rtl/neoTRNG.vhd
+  /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/sources_1/new/top_uart.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -86,15 +88,15 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/physical.xdc
-set_property used_in_implementation false [get_files /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/physical.xdc]
+read_xdc /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/physical.xdc
+set_property used_in_implementation false [get_files /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/physical.xdc]
 
-read_xdc /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/pblocks.xdc
-set_property used_in_implementation false [get_files /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/pblocks.xdc]
+read_xdc /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/pblocks.xdc
+set_property used_in_implementation false [get_files /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/pblocks.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/szymon/Desktop/magister/base_RTL/project_1.srcs/utils_1/imports/synth_1/oscillator.dcp
+read_checkpoint -auto_incremental -incremental /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/utils_1/imports/synth_1/oscillator.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

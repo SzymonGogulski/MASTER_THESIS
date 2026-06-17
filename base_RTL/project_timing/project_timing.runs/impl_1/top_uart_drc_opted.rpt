@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue Jun  9 11:13:41 2026
+| Date         : Mon Jun 15 18:28:55 2026
 | Host         : szymon running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_drc -file top_uart_drc_opted.rpt -pb top_uart_drc_opted.pb -rpx top_uart_drc_opted.rpx
 | Design       : top_uart

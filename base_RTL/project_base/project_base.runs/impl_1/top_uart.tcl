@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/szymon/Desktop/magister/base_RTL/project_1.runs/impl_1/top_uart.tcl"
+  variable script "/home/szymon/Desktop/magister/base_RTL/project_base/project_base.runs/impl_1/top_uart.tcl"
   variable category "vivado_impl"
 }
 
@@ -106,6 +106,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
   set_param general.usePosixSpawnForFork 1
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z007sclg400-1
@@ -115,16 +116,16 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/szymon/Desktop/magister/base_RTL/project_1.cache/wt [current_project]
-  set_property parent.project_path /home/szymon/Desktop/magister/base_RTL/project_1.xpr [current_project]
-  set_property ip_output_repo /home/szymon/Desktop/magister/base_RTL/project_1.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/szymon/Desktop/magister/base_RTL/project_base/project_base.cache/wt [current_project]
+  set_property parent.project_path /home/szymon/Desktop/magister/base_RTL/project_base/project_base.xpr [current_project]
+  set_property ip_output_repo /home/szymon/Desktop/magister/base_RTL/project_base/project_base.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/szymon/Desktop/magister/base_RTL/project_1.runs/synth_1/top_uart.dcp
+  add_files -quiet /home/szymon/Desktop/magister/base_RTL/project_base/project_base.runs/synth_1/top_uart.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/physical.xdc
-  read_xdc /home/szymon/Desktop/magister/base_RTL/project_1.srcs/constrs_1/new/pblocks.xdc
+  read_xdc /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/physical.xdc
+  read_xdc /home/szymon/Desktop/magister/base_RTL/project_base/project_base.srcs/constrs_1/new/pblocks.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

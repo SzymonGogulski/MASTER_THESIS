@@ -1,6 +1,6 @@
 library ieee;
-  use ieee.std_logic_1164.all;
-  use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity neoTRNG is
   generic (
@@ -64,9 +64,13 @@ architecture neoTRNG_rtl of neoTRNG is
   signal selected_valid    : std_ulogic;
   signal selected_data     : std_ulogic;
 
-  signal sample_en   : std_ulogic;                                        
-  signal sample_sreg : std_ulogic_vector(7 downto 0);                     
+  signal sample_en   : std_ulogic;                                         
+  signal sample_sreg : std_ulogic_vector(7 downto 0);                      
   signal sample_cnt  : std_ulogic_vector(clog2_f(NUM_RAW_BITS) downto 0);
+  
+  -- Counter for non-CRC mode to track 8-bit accumulations
+  signal bit_cnt     : unsigned(3 downto 0); 
+  signal valid_reg   : std_ulogic;
 
   constant poly_c : std_ulogic_vector(7 downto 0) := "00000111";
 
@@ -116,14 +120,12 @@ begin
   end process;
 
   -- John von Neumann Randomness Extractor (De-Biasing) -------------------------------------
-  -- -------------------------------------------------------------------------------------------
   debiasing: process (rstn_i, clk_i)
   begin
     if (rstn_i = '0') then
-      debias_sreg <= (others => '0');
+      debias_sreg  <= (others => '0');
       debias_state <= '0';
     elsif rising_edge(clk_i) then
-
       if ENABLE_VON_NEUMANN then
         debias_sreg <= debias_sreg(0) & cell_sum;
         -- start operation when last cell is enabled and process in every second cycle --
@@ -132,7 +134,6 @@ begin
         -- VON NEUMANN DISABLED, ignore debias_state --
         debias_state <= '0';
       end if;
-
     end if;
   end process;
 
@@ -141,34 +142,38 @@ begin
 
   -- bypassed signals --
   raw_valid <= cell_en_out(cell_en_out'left);
-  raw_data <= cell_sum;
+  raw_data  <= cell_sum;
 
   selected_valid <= debias_valid when ENABLE_VON_NEUMANN else raw_valid;
   selected_data  <= debias_data  when ENABLE_VON_NEUMANN else raw_data;
 
   -- Sampling Control -----------------------------------------------------------------------
-  -- -------------------------------------------------------------------------------------------
   sampling_control: process (rstn_i, clk_i)
   begin
     if (rstn_i = '0') then
-      sample_en <= '0';
-      sample_cnt <= (others => '0');
+      sample_en   <= '0';
+      sample_cnt  <= (others => '0');
       sample_sreg <= (others => '0');
-
+      bit_cnt     <= (others => '0');
+      valid_reg   <= '0';
 
     elsif rising_edge(clk_i) then
       sample_en <= enable_i;
+      valid_reg <= '0'; -- Default assignment, pulse high for exactly 1 cycle when ready
 
       if ENABLE_CRC then 
-
-        -- CRC ENABLED --
+        -- ===================================================================================
+        -- CRC MODES (ENABLE_CRC = true)
+        -- Tracks NUM_RAW_BITS of incoming bits (either raw or von Neumann conditioned)
+        -- ===================================================================================
         if (sample_en = '0') or (sample_cnt(sample_cnt'left) = '1') then -- start new iteration
-          sample_cnt <= (others => '0');
+          sample_cnt  <= (others => '0');
           sample_sreg <= (others => '0');
-        elsif (selected_valid = '1') then -- valid raw random bit
+        elsif (selected_valid = '1') then -- valid bit received
           sample_cnt <= std_ulogic_vector(unsigned(sample_cnt) + 1);
-          -- CRC-style sampling shift-register to mix random stream --
-          if ((sample_sreg(sample_sreg'left) xor selected_data) = '1') then -- feedback bit
+          
+          -- CRC mixing
+          if ((sample_sreg(sample_sreg'left) xor selected_data) = '1') then
             sample_sreg <= (sample_sreg(sample_sreg'left - 1 downto 0) & '0') xor poly_c;
           else
             sample_sreg <= (sample_sreg(sample_sreg'left - 1 downto 0) & '0');
@@ -176,22 +181,36 @@ begin
         end if;
 
       else 
-        -- CRC DISABLED --
-        -- no counter usage at all
-        sample_cnt <= (others => '0');
+        -- ===================================================================================
+        -- NON-CRC MODES (ENABLE_CRC = false)
+        -- Accumulates exactly 8 incoming bits before asserting valid_o
+        -- ===================================================================================
+        sample_cnt <= (others => '0'); -- Reset CRC counter
 
-        if (sample_en = '1') and (selected_valid = '1') then
-          sample_sreg <= sample_sreg(sample_sreg'left-1 downto 0) & selected_data;
+        if (sample_en = '0') then
+          bit_cnt <= (others => '0');
+        elsif (selected_valid = '1') then
+          -- Shift in incoming bit (Will be either Raw or Von Neumann depending on ENABLE_VON_NEUMANN)
+          sample_sreg <= sample_sreg(sample_sreg'left - 1 downto 0) & selected_data;
+          
+          if (bit_cnt = 7) then
+            bit_cnt   <= (others => '0');
+            valid_reg <= '1'; -- We collected 8 new bits!
+          else
+            bit_cnt   <= bit_cnt + 1;
+          end if;
         end if;
 
       end if;
     end if;
   end process;
 
+  -- Drive output signals
   data_o  <= sample_sreg;
-  valid_o <= sample_cnt(sample_cnt'left) when ENABLE_CRC else selected_valid;
+  valid_o <= sample_cnt(sample_cnt'left) when ENABLE_CRC else valid_reg;
 
 end architecture;
+
 
 library ieee;
   use ieee.std_logic_1164.all;

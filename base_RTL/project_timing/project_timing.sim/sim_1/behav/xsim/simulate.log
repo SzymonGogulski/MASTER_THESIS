@@ -1,0 +1,26 @@
+Time resolution is 1 ps
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE4/line__91  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE4/line__79  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE3/line__91  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE3/line__79  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE2/line__91  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE2/line__79  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Warning: [neoTRNG] Simulation-mode enabled (NO TRUE/PHYSICAL RANDOM)!
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE1/line__91  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Note: [neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, github.com/stnolting/neoTRNG
+Time: 0 ps  Iteration: 0  Process: /neoTRNG_tb/DUT_CASE1/line__79  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd
+Note: Entering Warm-up Phase: Enabling module to latch entropy chains...
+Time: 70 ns  Iteration: 0  Process: /neoTRNG_tb/stimulus_proc  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sim_1/new/neoTRNG_tb.vhd
+Note: Warm-up complete! Resetting cores to establish synchronized clean slate...
+Time: 1815 ns  Iteration: 1  Process: /neoTRNG_tb/stimulus_proc  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sim_1/new/neoTRNG_tb.vhd
+Note: Testing Case 1: VON_NEUMANN=false, CRC=false...
+Time: 1895 ns  Iteration: 0  Process: /neoTRNG_tb/stimulus_proc  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sim_1/new/neoTRNG_tb.vhd
+Failure: Case 1 Failed: Timeout!
+Time: 2095 ns  Iteration: 1  Process: /neoTRNG_tb/stimulus_proc  File: /home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sim_1/new/neoTRNG_tb.vhd
+$finish called at time : 2095 ns : File "/home/szymon/Desktop/magister/base_RTL/project_timing/project_timing.srcs/sim_1/new/neoTRNG_tb.vhd" Line 122

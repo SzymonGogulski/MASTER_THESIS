@@ -11,3 +11,4 @@ sudo stty -F /dev/ttyUSB0 flush
 sudo dd if=/dev/ttyUSB0 of=true_true.bin bs=1M count=100 status=progress iflag=fullblock
 
 /home/szymon/Desktop/magister/data/ch3/02_05/nVN_CRC.bin
+sudo xxd -c 5 -g 2 /dev/ttyUSB0

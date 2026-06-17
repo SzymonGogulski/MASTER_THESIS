@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_timing.srcs/sources_1/imports/rtl/neoTRNG.vhd" \
+"../../../../project_timing.srcs/sim_1/new/neoTRNG_tb.vhd" \
+
+# Do not sort compile order
+nosort
