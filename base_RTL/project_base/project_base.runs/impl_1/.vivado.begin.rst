@@ -33,3 +33,18 @@
     <Process Command="vivado" Owner="szymon" Host="szymon" Pid="37273" HostCore="8" HostMemory="15776928">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="48436" HostCore="8" HostMemory="15776928">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="55941" HostCore="8" HostMemory="15776928">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="szymon" Host="szymon" Pid="60622" HostCore="8" HostMemory="15776928">
+    </Process>
+</ProcessHandle>
