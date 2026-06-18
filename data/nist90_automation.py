@@ -16,7 +16,8 @@ args = parser.parse_args()
 
 base_dir = Path(args.base_dir).expanduser().resolve()
 nist90_output_dir = base_dir / "tests_results/nist90"
-nist90_output_dir.mkdir(exist_ok=True)
+# Ensure the output directory exists
+nist90_output_dir.mkdir(parents=True, exist_ok=True)
 nist90_dir = Path.home() / "tools/SP800-90B_EntropyAssessment/cpp"
 
 # Find all .bin files
@@ -27,12 +28,20 @@ if not bin_files:
     exit(1)
 
 for bin_file in bin_files:
+    # Define the output log path first so we can check for its existence
+    log_file = nist90_output_dir / f"{bin_file.stem}.log"
+    
+    # Check if the test has already been run for this file
+    if log_file.exists():
+        print(f"Skipping {bin_file.name} (Log file already exists).")
+        continue
+
     print(f"NIST90 processing {bin_file.name}...")
     
     bin_path = str(bin_file.resolve())
     # Run external program
     result = subprocess.run(
-            ["./ea_non_iid", bin_path, "8"],
+        ["./ea_non_iid", bin_path, "8"],
         cwd=nist90_dir,
         capture_output=True,
         text=True
@@ -41,7 +50,7 @@ for bin_file in bin_files:
     output_text = result.stdout + result.stderr
 
     # Write to log file
-    log_file = nist90_output_dir / f"{bin_file.stem}.log"
     log_file.write_text(output_text)
-    print(output_text.splitlines()[0])
+    if output_text.splitlines():
+        print(output_text.splitlines()[0])
     print(f"Saved -> {log_file}")

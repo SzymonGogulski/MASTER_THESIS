@@ -27,6 +27,14 @@ if not bin_files:
     exit(1)
 
 for bin_file in bin_files:
+    # 1. Define the expected target file path first
+    target_file = nist_out_dir / f"{bin_file.stem}.txt"
+
+    # 2. Skip processing if the output file already exists
+    if target_file.exists():
+        print(f"Skipping {bin_file.name} (Results already exist at {target_file.name})")
+        continue
+
     print(f"\nRunning NIST SP800-22 on {bin_file.name}")
 
     bin_path = str(bin_file.resolve())
@@ -64,7 +72,6 @@ for bin_file in bin_files:
         continue
 
     # Copy report to output directory
-    target_file = nist_out_dir / f"{bin_file.stem}.txt"
     shutil.copy(report_path, target_file)
 
     print(f"Saved -> {target_file}")
