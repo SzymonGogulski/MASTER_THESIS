@@ -1,0 +1,26 @@
+\begin{table}[h!]
+\centering
+\caption{NIST Results}
+\label{tab:nist_results}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true_true}} & \multicolumn{2}{c|}{\textbf{true_false}} & \multicolumn{2}{c|}{\textbf{false_true}} & \multicolumn{2}{c|}{\textbf{false_false}} \\ \hline
+Frequency               &  99/100 &     & 100/100 &     &  98/100 &     &  19/100 & *   \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  99/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  99/100 &     &  26/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  96/100 &     &  23/100 & *   \\ \hline
+Runs                    &  98/100 &     &   0/100 & *   &  71/100 & *   &   0/100 & *   \\ \hline
+LongestRun              &  99/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Rank                    &  98/100 &     &  99/100 &     & 100/100 &     &  98/100 &     \\ \hline
+FFT                     &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  &   4/148 & sp  & 111/148 & sp  &   5/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &   0/100 & *   &  89/100 & *   &   0/100 & *   \\ \hline
+Universal               &  96/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &   9/100 & *   &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/8 & sp  &     8/8 & sp  &     1/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   17/18 & sp  \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  96/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  11/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}

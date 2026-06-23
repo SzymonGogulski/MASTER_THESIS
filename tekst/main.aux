@@ -10,6 +10,7 @@
 \babel@aux{polish}{}
 \babel@aux{polish}{}
 \citation{NIST-SP-800-90B}
+\citation{neoTRNG}
 \citation{2016Sreekumar-Ramesh}
 \citation{NIST-SP-800-22}
 \citation{NIST-SP-800-90B}
@@ -31,13 +32,13 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Źródła losowości}{4}{section.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}TRBG}{4}{subsection.2.1.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Model źródła entropii. \cite  {NIST-SP-800-90B}}}{4}{figure.2.1}\protected@file@percent }
-\newlabel{fig:model_zrodla_entropii_nist}{{2.1}{4}{Model źródła entropii. \cite {NIST-SP-800-90B}}{figure.2.1}{}}
+\newlabel{fig:ch2_model_zrodla_entropii_nist}{{2.1}{4}{Model źródła entropii. \cite {NIST-SP-800-90B}}{figure.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}PRBG}{5}{subsection.2.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}QRBG}{5}{subsection.2.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Zasada działania Quantis USB 4M}{5}{subsection.2.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}RO jako źródła losowości w FPGA}{5}{section.2.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Przykład prostego oscylatora pierścieniowego.}}{5}{figure.2.2}\protected@file@percent }
-\newlabel{fig:oscylator_3xNOT}{{2.2}{5}{Przykład prostego oscylatora pierścieniowego}{figure.2.2}{}}
+\newlabel{fig:ch2_oscylator_3xNOT}{{2.2}{5}{Przykład prostego oscylatora pierścieniowego}{figure.2.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Ekstraktory losowości}{5}{section.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Ekstraktor von Neumanna}{5}{subsection.2.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Wielomian CRC}{5}{subsection.2.3.2}\protected@file@percent }
@@ -47,45 +48,86 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}ENT - Fourmilab Random Sequence Tester}{5}{subsection.2.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}NIST SP 800-22 - A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications}{5}{subsection.2.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}NIST SP 800-90B - Entropy Assessment Test Suite}{5}{subsection.2.4.3}\protected@file@percent }
+\citation{neoTRNG}
+\citation{neoTRNG}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}Modułowa platforma sprzętowa do oceny losowości generatora neoTRNG}{6}{chapter.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Architektura bazowa neoTRNG opartego na RO}{6}{section.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Model źródła entropii. \cite  {neoTRNG}}}{6}{figure.3.1}\protected@file@percent }
+\newlabel{fig:ch3_architektura }{{3.1}{6}{Model źródła entropii. \cite {neoTRNG}}{figure.3.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Projekt i implementacja ekstraktora kryptograficznego AES-CTR}{6}{section.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz}{6}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Zarządzanie wykorzystaniem zasobów sprzętowych dla RO na FPGA}{6}{section.3.4}\protected@file@percent }
+\citation{NIST-SP-800-22}
+\citation{NIST-SP-800-22}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Badania eksperymentalne}{7}{chapter.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Wpływ metody post-processingu na losowość}{7}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Wpływ skalowania liczby oscylatorów RO na losowość}{7}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Wpływ rozmieszczenia RO w układzie FPGA na losowość}{7}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}{7}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}{7}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}{7}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}NIST SP 800-22}{7}{subsection.4.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces 2 RO : 3 - 5}}{7}{table.4.1}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_2RO_8I}{{4.1}{7}{2 RO : 3 - 5}{table.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces 3 RO : 3 - 5 - 7}}{8}{table.4.2}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_3RO_15I}{{4.2}{8}{3 RO : 3 - 5 - 7}{table.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces 3 RO : 5 - 7 - 9}}{8}{table.4.3}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_3RO_21I}{{4.3}{8}{3 RO : 5 - 7 - 9}{table.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}NIST SP 800-90B}{8}{subsection.4.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces NIST SP 800-90: Non-IID entropy assessment}}{8}{table.4.4}\protected@file@percent }
+\newlabel{tab:ch4_NIST_SP_800_90}{{4.4}{8}{NIST SP 800-90: Non-IID entropy assessment}{table.4.4}{}}
+\citation{NIST-SP-800-22}
+\citation{NIST-SP-800-22}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}ENT}{9}{subsection.4.1.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces ENT: Fourmilab Random Sequence Tester}}{9}{table.4.5}\protected@file@percent }
+\newlabel{tab:ch4_NIST_SP_800_90}{{4.5}{9}{ENT: Fourmilab Random Sequence Tester}{table.4.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Wpływ rozmieszczenia RO w układzie FPGA na losowość}{9}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}NIST SP 800-22}{9}{subsection.4.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces 2 RO : 3 - 5 rozproszone}}{9}{table.4.6}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_2RO_8I_DISTRIBUTED}{{4.6}{9}{2 RO : 3 - 5 rozproszone}{table.4.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces 2 RO : 3 - 5 zlokalizowane}}{10}{table.4.7}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_2RO_8I_LOCALIZED}{{4.7}{10}{2 RO : 3 - 5 zlokalizowane}{table.4.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces 3 RO : 5 - 7 - 9 rozproszone}}{10}{table.4.8}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_3RO_21I_DISTRIBUTED}{{4.8}{10}{3 RO : 5 - 7 - 9 rozproszone}{table.4.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.9}{\ignorespaces 3 RO : 5 - 7 - 9 zlokalizowane}}{11}{table.4.9}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_3RO_21I_LOCALIZED}{{4.9}{11}{3 RO : 5 - 7 - 9 zlokalizowane}{table.4.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.10}{\ignorespaces 6 RO : 5 - 7 - 9 - 11 - 13 - 15 rozproszone}}{11}{table.4.10}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_6RO_60I_DISTRIBUTED}{{4.10}{11}{6 RO : 5 - 7 - 9 - 11 - 13 - 15 rozproszone}{table.4.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.11}{\ignorespaces 6 RO : 5 - 7 - 9 - 11 - 13 - 15 zlokalizowane}}{12}{table.4.11}\protected@file@percent }
+\newlabel{tab:ch4_nist_22_6RO_60I_LOCALIZED}{{4.11}{12}{6 RO : 5 - 7 - 9 - 11 - 13 - 15 zlokalizowane}{table.4.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}NIST SP 800-90B}{12}{subsection.4.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.12}{\ignorespaces NIST SP 800-90: Non-IID entropy assessment}}{12}{table.4.12}\protected@file@percent }
+\newlabel{tab:ch4_NIST_SP_800_90_D}{{4.12}{12}{NIST SP 800-90: Non-IID entropy assessment}{table.4.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.13}{\ignorespaces NIST SP 800-90: Non-IID entropy assessment}}{12}{table.4.13}\protected@file@percent }
+\newlabel{tab:ch4_NIST_SP_800_90_L}{{4.13}{12}{NIST SP 800-90: Non-IID entropy assessment}{table.4.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}ENT}{12}{subsection.4.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.14}{\ignorespaces ENT: Fourmilab Random Sequence Tester}}{12}{table.4.14}\protected@file@percent }
+\newlabel{tab:ch4_NIST_SP_800_90}{{4.14}{12}{ENT: Fourmilab Random Sequence Tester}{table.4.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}{13}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}{13}{section.4.4}\protected@file@percent }
 \bibstyle{plain}
 \bibdata{bibliografia}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{8}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{14}{chapter.5}\protected@file@percent }
 \bibcite{fourmilab-ENT}{1}
 \bibcite{NIST-SP-800-22}{2}
 \bibcite{2016Sreekumar-Ramesh}{3}
 \bibcite{neoTRNG}{4}
 \bibcite{NIST-SP-800-90B}{5}
-\@writefile{toc}{\contentsline {chapter}{Literatura}{9}{chapter*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Literatura}{15}{chapter*.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Floorplanning}{10}{appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{10}{section.A.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Floorplanning}{16}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{16}{section.A.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów}{11}{appendix.B}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}neoTRNG\_mod\_1.vhd}{11}{section.B.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów}{17}{appendix.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}neoTRNG\_mod\_1.vhd}{17}{section.B.1}\protected@file@percent }
 \gdef\minted@oldcachelist{,
   default.pygstyle,
   E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex,
   E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex}
-\memsetcounter{lastsheet}{16}
-\memsetcounter{lastpage}{12}
+\memsetcounter{lastsheet}{23}
+\memsetcounter{lastpage}{18}
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{1}}
-\gdef \@abspage@last{16}
+\gdef \@abspage@last{23}

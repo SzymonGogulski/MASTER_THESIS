@@ -33,11 +33,497 @@
 
 \chapter{Badania eksperymentalne}
 
-\section{Wpływ metody post-processingu na losowość}
+\section{Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}
+
+\subsection{NIST SP 800-22}
+
+\begin{flushleft}
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
+\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
+\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\end{flushleft}
 
 
-\section{Wpływ skalowania liczby oscylatorów RO na losowość}
+\begin{table}[H]
+\centering
+\caption{2 RO : 3 - 5}
+\label{tab:ch4_nist_22_2RO_8I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          & 100/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          & 100/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LongestRun              &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Rank                    &  99/100 &     &  98/100 &     &  99/100 &     &  98/100 &     \\ \hline
+FFT                     & 100/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  &   2/148 & sp  & 148/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Universal               &  98/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/6 & sp  &     8/8 & sp  &     0/6 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &    4/18 & sp  &   18/18 & sp  &    0/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        &  98/100 &     &  98/100 &     & 100/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{3 RO : 3 - 5 - 7}
+\label{tab:ch4_nist_22_3RO_15I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  98/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     &  99/100 &     &  99/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  98/100 &     &  35/100 & *   \\ \hline
+LongestRun              &  99/100 &     &   0/100 & *   &  99/100 &     &  25/100 & *   \\ \hline
+Rank                    &  99/100 &     & 100/100 &     & 100/100 &     & 100/100 &     \\ \hline
+FFT                     &  98/100 &     &  75/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &  36/148 & sp  & 148/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Universal               &  98/100 &     &  68/100 & *   &  96/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     2/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  99/100 &     &  99/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        &  97/100 &     & 100/100 &     & 100/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{3 RO : 5 - 7 - 9}
+\label{tab:ch4_nist_22_3RO_21I}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  98/100 &     & 100/100 &     &  97/100 &     &  99/100 &     \\ \hline
+BlockFrequency          &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &  32/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+LongestRun              & 100/100 &     &   0/100 & *   &  99/100 &     &  20/100 & *   \\ \hline
+Rank                    &  99/100 &     &  99/100 &     &  99/100 &     &  99/100 &     \\ \hline
+FFT                     & 100/100 &     &   0/100 & *   &  98/100 &     &  29/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &  10/148 & sp  & 148/148 & sp  &  30/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &   0/100 & *   &  99/100 &     &   1/100 & *   \\ \hline
+Universal               &  97/100 &     &   0/100 & *   & 100/100 &     &  21/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     7/8 & sp  &     1/8 & sp  &     8/8 & sp  &     8/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   17/18 & sp  \\ \hline
+Serial                  &  99/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Serial                  &  98/100 &     &  91/100 & *   &  99/100 &     &  95/100 & *   \\ \hline
+LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{NIST SP 800-90B}
+
+\begin{table}[H]
+\centering
+\caption{NIST SP 800-90: Non-IID entropy assessment}
+\label{tab:ch4_NIST_SP_800_90}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$H_{min}= 7.529456$} & 
+\makecell{$H_{min}= 7.493927$} & 
+\makecell{$H_{min}= 7.517294$} \\ \hline
+
+\textbf{true/false} &
+\makecell{$H_{min}= 6.449056$} &
+\makecell{$H_{min}= 7.194429$} &
+\makecell{$H_{min}= 3.317881$} \\ \hline
+
+\textbf{false/true} &
+\makecell{$H_{min}= 7.529456$} &
+\makecell{$H_{min}= 7.517294$} &
+\makecell{$H_{min}= 7.529456$} \\ \hline
+
+\textbf{false/false} &
+\makecell{$H_{min}= 6.441963$} &
+\makecell{$H_{min}= 4.746528$} &
+\makecell{$H_{min}= 2.274360$} \\ \hline
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\end{minipage}
+\end{table}
+
+
+\subsection{ENT}
+
+\begin{table}[H]
+\centering
+\caption{ENT: Fourmilab Random Sequence Tester}
+\label{tab:ch4_NIST_SP_800_90}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$\text{Entropy}= 7.999998$} & 
+\makecell{$\text{Entropy}= 7.999998$} & 
+\makecell{$\text{Entropy}= 7.999997$} \\ \hline
+
+\textbf{true/false} &
+\makecell{$\text{Entropy}= 7.864606$} &
+\makecell{$\text{Entropy}= 7.977855$} &
+\makecell{$\text{Entropy}= 7.168778$} \\ \hline
+
+\textbf{false/true} &
+\makecell{$\text{Entropy}= 7.999988$} &
+\makecell{$\text{Entropy}= 7.999995$} &
+\makecell{$\text{Entropy}= 7.999742$} \\ \hline
+
+\textbf{false/false} &
+\makecell{$\text{Entropy}= 7.917160$} &
+\makecell{$\text{Entropy}= 7.398469$} &
+\makecell{$\text{Entropy}= 5.322542$} \\ \hline
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+\textbf{Legend:} Entropy = X bits per byte.
+\end{minipage}
+\end{table}
+
+%###############################################################################
 \section{Wpływ rozmieszczenia RO w układzie FPGA na losowość}
+
+\subsection{NIST SP 800-22}
+
+\begin{flushleft}
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 96 for a
+sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
+\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
+\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
+\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\end{flushleft}
+
+
+\begin{table}[H]
+\centering
+\caption{2 RO : 3 - 5 rozproszone}
+\label{tab:ch4_nist_22_2RO_8I_DISTRIBUTED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+BlockFrequency          &  96/100 &     & 100/100 &     &  95/100 & *   & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  98/100 &     & 100/100 &     &  97/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  86/100 & *   &   0/100 & *   \\ \hline
+LongestRun              & 100/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Rank                    & 100/100 &     &  99/100 &     & 100/100 &     &  98/100 &     \\ \hline
+FFT                     & 100/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  &   5/148 & sp  & 144/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     &  98/100 &     &   0/100 & *   &  96/100 &     &   0/100 & *   \\ \hline
+Universal               &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &  87/100 & *   &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/0 & sp  &     8/8 & sp  &     0/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &    0/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        & 100/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{2 RO : 3 - 5 zlokalizowane}
+\label{tab:ch4_nist_22_2RO_8I_LOCALIZED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     & 100/100 &     &  98/100 &     &  19/100 & *   \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  99/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  99/100 &     &  26/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  96/100 &     &  23/100 & *   \\ \hline
+Runs                    &  98/100 &     &   0/100 & *   &  71/100 & *   &   0/100 & *   \\ \hline
+LongestRun              &  99/100 &     &   0/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Rank                    &  98/100 &     &  99/100 &     & 100/100 &     &  98/100 &     \\ \hline
+FFT                     &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  &   4/148 & sp  & 111/148 & sp  &   5/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &   0/100 & *   &  89/100 & *   &   0/100 & *   \\ \hline
+Universal               &  96/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &   9/100 & *   &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     0/8 & sp  &     8/8 & sp  &     1/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   17/18 & sp  \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  96/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  11/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{3 RO : 5 - 7 - 9 rozproszone}
+\label{tab:ch4_nist_22_3RO_21I_DISTRIBUTED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     &  99/100 &     &  96/100 &     &  96/100 &     \\ \hline
+BlockFrequency          & 100/100 &     & 100/100 &     &  99/100 &     &  84/100 & *   \\ \hline
+CumulativeSums          & 100/100 &     &  99/100 &     &  97/100 &     &  98/100 &     \\ \hline
+CumulativeSums          &  98/100 &     &  99/100 &     &  97/100 &     &  97/100 &     \\ \hline
+Runs                    &  98/100 &     &   0/100 & *   & 100/100 &     &  99/100 &     \\ \hline
+LongestRun              & 100/100 &     &  46/100 & *   & 100/100 &     &  29/100 & *   \\ \hline
+Rank                    &  99/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+FFT                     &  98/100 &     &  45/100 & *   &  99/100 &     &  43/100 & *   \\ \hline
+NonOverlappingTemplate  & 146/148 & sp  &  19/148 & sp  & 148/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     &  98/100 &     &  21/100 & *   &  99/100 &     &   2/100 & *   \\ \hline
+Universal               &  97/100 &     &  18/100 & *   &  99/100 &     &   8/100 & *   \\ \hline
+ApproximateEntropy      &  98/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     5/8 & sp  &     8/8 & sp  &     6/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  & 100/100 &     &   0/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  96/100 &     &  97/100 &     & 100/100 &     \\ \hline
+LinearComplexity        &  99/100 &     & 100/100 &     &  99/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{3 RO : 5 - 7 - 9 zlokalizowane}
+\label{tab:ch4_nist_22_3RO_21I_LOCALIZED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+BlockFrequency          & 100/100 &     &  95/100 & *   &  97/100 &     &  39/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     & 100/100 &     &  98/100 &     & 100/100 &     \\ \hline
+Runs                    &  97/100 &     &   0/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+LongestRun              &  98/100 &     &  55/100 & *   &  99/100 &     &  68/100 & *   \\ \hline
+Rank                    & 100/100 &     &  99/100 &     & 100/100 &     &  98/100 &     \\ \hline
+FFT                     & 100/100 &     &  32/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+NonOverlappingTemplate  & 147/148 & sp  &  19/148 & sp  & 148/148 & sp  &   2/148 & sp  \\ \hline
+OverlappingTemplate     &  98/100 &     &  50/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+Universal               & 100/100 &     &  56/100 & *   &  98/100 &     &   0/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   0/100 & *   &  95/100 & *   &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     7/8 & sp  &     8/8 & sp  &     0/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  98/100 &     &   0/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+Serial                  &  99/100 &     &  96/100 &     &  99/100 &     &   0/100 & *   \\ \hline
+LinearComplexity        & 100/100 &     &  98/100 &     & 100/100 &     & 100/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{6 RO : 5 - 7 - 9 - 11 - 13 - 15 rozproszone}
+\label{tab:ch4_nist_22_6RO_60I_DISTRIBUTED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               & 100/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+BlockFrequency          &  98/100 &     & 100/100 &     & 100/100 &     &   0/100 & *   \\ \hline
+CumulativeSums          &  99/100 &     &  99/100 &     &  98/100 &     &  99/100 &     \\ \hline
+CumulativeSums          & 100/100 &     &  99/100 &     &  98/100 &     &  97/100 &     \\ \hline
+Runs                    &  99/100 &     &  61/100 & *   &  97/100 &     &  99/100 &     \\ \hline
+LongestRun              & 100/100 &     &  60/100 & *   &  98/100 &     &  41/100 & *   \\ \hline
+Rank                    &  99/100 &     & 100/100 &     & 100/100 &     &  99/100 &     \\ \hline
+FFT                     &  96/100 &     &  98/100 &     &  99/100 &     &  43/100 & *   \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  & 109/148 & sp  & 147/148 & sp  &   0/148 & sp  \\ \hline
+OverlappingTemplate     &  99/100 &     &   2/100 & *   &  97/100 &     &   0/100 & *   \\ \hline
+Universal               &  99/100 &     & 100/100 &     &  99/100 &     &  32/100 & *   \\ \hline
+ApproximateEntropy      & 100/100 &     &   2/100 & *   &  99/100 &     &   0/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  &  99/100 &     &  85/100 & *   & 100/100 &     &   0/100 & *   \\ \hline
+Serial                  & 100/100 &     &  98/100 &     & 100/100 &     &  98/100 &     \\ \hline
+LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     &  99/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{6 RO : 5 - 7 - 9 - 11 - 13 - 15 zlokalizowane}
+\label{tab:ch4_nist_22_6RO_60I_LOCALIZED}
+\begin{tabular}{|l|c|l|c|l|c|l|c|l|}
+\hline
+\textbf{Statistical Test} & \multicolumn{2}{c|}{\textbf{true/true}} & \multicolumn{2}{c|}{\textbf{true/false}} & \multicolumn{2}{c|}{\textbf{false/true}} & \multicolumn{2}{c|}{\textbf{false/false}} \\ \hline
+Frequency               &  99/100 &     &  98/100 &     & 100/100 &     & 100/100 &     \\ \hline
+BlockFrequency          & 100/100 &     &  99/100 &     &  99/100 &     &  63/100 & *   \\ \hline
+CumulativeSums          &  98/100 &     &  98/100 &     &  99/100 &     & 100/100 &     \\ \hline
+CumulativeSums          &  99/100 &     &  97/100 &     & 100/100 &     & 100/100 &     \\ \hline
+Runs                    & 100/100 &     &   0/100 & *   &  96/100 &     & 100/100 &     \\ \hline
+LongestRun              & 100/100 &     &  98/100 &     & 100/100 &     &  97/100 &     \\ \hline
+Rank                    &  99/100 &     &  98/100 &     & 100/100 &     &  99/100 &     \\ \hline
+FFT                     & 100/100 &     & 100/100 &     &  99/100 &     &  99/100 &     \\ \hline
+NonOverlappingTemplate  & 148/148 & sp  & 102/148 & sp  & 148/148 & sp  & 118/148 & sp  \\ \hline
+OverlappingTemplate     & 100/100 &     &  99/100 &     &  97/100 &     &  75/100 & *   \\ \hline
+Universal               & 100/100 &     &  95/100 & *   &  98/100 &     & 100/100 &     \\ \hline
+ApproximateEntropy      &  99/100 &     &  14/100 & *   &  99/100 &     &  22/100 & *   \\ \hline
+RandomExcursions        &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  &     8/8 & sp  \\ \hline
+RandomExcursionsVariant &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  &   18/18 & sp  \\ \hline
+Serial                  & 100/100 &     &  96/100 &     & 100/100 &     &  94/100 & *   \\ \hline
+Serial                  &  99/100 &     &  98/100 &     & 100/100 &     &  98/100 &     \\ \hline
+LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/100 &     \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{NIST SP 800-90B}
+
+% ==> ./ch4/6RO_60I_D/tests_results/nist90/false_false.log <==
+% min(H_original, 8 X H_bitstring): 
+
+% ==> ./ch4/6RO_60I_D/tests_results/nist90/false_true.log <==
+% min(H_original, 8 X H_bitstring): 
+
+% ==> ./ch4/6RO_60I_D/tests_results/nist90/true_false.log <==
+% min(H_original, 8 X H_bitstring): 
+
+% ==> ./ch4/6RO_60I_D/tests_results/nist90/true_true.log <==
+% min(H_original, 8 X H_bitstring): 
+
+
+
+\begin{table}[H]
+\centering
+\caption{NIST SP 800-90: Non-IID entropy assessment}
+\label{tab:ch4_NIST_SP_800_90_D}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{6RO 5-7-9-11-13-15 D} & \textbf{3RO 5-7-9 D} & \textbf{2RO 3-5 D} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$H_{min}= 7.529456$} & 
+\makecell{$H_{min}= 7.464863$} & 
+\makecell{$H_{min}= 7.529456$} \\ \hline
+
+\textbf{true/false} &
+\makecell{$H_{min}= 7.505457$} &
+\makecell{$H_{min}= 6.252241$} &
+\makecell{$H_{min}= 2.672020$} \\ \hline
+
+\textbf{false/true} &
+\makecell{$H_{min}= 7.464863$} &
+\makecell{$H_{min}= 7.517294$} &
+\makecell{$H_{min}= 7.505457$} \\ \hline
+
+\textbf{false/false} &
+\makecell{$H_{min}= 6.755574$} &
+\makecell{$H_{min}= 6.462812$} &
+\makecell{$H_{min}= 2.779685$} \\ \hline
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\end{minipage}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{NIST SP 800-90: Non-IID entropy assessment}
+\label{tab:ch4_NIST_SP_800_90_L}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{6RO 5-7-9-11-13-15 L} & \textbf{3RO 5-7-9 L} & \textbf{2RO 3-5 L} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$H_{min}= $} & 
+\makecell{$H_{min}= $} & 
+\makecell{$H_{min}= $} \\ \hline
+
+\textbf{true/false} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} \\ \hline
+
+\textbf{false/true} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} \\ \hline
+
+\textbf{false/false} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} &
+\makecell{$H_{min}= $} \\ \hline
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\end{minipage}
+\end{table}
+
+
+\subsection{ENT}
+
+\begin{table}[H]
+\centering
+\caption{ENT: Fourmilab Random Sequence Tester}
+\label{tab:ch4_NIST_SP_800_90}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Konfiguracja} & \textbf{3RO 5-7-9} & \textbf{3RO 3-5-7} & \textbf{2RO 3-5} \\ \hline
+
+\textbf{true/true} &  
+\makecell{$\text{Entropy}= $} & 
+\makecell{$\text{Entropy}= $} & 
+\makecell{$\text{Entropy}= $} \\ \hline
+
+\textbf{true/false} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}= $} \\ \hline
+
+\textbf{false/true} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}= $} \\ \hline
+
+\textbf{false/false} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}= $} &
+\makecell{$\text{Entropy}=  $} \\ \hline
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+\textbf{Legend:} Entropy = X bits per byte.
+\end{minipage}
+\end{table}
+
+% ##############################################################################
 \section{Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}
 \section{Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}
 
