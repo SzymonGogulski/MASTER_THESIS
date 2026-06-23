@@ -1,48 +1,41 @@
 \babel@toc {polish}{}\relax 
 \babel@toc {polish}{}\relax 
 \contentsline {chapter}{\chapternumberline {1}Wstęp}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Zapotrzebowanie na niezawodne źródła losowości}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Znaczenie losowości w procesie kryptograficznym}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Cel pracy}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Charakterystyka literatury}{1}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Układ pracy}{2}{section.1.4}%
-\contentsline {chapter}{\chapternumberline {2}Podstawy teoretyczne}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Entropia Shannon'a}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}PRNG a TRNG}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Oscylator pierścieniowy}{4}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Architektura modułu neoTRNG}{4}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Korekcja źródła}{5}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Korektor Von-Neumanna}{5}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Metody przetwarzania końcowego}{5}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}XOR}{5}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}CRC}{5}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Ekstraktor Toeplitz'a}{5}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}AES-256}{5}{subsection.2.6.4}%
-\contentsline {section}{\numberline {2.7}Metody badania źródeł entropii}{5}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}ENT}{5}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}NIST SP 800-22}{5}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}NIST SP 800-90B}{5}{subsection.2.7.3}%
-\contentsline {section}{\numberline {2.8}Moduły testowe}{5}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}RCT}{5}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}APT}{5}{subsection.2.8.2}%
-\contentsline {section}{\numberline {2.9}Sprzęt}{5}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Digilent CoraZ7-07S}{5}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Digilent Nexys 4 DDR}{5}{subsection.2.9.2}%
-\contentsline {chapter}{\chapternumberline {3}Testy bazowe}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Modyfikacja}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}ENT}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}NIST SP 800-22}{7}{section.3.3}%
-\contentsline {section}{\numberline {3.4}NIST SP 800-90B}{8}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Zużycie zasobów}{8}{section.3.5}%
-\contentsline {chapter}{\chapternumberline {4}Analiza rozmieszczenia}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}ENT}{12}{section.4.1}%
-\contentsline {section}{\numberline {4.2}NIST SP 800-90B}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}NIST SP 800-22}{12}{section.4.3}%
-\contentsline {chapter}{\chapternumberline {5}Faza algorytmiczna i optymalizacja ekstrakcji}{15}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Faza odporności i monitorowanie online}{16}{chapter.6}%
-\contentsline {chapter}{\chapternumberline {7}neoTRNG na FPGA dla RPI}{17}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Zakończenie}{18}{chapter.8}%
-\contentsline {chapter}{Literatura}{19}{chapter*.4}%
-\contentsline {appendix}{\chapternumberline {A}Kod źródłowy}{20}{appendix.A}%
-\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{20}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Raport}{21}{appendix.B}%
-\contentsline {appendix}{\chapternumberline {C}Notatki}{22}{appendix.C}%
+\contentsline {section}{\numberline {1.3}Uzasadnienie podjęcia tematu w kontekście systemów brzegowych}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Charakterystyka literatury}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Układ pracy}{2}{section.1.5}%
+\contentsline {chapter}{\chapternumberline {2}Teoretyczne aspekty projektowania sprzętowych generatorów liczb losowych}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Źródła losowości}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}TRBG}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}PRBG}{5}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}QRBG}{5}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Zasada działania Quantis USB 4M}{5}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}RO jako źródła losowości w FPGA}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ekstraktory losowości}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Ekstraktor von Neumanna}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Wielomian CRC}{5}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Ekstraktor Toeplitz'a}{5}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Szyfr strumieniowy AES-CTR}{5}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Metody oceny losowości}{5}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}ENT - Fourmilab Random Sequence Tester}{5}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}NIST SP 800-22 - A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications}{5}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}NIST SP 800-90B - Entropy Assessment Test Suite}{5}{subsection.2.4.3}%
+\contentsline {chapter}{\chapternumberline {3}Modułowa platforma sprzętowa do oceny losowości generatora neoTRNG}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Architektura bazowa neoTRNG opartego na RO}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Projekt i implementacja ekstraktora kryptograficznego AES-CTR}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Zarządzanie wykorzystaniem zasobów sprzętowych dla RO na FPGA}{6}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {4}Badania eksperymentalne}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Wpływ metody post-processingu na losowość}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Wpływ skalowania liczby oscylatorów RO na losowość}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Wpływ rozmieszczenia RO w układzie FPGA na losowość}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}{7}{section.4.5}%
+\contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{8}{chapter.5}%
+\contentsline {chapter}{Literatura}{9}{chapter*.4}%
+\contentsline {appendix}{\chapternumberline {A}Floorplanning}{10}{appendix.A}%
+\contentsline {section}{\numberline {A.1}neoTRNG\_mod\_1.vhd}{10}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów}{11}{appendix.B}%
+\contentsline {section}{\numberline {B.1}neoTRNG\_mod\_1.vhd}{11}{section.B.1}%

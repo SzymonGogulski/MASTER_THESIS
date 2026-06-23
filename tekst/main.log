@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  25 MAY 2026 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  23 JUN 2026 17:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -734,20 +734,7 @@ runsystem(command -v pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
 
- (./main.aux
-
-LaTeX Warning: Label `fig:distributed_cells_ch4' multiply defined.
-
-
-LaTeX Warning: Label `fig:localized_cells_ch4' multiply defined.
-
-
-LaTeX Warning: Label `tab:nist_22_3RO_21I_L' multiply defined.
-
-
-LaTeX Warning: Label `tab:nist_22_3RO_21I_L' multiply defined.
-
-)
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -801,7 +788,7 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
-<wit/sygnet-pp-eps-converted-to.pdf, id=191, 1391.1975pt x 278.03876pt>
+<wit/sygnet-pp-eps-converted-to.pdf, id=163, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
 Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 45.
@@ -818,164 +805,44 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
  [1
 
-]) (./main.lof) (./main.lot [2]) [3] (./chapters/01-wstep.tex [1
+]) (./main.lof) (./main.lot) [2] (./chapters/01-wstep.tex [1
 
 
 
-]) (./chapters/02-teoria.tex [2]
-<figures/ch2/nist_source_schematic.png, id=332, 889.3225pt x 611.28375pt>
+] [2]) (./chapters/02-teoria.tex [3]
+<figures/ch2/nist_source_schematic.png, id=264, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
-Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 32.
+Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 28.
 (pdftex.def)             Requested size: 319.5pt x 219.60493pt.
-Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 48.
+Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 43.
  (./svg-inkscape/schematic_svg-tex.pdf_tex
-<./svg-inkscape/schematic_svg-tex.pdf, id=337, page=1, 416.71994pt x 111.85147pt>
+<./svg-inkscape/schematic_svg-tex.pdf, id=269, page=1, 416.71994pt x 111.85147pt>
 File: ./svg-inkscape/schematic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/schematic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 426.0pt x 114.34126pt.
-) [3
+) [4
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.52 
-      <./figures/ch2/nist_source_schematic.png>]
-<figures/ch2/neotrng_architecture.png, id=351, 519.03pt x 169.506pt>
-File: figures/ch2/neotrng_architecture.png Graphic file (type png)
-<use figures/ch2/neotrng_architecture.png>
-Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 64.
-(pdftex.def)             Requested size: 426.0pt x 139.13031pt.
-) (./chapters/03-testy-bazowe.tex [4
+l.47 
+      <./figures/ch2/nist_source_schematic.png>]) (./chapters/03-neoTRNG.tex [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.46 \chapter
-             {Testy bazowe}
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.46 \chapter
-             {Testy bazowe} <./svg-inkscape/schematic_svg-tex.pdf> <./figures/ch2/neotrng_architecture.png>] [5] [6
+l.1 \chapter
+            {Modułowa platforma sprzętowa do oceny losowości generatora n... <./svg-inkscape/schematic_svg-tex.pdf>]) (./chapters/04-badania.tex [6
 
+]) (./chapters/05-podsumowanie.tex [7
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.102 \small \textbf{Note:}
-                            The minimum pass rate for each statistical test ...] [7
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.190 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.190 
-      ]) (./chapters/04-analiza-rozmieszczenia.tex [8
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.20 \chapter
-             {Analiza rozmieszczenia}
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.20 \chapter
-             {Analiza rozmieszczenia}
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.20 \chapter
-             {Analiza rozmieszczenia}]
-<figures/ch4/distributed 2.png, id=403, 1147.28625pt x 894.34125pt>
-File: figures/ch4/distributed 2.png Graphic file (type png)
-<use figures/ch4/distributed 2.png>
-Package pdftex.def Info: figures/ch4/distributed 2.png  used on input line 40.
-(pdftex.def)             Requested size: 383.3974pt x 298.85902pt.
- [9
-
-]
-<figures/ch4/localized_2.png, id=408, 1152.305pt x 898.35625pt>
-File: figures/ch4/localized_2.png Graphic file (type png)
-<use figures/ch4/localized_2.png>
-Package pdftex.def Info: figures/ch4/localized_2.png  used on input line 47.
-(pdftex.def)             Requested size: 383.3974pt x 298.89847pt.
-<figures/ch4/6D2.png, id=409, 1166.3575pt x 900.36375pt>
-File: figures/ch4/6D2.png Graphic file (type png)
-<use figures/ch4/6D2.png>
-Package pdftex.def Info: figures/ch4/6D2.png  used on input line 54.
-(pdftex.def)             Requested size: 383.3974pt x 295.95319pt.
- [10
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.58 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.58 
-      <./figures/ch4/distributed 2.png> <./figures/ch4/localized_2.png>]
-<figures/ch4/6DL.png, id=416, 1166.3575pt x 900.36375pt>
-File: figures/ch4/6DL.png Graphic file (type png)
-<use figures/ch4/6DL.png>
-Package pdftex.def Info: figures/ch4/6DL.png  used on input line 61.
-(pdftex.def)             Requested size: 383.3974pt x 295.95319pt.
- [11
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.81 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.81 
-      <./figures/ch4/6D2.png> <./figures/ch4/6DL.png>] [12
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.186 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.186 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.186 
-      ]) (./chapters/05-algo-optym.tex [13
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.15 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.15 
-     ] [14
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.16 \chapter
-             {Faza algorytmiczna i optymalizacja ekstrakcji}]) (./chapters/06-odpornosc-monitoring.tex [15
-
-]) (./chapters/07-neoTRNG-RPI.tex [16
-
-]) (./chapters/08-zakonczenie.tex [17
-
-]) (./main.bbl [18
+]) (./main.bbl [8
 
 ]
 bibitemlist
-) [19
+) [9
 
 ] (./chapters/zalacznik-A.tex
 \openout4 = `main.pyg'.
@@ -984,24 +851,25 @@ bibitemlist
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-))) (./chapters/zalacznik.tex [20
+))) (./chapters/zalacznik-B.tex [10
 
-
-] [21
-
-]) [22
 
 ]
-<wit/logo-pp.pdf, id=497, 422.57875pt x 422.57875pt>
+\openout4 = `main.pyg'.
+
+ (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) [11
+
+]
+<wit/logo-pp.pdf, id=315, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
-Package pdftex.def Info: wit/logo-pp.pdf  used on input line 109.
+Package pdftex.def Info: wit/logo-pp.pdf  used on input line 108.
 (pdftex.def)             Requested size: 42.67946pt x 42.67912pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 109.
+(Font)              <8> on input line 108.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 109.
- [23
+(Font)              <6> on input line 108.
+ [12
 
  <./wit/logo-pp.pdf>]
 \tf@toc=\write8
@@ -1018,28 +886,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F5E97AD55F8A4BB80C37D9B542D33F41;7300.
+(rerunfilecheck)             Checksum: 2415298C52AAA6CBBD3CA2B664989D98;10352.
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 19838 strings out of 476074
- 344075 string characters out of 5793136
- 1968975 words of memory out of 5000000
- 41348 multiletter control sequences out of 15000+600000
- 574721 words of font info for 64 fonts, out of 8000000 for 9000
+ 19677 strings out of 476074
+ 341129 string characters out of 5793136
+ 1939975 words of memory out of 5000000
+ 41270 multiletter control sequences out of 15000+600000
+ 573244 words of font info for 62 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
- 99i,17n,107p,407b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main.pdf (28 pages, 509823 bytes).
+ 99i,12n,107p,814b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>
+Output written on main.pdf (16 pages, 296534 bytes).
 PDF statistics:
- 1189 PDF objects out of 1200 (max. 8388607)
- 542 compressed objects within 6 object streams
- 140 named destinations out of 1000 (max. 500000)
- 431 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 897 PDF objects out of 1000 (max. 8388607)
+ 357 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

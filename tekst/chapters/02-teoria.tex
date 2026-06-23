@@ -1,5 +1,5 @@
 
-\chapter{Podstawy teoretyczne}
+\chapter{Teoretyczne aspekty projektowania sprzętowych generatorów liczb losowych}
 
 % Rozdział teoretyczny --- przegląd literatury naświetlający stan wiedzy na dany temat. 
 
@@ -11,37 +11,32 @@
 % dotyczy to również rysunków, tabel, fragmentów kodu źródłowego programów itd. Należy także podać
 % adresy stron internetowych w przypadku źródeł pochodzących z Internetu.
 
-\noindent Projektowanie sprzętowych generatorów liczb losowych wiąże się z syntezą wiedzy z wielu 
-dziedzin: elektroniki cyfrowej, fizyki, przetwarzania sygnałów, kryptografii oraz teorii 
-informacji. W niniejszej części przedstawiono najważniejsze pojęcia związane z tematyką pracy. 
-Wyjaśnione zostaną zarówno pojęcia fundamentalne jak losowość według Shannon'a 
-oraz bardziej złożone zagadnienia architektury źródła entropii. 
+\noindent Niniejszy rozdział przedstawia teoretyczne podstawy projektoawnia 
+sprzętowych generatorów liczb losowych. Omówiona zostanie klasyfikacja architektur generatorów 
+oraz fizyczne zjawiska wykorzystywane do pozyskiwania entropii w układach programowalnych 
+FPGA. Ponadto wytłumaczne zostaną metody obróbki sygnałów losowych oraz 
+standardy statystyczne stosowane do walidacji jakości generowanych danych.
 
-\section{Entropia Shannon'a}
-
-\begin{enumerate}
-    \item Wstaw podręcznikową definicję, pamiętaj o \textbackslash cite
-    \item porównaj dwa sygnały, 01010101010101010101, i 11001011101110100011 za pomocą ENT
-\end{enumerate}
+\section{Źródła losowości}
 
 
-\section{PRNG a TRNG}
+
+\subsection{TRBG}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch2/nist_source_schematic.png}
-    \caption{Model źródła entropii. Źródło:~\cite{NIST-SP-800-90B}}
+    \caption{Model źródła entropii. \cite{NIST-SP-800-90B}}
     \label{fig:model_zrodla_entropii_nist}
 \end{figure}
 
-\begin{enumerate}
-    \item Omów różnicę między PRNG i TRNG, najlepiej na podstawie źródła
-    \item Podkreśl znaczenie pochodzenia szumu ze źródła analogowego
-    \item Opisz model źródła nist
-\end{enumerate}
+\subsection{PRBG}
 
+\subsection{QRBG}
 
-\section{Oscylator pierścieniowy}
+\subsection{Zasada działania Quantis USB 4M}
+
+\section{RO jako źródła losowości w FPGA}
 
 \begin{figure}[H]
     \centering
@@ -50,59 +45,47 @@ oraz bardziej złożone zagadnienia architektury źródła entropii.
     \label{fig:oscylator_3xNOT}
 \end{figure}
 
+\section{Ekstraktory losowości}
 
-\begin{enumerate}
-    \item Opisz oscylator pierścieniowy/ (pętlę kombinatoryczną z bramką NOT)
-    \item przedstaw najprostszy przykład: RTL, układ, symulację, widok z oscyloskopu.
-    \item sprawdz czy tak prosty przykład będzie generować sygnał losowy
-\end{enumerate}
+\subsection{Ekstraktor von Neumanna}
 
-\section{Architektura modułu neoTRNG}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/ch2/neotrng_architecture.png}
-    \caption{Architektura neoTRNG. Źródło:~\cite{neoTRNG}}
-    \label{fig:architektura_neotrng}
-\end{figure}
-
-\begin{enumerate}
-    \item Opisz elementy składowe modułu
-\end{enumerate}
-
-\section{Korekcja źródła}
-
-\subsection{Korektor Von-Neumanna}
-
-\section{Metody przetwarzania końcowego}
-
-\subsection{XOR}
-
-\subsection{CRC}
+\subsection{Wielomian CRC}
 
 \subsection{Ekstraktor Toeplitz'a}
 
-\subsection{AES-256}
+\subsection{Szyfr strumieniowy AES-CTR}
+
+\section{Metody oceny losowości}
+
+\subsection{ENT - Fourmilab Random Sequence Tester}
+
+\subsection{NIST SP 800-22 - A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications}
+
+\subsection{NIST SP 800-90B - Entropy Assessment Test Suite}
 
 
-\section{Metody badania źródeł entropii}
-
-\subsection{ENT}
-
-\subsection{NIST SP 800-22}
-
-\subsection{NIST SP 800-90B}
+% \section{Architektura modułu neoTRNG}
 
 
-\section{Moduły testowe}
 
-\subsection{RCT}
+% \begin{enumerate}
+%     \item Opisz elementy składowe modułu
+% \end{enumerate}
 
-\subsection{APT}
-
-
-\section{Sprzęt}
-
-\subsection{Digilent CoraZ7-07S}
-
-\subsection{Digilent Nexys 4 DDR}
+% \section{Korekcja źródła}
+% \subsection{Korektor Von-Neumanna}
+% \section{Metody przetwarzania końcowego}
+% \subsection{XOR}
+% \subsection{CRC}
+% \subsection{Ekstraktor Toeplitz'a}
+% \subsection{AES-256}
+% \section{Metody badania źródeł entropii}
+% \subsection{ENT}
+% \subsection{NIST SP 800-22}
+% \subsection{NIST SP 800-90B}
+% \section{Moduły testowe}
+% \subsection{RCT}
+% \subsection{APT}
+% \section{Sprzęt}
+% \subsection{Digilent CoraZ7-07S}
+% \subsection{Digilent Nexys 4 DDR}

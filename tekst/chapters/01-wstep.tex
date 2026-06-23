@@ -41,44 +41,98 @@
 % Grzegorz Brzęczyszczykiewicz wykonał ......, itd. 
 % \end{quote}
 
-\section{Zapotrzebowanie na niezawodne źródła losowości}
+\section{Znaczenie losowości w procesie kryptograficznym}
 
-\noindent Generatory liczb losowych stanowią podstawę algorytmów współczesnej 
-kryptografii~\cite{2016Sreekumar-Ramesh}. Generowanie par kluczy kryptograficznych 
-oraz tworzenie podpisów cyfrowych nie byłyby możliwe bez odpowiednich źródeł 
-losowości. Jednocześnie generatory liczb losowych, które nie spełniają 
-wymagań statystycznych oraz miar losowości, mogą znacząco osłabiać 
-bezpieczeństwo stosowanych algorytmów. Przesłanki te stanowią motywację 
-do podjęcia badań nad oceną dostępnych generatorów.
+\noindent Generatory liczb losowych stanowią istotną część algorytmów współczesnej 
+kryptografii~\cite{2016Sreekumar-Ramesh}. Liczby losowe wykorzystywane są w zadaniach kryptografii na różnych etapach i w wielu 
+różnych celach.
+
+Generowanie par kluczy kryptograficznych algorytmem RSA zapewnia bezpieczeństwo 
+komunikacji, zakładając wysoką złożoność obliczeniową faktoryzacji iloczynu dwóch losowych liczb pierwszych. 
+Dopiero gdy dane liczby pierwsze spełniają kryteria oceny losowości, możemy stwierdzić, że 
+para kluczy będzie bezpieczna. Tzn. próba faktoryzacji będzie na tyle wymagająca 
+sprzętowo i czasowo, aby uczynić ją nieopłacalną dla atakującego.
+
+Tworzenie podpisów cyfrowych nie byłoby możliwe bez odpowiednich źródeł 
+losowości. Kryptografia krzywych eliptycznych, stosowana przy podpisywaniu plików binarnych, 
+zawiera element losowy w postaci jednorazowego nonce. 
+Sytuacja, w której nonce nie spełnia miar losowości, naraża na niebezpieczeństwo 
+cały klucz prywatny producenta. Samo występowanie okresowości w generowanych nonce 
+otwiera drzwi dla nowych wektorów ataku.
+
+W różnych trybach pracy szyfrów blokowych, takich jak AES, wprowadzane są dodatkowe 
+wartości losowe, takie jak IV czy nonce. Powtarzalny nonce w trybie AES-CTR naraża bezpieczeństwo 
+szyfrowanej wiadomości. Przechwycenie dwóch różnych szyfrogramów wygenerowanych z tym samym
+nonce umożliwia wydobycie tekstu jawnego. 
+
+Przesłanki te stanowią motywację do podjęcia badań nad oceną dostępnych generatorów losowości.
 
 
 \section{Cel pracy}
 
-\noindent Celem niniejszej pracy magisterskiej jest implementacja oraz analiza 
-generatorów losowości bazujących na oscylatorach pierścieniowych. 
-Badane moduły będą implementowane jako układy cyfrowe realizowane 
-na płytach deweloperskich wyposażonych w układy FPGA. 
+\noindent Celem niniejszej pracy magisterskiej jest adaptacja oraz implementacja otwartoźródłowego 
+generatora losowości neoTRNG bazującego na oscylatorach pierścieniowych. 
+Badany moduł będzie implementowany jako układ cyfrowy realizowany 
+na płycie deweloperskiej wyposażonej w układ FPGA. Badania zostaną przeprowadzone za 
+pomocą dedykowanego środowiska testowego. 
 
-Kryteria oceny generatorów obejmować będą: zestaw testów statystycznych 
+Kryteria oceny generatora obejmować będą: zestaw testów statystycznych 
 zdefiniowanych w publikacji NIST SP 800-22~\cite{NIST-SP-800-22}, 
 zestaw testów do oceny entropii opisany w publikacji 
 NIST SP 800-90B~\cite{NIST-SP-800-90B} oraz program do oceny 
 generatorów pseudolosowych ENT~\cite{fourmilab-ENT}. Wraz z wynikami testów 
-zestawione zostaną informacje o zajętości 
-zasobów sprzętowych poszczególnych implementacji. Badane moduły będą 
+zestawione zostaną informacje o zajętości zasobów sprzętowych 
+i przepustowości poszczególnych implementacji. Badane moduły będą 
 stanowić modyfikacje bazowego rozwiązania neoTRNG przedstawionego 
 w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą aspekty takie jak: 
 liczba zastosowanych oscylatorów, zastosowanie korekcji źródła 
 (np. korektor Von Neumanna), metody przetwarzania końcowego 
-(post-processing) oraz fizyczne rozmieszczenie elementów w strukturze FPGA. 
+(post-processing) oraz fizyczne rozmieszczenie elementów w strukturze FPGA.
 
-Osobna faza badań poruszy kwestie analizy odporności układu oraz mechanizmów monitorowania. 
-Zbadany zostanie wpływ modułów testowych (Health Tests) oraz wpływ warunków 
-środowiskowych na jakość badanego źródła entropii.
+\section{Uzasadnienie podjęcia tematu w kontekście systemów brzegowych}
+Rosnąca złożoność systemów informatycznych wymusza na inżynierach podejmowanie 
+nowych rozwiązań technicznych. W odpowiedzi na znaczne uzależnienie systemów 
+informatycznych od usług chmurowych powstała dziedzina przetwarzania brzegowego 
+(ang. edge computing). Zakłada ona ograniczenie interakcji z chmurą poprzez 
+rozwój dedykowanych systemów brzegowych. Podejście to opiera się na przetwarzaniu 
+danych oraz podejmowaniu decyzji przez system bezpośrednio w miejscu, w którym 
+dane są generowane.
 
-Dodatkowy etap implementacyjny obejmie porównanie zastosowania neoTRNG 
-jako generatora entropii dla komputera jednopłytkowego Raspberry Pi 
-z rozwiązaniem komercyjnym, takim jak moduł Quantis.
+Podejście to ogranicza zależność od systemów chmurowych, jednak wprowadza nowe 
+zagrożenia charakterystyczne dla tej klasy systemów. Wiele z rozwiązań opartych 
+jest na układach scalonych dedykowanych do konkretnego zastosowania (ang. ASIC -
+ Application-Specific Integrated Circuit). Ich główną zaletą jest ich znaczna 
+ adaptowalność do zadań, które mają wykonywać. Jednak jest to opłacone znaczną 
+ złożonością rozwijanego systemu, co otwiera go na nowe podatności. Jedną ze 
+ szczególnych klas zagrożeń, wynikającą ze złożonego procesu rozwoju, są trojany 
+ sprzętowe wprowadzane przez atakującego na etapach projektowania i produkcji 
+ układów scalonych.
+
+Ze względu na powagę tego zagrożenia, przyjęto, że jedną z metod przeciwdziałania 
+jest promowanie układów scalonych rozwijanych w sposób transparentny i 
+weryfikowalny. Organizacje takie jak OSHWA i projekty jak RISC-V stanowią 
+fundament ruchu wspierającego transparentny rozwój otwartoźródłowych rozwiązań 
+technicznych.
+
+Organizacja Open-Source Hardware Association (OSHWA) oraz architektura zestawu 
+instrukcji RISC-V stanowią odpowiedź na kryzys zaufania do zamkniętych i 
+komercyjnych architektur. OSHW i RISC-V znajdują się we wspólnym ekosystemie 
+otwartoźródłowych technologii, choć pełnią różne zadania. Architektura RISC-V 
+jest jedynie standardem technicznym, który umożliwia rozwój układów scalonych. 
+Z kolei OSHW jest organem nadzorującym rozpowszechnianie konkretnych gotowych 
+rozwiązań. Połączenie OSHW i RISC-V poskutkowało powstaniem szerokiego wachlarza 
+transparentnych, otwartoźródłowych i bezpiecznych projektów układów scalonych.
+
+Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHW i 
+RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa napisana w 
+języku opisu sprzętu VHDL. Rozwiązanie to jest dedykowane inżynierom rozwijającym 
+systemy brzegowe w oparciu o układy FPGA.
+
+W strukturze procesora NEORV32 RISC-V zintegrowano moduł generatora entropii 
+neoTRNG, który stanowi główny przedmiot badań prowadzonych w ramach niniejszej 
+pracy magisterskiej. Podjęcie tematyki weryfikacji oraz analizy zastosowanego 
+generatora pozwala na realny wkład w rozwój bezpieczeństwa technologii otwartoźródłowych.
+
 
 
 \section{Charakterystyka literatury}
@@ -88,30 +142,34 @@ projektowania źródeł entropii oraz publikacje naukowe związane z analizowan�
 
 \section{Układ pracy}
 
-\noindent Struktura pracy obejmuje osiem rozdziałów oraz dodatkową sekcję załączników. 
+\noindent Struktura pracy obejmuje pięć rozdziałów oraz dodatkową sekcję załączników. 
 
 Rozdział pierwszy przedstawia motywację podjęcia badań w obszarze generatorów 
-entropii oraz określa założenia i cele pracy. 
+losowości oraz określa założenia i cele pracy. 
 
-Rozdział drugi koncentruje się na podstawach teoretycznych, omówione zostaną 
-definicje związane z tematyką pracy, architektura badanego źródła entropii, a 
-także metody korekcji źródła, metody przetwarzania końcowego oraz techniki oceny 
-(testy statystyczne i moduły testowe). 
+Rozdział drugi koncentruje się na podstawach teoretycznych. Omówiono w nim 
+definicje związane z tematyką pracy, dostępne ekstraktory entropii oraz metody 
+oceny losowości.
 
-Rozdział trzeci rozpoczyna część badawczą pracy i obejmuje analizę wpływu 
-korekcji źródła oraz metod przetwarzania końcowego na poziom entropii 
-i zajętość zasobów sprzętowych.
+Rozdział trzeci omawia architekturę badanego modułu neoTRNG oraz przedstawia 
+różne modyfikacje badanego generatora wraz z analizą ich zajętości sprzętowej.  
 
-Rozdział czwarty poświęcony jest analizie wpływu fizycznego rozmieszczenia 
-oscylatorów w strukturze układu na poziom entropii.
+Rozdział czwarty poświęcono badaniom eksperymentalnym. Zbadane zostaną: 
+\begin{itemize}
+    \item wpływ metod postprocessingu na losowość, 
+    \item wpływ skalowania liczby oscylatorów pierścieniowych oraz liczby inwerterów na losowość, 
+    \item wpływ zastosowania ekstraktorów AES-CTR i Toeplitza na losowość, 
+    \item wpływ rozmieszczenia komórek entropii w układzie FPGA na losowość. 
+\end{itemize}
 
-Rozdział piąty przedstawia porównanie różnych metod przetwarzania końcowego.
+Wraz z wynikami testów losowości dodana zostanie informacja o przepustowości 
+każdej z implementacji.
 
-Rozdział szósty rozszerza zakres badań o zagadnienia związane z monitorowaniem 
-działania źródła oraz wpływem warunków środowiskowych.
-
-Rozdział siódmy omawia dodatkowe aspekty implementacyjne oraz zawiera porównanie 
-modułu wykorzystującego oscylatory pierścieniowe z komercyjnym generatorem Quantis.
-
-Rozdział ósmy kończy pracę i podsumowuje najważniejsze wnioski wynikające z 
+Rozdział piąty kończy pracę i podsumowuje najważniejsze wnioski wynikające z 
 przeprowadzonych badań.
+
+Załącznik A zawiera instrukcję planowania rozmieszczenia elementów (ang. \textit{floorplanning}), wykonanego w ramach analizy rozmieszczenia 
+komórek entropii.
+
+Załącznik B zawiera instrukcję przedstawiającą metodę akwizycji oraz przetworzenia 
+danych testowych.
