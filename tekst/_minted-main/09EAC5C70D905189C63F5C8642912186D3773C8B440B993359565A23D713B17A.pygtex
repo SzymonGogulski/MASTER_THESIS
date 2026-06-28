@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{Entropy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.168778\PYG{+w}{ }bits\PYG{+w}{ }per\PYG{+w}{ }byte.
+
+Optimum\PYG{+w}{ }compression\PYG{+w}{ }would\PYG{+w}{ }reduce\PYG{+w}{ }the\PYG{+w}{ }size
+of\PYG{+w}{ }this\PYG{+w}{ }\PYG{l+m}{104857600}\PYG{+w}{ }byte\PYG{+w}{ }file\PYG{+w}{ }by\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }percent.
+
+Chi\PYG{+w}{ }square\PYG{+w}{ }distribution\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{l+m}{104857600}\PYG{+w}{ }samples\PYG{+w}{ }is\PYG{+w}{ }\PYG{l+m}{131655940}.14,\PYG{+w}{ }and\PYG{+w}{ }randomly
+would\PYG{+w}{ }exceed\PYG{+w}{ }this\PYG{+w}{ }value\PYG{+w}{ }less\PYG{+w}{ }than\PYG{+w}{ }\PYG{l+m}{0}.01\PYG{+w}{ }percent\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }times.
+
+Arithmetic\PYG{+w}{ }mean\PYG{+w}{ }value\PYG{+w}{ }of\PYG{+w}{ }data\PYG{+w}{ }bytes\PYG{+w}{ }is\PYG{+w}{ }\PYG{l+m}{127}.4529\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{127}.5\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }random\PYG{o}{)}.
+Monte\PYG{+w}{ }Carlo\PYG{+w}{ }value\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }Pi\PYG{+w}{ }is\PYG{+w}{ }\PYG{l+m}{3}.458389109\PYG{+w}{ }\PYG{o}{(}error\PYG{+w}{ }\PYG{l+m}{10}.08\PYG{+w}{ }percent\PYG{o}{)}.
+Serial\PYG{+w}{ }correlation\PYG{+w}{ }coefficient\PYG{+w}{ }is\PYG{+w}{ }\PYG{l+m}{0}.000098\PYG{+w}{ }\PYG{o}{(}totally\PYG{+w}{ }\PYG{n+nv}{uncorrelated}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.0\PYG{o}{)}.
+\end{Verbatim}

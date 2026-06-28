@@ -6,9 +6,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2/neotrng_architecture.png}
-    \caption{Model źródła entropii. \cite{neoTRNG}}
-    \label{fig:ch3_architektura }
+    \caption{Architektura neoTRNG. \cite{neoTRNG}}
+    \label{fig:ch3_architektura}
 \end{figure}
+
 
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
 
@@ -17,6 +18,57 @@
 \section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz}
 
 
+\subsection{Wykorzystanie zasobów}
 
-\section{Zarządzanie wykorzystaniem zasobów sprzętowych dla RO na FPGA}
 
+\begin{table}[H]
+  \centering
+  \caption{Compiled Resource Utilization Results across Chapters}
+  \label{tab:resource_utilization}
+\begin{tabular}{llllccccc} % 9 columns total
+    \hline
+    \textbf{Algo.} & \textbf{RO} & \textbf{I} & \textbf{VN} & \textbf{CRC} & \textbf{LUTs} & \textbf{Registers} & \textbf{F7 Mux} & \textbf{F8 Mux} \\
+    \hline
+    VN-CRC   & 2 & 8I    & False & False & 39    & 39   & 0   & 0 \\
+    VN-CRC   & 2 & 8I    & False & True  & 37    & 41   & 0   & 0 \\
+    VN-CRC   & 2 & 8I    & True  & False & 38    & 42   & 0   & 0 \\
+    VN-CRC   & 2 & 8I    & True  & True  & 44    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 15I   & False & False & 60    & 41   & 0   & 0 \\
+    VN-CRC   & 3 & 15I   & False & True  & 61    & 43   & 0   & 0 \\
+    VN-CRC   & 3 & 15I   & True  & False & 52    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 15I   & True  & True  & 50    & 46   & 0   & 0 \\
+    VN-CRC   & 3 & 21I   & False & False & 61    & 41   & 0   & 0 \\
+    VN-CRC   & 3 & 21I   & False & True  & 72    & 43   & 0   & 0 \\
+    VN-CRC   & 3 & 21I   & True  & False & 65    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 21I   & True  & True  & 69    & 46   & 0   & 0 \\
+    VN-CRC   & 2 & 8I D  & False & False & 46    & 39   & 0   & 0 \\
+    VN-CRC   & 2 & 8I D  & False & True  & 42    & 41   & 0   & 0 \\
+    VN-CRC   & 2 & 8I D  & True  & False & 47    & 42   & 0   & 0 \\
+    VN-CRC   & 2 & 8I D  & True  & True  & 43    & 44   & 0   & 0 \\
+    VN-CRC   & 2 & 8I L  & False & False & 37    & 39   & 0   & 0 \\
+    VN-CRC   & 2 & 8I L  & False & True  & 40    & 41   & 0   & 0 \\
+    VN-CRC   & 2 & 8I L  & True  & False & 38    & 42   & 0   & 0 \\
+    VN-CRC   & 2 & 8I L  & True  & True  & 42    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 21I D & False & False & 62    & 41   & 0   & 0 \\
+    VN-CRC   & 3 & 21I D & False & True  & 77    & 43   & 0   & 0 \\
+    VN-CRC   & 3 & 21I D & True  & False & 66    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 21I D & True  & True  & 69    & 46   & 0   & 0 \\
+    VN-CRC   & 3 & 21I L & False & False & 67    & 41   & 0   & 0 \\
+    VN-CRC   & 3 & 21I L & False & True  & 79    & 43   & 0   & 0 \\
+    VN-CRC   & 3 & 21I L & True  & False & 62    & 44   & 0   & 0 \\
+    VN-CRC   & 3 & 21I L & True  & True  & 70    & 46   & 0   & 0 \\
+    VN-CRC   & 6 & 60I D & False & False & 150   & 47   & 0   & 0 \\
+    VN-CRC   & 6 & 60I D & False & True  & 162   & 49   & 0   & 0 \\
+    VN-CRC   & 6 & 60I D & True  & False & 153   & 50   & 0   & 0 \\
+    VN-CRC   & 6 & 60I D & True  & True  & 162   & 52   & 0   & 0 \\
+    VN-CRC   & 6 & 60I L & False & False & 142   & 47   & 0   & 0 \\
+    VN-CRC   & 6 & 60I L & False & True  & 145   & 49   & 0   & 0 \\
+    VN-CRC   & 6 & 60I L & True  & False & 167   & 50   & 0   & 0 \\
+    VN-CRC   & 6 & 60I L & True  & True  & 169   & 52   & 0   & 0 \\
+    AES-CTR  & 2 & 8I    & N/A   & N/A   & 1276  & 1317 & 272 & 136 \\
+    AES-CTR  & 3 & 15I   & N/A   & N/A   & 1284  & 1333 & 272 & 136 \\
+    Toeplitz & 2 & 8I    & N/A   & N/A   & 261   & 926  & 0   & 0 \\
+    Toeplitz & 3 & 15I   & N/A   & N/A   & 263   & 928  & 0   & 0 \\
+    \hline
+  \end{tabular}
+\end{table}

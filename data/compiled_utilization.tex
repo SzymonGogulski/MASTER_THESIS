@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{longtable} % Essential for a 40-row dataset
+\usepackage{multirow}
+\begin{document}
+
+\begin{longtable}{lllccccccc}
+\caption{Complete Resource Utilization Framework Across Project Cycles.} \label{tab:resources} \\
+\toprule
+\textbf{Ch.} & \textbf{Design Style} & \textbf{Config.} & \textbf{Mode} & \textbf{LUTs} & \textbf{Regs} & \textbf{F7Mux} & \textbf{F8Mux} & \textbf{BRAM} & \textbf{DSPs} \\
+\midrule
+\endfirsthead
+\multicolumn{10}{c}{{\bfseries Table \thetable\ Continued from previous page}} \\
+\toprule
+\textbf{Ch.} & \textbf{Design Style} & \textbf{Config.} & \textbf{Mode} & \textbf{LUTs} & \textbf{Regs} & \textbf{F7Mux} & \textbf{F8Mux} & \textbf{BRAM} & \textbf{DSPs} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+CH3 & Baseline & 2RO\_8I & false\_false & 39 & 39 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 37 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 38 & 42 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 44 & 44 & 0 & 0 & 0 & 0 \\
+ &  & 3RO\_15I & false\_false & 60 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 61 & 43 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 52 & 44 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 50 & 46 & 0 & 0 & 0 & 0 \\
+ &  & 3RO\_21I & false\_false & 61 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 72 & 43 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 65 & 44 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 69 & 46 & 0 & 0 & 0 & 0 \\
+CH4 & Distributed (D) & 2RO\_8I\_D & false\_false & 46 & 39 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 42 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 47 & 42 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 43 & 44 & 0 & 0 & 0 & 0 \\
+ &  & 3RO\_21I\_D & false\_false & 62 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 77 & 43 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 66 & 44 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 69 & 46 & 0 & 0 & 0 & 0 \\
+ &  & 6RO\_60I\_D & false\_false & 150 & 47 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 162 & 49 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 153 & 50 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 162 & 52 & 0 & 0 & 0 & 0 \\
+ & LUT-based (L) & 2RO\_8I\_L & false\_false & 0 & 0 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 40 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 0 & 0 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 42 & 44 & 0 & 0 & 0 & 0 \\
+ &  & 3RO\_21I\_L & false\_false & 67 & 41 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 79 & 43 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 62 & 44 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 70 & 46 & 0 & 0 & 0 & 0 \\
+ &  & 6RO\_60I\_L & false\_false & 142 & 47 & 0 & 0 & 0 & 0 \\
+ &  &  & false\_true & 145 & 49 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_false & 167 & 50 & 0 & 0 & 0 & 0 \\
+ &  &  & true\_true & 169 & 52 & 0 & 0 & 0 & 0 \\
+CH5 & aes & 2RO\_8I & N/A & 1276 & 1317 & 272 & 136 & 1 & 0 \\
+ &  & 3RO\_15I & N/A & 1284 & 1333 & 272 & 136 & 1 & 0 \\
+ & toeplitz & 2RO\_8I & N/A & 261 & 926 & 0 & 0 & 0 & 0 \\
+ &  & 3RO\_15I & N/A & 263 & 928 & 0 & 0 & 0 & 0 \\
+\end{longtable}
+\end{document}

@@ -1,26 +1,46 @@
-\begin{thebibliography}{1}
-
-\bibitem{fourmilab-ENT}
-{Fourmilab}.
-\newblock Ent: A pseudorandom number sequence test program.
-
-\bibitem{NIST-SP-800-22}
-Andrew Rukhin, Juan Soto, James Nechvatal, Miles Smid, Elaine Barker, Stefan Leigh, Mark Levenson, Mark Vangel, David Banks, N.~Heckert, James Dray, San Vo, and Lawrence Bassham.
-\newblock Nist sp 800-22: A statistical test suite for random and pseudorandom number generators for cryptographic applications.
-\newblock {\em NIST Information Technology Laboratory}, 2010.
-
-\bibitem{2016Sreekumar-Ramesh}
-Lakshmi Sreekumar and P.~Ramesh.
-\newblock Selection of an optimum entropy source design for a true random number generator.
-\newblock {\em Procedia Technology}, 2016.
-
-\bibitem{neoTRNG}
-{stnolting}.
-\newblock neotrng: A true random number generator for fpgas, 2016.
+\begin{thebibliography}{10}
 
 \bibitem{NIST-SP-800-90B}
-Meltem~S{\"o}nmez Turan, Elaine Barker, John Kelsey, Kerry McKay, Mary Baish, and Michael Boyle.
-\newblock Nist sp 800-90b: Recommendation for the entropy sources used for random bit generation.
-\newblock {\em NIST Information Technology Laboratory}, 2018.
+M.~S. Turan, E.~Barker, J.~Kelsey, K.~McKay, M.~Baish, and M.~Boyle, ``Nist sp 800-90b: Recommendation for the entropy sources used for random bit generation,'' {\em NIST Information Technology Laboratory}, 2018.
+
+\bibitem{quatis-brouchure}
+I.~Quantique, ``Quantis when random numbers cannot be left to chance.''
+
+\bibitem{Quantum-randomness-generator-optical-circ}
+``Quantum random numbers generator,'' {\em Quantum Flagship}.
+
+\bibitem{Digital-integraged-circuits-A-design-perspective}
+J.~M. Rabaey, B.~Nikolic, and A.~P. Chandrakasan, {\em Digital Integrated Circuits: A Design Perspective}.
+\newblock 1995.
+
+\bibitem{neoTRNG}
+{stnolting}, ``neotrng: A true random number generator for fpgas,'' 2016.
+
+\bibitem{2016Sreekumar-Ramesh}
+L.~Sreekumar and P.~Ramesh, ``Selection of an optimum entropy source design for a true random number generator,'' {\em Procedia Technology}, 2016.
+
+\bibitem{NIST-SP-800-22}
+A.~Rukhin, J.~Soto, J.~Nechvatal, M.~Smid, E.~Barker, S.~Leigh, M.~Levenson, M.~Vangel, D.~Banks, N.~Heckert, J.~Dray, S.~Vo, and L.~Bassham, ``Nist sp 800-22: A statistical test suite for random and pseudorandom number generators for cryptographic applications,'' {\em NIST Information Technology Laboratory}, 2010.
+
+\bibitem{fourmilab-ENT}
+{Fourmilab}, ``Ent: A pseudorandom number sequence test program.''
+
+\bibitem{2023anstasios-panagiotis-georgis-yannis}
+A.~Bikos, P.~E. Nastou, G.~Petroudis, and Y.~C. Stamatiou, ``Random number generators: Principles and applications,'' {\em MDPI}, 2023.
+
+\bibitem{2025QRNG-zeshan}
+Z.~Haider, M.~H. Saeed, M.~E. ul~Haq~Zaheer, Z.~A. Alvi, M.~Ilyas, T.~Nasreen, M.~Imran, R.~U. Islam, and M.~Ikram, ``Quantum random number generator (qrng): Theoretical and experimental investigations,'' {\em arxiv}, 2025.
+
+\bibitem{2024-predicting-prngs}
+D.~Proskurin, M.~Iavich, T.~Okhrimenko1, O.~Chukwukaelonma1, and T.~Hryniuk1, ``Predicting pseudo-random number generator output with sequential analysis,'' {\em CEUR Workshop Proceedings}, 2024.
+
+\bibitem{2023Analisis-of-CSPRNG}
+B.~Williams, R.~E. Hiromoto, and A.~Carlson, ``Analysis of a cryptographically secure pseudo random number generator,'' {\em IEEE}, 2023.
+
+\bibitem{Quantum-physics-peter-kok}
+P.~Kok, ``A first introduction to quantum physics,'' {\em Springer Nature Link}, 2023.
+
+\bibitem{ucgosu-CRC}
+M.~Gajdzica, ``Jak działa crc,'' 2017.
 
 \end{thebibliography}

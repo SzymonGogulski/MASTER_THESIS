@@ -11,17 +11,39 @@
 % dotyczy to również rysunków, tabel, fragmentów kodu źródłowego programów itd. Należy także podać
 % adresy stron internetowych w przypadku źródeł pochodzących z Internetu.
 
-\noindent Niniejszy rozdział przedstawia teoretyczne podstawy projektoawnia 
-sprzętowych generatorów liczb losowych. Omówiona zostanie klasyfikacja architektur generatorów 
-oraz fizyczne zjawiska wykorzystywane do pozyskiwania entropii w układach programowalnych 
-FPGA. Ponadto wytłumaczne zostaną metody obróbki sygnałów losowych oraz 
-standardy statystyczne stosowane do walidacji jakości generowanych danych.
+\noindent Niniejszy rozdział przedstawia teoretyczne podstawy projektowania 
+sprzętowych generatorów liczb losowych. Omówiono w nim klasyfikację architektur 
+generatorów oraz zjawiska fizyczne wykorzystywane do pozyskiwania entropii w 
+układach programowalnych FPGA. Ponadto wyjaśniono metody obróbki sygnałów 
+losowych, a także standardy statystyczne stosowane do walidacji jakości 
+generowanych danych.
 
 \section{Źródła losowości}
 
+\noindent Generatory liczb losowych można podzielić na kategorie w zależności 
+od mechanizmu powstawania losowości. Dwie główne klasy generatorów stanowią 
+generatory liczb prawdziwie losowych (ang. TRNG - True Random Number Generator) 
+oraz generatory liczb pseudolosowych (ang. PRNG - Pseudorandom Number Generator)
+~\cite{2023anstasios-panagiotis-georgis-yannis}. 
+
+Z pośród generatorów liczb prawdziwie losowych można wyróżnić podklasę 
+kwantowych generatorów liczb prawdziwie losowych (and QRNG - Quantum Random Number 
+Generator)~\cite{2025QRNG-zeshan}.
+
+Podklasą generatorów pseudolosowych są generatory pseudolosowe kryptograficznie bezpieczne 
+(ang. CSPRNG - Cryptographically Secure Pseudorandom Number Generator). 
+
+Kryterium podziału generatorów TRNG i PRNG jest źródło pochodzenia losowości. 
 
 
-\subsection{TRBG}
+\subsection{TRNG}
+
+\noindent Generatory liczb prawdziwie losowych opierają generowanie liczb na podstawie digitalizacji 
+niedeterministycznych zjawisk fizycznych. 
+Przykładowymi źródłami szumów analogowych są: 
+szum napięcia zasilania, fluktuacje temperatury elementów pasywnych, 
+niestabilności fazowe w układach cyfrowych(oscylatory pierścieniowe) lub 
+bardziej nietypowe zjawiska jak procesy kwantowe w układach optycznych. 
 
 \begin{figure}[H]
     \centering
@@ -30,13 +52,139 @@ standardy statystyczne stosowane do walidacji jakości generowanych danych.
     \label{fig:ch2_model_zrodla_entropii_nist}
 \end{figure}
 
-\subsection{PRBG}
+Wiodącą publikacją w dziedzinie projektowania generatorów liczb prawdziwie pseudolosowych jest 
+zbiór rekomendacji porojektowych \textit{NIST SP800-90B}. Publikacja ta opisuje 
+ogólny model źródła losowości, złóżony z czterach części składowych~\cite{NIST-SP-800-90B}.
 
-\subsection{QRBG}
+
+\begin{itemize}
+    \item źródło szumu analogowego - entropia zbierana z nideterministyczengo procesu fizycznego,
+    \item digitalizacja - próbkowanie oraz kwantyzacja sygnału analogowego poprzez np. przetwornik analogowo-cyfrowy,
+    \item przetwarzanie końcowe - metody postprocessing'u w celu zwiększenia jakości wygenerowaniej entropii, 
+    \item Testy zdrowia - moduły monitorujące pracę źródła, wykrywa awarie i próby manipulacji.
+\end{itemize}
+
+Mimo wielu zalet, generatowy liczb prawdziwie losowych nie są kompletnie odporne na ataki. 
+Możliwą formą ataku jest zakłócenie źródła szumu analogowego, na przykład poprzez rozgrzanie 
+termistora próbkującego fluktuacje temperatury.
+
+\subsection{PRNG}
+
+\noindent Generatory liczb pseudolosowych charakteryzuje generowanie sygnału 
+pozornie losowego. Wynika to z mechanizmów wewnątrz takiego generatora. 
+\enquote{Generowanie liczb pseudolosowych polega na tworzeniu długich sekwencji 
+bitów, zaczynając od małej, najlepiej prawdziwie losowej wartości początkowej 
+zwanej ziarnem.}~\cite{2023anstasios-panagiotis-georgis-yannis}. Główną wadą takich 
+generatorów jest przewidywalność każdego ciągu losowego po poznaniu wykorzystanego ziarna. 
+
+Bazują one na podstawowych obliczeniach algebraicznych, generaując kolejne wartość 
+na podstawie wyników powtarzających się obliczeń. Z tego względu klasyczne algorytmy 
+PRNG (LCG, Mersenne Twister) nie są uważane za generatory bezpieczne kryprograficznie. 
+Są one podatne na analizę sekwencji ciągu, co umożliwia przewidzenie kolejnych 
+wygenerowanych wartości~\cite{2024-predicting-prngs}.
+
+Ze względu na ich prostotę znajdują zastosowanie w systemach niekrytycznych. Są stosowane 
+przy generowaniu proceduralnym bądź w symulacjach naukowych.
+
+\subsection{CSPRNG}
+
+\noindent Kryptograficznie bezpieczne generatory liczb pseudolosowych działaja w sposób 
+analityczny jak generatory PRNG z jedną szczególną róźnicą. Wykorzystują nieodwracalne 
+funkcje kryptograficzne. Tego typu generatory muszą dwa wymagania: test next-bit oraz 
+odporność na kompromitację stanu\cite{2023Analisis-of-CSPRNG}. 
+
+Oznacza to, że poprzez znajomość ciągu N bitów losowych, atakujący nie jest w stanie 
+przewidzieć bitu N+1 z prawdopodobieństwem większym niż 50\% oraz znając część lub 
+całość stanu generatora nie jest w stanie odtworzyć poprzednich wygenerowanych 
+wartości~\cite{2023Analisis-of-CSPRNG}.
+
+\subsection{QRNG}
+
+\noindent Kwantowe generatory liczb losowych stanowią szczególny przypadek generatora prawdziwie 
+losowego. Zamiast pobierać entropię ze zjawisk fizyki klasycznej, wykorzystują 
+zjawiska mechaniki kwantowej. 
+
+Ich główną przewagą jest probabilistyczna natura zjawisk kwantowych. Zjawiska fizyki 
+klasycznej jak zmian temperatury można zamodelować za pomocą cząstkowych równań różniczkowych, co 
+może dać nieporządany wgląd do wnętrza mechanizku generującego losowość. W przypadku 
+zjawisk kwantowych modele takie nie istnieją, obserwowany układ kwantowy zawsze będzie 
+działał z określonym rozkładem prawdopodobieństwa~\cite{Quantum-physics-peter-kok}. 
+
+Wadą kwantowych generatorów jest ich cena. Zazwyczaj rozwiązania kwantowe będą 
+znacznie droższe niż generatory klasyczne.
 
 \subsection{Zasada działania Quantis USB 4M}
 
+\noindent Komercyjnie dostępny kwantowy generator Quantis-PCIe-4M firmy IDQ. Urządzenie dostępne 
+jest w obudowie z interfejsem USB 2.0.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/ch2/Quantis-QRNG-USB.png}
+    \caption{Quantis USB 4M. \cite{quatis-brouchure}}
+    \label{fig:ch2_qunatis-usb}
+\end{figure}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Specyfikacja ogólna urządzenia Quantis-USB-4M~\cite{quatis-brouchure}}
+\label{tab:quantis_usb_specs}
+\begin{tabular}{p{5.5cm}l}
+\toprule
+\textbf{Parametr} & \textbf{Specyfikacja} \\
+\midrule
+Losowa prędkość bitowa* & 4 Mbit/s $\pm$ 10\% \\
+Udział szumu termicznego & $< 1\%$ \\
+Temperatura przechowywania & od -25 do +85°C \\
+Wymiary & 61 mm $\times$ 31 mm $\times$ 114 mm \\
+Specyfikacja USB & 2.0 \\
+Wymagania & Komputer PC z wolnym złączem USB \\
+Zasilanie & Przez port USB \\
+\bottomrule
+\end{tabular}
+\par\vspace{2mm}    
+\begin{minipage}{0.5\textwidth} 
+\small
+* Bitrate przed ekstrakcją losowości
+\end{minipage}
+\end{table}
+
+Według specyfikacji producenta (Tab.~\ref{tab:quantis_usb_specs}) udział szumu termicznego 
+w generowanych bitach losowych wynosi mniej niż 1\%. Oznacza to, że generator 
+generuje losowość niemal wyłącznie z zjawisk mechaniki kwantowej.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/ch2/319_QNRG.png}
+    \caption{Model układu optycznego. \cite{Quantum-randomness-generator-optical-circ}}
+    \label{fig:ch2-model-ukladu-kwantowego}
+\end{figure}
+
+Układ optyczny znajdujący się wenątrz Quantis USB 4M składa się z czterech elemetnów:
+
+\begin{itemize}
+    \item źródła fotonów - laser o niskiej mocy generujący wiązke fotonów,
+    \item dzielnika wiązki - pryzmat wykonany z materiałów, które częściowo przepuszczają fotony,
+    \item dwóch detektory fotonów.
+\end{itemize}
+
+Generowana losowość jest związana z częściową przepuszczalnością dzielnika wiązki. 
+W przypadku idealnym 50\% fotonów zostaje odbitych i 50\% zosaje przepuszczonych. 
+Oznacza to, że prawdopodobieństwo detekcji fotonu w kaźdym z detektorów jest rozłożone 
+równo po 50\%. W ten sposób generator kwantowy wytwarza ciąg bitów niedeterministycznych 
+z idealnym rozkładem prawdopodobieństwa bitu '1' i '0'.
+
+Jednak w rzeczywistości dzielnik wiązki nie jest elementem idealnym. Oznacza to, że 
+prawdopodobieństwo bitu '1' lub '0' nie będzie równe idealnie 50\%. 
+
 \section{RO jako źródła losowości w FPGA}
+
+\noindent Generowanie losowości przy użyciu oscylatorów pierścieniowych będzie 
+bazowało na zjawiskach fizycznych związanych z propagacja sygnałów wewnątrz 
+struktury krzemowej układu FPGA. Oscylator pierścieniowy (ang. RO - Ring Oscilator) 
+jest asynchronicznym układem cyfrowym złożonym z pętli nieparzystej liczby inwerterów. 
 
 \begin{figure}[H]
     \centering
@@ -45,22 +193,119 @@ standardy statystyczne stosowane do walidacji jakości generowanych danych.
     \label{fig:ch2_oscylator_3xNOT}
 \end{figure}
 
+Tak skostruowany układ logiczny doprowadzi do powstania stanu nieustalonego wewnątrz 
+układu. Inwertery ułożone w pętli będą koleno generować sygnał wejściowy dla następnego 
+inwertera w kolejności. Oznacza to, że w układzi powstanie sygnał oscylujący z 
+okresem wynikającym z czasu propagacji sygnału w krzemie oraz ilości zastosowanych 
+inwerterów. Należy zwrócić uwagę, że jest to stosowne wyłącznie dla nieparzystej 
+liczby inwerterów. W przypadku liczby parzystej, sygnał się usatli a próbkowne 
+wyjście będzie zwracać wartość stałą.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/ch2/inverter.png}
+    \caption{Propagacja sygnału wewnątrz inwertera CMOS - symulacja.~\cite{Digital-integraged-circuits-A-design-perspective}}
+    \label{fig:ch2_inverter_propagation}
+\end{figure}
+
+Na zamieszczonym obrazie (Fig.~\ref{fig:ch2_inverter_propagation}) przedstawiono 
+przebiegi sygnału $V_{in}$ oraz $V_{out}$ dla symulacji inwertera wykonanego w technologii 
+$0.25 \mu m$. Widoczne jest opóźnienie w propagacji sygnału wyjściowego dla 
+nagłej zmiany sygnału wejściowego. Od momentu przełączenia $V_{in}$ do ustalenia 
+sygnału $V_{out}$ na poziomie 2.5V mija około $100~\text{ps}$.
+
+W rzeczywistości każdy inwerter będzie odrobine różnić się od reszty ze względu na 
+niedoskonałe metody produkcjne. Co za tym idzie syngał wyjściowy z RO będzie zmieniał się w 
+jeszcze bardziej nieprzewidywalny sposób. Idąc dalej pozwala to na stworzenie 
+układu z wielu RO o róźniej ilości iwerterów, gdzie kombinacja ich wyjść 
+wygeneruje sygnał prawdziwie losowy. Pozwala to na opracowania generatora liczb 
+prawdziwie losowych, ze względu na analogową naturę sygnałów wewnątrz układu RO.
+
 \section{Ekstraktory losowości}
+
+\noindent Syngał pozyskiwany bezpośrednio ze źródła analogowego charakteryzuje się 
+nierównoległym rozkładem zer i jedynek oraz występowaniem korelacji. Aby poprawić 
+losowość, sugerowaną praktyką jest odpowiednie przetworzenie sygnału. 
 
 \subsection{Ekstraktor von Neumanna}
 
+\noindent Ekstraktor von Neumanna jest nieskomplikowanym układem cyfrowym. Jego zadanie 
+to zapewnienie symeryczengo rozkładu generowanych liczb losowych. Zasada działania 
+tego ekstraktora opiera się o pobranie dwóch próbek sygnału ze źródła oraz sprawdzenie 
+zestawu trzech instrukcji:
+
+\begin{itemize}
+    \item pobrano próbki $(0;0)$ lub $(1;1)$ $\rightarrow$ próbki zostają odrzucone,
+    \item pobarno próbkę $(1;0)$ $\rightarrow$ generowany jest bit $1$
+    \item pobarno próbkę $(0;1)$ $\rightarrow$ generowany jest bit $0$
+\end{itemize}
+
+Ekstraktor zapewnia jednostajny rozkład prawdopodobieństwa wystąpienia, każdego z bitów, 
+ale znacznie ogranicza przepustowość generator. Jednocześci nie pozbywa się korelacji 
+z generowanego sygnału. 
+
 \subsection{Wielomian CRC}
+
+\noindent cykliczna kontrola nadmiarowa (ang. CRC - cyclic redundancy check) jest 
+pierwotnie stosowana w celu zapewnienia integralności przesyłanych danych w interfejsach 
+komunikacyjnych~\cite{ucgosu-CRC}. Znajdzie jednak też zastosowanie w korekcji 
+źródła losowości. 
+
+Zaimplementowany jest w postacji liniowego rejestru przesuwającego ze 
+sprzężeniem zwrotnym. Posiada właściwości rozpraszające, oznacza to, że każdy nowy 
+bit ma wpływ jednoczeście na wszystkie bity wyjściowe. W ten sposób eliminuje 
+korelacje między wyjściowymi bitami.
+
 
 \subsection{Ekstraktor Toeplitz'a}
 
+\noindent   
+
 \subsection{Szyfr strumieniowy AES-CTR}
+
+\noindent 
 
 \section{Metody oceny losowości}
 
+\noindent Ocena właściwości statystycznych generatora liczb losowych stanowi 
+rygorystyczny zestaw miar i testów. W ramach badań dostępne są publicznie dostępne 
+programi i zbiory testów do oceny generowanych ciągów losowych. 
+
+
 \subsection{ENT - Fourmilab Random Sequence Tester}
+
+\noindent \enquote{Tester sekwencji losowych Fourmilab (ent) przeprowadza różne testy 
+na sekwencjach bajtów zapisanych w plikach i raportuje wyniki tych testów. Program jest 
+przydatny do oceny generatorów liczb pseudolosowych w zastosowaniach szyfrowania i 
+próbkowania statystycznego, algorytmach kompresji i innych zastosowaniach, w których 
+istotna jest gęstość informacji w pliku.}~\cite{fourmilab-ENT}
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+Entropy = 7.168778 bits per byte.
+
+Optimum compression would reduce the size
+of this 104857600 byte file by 10 percent.
+
+Chi square distribution for 104857600 samples is 131655940.14, and randomly
+would exceed this value less than 0.01 percent of the times.
+
+Arithmetic mean value of data bytes is 127.4529 (127.5 = random).
+Monte Carlo value for Pi is 3.458389109 (error 10.08 percent).
+Serial correlation coefficient is 0.000098 (totally uncorrelated = 0.0).
+    \end{minted}
+    \caption{Przykładowy wynik pakietu ENT.}
+    \label{fig:ch2_wyniki_ent}
+\end{figure}
+
 
 \subsection{NIST SP 800-22 - A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications}
 
+\noindent 
+
 \subsection{NIST SP 800-90B - Entropy Assessment Test Suite}
+
+\noindent 
 
  
