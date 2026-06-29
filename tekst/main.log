@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  28 JUN 2026 23:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  29 JUN 2026 20:10
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -875,6 +875,236 @@ LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
 \linenoamsmath@ams@eqpen=\count409
+ (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen290
+\pgfmath@count=\count410
+\pgfmath@box=\box83
+\pgfmath@toks=\toks46
+\pgfmath@stack@operand=\toks47
+\pgfmath@stack@operation=\toks48
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count411
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen291
+\pgf@picmaxx=\dimen292
+\pgf@picminy=\dimen293
+\pgf@picmaxy=\dimen294
+\pgf@pathminx=\dimen295
+\pgf@pathmaxx=\dimen296
+\pgf@pathminy=\dimen297
+\pgf@pathmaxy=\dimen298
+\pgf@xx=\dimen299
+\pgf@xy=\dimen300
+\pgf@yx=\dimen301
+\pgf@yy=\dimen302
+\pgf@zx=\dimen303
+\pgf@zy=\dimen304
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen305
+\pgf@path@lasty=\dimen306
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen307
+\pgf@shorten@start@additional=\dimen308
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box84
+\pgf@hbox=\box85
+\pgf@layerbox@main=\box86
+\pgf@picture@serial@count=\count412
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen309
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen310
+\pgf@pt@y=\dimen311
+\pgf@pt@temp=\dimen312
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen313
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen314
+\pgf@sys@shading@range@num=\count413
+\pgf@shadingcount=\count414
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box87
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box88
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen315
+\pgf@nodesepend=\dimen316
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+)
+\tcb@titlebox=\box89
+\tcb@upperbox=\box90
+\tcb@lowerbox=\box91
+\tcb@phantombox=\box92
+\c@tcbbreakpart=\count415
+\c@tcblayer=\count416
+\c@tcolorbox@number=\count417
+\l__tcobox_tmpa_box=\box93
+\l__tcobox_tmpa_dim=\dimen317
+\tcb@temp=\box94
+\tcb@temp=\box95
+\tcb@temp=\box96
+\tcb@temp=\box97
+ (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+\c@tcbrastercolumn=\count418
+\c@tcbrasterrow=\count419
+\c@tcbrasternum=\count420
+\c@tcbraster=\count421
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen318
+\pgffor@skip=\dimen319
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count422
+\pgfplotmarksize=\dimen320
+)
+\tikz@lastx=\dimen321
+\tikz@lasty=\dimen322
+\tikz@lastxsaved=\dimen323
+\tikz@lastysaved=\dimen324
+\tikz@lastmovetox=\dimen325
+\tikz@lastmovetoy=\dimen326
+\tikzleveldistance=\dimen327
+\tikzsiblingdistance=\dimen328
+\tikz@figbox=\box98
+\tikz@figbox@bg=\box99
+\tikz@tempbox=\box100
+\tikz@tempbox@bg=\box101
+\tikztreelevel=\count423
+\tikznumberofchildren=\count424
+\tikznumberofcurrentchild=\count425
+\tikz@fig@count=\count426
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count427
+\pgfmatrixcurrentcolumn=\count428
+\pgf@matrix@numberofcolumns=\count429
+)
+\tikz@expandcount=\count430
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+ (/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box102
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 2 on input line 23.
+\tcb@testbox=\box103
+\tcb@totalupperbox=\box104
+\tcb@totallowerbox=\box105
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+\tcbfitdim=\dimen329
+\tcb@lowerfitdim=\dimen330
+\tcb@upperfitdim=\dimen331
+\tcb@cur@hbadness=\count431
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count432
+\lst@gtempboxa=\box106
+\lst@token=\toks51
+\lst@length=\count433
+\lst@currlwidth=\dimen332
+\lst@column=\count434
+\lst@pos=\count435
+\lst@lostspace=\dimen333
+\lst@width=\dimen334
+\lst@newlines=\count436
+\lst@lineno=\count437
+\lst@maxwidth=\dimen335
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count438
+\lst@skipnumbers=\count439
+\lst@framebox=\box107
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+)
+\c@tcblisting=\count440
+)) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+))
 runsystem(command -v pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
@@ -884,50 +1114,44 @@ Package csquotes Info: ... found 'babel' package.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count410
-\scratchdimen=\dimen290
-\scratchbox=\box83
-\nofMPsegments=\count411
-\nofMParguments=\count412
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count413
-\MPscratchDim=\dimen291
-\MPnumerator=\count414
-\makeMPintoPDFobject=\count415
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count441
+\scratchdimen=\dimen336
+\scratchbox=\box108
+\nofMPsegments=\count442
+\nofMParguments=\count443
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count444
+\MPscratchDim=\dimen337
+\MPnumerator=\count445
+\makeMPintoPDFobject=\count446
+\everyMPtoPDFconversion=\toks53
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 47.
+Package hyperref Info: Link coloring ON on input line 62.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -935,7 +1159,8 @@ Package hyperref Info: Link coloring ON on input line 47.
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-polish.trsl
 File: translations-basic-dictionary-polish.trsl (polish translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 47.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 62.
+\c@lstlisting=\count447
 Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)                    date: 2026-04-24 12:31:20
 (epstopdf)                    size: 1264718 bytes
@@ -943,12 +1168,12 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)                    date: 2026-04-24 14:59:26
 (epstopdf)                    size: 31922 bytes
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
-(epstopdf)             \includegraphics on input line 51.
+(epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
-<wit/sygnet-pp-eps-converted-to.pdf, id=199, 1391.1975pt x 278.03876pt>
+<wit/sygnet-pp-eps-converted-to.pdf, id=236, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
-Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 51.
+Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 66.
 (pdftex.def)             Requested size: 426.0pt x 85.13472pt.
  [1
 
@@ -962,10 +1187,10 @@ Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 
 
 
 ] [2]) (./chapters/02-teoria.tex [3]
-<figures/ch2/nist_source_schematic.png, id=376, 889.3225pt x 611.28375pt>
+<figures/ch2/nist_source_schematic.png, id=417, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
-Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 50.
+Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 48.
 (pdftex.def)             Requested size: 319.5pt x 219.60493pt.
  [4
 
@@ -973,32 +1198,32 @@ Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input li
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.95 
-      <./figures/ch2/nist_source_schematic.png>]
-<figures/ch2/Quantis-QRNG-USB.png, id=401, 201.00093pt x 104.64093pt>
+l.100 
+       <./figures/ch2/nist_source_schematic.png>]
+<figures/ch2/Quantis-QRNG-USB.png, id=442, 201.00093pt x 104.64093pt>
 File: figures/ch2/Quantis-QRNG-USB.png Graphic file (type png)
 <use figures/ch2/Quantis-QRNG-USB.png>
-Package pdftex.def Info: figures/ch2/Quantis-QRNG-USB.png  used on input line 123.
+Package pdftex.def Info: figures/ch2/Quantis-QRNG-USB.png  used on input line 129.
 (pdftex.def)             Requested size: 170.3974pt x 88.70888pt.
  [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.156 
+l.162 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.156 
+l.162 
        <./figures/ch2/Quantis-QRNG-USB.png>]
-<figures/ch2/319_QNRG.png, id=418, 335.00156pt x 192.72pt>
+<figures/ch2/319_QNRG.png, id=459, 335.00156pt x 192.72pt>
 File: figures/ch2/319_QNRG.png Graphic file (type png)
 <use figures/ch2/319_QNRG.png>
-Package pdftex.def Info: figures/ch2/319_QNRG.png  used on input line 160.
+Package pdftex.def Info: figures/ch2/319_QNRG.png  used on input line 166.
 (pdftex.def)             Requested size: 255.6026pt x 147.04213pt.
-Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 191.
+Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 199.
  (./svg-inkscape/schematic_svg-tex.pdf_tex
-<./svg-inkscape/schematic_svg-tex.pdf, id=422, page=1, 416.71994pt x 111.85147pt>
+<./svg-inkscape/schematic_svg-tex.pdf, id=463, page=1, 416.71994pt x 111.85147pt>
 File: ./svg-inkscape/schematic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/schematic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on input line 56.
@@ -1007,24 +1232,24 @@ Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on in
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.203 
+l.211 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.203 
+l.211 
        <./figures/ch2/319_QNRG.png> <./svg-inkscape/schematic_svg-tex.pdf>]
-<figures/ch2/inverter.png, id=432, 438.63875pt x 367.3725pt>
+<figures/ch2/inverter.png, id=473, 438.63875pt x 367.3725pt>
 File: figures/ch2/inverter.png Graphic file (type png)
 <use figures/ch2/inverter.png>
-Package pdftex.def Info: figures/ch2/inverter.png  used on input line 206.
+Package pdftex.def Info: figures/ch2/inverter.png  used on input line 214.
 (pdftex.def)             Requested size: 255.6026pt x 214.07959pt.
  [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.240     \item p
-                 obarno próbkę $(0;1)$ $\rightarrow$ generowany jest bit $0$ <./figures/ch2/inverter.png>]
+l.250     \item p
+                 obrano próbki $(0;1)$ $\rightarrow$ generowany jest bit $0$. <./figures/ch2/inverter.png>]
 \openout4 = `main.pyg'.
 
  (./_minted-main/default.pygstyle) (./_minted-main/09EAC5C70D905189C63F5C8642912186D3773C8B440B993359565A23D713B17A.pygtex
@@ -1034,37 +1259,37 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 7.
-)) (./chapters/03-neoTRNG.tex [9
+) [9]) (./chapters/03-neoTRNG.tex [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \chapter
-            {Modułowa platforma sprzętowa do oceny losowości generatora n...] [10]
-<figures/ch2/neotrng_architecture.png, id=456, 519.03pt x 169.506pt>
+            {Modułowa platforma sprzętowa do oceny losowości generatora n...]
+<figures/ch2/neotrng_architecture.png, id=502, 519.03pt x 169.506pt>
 File: figures/ch2/neotrng_architecture.png Graphic file (type png)
 <use figures/ch2/neotrng_architecture.png>
-Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 8.
+Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 29.
 (pdftex.def)             Requested size: 426.0pt x 139.13031pt.
-) (./chapters/04-badania.tex [11
+ [11
 
-
+]) (./chapters/04-badania.tex [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.4 
-     <./figures/ch2/neotrng_architecture.png>] [12
+     <./figures/ch2/neotrng_architecture.png>] [13
 pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.34 \chapter
-             {Badania eksperymentalne}] [13
+             {Badania eksperymentalne}] [14
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.106 
-      ] [14
+      ] [15
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1079,7 +1304,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.209 
-      ] [15
+      ] [16
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1089,7 +1314,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.283 
-      ] [16
+      ] [17
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1099,7 +1324,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.8}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.341 
-      ] [17
+      ] [18
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1109,7 +1334,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.10}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.399 
-      ] [18
+      ] [19
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1134,7 +1359,7 @@ Overfull \hbox (37.16328pt too wide) in paragraph at lines 571--592
  [][] 
  []
 
-[19
+[20
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.15}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1154,7 +1379,7 @@ Overfull \hbox (15.67049pt too wide) in paragraph at lines 653--698
  [][] 
  []
 
-) (./chapters/05-podsumowanie.tex [20
+) (./chapters/05-podsumowanie.tex [21
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.18}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1164,30 +1389,30 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.19}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.2 \chapter
-            {Podsumowanie i wnioski}]) (./main.bbl [21
+            {Podsumowanie i wnioski}]) (./main.bbl [22
 
 ]
 bibitemlist
-) [22
+[23
 
-] (./chapters/zalacznik-A.tex
+]) [24] (./chapters/zalacznik-A.tex
 \openout4 = `main.pyg'.
 
- (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) (./chapters/zalacznik-B.tex [23
+ (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) (./chapters/zalacznik-B.tex [25
 
 
 ]
 \openout4 = `main.pyg'.
 
- (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) [24
+ (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) [26
 
 ]
-<wit/logo-pp.pdf, id=531, 422.57875pt x 422.57875pt>
+<wit/logo-pp.pdf, id=587, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
-Package pdftex.def Info: wit/logo-pp.pdf  used on input line 114.
+Package pdftex.def Info: wit/logo-pp.pdf  used on input line 129.
 (pdftex.def)             Requested size: 42.67946pt x 42.67912pt.
- [25
+ [27
 
  <./wit/logo-pp.pdf>]
 \tf@toc=\write8
@@ -1205,23 +1430,23 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 46B4CC29FEAB017696BB58EA6128A45F;11442.
+(rerunfilecheck)             Checksum: 7459808EF4A4AC17B4E79DD1A1DC39D0;11748.
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 25132 strings out of 476074
- 485223 string characters out of 5793136
- 1970975 words of memory out of 5000000
- 46603 multiletter control sequences out of 15000+600000
+ 40511 strings out of 476074
+ 843466 string characters out of 5793136
+ 1971975 words of memory out of 5000000
+ 61734 multiletter control sequences out of 15000+600000
  579695 words of font info for 79 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
- 99i,20n,107p,814b,1193s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (30 pages, 605122 bytes).
+ 99i,20n,107p,858b,1216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (32 pages, 631340 bytes).
 PDF statistics:
- 1350 PDF objects out of 1440 (max. 8388607)
- 583 compressed objects within 6 object streams
- 124 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1451 PDF objects out of 1728 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 586 words of extra memory for PDF output out of 10000 (max. 10000000)
 

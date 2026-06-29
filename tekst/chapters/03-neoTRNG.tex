@@ -1,5 +1,26 @@
 \chapter{Modułowa platforma sprzętowa do oceny losowości generatora neoTRNG}
 
+Generator liczb losowych neoTRNG stanowi obiekt badań niniejszej pracy. 
+Cały projekt generator jest publicznie dostępny w postaci repozytorium kodu
+(\url{https://github.com/stnolting/neoTRNG}). Główne cechy charakterystyczne 
+badanego generatora to~\cite{neoTRNG}:
+
+\begin{itemize}
+  \item projekt niezależny od technologii konkretnego dostawcy,
+  \item niewielkie zużycie zasobów sprzętowych,
+  \item wysoka przespustowość,
+  \item w pełni otwarto źródłowy,
+  \item cały projekt w postaci jednego pliku VHDL,
+  \item wysoka częstotliwość pracy,
+  \item łatwy w integracji,
+  \item w pełni udokumentowany.
+\end{itemize}
+
+\begin{ostrzezenie}{Ostrzeżenie:}
+  Domyślna implementacja neoTRNG nie gwarantuje generowania całkowicie losowych, 
+  ani bezpiecznych kryptograficznie ciągów liczb. Ponadto generator nie jest 
+  wyposażony w żadne mechanizmy testów zdrowia źródła~\cite{neoTRNG}.
+\end{ostrzezenie}
 
 \section{Architektura bazowa neoTRNG opartego na RO}
 
@@ -10,16 +31,26 @@
     \label{fig:ch3_architektura}
 \end{figure}
 
+W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe 
+po klejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
+operacją $\text{XOR}$. Następnie surowy sygnał losowy trafia do ekstraktora 
+von Neumanna. Ostatecznie próbki z ekstaktora mieszane są wielomianem CRC. 
+Generator zwraca jeden bajt dany, o czym informuje poprzez stanem wysokim na linii 
+valid\_o.
 
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
-
 
 
 \section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz}
 
 
-\subsection{Wykorzystanie zasobów}
 
+
+
+
+
+
+\section{Wykorzystanie zasobów}
 
 \begin{table}[H]
   \centering

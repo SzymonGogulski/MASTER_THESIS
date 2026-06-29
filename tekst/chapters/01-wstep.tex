@@ -1,80 +1,46 @@
-
 \chapter{Wstęp}
-
-% Wstęp do pracy powinien zawierać następujące elementy:
-% \begin{itemize}
-%     \item krótkie uzasadnienie podjęcia tematu; 
-%     \item cel pracy (patrz niżej); 
-%     \item zakres (przedmiotowy, podmiotowy, czasowy) wyjaśniający, w jakim rozmiarze praca będzie realizowana; 
-%     \item ewentualne hipotezy, które autor zamierza sprawdzić lub udowodnić; 
-%     \item krótką charakterystykę źródeł, zwłaszcza literaturowych; 
-%     \item układ pracy (patrz niżej), czyli zwięzłą charakterystykę zawartości poszczególnych rozdziałów; 
-%     \item ewentualne uwagi dotyczące realizacji tematu pracy np.~trudności, które pojawiły się w trakcie 
-%     realizacji poszczególnych zadań, uwagi dotyczące wykorzystywanego sprzętu, współpraca z firmami zewnętrznymi. 
-% \end{itemize}
-
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.4\textwidth]{figures/images.png}
-%     \caption{Schemat przedstawiający koncepcję systemu}
-%     \label{fig:1}
-% \end{figure}
-
-% \noindent
-% \textbf{Wstęp do pracy musi się kończyć dwoma następującymi akapitami:}
-% \begin{quote}
-% Celem pracy jest opracowanie / wykonanie analizy / zaprojektowanie / ...........
-% \end{quote}
-% oraz:
-% \begin{quote}
-% Struktura pracy jest następująca. W rozdziale 2 przedstawiono przegląd literatury na temat ........ 
-% Rozdział 3 jest poświęcony ....... (kilka zdań). 
-% Rozdział 4 zawiera ..... (kilka zdań) ............ itd. 
-% Rozdział X stanowi podsumowanie pracy. 
-% \end{quote}
-
-% W przypadku prac inżynierskich zespołowych lub magisterskich 2-osobowych, po tych dwóch w/w akapitach 
-% musi w pracy znaleźć się akapit, w którym będzie opisany udział w pracy poszczególnych członków zespołu. Na przykład:
-
-% \begin{quote}
-% Jan Kowalski w ramach niniejszej pracy wykonał projekt tego i tego, opracował ......
-% Grzegorz Brzęczyszczykiewicz wykonał ......, itd. 
-% \end{quote}
 
 \section{Znaczenie losowości w procesie kryptograficznym}
 
-\noindent Generatory liczb losowych stanowią istotną część algorytmów współczesnej 
-kryptografii~\cite{2016Sreekumar-Ramesh}. Liczby losowe wykorzystywane są w zadaniach kryptografii na różnych etapach i w wielu 
+\noindent Generatory liczb losowych stanowią istotną część algorytmów 
+współczesnej kryptografii~\cite{2016Sreekumar-Ramesh}. Liczby losowe 
+wykorzystywane są w kryptografii na różnych etapach i w wielu 
 różnych celach.
 
 Generowanie par kluczy kryptograficznych algorytmem RSA zapewnia bezpieczeństwo 
-komunikacji, zakładając wysoką złożoność obliczeniową faktoryzacji iloczynu dwóch losowych liczb pierwszych. 
-Dopiero gdy dane liczby pierwsze spełniają kryteria oceny losowości, możemy stwierdzić, że 
-para kluczy będzie bezpieczna. Tzn. próba faktoryzacji będzie na tyle wymagająca 
-sprzętowo i czasowo, aby uczynić ją nieopłacalną dla atakującego.
+komunikacji przy założeniu wysokiej złożoności obliczeniowej faktoryzacji iloczynu 
+dwóch losowych liczb pierwszych~\cite{Handbook-of-Applied-Cryptography}. 
+Dopiero gdy dane liczby pierwsze spełniają kryteria oceny losowości, możemy 
+stwierdzić, że para kluczy będzie bezpieczna. Oznacza to, że próba 
+faktoryzacji będzie na tyle wymagająca sprzętowo i czasowo, aby uczynić ją 
+nieopłacalną dla atakującego.
 
 Tworzenie podpisów cyfrowych nie byłoby możliwe bez odpowiednich źródeł 
-losowości. Kryptografia krzywych eliptycznych, stosowana przy podpisywaniu plików binarnych, 
-zawiera element losowy w postaci jednorazowego nonce. 
+losowości. Kryptografia krzywych eliptycznych, stosowana przy podpisywaniu 
+plików binarnych, zawiera element losowy w postaci jednorazowej wartości nonce. 
 Sytuacja, w której nonce nie spełnia miar losowości, naraża na niebezpieczeństwo 
-cały klucz prywatny producenta. Samo występowanie okresowości w generowanych nonce 
-otwiera drzwi dla nowych wektorów ataku.
+cały klucz prywatny producenta. Gdy kilka kolejnych bitów losowych wartości nonce 
+(używanych przy każdej generacji sygnatury) jest znanych dla pewnej liczby 
+sygnatur cyfrowych, możliwe jest odzyskanie klucza 
+prywatnego~\cite{ch1-the-insecurity-of-ECDSA}.
 
-W różnych trybach pracy szyfrów blokowych, takich jak AES, wprowadzane są dodatkowe 
-wartości losowe, takie jak IV czy nonce. Powtarzalny nonce w trybie AES-CTR naraża bezpieczeństwo 
-szyfrowanej wiadomości. Przechwycenie dwóch różnych szyfrogramów wygenerowanych z tym samym
-nonce umożliwia wydobycie tekstu jawnego. 
+W różnych trybach pracy szyfrów blokowych, takich jak AES, wprowadzane są 
+dodatkowe wartości losowe, takie jak wektor inicjalizacyjny (IV) czy nonce. Powtarzająca się 
+wartość nonce w trybie AES-CTR naraża na niebezpieczeństwo całą szyfrowaną wiadomość. 
+Przechwycenie dwóch różnych szyfrogramów wygnerowanych z tym samym nonce 
+umożliwia wydobycie tekstu jawnego~\cite{NIST-SP-800-38A}.
 
-Przesłanki te stanowią motywację do podjęcia badań nad oceną dostępnych generatorów losowości.
+Przesłanki te stanowią motywację do podjęcia badań nad oceną dostępnych 
+generatorów losowości.
 
 
 \section{Cel pracy}
 
-\noindent Celem niniejszej pracy magisterskiej jest adaptacja oraz implementacja otwartoźródłowego 
-generatora losowości neoTRNG bazującego na oscylatorach pierścieniowych. 
-Badany moduł będzie implementowany jako układ cyfrowy realizowany 
-na płycie deweloperskiej wyposażonej w układ FPGA. Badania zostaną przeprowadzone za 
-pomocą dedykowanego środowiska testowego. 
+\noindent Celem niniejszej pracy magisterskiej jest adaptacja oraz 
+implementacja otwartoźródłowego generatora losowości neoTRNG, bazującego na 
+oscylatorach pierścieniowych. Badany moduł będzie implementowany jako układ 
+cyfrowy realizowany na płycie deweloperskiej wyposażonej w układ FPGA. Badania 
+zostaną przeprowadzone za pomocą dedykowanego środowiska testowego. 
 
 Kryteria oceny generatora obejmować będą: zestaw testów statystycznych 
 zdefiniowanych w publikacji NIST SP 800-22~\cite{NIST-SP-800-22}, 
@@ -87,44 +53,44 @@ stanowić modyfikacje bazowego rozwiązania neoTRNG przedstawionego
 w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą aspekty takie jak: 
 liczba zastosowanych oscylatorów, zastosowanie korekcji źródła 
 (np. korektor Von Neumanna), metody przetwarzania końcowego 
-(post-processing) oraz fizyczne rozmieszczenie elementów w strukturze FPGA.
+(ang. \textit{post-processing}) oraz fizyczne rozmieszczenie elementów w strukturze FPGA.
 
 \section{Uzasadnienie podjęcia tematu w kontekście systemów brzegowych}
 
-\noindent Rosnąca złożoność systemów informatycznych wymusza na inżynierach podejmowanie 
-nowych rozwiązań technicznych. W odpowiedzi na znaczne uzależnienie systemów 
-informatycznych od usług chmurowych powstała dziedzina przetwarzania brzegowego 
-(ang. edge computing). Zakłada ona ograniczenie interakcji z chmurą poprzez 
-rozwój dedykowanych systemów brzegowych. Podejście to opiera się na przetwarzaniu 
-danych oraz podejmowaniu decyzji przez system bezpośrednio w miejscu, w którym 
-dane są generowane.
+\noindent Rosnąca złożoność systemów informatycznych wymusza na inżynierach 
+wdrażanie nowych rozwiązań technicznych. W odpowiedzi na znaczne 
+uzależnienie systemów informatycznych od usług chmurowych powstała dziedzina 
+przetwarzania brzegowego (ang. \textit{edge computing}). Zakłada ona ograniczenie 
+interakcji z chmurą poprzez rozwój dedykowanych systemów brzegowych. Podejście 
+to opiera się na przetwarzaniu danych oraz podejmowaniu decyzji przez system 
+bezpośrednio w miejscu, w którym te dane są generowane.
 
 Podejście to ogranicza zależność od systemów chmurowych, jednak wprowadza nowe 
-zagrożenia charakterystyczne dla tej klasy systemów. Wiele z rozwiązań opartych 
-jest na układach scalonych dedykowanych do konkretnego zastosowania (ang. ASIC -
- Application-Specific Integrated Circuit). Ich główną zaletą jest ich znaczna 
- adaptowalność do zadań, które mają wykonywać. Jednak jest to opłacone znaczną 
- złożonością rozwijanego systemu, co otwiera go na nowe podatności. Jedną ze 
- szczególnych klas zagrożeń, wynikającą ze złożonego procesu rozwoju, są trojany 
+zagrożenia charakterystyczne dla tej klasy systemów. Wiele rozwiązań opartych 
+jest na układach scalonych przeznaczonych do konkretnych zastosowań (ang. \textit{ASIC} --
+ \textit{Application-Specific Integrated Circuit}). Ich główną zaletą jest 
+ znaczna adaptowalność do zadań, które mają wykonywać. Jest to jednak 
+ opłacone dużą złożonością rozwijanego systemu, co otwiera go na nowe podatności. 
+ Jedną ze szczególnych klas zagrożeń, wynikających ze złożonego procesu rozwoju, są trojany 
  sprzętowe wprowadzane przez atakującego na etapach projektowania i produkcji 
  układów scalonych.
 
-Ze względu na powagę tego zagrożenia, przyjęto, że jedną z metod przeciwdziałania 
+Ze względu na powagę tego zagrożenia przyjęto, że jedną z metod przeciwdziałania 
 jest promowanie układów scalonych rozwijanych w sposób transparentny i 
-weryfikowalny. Organizacje takie jak OSHWA i projekty jak RISC-V stanowią 
-fundament ruchu wspierającego transparentny rozwój otwartoźródłowych rozwiązań 
-technicznych.
+weryfikowalny. Organizacje takie jak OSHWA (ang. \textit{Open-Source Hardware Association}) 
+i projekty takie jak RISC-V stanowią fundament ruchu wspierającego transparentny 
+rozwój otwartoźródłowych rozwiązań technicznych.
 
-Organizacja Open-Source Hardware Association (OSHWA) oraz architektura zestawu 
-instrukcji RISC-V stanowią odpowiedź na kryzys zaufania do zamkniętych i 
-komercyjnych architektur. OSHW i RISC-V znajdują się we wspólnym ekosystemie 
-otwartoźródłowych technologii, choć pełnią różne zadania. Architektura RISC-V 
-jest jedynie standardem technicznym, który umożliwia rozwój układów scalonych. 
-Z kolei OSHW jest organem nadzorującym rozpowszechnianie konkretnych gotowych 
-rozwiązań. Połączenie OSHW i RISC-V poskutkowało powstaniem szerokiego wachlarza 
-transparentnych, otwartoźródłowych i bezpiecznych projektów układów scalonych.
+OSHWA oraz architektura zestawu instrukcji RISC-V stanowią odpowiedź na kryzys 
+zaufania do zamkniętych i komercyjnych architektur. OSHWA i RISC-V znajdują się 
+we wspólnym ekosystemie otwartoźródłowych technologii, choć pełnią różne 
+funkcje. Architektura RISC-V jest jedynie standardem technicznym, który 
+umożliwia rozwój układów scalonych. Z kolei OSHWA jest organem nadzorującym 
+rozpowszechnianie konkretnych, gotowych rozwiązań. Połączenie OSHWA i RISC-V 
+poskutkowało powstaniem szerokiego wachlarza transparentnych, otwartoźródłowych 
+i bezpiecznych projektów układów scalonych.
 
-Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHW i 
+Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHWA i 
 RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa napisana w 
 języku opisu sprzętu VHDL. Rozwiązanie to jest dedykowane inżynierom rozwijającym 
 systemy brzegowe w oparciu o układy FPGA.
@@ -132,14 +98,15 @@ systemy brzegowe w oparciu o układy FPGA.
 W strukturze procesora NEORV32 RISC-V zintegrowano moduł generatora entropii 
 neoTRNG, który stanowi główny przedmiot badań prowadzonych w ramach niniejszej 
 pracy magisterskiej. Podjęcie tematyki weryfikacji oraz analizy zastosowanego 
-generatora pozwala na realny wkład w rozwój bezpieczeństwa technologii otwartoźródłowych.
-
+generatora pozwala na realny wkład w rozwój bezpieczeństwa 
+technologii otwartoźródłowych.
 
 
 \section{Charakterystyka literatury}
 
-\noindent Badania zostaną przeprowadzone w oparciu o rekomendacje branżowe dotyczące 
-projektowania źródeł entropii oraz publikacje naukowe związane z analizowaną tematyką.
+\noindent Badania zostaną przeprowadzone na podstawie rekomendacji branżowych 
+dotyczących projektowania źródeł entropii oraz publikacji naukowych związanych 
+z analizowaną tematyką.
 
 \section{Układ pracy}
 
@@ -157,19 +124,21 @@ różne modyfikacje badanego generatora wraz z analizą ich zajętości sprzęto
 
 Rozdział czwarty poświęcono badaniom eksperymentalnym. Zbadane zostaną: 
 \begin{itemize}
-    \item wpływ metod postprocessingu na losowość, 
-    \item wpływ skalowania liczby oscylatorów pierścieniowych oraz liczby inwerterów na losowość, 
+    \item wpływ metod post-processing'u na losowość, 
+    \item wpływ skalowania liczby oscylatorów pierścieniowych oraz liczby 
+    inwerterów na losowość, 
     \item wpływ zastosowania ekstraktorów AES-CTR i Toeplitza na losowość, 
     \item wpływ rozmieszczenia komórek entropii w układzie FPGA na losowość. 
 \end{itemize}
 
-Wraz z wynikami testów losowości dodana zostanie informacja o przepustowości 
+Wraz z wynikami testów losowości dołączona zostanie informacja o przepustowości 
 każdej z implementacji.
 
 Rozdział piąty kończy pracę i podsumowuje najważniejsze wnioski wynikające z 
 przeprowadzonych badań.
 
-Załącznik A zawiera instrukcję planowania rozmieszczenia elementów (ang. \textit{floorplanning}), wykonanego w ramach analizy rozmieszczenia 
+Załącznik A zawiera instrukcję planowania rozmieszczenia elementów 
+(ang. \textit{floorplanning}), wykonanego w ramach analizy rozmieszczenia 
 komórek entropii.
 
 Załącznik B zawiera instrukcję przedstawiającą metodę akwizycji oraz przetworzenia 

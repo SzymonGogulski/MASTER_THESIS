@@ -23,6 +23,21 @@
 \usepackage[autostyle=true]{csquotes}
 \usepackage{upgreek}
 \usepackage{amsmath} % for \text
+\usepackage[most]{tcolorbox}
+
+% Definicja własnego otoczenia dla ostrzeżeń
+\newtcolorbox{ostrzezenie}[1]{%
+  enhanced,
+  colback=red!5!white,       % tło (5% czerwieni, bardzo jasne)
+  colframe=red!75!black,     % kolor lewej krawędzi
+  boxrule=0pt,               % brak ramki dookoła
+  leftrule=4pt,              % gruba linia tylko po lewej stronie
+  arc=0pt,                   % ostre narożniki
+  title=\textbf{#1},          % pogrubiony tytuł
+  coltitle=red!75!black,     % kolor tytułu
+  attach title to upper,     % tytuł w tej samej linii co tekst
+  after title={\quad},       % odstęp po tytule
+}
 
 %--------------------------------------
 % Strona tytułowa

@@ -6,45 +6,45 @@ Database file #1: bibliografia.bib
 Warning--empty author in Quantum-randomness-generator-optical-circ
 Warning--empty year in Quantum-randomness-generator-optical-circ
 Warning--empty publisher in Digital-integraged-circuits-A-design-perspective
-You've used 14 entries,
+You've used 17 entries,
             1876 wiz_defined-function locations,
-            547 strings with 5959 characters,
-and the built_in function-call counts, 2324 in all, are:
-= -- 154
-> -- 172
+            580 strings with 9036 characters,
+and the built_in function-call counts, 2901 in all, are:
+= -- 227
+> -- 195
 < -- 0
-+ -- 64
-- -- 50
-* -- 170
-:= -- 397
-add.period$ -- 13
-call.type$ -- 14
-change.case$ -- 13
++ -- 73
+- -- 56
+* -- 198
+:= -- 496
+add.period$ -- 28
+call.type$ -- 17
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 106
-empty$ -- 245
-format.name$ -- 50
-if$ -- 523
+cite$ -- 20
+duplicate$ -- 133
+empty$ -- 296
+format.name$ -- 56
+if$ -- 664
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 11
-newline$ -- 46
-num.names$ -- 13
-pop$ -- 69
+int.to.str$ -- 17
+missing$ -- 14
+newline$ -- 67
+num.names$ -- 16
+pop$ -- 74
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 34
+skip$ -- 32
 stack$ -- 0
 substring$ -- 0
-swap$ -- 10
+swap$ -- 13
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 13
-width$ -- 16
-write$ -- 106
+while$ -- 16
+width$ -- 19
+write$ -- 154
 (There were 3 warnings)
