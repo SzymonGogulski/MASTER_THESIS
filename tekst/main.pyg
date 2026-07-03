@@ -1,0 +1,17 @@
+entity neoTRNG is
+  generic (
+    NUM_CELLS           : natural range 1 to 255;
+    NUM_INV_START       : natural range 3 to 4095;
+    NUM_RAW_BITS        : natural range 1 to 4096;
+    SIM_MODE            : boolean;
+    ENABLE_VON_NEUMANN  : boolean := true;
+    ENABLE_CRC          : boolean := true
+  );
+  port (
+    clk_i    : in  std_ulogic;
+    rstn_i   : in  std_ulogic;
+    enable_i : in  std_ulogic;
+    valid_o  : out std_ulogic;
+    data_o   : out std_ulogic_vector(7 downto 0)
+  );
+end entity;

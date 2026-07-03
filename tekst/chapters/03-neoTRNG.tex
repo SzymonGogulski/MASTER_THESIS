@@ -1,6 +1,6 @@
 \chapter{Modułowa platforma sprzętowa do oceny losowości generatora neoTRNG}
 
-Generator liczb losowych neoTRNG stanowi obiekt badań niniejszej pracy. 
+\noindent Generator liczb losowych neoTRNG stanowi obiekt badań niniejszej pracy. 
 Cały projekt generator jest publicznie dostępny w postaci repozytorium kodu
 (\url{https://github.com/stnolting/neoTRNG}). Główne cechy charakterystyczne 
 badanego generatora to~\cite{neoTRNG}:
@@ -31,24 +31,169 @@ badanego generatora to~\cite{neoTRNG}:
     \label{fig:ch3_architektura}
 \end{figure}
 
-W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe 
+\noindent W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe 
 po klejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
 operacją $\text{XOR}$. Następnie surowy sygnał losowy trafia do ekstraktora 
 von Neumanna. Ostatecznie próbki z ekstaktora mieszane są wielomianem CRC. 
-Generator zwraca jeden bajt dany, o czym informuje poprzez stanem wysokim na linii 
-valid\_o.
+Generator zwraca jeden bajt danych, o czym informuje poprzez stanem wysokim na linii 
+\texttt{valid\_o}. 
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+entity neoTRNG is
+  generic (
+    NUM_CELLS           : natural range 1 to 255;
+    NUM_INV_START       : natural range 3 to 4095;
+    NUM_RAW_BITS        : natural range 1 to 4096;
+    SIM_MODE            : boolean;
+    ENABLE_VON_NEUMANN  : boolean := true;
+    ENABLE_CRC          : boolean := true
+  );
+  port (
+    clk_i    : in  std_ulogic;
+    rstn_i   : in  std_ulogic;
+    enable_i : in  std_ulogic;
+    valid_o  : out std_ulogic;
+    data_o   : out std_ulogic_vector(7 downto 0)
+  );
+end entity;
+    \end{minted}
+    \caption{Parametry generic oraz porty neoTRNG.}
+    \label{fig:ch3_neotrng_entity_generic_port_map}
+\end{figure}
+
+Bazowy plik RTL zawiera cztery parametry generyczne:
+
+\begin{itemize}
+  \item \texttt{NUM\_CELLS} - ilość zastosowanych RO,
+  \item \texttt{NUM\_INV\_START} - nieparzysta liczba inverterów w pierwszym RO, każdy 
+  kolejny RO zawiera o dwa inwertery więcej,
+  \item \texttt{NUM\_RAW\_BITS} - ilość bitów wejściowych dla wielomianu CRC,
+  \item \texttt{SIM\_MODE} - dodatkowy tryb pracy, wykorzystywany do symulacji układu 
+  oraz testów (nie generuje sygnału losowego).
+\end{itemize}
+
+\subsection{Modyfikacje wprowadzone w module neoTRNG}
+
+\noindent Dodatkowo zaimplementowane zostały dwa kolejne parametry generyczne, w celu 
+zbadania wpływu obecności ekstaktora von Neumanna oraz wielomianu CRC: 
+
+\begin{itemize}
+  \item \texttt{ENABLE\_VON\_NEUMANN} - określa czy sygnał ze źródła zostanie przetworzony 
+  ekstraktorem von Neumanna, gdy parametry jest równy \texttt{True}, sygnał jest 
+  kierowany od ekstraktora, w przeciwnym razie jest przekierowany do następnego modułu,
+  \item \texttt{ENABLE\_CRC} - określa czy sygnał z poprzedniego modułu zostanie przetworzony 
+  wielomianem CRC, gdy parametr jest równy \texttt{True} sygnał jest kierowany do CRC, w 
+  przeciwym razie moduł CRC jest omijany.
+\end{itemize}
+
+Pozwala to na zbadanie sygnału na różnych etapach pracy generatora.
+
+\begin{table}[H]
+\centering
+\caption{Wpływ konfiguracji parametrów generycznych na rzeczywisty sygnał wyjściowy generatora}
+\label{tab:ch3_konfiguracja_parametrow}
+\vspace{2mm} % 
+\begin{tabularx}{\textwidth}{ccX}
+\toprule
+\textbf{\makecell{ENABLE\_\\VON\_NEUMANN}} & \textbf{ENABLE\_CRC} & \textbf{Charakterystyka sygnału wyjściowego} \\
+\midrule
+\texttt{False} & \texttt{False} & Sygnał surowy (bezpośrednio ze źródła). Brak korekcji asymetrii 
+i dodatkowego rozproszenia statystycznego. \\
+\addlinespace
+\texttt{False} & \texttt{True}  & Sygnał surowy przetworzony wyłącznie przez wielomian CRC. 
+Poprawione właściwości statystyczne, lecz ewentualna asymetria źródła może 
+wpływać na wynik końcowy. \\
+\addlinespace
+\texttt{True}  & \texttt{False} & Sygnał poddany ekstrakcji von Neumanna, z pominięciem modułu CRC. 
+Usunięta asymetria, kosztem zmniejszenia przepustowości strumienia danych. \\
+\addlinespace
+\texttt{True}  & \texttt{True}  & Pełna implementacja sprzętowa. Sygnał po ekstrakcji von Neumanna 
+zostaje dodatkowo przetworzony przez wielomian CRC. Sygnał o możliwie najlepszych 
+właściwościach statystycznych, kosztem największego zużycia zasobów oraz najmniejszą 
+przepustowością. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Opis pracy komórki entropii neoTRNG\_cell}
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+entity neoTRNG_cell is
+  generic (
+    NUM_INV  : natural; 
+    SIM_MODE : boolean  
+  );
+  port (
+    clk_i  : in  std_ulogic; 
+    rstn_i : in  std_ulogic; 
+    en_i   : in  std_ulogic; 
+    en_o   : out std_ulogic;
+    rnd_o  : out std_ulogic  
+  );
+end entity;
+
+    \end{minted}
+    \caption{Parametry generic oraz porty neoTRNG\_cell.}
+    \label{fig:ch3_neotrng_cell_entity_generic_port_map}
+\end{figure}
+
+
+\noindent Bazowym modułem generatora neoTRNG jest neoTRNG\_cell, stanowi on pojedyńczy RO. 
+Rozwiązanie zaimplementowane jest za pomocą instrukcji generowania i dwóch procesów.
+
+\begin{enumerate}
+  \item \texttt{ring\_osc\_gen} - instrukcja generowania, tworzy pętlę inwerterów oraz oraz logikę 
+  zatrzasków (ang. \textit{latch}) pomiędzy nimi,
+  \item \texttt{en\_shift\_reg} - proces obsługujący rejest przesówny z sygnałami enable dla kolejnych zatrzasków w RO,
+  \item \texttt{synchronizer} - proces obsługujący dwustopniowy rejest przesówny (bufer próbek przed wyjściem).
+\end{enumerate}
+
+Zatrzaski pomiędzy inwerterami pozwalają na krokowe łączenie inwerterów z każdym 
+cyklem zegara, dzięku temu urządzenie włączane jest w powtarzalny sposób. Z kolei 
+gdy jest wyłączone, cały układ jest rozłączony. Funkcjonalność ta ma na celu 
+zapobiec powstaniu możliwym stanom nieustalonym w układzie. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/ch3/metastability.png}
+    \caption{Metastabilność - stan nieustalony.~\cite{FPGA-metastability}}
+    \label{fig:ch2_model_zrodla_entropii_nist}
+\end{figure}
+
+
+Metastabilność (ang. \textit{metastability}) to zjawisko w elektronice cyfrowej, 
+w którym przerzutnik nie potrafi w założonym czasie osiągnąć stanu ustalonego 
+'0' lub '1'. Pozostaje wówczas przez pewien moment w stanie nie ustalonym, co może 
+prowadzić do błędów w innych częściach układu. Przyczyną metastabilności może być 
+próbkowanie sygnału w trakcie zmainy stanu.
+
+Ostateczną metodą uniknięcia metastabilność w układzie jest dwustopniowy rejest 
+przesówny procesu synchronizatora. Jeżeli próbkowane jest wyjście 
+z ostatniego RO i akurat wtedy sygnał znajduje się w stanie nieustalonym, 
+oznacza to propagację wadliwego sygnału do reszty układu. Dodatkowy rejestr 
+spowalnia proces generowania pierwszej próbki o jeden cykl, ale jego 
+obecność w układzie zapobiega propagacji powyższego błędu. Wadliwa sygnał w 
+pierwszym rejestrze ma czas się ustalić. 
+
+Ostatecznie sygnał z drugiego rejestru jest przesówany na wyjście układu 
+\texttt{rnd\_o} oraz podnoszony jest stan wysoki na lini \texttt{en\_o}.
+
+
+\section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz'a}
+
+Kolejna implementacja generatora wymienia ekstraktor von Neumanna i wielomina CRC 
+na ekstraktor Toeplitz'a. Wykorzystana została otwartoźródłowa implementacja  
+dostępna w repozytrium~\cite{topelitz-rok-zitko}. 
 
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
 
-
-\section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz}
-
-
-
-
-
-
-
+Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
+AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
+silnika szyfru blokowego aes~\cite{AES-opencores}.
 
 \section{Wykorzystanie zasobów}
 

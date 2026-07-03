@@ -19,6 +19,9 @@ J.~M. Rabaey, B.~Nikolic, and A.~P. Chandrakasan, {\em Digital Integrated Circui
 \bibitem{neoTRNG}
 {stnolting}, ``neotrng: A true random number generator for fpgas,'' 2016.
 
+\bibitem{FPGA-metastability}
+C.~O'Flynn, ``Experimenting with metastability and multiple clocks on fpgas,'' 2020.
+
 \bibitem{2016Sreekumar-Ramesh}
 L.~Sreekumar and P.~Ramesh, ``Selection of an optimum entropy source design for a true random number generator,'' {\em Procedia Technology}, 2016.
 \newblock Random number generators are a vital component in many cryptographic algorithms and systems, such as generation of keys in secret key cryptography and public key cryptography.
@@ -63,5 +66,11 @@ P.~Kok, ``A first introduction to quantum physics,'' {\em Springer Nature Link},
 \bibitem{ucgosu-CRC}
 M.~Gajdzica, ``Jak działa crc,'' 2017.
 \newblock CRC jest wykorzystywane między innymi do wykrywania przekłamań wiadomości przesyłanych przez łącza komunikacyjne, czy do sprawdzania poprawności danych zapisywanych na dysku.
+
+\bibitem{topelitz-rok-zitko}
+R.~Zitko, ``Toeplitz entropy extractor,''
+
+\bibitem{AES-opencores}
+H.~Hadipour, ``Aes opencores,''
 
 \end{thebibliography}

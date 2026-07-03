@@ -10,6 +10,9 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Przykładowy wynik pakietu ENT.}}{10}{figure.2.6}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Architektura neoTRNG. \cite {neoTRNG}}}{12}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Parametry generic oraz porty neoTRNG.}}{12}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Parametry generic oraz porty neoTRNG\_cell.}}{14}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Metastabilność - stan nieustalony.~\cite {FPGA-metastability}}}{14}{figure.3.4}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

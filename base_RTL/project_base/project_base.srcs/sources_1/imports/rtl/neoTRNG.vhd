@@ -252,7 +252,7 @@ architecture neoTRNG_cell_rtl of neoTRNG_cell is
 
 begin
 
-  en_shift_reg: process (rstn_i, clk_i)
+	  en_shift_reg: process (rstn_i, clk_i)
   begin
     if (rstn_i = '0') then
       sreg <= (others => '0');
@@ -269,20 +269,20 @@ begin
                 latch(i)      when (sreg(i) = '0')  else
                 inv_out(i);
 
-    inverter_phy: if not SIM_MODE generate
+--    inverter_phy: if not SIM_MODE generate
       inv_out(i) <= not inv_in(i);
-    end generate;
+--    end generate;
 
-    inverter_sim: if SIM_MODE generate 
-      inverter_sim_ff: process (rstn_i, clk_i) 
-      begin
-        if (rstn_i = '0') then
-          inv_out(i) <= '0';
-        elsif rising_edge(clk_i) then
-          inv_out(i) <= not inv_in(i);
-        end if;
-      end process;
-    end generate;
+--    inverter_sim: if SIM_MODE generate 
+--      inverter_sim_ff: process (rstn_i, clk_i) 
+--      begin
+--        if (rstn_i = '0') then
+--          inv_out(i) <= '0';
+--        elsif rising_edge(clk_i) then
+--          inv_out(i) <= not inv_in(i);
+--        end if;
+--      end process;
+--    end generate;
 
   end generate;
 
