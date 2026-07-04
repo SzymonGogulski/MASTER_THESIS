@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  3 JUL 2026 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  4 JUL 2026 21:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1104,48 +1104,127 @@ File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
-))
+)) (/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen336
+\pgfarrowlength=\dimen337
+\pgfarrowwidth=\dimen338
+\pgfarrowlinewidth=\dimen339
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box108
+\pgfnodeparttwobox=\box109
+\pgfnodepartthreebox=\box110
+\pgfnodepartfourbox=\box111
+\pgfnodeparttwentybox=\box112
+\pgfnodepartnineteenbox=\box113
+\pgfnodeparteighteenbox=\box114
+\pgfnodepartseventeenbox=\box115
+\pgfnodepartsixteenbox=\box116
+\pgfnodepartfifteenbox=\box117
+\pgfnodepartfourteenbox=\box118
+\pgfnodepartthirteenbox=\box119
+\pgfnodeparttwelvebox=\box120
+\pgfnodepartelevenbox=\box121
+\pgfnodeparttenbox=\box122
+\pgfnodepartninebox=\box123
+\pgfnodeparteightbox=\box124
+\pgfnodepartsevenbox=\box125
+\pgfnodepartsixbox=\box126
+\pgfnodepartfivebox=\box127
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box128
+\pgf@layerboxsaved@background=\box129
+)
 runsystem(command -v pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (./main.aux
-
-LaTeX Warning: Label `fig:ch2_model_zrodla_entropii_nist' multiply defined.
-
-)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 77.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count441
-\scratchdimen=\dimen336
-\scratchbox=\box108
+\scratchdimen=\dimen340
+\scratchbox=\box130
 \nofMPsegments=\count442
 \nofMParguments=\count443
 \everyMPshowfont=\toks52
 \MPscratchCnt=\count444
-\MPscratchDim=\dimen337
+\MPscratchDim=\dimen341
 \MPnumerator=\count445
 \makeMPintoPDFobject=\count446
 \everyMPtoPDFconversion=\toks53
@@ -1155,7 +1234,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 62.
+Package hyperref Info: Link coloring ON on input line 77.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1163,7 +1242,7 @@ Package hyperref Info: Link coloring ON on input line 62.
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-polish.trsl
 File: translations-basic-dictionary-polish.trsl (polish translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 62.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 77.
 \c@lstlisting=\count447
 Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)                    date: 2026-04-24 12:31:20
@@ -1172,26 +1251,53 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)                    date: 2026-04-24 14:59:26
 (epstopdf)                    size: 31922 bytes
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
-(epstopdf)             \includegraphics on input line 66.
+(epstopdf)             \includegraphics on input line 81.
 Package epstopdf Info: Output file is already uptodate.
 <wit/sygnet-pp-eps-converted-to.pdf, id=240, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
-Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 66.
+Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 81.
 (pdftex.def)             Requested size: 426.0pt x 85.13472pt.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./wit/sygnet-pp-eps-converted-to.pdf>] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} <./wit/sygnet-pp-eps-converted-to.pdf>] [2
 
-] (./main.toc [1
+] (./main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3.
+ (/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 3.
+ (/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 3.
+ (/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+ [1
 
 ]) (./main.lof) (./main.lot [2]) [3] (./chapters/01-wstep.tex [1
 
 
 
-] [2]) (./chapters/02-teoria.tex [3]
-<figures/ch2/nist_source_schematic.png, id=432, 889.3225pt x 611.28375pt>
+] [2]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 127.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (./chapters/02-teoria.tex [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+<figures/ch2/nist_source_schematic.png, id=439, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
 Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 48.
@@ -1204,12 +1310,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) h
                                                   \__shipout_drop_firstpage_...
 l.100 
        <./figures/ch2/nist_source_schematic.png>]
-<figures/ch2/Quantis-QRNG-USB.png, id=457, 201.00093pt x 104.64093pt>
+<figures/ch2/Quantis-QRNG-USB.png, id=463, 201.00093pt x 104.64093pt>
 File: figures/ch2/Quantis-QRNG-USB.png Graphic file (type png)
 <use figures/ch2/Quantis-QRNG-USB.png>
 Package pdftex.def Info: figures/ch2/Quantis-QRNG-USB.png  used on input line 129.
 (pdftex.def)             Requested size: 170.3974pt x 88.70888pt.
- [6
+ [6{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1219,15 +1325,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.162 
-       <./figures/ch2/Quantis-QRNG-USB.png>]
-<figures/ch2/319_QNRG.png, id=474, 335.00156pt x 192.72pt>
+      {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/ch2/Quantis-QRNG-USB.png>]
+<figures/ch2/319_QNRG.png, id=480, 335.00156pt x 192.72pt>
 File: figures/ch2/319_QNRG.png Graphic file (type png)
 <use figures/ch2/319_QNRG.png>
 Package pdftex.def Info: figures/ch2/319_QNRG.png  used on input line 166.
 (pdftex.def)             Requested size: 255.6026pt x 147.04213pt.
 Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 199.
  (./svg-inkscape/schematic_svg-tex.pdf_tex
-<./svg-inkscape/schematic_svg-tex.pdf, id=478, page=1, 416.71994pt x 111.85147pt>
+<./svg-inkscape/schematic_svg-tex.pdf, id=484, page=1, 416.71994pt x 111.85147pt>
 File: ./svg-inkscape/schematic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/schematic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on input line 56.
@@ -1243,7 +1349,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) h
                                                   \__shipout_drop_firstpage_...
 l.211 
        <./figures/ch2/319_QNRG.png> <./svg-inkscape/schematic_svg-tex.pdf>]
-<figures/ch2/inverter.png, id=488, 438.63875pt x 367.3725pt>
+<figures/ch2/inverter.png, id=494, 438.63875pt x 367.3725pt>
 File: figures/ch2/inverter.png Graphic file (type png)
 <use figures/ch2/inverter.png>
 Package pdftex.def Info: figures/ch2/inverter.png  used on input line 214.
@@ -1253,4 +1359,292 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.250     \item p
-                 obrano próbki $(0;1)$ $\righ
+                 obrano próbki $(0;1)$ $\rightarrow$ generowany jest bit $0$. <./figures/ch2/inverter.png>]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/default.pygstyle) (./_minted-main/09EAC5C70D905189C63F5C8642912186D3773C8B440B993359565A23D713B17A.pygtex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
+) [9]) (./chapters/03-neoTRNG.tex [10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1 \chapter
+            {Modułowa platforma sprzętowa do oceny losowości generatora n...]
+<figures/ch2/neotrng_architecture.png, id=524, 519.03pt x 169.506pt>
+File: figures/ch2/neotrng_architecture.png Graphic file (type png)
+<use figures/ch2/neotrng_architecture.png>
+Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 29.
+(pdftex.def)             Requested size: 426.0pt x 139.13031pt.
+ [11
+
+]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/977B30E52B748205EE4653511B5B1997F44F6C4ED06BC6BBC27BF316A372E127.pygtex) [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.83   \item \texttt
+                    {ENABLE\_VON\_NEUMANN} - określa czy sygnał ze źród�...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.83   \item \texttt
+                    {ENABLE\_VON\_NEUMANN} - określa czy sygnał ze źród�... <./figures/ch2/neotrng_architecture.png>]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/D35AE802E5F737C55C2E94DFBA51750FF44F6C4ED06BC6BBC27BF316A372E127.pygtex) [13
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.143 
+      ]
+<figures/ch3/metastability.png, id=541, 578.16pt x 316.93407pt>
+File: figures/ch3/metastability.png Graphic file (type png)
+<use figures/ch3/metastability.png>
+Package pdftex.def Info: figures/ch3/metastability.png  used on input line 162.
+(pdftex.def)             Requested size: 319.5pt x 175.14122pt.
+ [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.173 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.173 
+       <./figures/ch3/metastability.png>]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/AA73D5937F988058DCD3AA1ED7645C4AD3773C8B440B993359565A23D713B17A.pygtex)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 295.
+ (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.353 
+      ]
+<figures/ch3/neotrng_topelitz.pdf, id=562, 614.295pt x 794.97pt>
+File: figures/ch3/neotrng_topelitz.pdf Graphic file (type pdf)
+<use figures/ch3/neotrng_topelitz.pdf>
+Package pdftex.def Info: figures/ch3/neotrng_topelitz.pdf  used on input line 364.
+(pdftex.def)             Requested size: 528.93549pt x 112.10364pt.
+ [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.368 
+      ]
+Overfull \vbox (13.21288pt too high) has occurred while \output is active []
+
+ [17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.368 
+       <./figures/ch3/neotrng_topelitz.pdf>]
+<figures/ch3/aes-ctr-architecture.pdf, id=582, 2902.845pt x 1676.18213pt>
+File: figures/ch3/aes-ctr-architecture.pdf Graphic file (type pdf)
+<use figures/ch3/aes-ctr-architecture.pdf>
+Package pdftex.def Info: figures/ch3/aes-ctr-architecture.pdf  used on input line 374.
+(pdftex.def)             Requested size: 2902.83795pt x 1676.17805pt.
+ [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.383 
+       <./figures/ch3/aes-ctr-architecture.pdf>]
+Overfull \hbox (3.84924pt too wide) in paragraph at lines 477--478
+ [][] 
+ []
+
+) (./chapters/04-badania.tex [19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.4 
+    ] [20
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.34 \chapter
+             {Badania eksperymentalne}] [21
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.106 
+      ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 168.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 168.
+ [22
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.209 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.209 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.209 
+      ] [23
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.283 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.283 
+      ] [24
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+      ] [25
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.399 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.399 
+      ] [26
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.548 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.548 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.548 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.548 
+      ]
+Overfull \hbox (37.26013pt too wide) in paragraph at lines 571--592
+ [][] 
+ []
+
+[27
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.641 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.641 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.641 
+      ]
+Overfull \hbox (15.70633pt too wide) in paragraph at lines 653--698
+ [][] 
+ []
+
+) (./chapters/05-podsumowanie.tex [28
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2 \chapter
+            {Podsumowanie i wnioski}
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.19}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2 \chapter
+            {Podsumowanie i wnioski}]) (./main.bbl [29
+
+]
+bibitemlist
+[30
+
+]) [31] (./chapters/zalacznik-A.tex) (./chapters/zalacznik-B.tex [32
+
+
+]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) [33
+
+]
+<wit/logo-pp.pdf, id=808, 422.57875pt x 422.57875pt>
+File: wit/logo-pp.pdf Graphic file (type pdf)
+<use wit/logo-pp.pdf>
+Package pdftex.def Info: wit/logo-pp.pdf  used on input line 144.
+(pdftex.def)             Requested size: 42.67946pt x 42.67912pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 144.
+ [34
+
+ <./wit/logo-pp.pdf>]
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+\tf@lof=\write9
+\openout9 = `main.lof'.
+
+\tf@lot=\write10
+\openout10 = `main.lot'.
+
+ (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4751633ABA97E95106E5A76229F9C764;12207.
+runsystem(rm main.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 42682 strings out of 476074
+ 903639 string characters out of 5793136
+ 1971975 words of memory out of 5000000
+ 63804 multiletter control sequences out of 15000+600000
+ 661695 words of font info for 93 fonts, out of 8000000 for 9000
+ 79 hyphenation exceptions out of 8191
+ 99i,20n,107p,858b,1214s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (39 pages, 1643284 bytes).
+PDF statistics:
+ 962 PDF objects out of 1000 (max. 8388607)
+ 677 compressed objects within 7 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 615 words of extra memory for PDF output out of 10000 (max. 10000000)
+

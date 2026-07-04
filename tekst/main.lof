@@ -13,6 +13,11 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Parametry generic oraz porty neoTRNG.}}{12}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Parametry generic oraz porty neoTRNG\_cell.}}{14}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Metastabilność - stan nieustalony.~\cite {FPGA-metastability}}}{14}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wynik symulacji.}}{15}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram ideowy modułu neoTRNG zintegrowanego z ekstraktorem Toeplitza.}}{16}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Schemat generatora z ekstraktorem Toeplitza.}}{17}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}}{18}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram stanów kontrolera pracy generatora z silnikiem AES-CTR.}}{19}{figure.3.9}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

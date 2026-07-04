@@ -9,38 +9,36 @@ Warning--empty publisher in Digital-integraged-circuits-A-design-perspective
 Warning--empty journal in FPGA-metastability
 Warning--empty journal in topelitz-rok-zitko
 Warning--empty year in topelitz-rok-zitko
-Warning--empty journal in AES-opencores
-Warning--empty year in AES-opencores
-You've used 20 entries,
+You've used 19 entries,
             1876 wiz_defined-function locations,
-            592 strings with 9257 characters,
-and the built_in function-call counts, 3287 in all, are:
-= -- 253
-> -- 207
+            588 strings with 9203 characters,
+and the built_in function-call counts, 3159 in all, are:
+= -- 245
+> -- 203
 < -- 0
-+ -- 79
-- -- 59
-* -- 223
-:= -- 555
++ -- 77
+- -- 58
+* -- 214
+:= -- 536
 add.period$ -- 29
-call.type$ -- 20
-change.case$ -- 19
+call.type$ -- 19
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 160
-empty$ -- 347
-format.name$ -- 59
-if$ -- 750
+cite$ -- 25
+duplicate$ -- 151
+empty$ -- 330
+format.name$ -- 58
+if$ -- 722
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 17
-newline$ -- 76
-num.names$ -- 19
-pop$ -- 94
+int.to.str$ -- 19
+missing$ -- 16
+newline$ -- 73
+num.names$ -- 18
+pop$ -- 87
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 37
+skip$ -- 35
 stack$ -- 0
 substring$ -- 0
 swap$ -- 13
@@ -48,8 +46,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 8
-while$ -- 19
-width$ -- 22
-write$ -- 173
-(There were 8 warnings)
+warning$ -- 6
+while$ -- 18
+width$ -- 21
+write$ -- 167
+(There were 6 warnings)

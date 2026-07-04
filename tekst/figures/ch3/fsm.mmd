@@ -1,0 +1,17 @@
+stateDiagram-v2
+    [*] --> RESET
+
+    RESET --> WAIT_TRNG
+
+    WAIT_TRNG --> START_AES : odebrano 224-bitowy seed
+
+    START_AES --> WAIT_AES
+
+    WAIT_AES --> WAIT_AES : AES pracuje
+    WAIT_AES --> LOAD_UART : szyfrogram gotowy
+
+    LOAD_UART --> WAIT_UART
+
+    WAIT_UART --> LOAD_UART : kolejny bajt
+    WAIT_UART --> START_AES : następny blok
+    WAIT_UART --> WAIT_TRNG : po 65536 blokach ponowne losowanie klucza

@@ -1,0 +1,198 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'neotrng_topelitz_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{415.63775475bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.17539063)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.485543,0.16581408){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}trng_inst\end{tabular}}}}%
+    \put(0.48398206,0.00757182){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}neoTRNG\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.01914062,0.09924607){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}clk_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.0121875,0.09143357){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}enable_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.01740234,0.08362107){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rstn_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.96210951,0.03674609){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}valid_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.96210951,0.09533978){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data_o[127:0]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.89492189,0.1111265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data_o_reg[127:0]\end{tabular}}}}%
+    \put(0.87668831,0.06929065){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_REG_ASYNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88671883,0.10016011){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88398451,0.09234766){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CE\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88984379,0.10578902){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CLR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88398451,0.08453511){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.90672664,0.09234766){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Q\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.68867186,0.05018905){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data0_i\end{tabular}}}}%
+    \put(0.68867186,0.03335311){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_XOR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.6842422,0.04807421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.6842422,0.04026171){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.70390625,0.04416798){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59882814,0.05409528){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data1_i\end{tabular}}}}%
+    \put(0.59882814,0.03725932){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_XOR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59439843,0.05198042){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59439843,0.04416798){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.61406253,0.04807421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.17771719,0.08847031){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}entropy_cell_gen[0].neoTRNG_cell_inst\end{tabular}}}}%
+    \put(0.20377266,0.05054064){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}neoTRNG_cell\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.19882814,0.07541801){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}clk_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.19925783,0.06760544){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.23164066,0.07541801){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.23164066,0.06760544){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rnd_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.19708986,0.05979298){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rstn_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.31834223,0.09628281){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}entropy_cell_gen[1].neoTRNG_cell_inst\end{tabular}}}}%
+    \put(0.32550942,0.05835312){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}neoTRNG_cell__parameterized1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.33945314,0.08323042){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}clk_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.33988283,0.07541801){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.37226562,0.08323042){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.37226562,0.07541801){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rnd_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.33771486,0.06760544){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rstn_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.45896716,0.1509703){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}entropy_cell_gen[2].neoTRNG_cell_inst\end{tabular}}}}%
+    \put(0.46613435,0.11304064){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}neoTRNG_cell__parameterized3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.48007809,0.13791798){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}clk_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.48050778,0.13010542){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.51289061,0.13791798){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}en_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.51289061,0.13010542){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rnd_o\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=38]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.47833981,0.12229298){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rstn_i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=39]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.69960939,0.09159529){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}raw_valid_reg\end{tabular}}}}%
+    \put(0.68137579,0.06225941){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_REG_ASYNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=40]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.69140628,0.08062889){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=41]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.69453127,0.08625779){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CLR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=42]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.68867186,0.07281641){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=43]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.71141407,0.0767227){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Q\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=44]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59882814,0.13222027){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}raw_valid0_i\end{tabular}}}}%
+    \put(0.59882814,0.11538439){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_AND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=45]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59439843,0.13010542){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=46]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.59439843,0.12229298){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=47]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.61406253,0.12619919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=48]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.08632811,0.07987652){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}sample_en_reg\end{tabular}}}}%
+    \put(0.06809454,0.05054064){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_REG_ASYNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=49]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.078125,0.06891012){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=50]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.08124999,0.07453902){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CLR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=51]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.07539062,0.06109768){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=52]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.09813281,0.06500389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Q\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=53]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.79270314,0.10800153){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}toeplitz_inst\end{tabular}}}}%
+    \put(0.79765314,0.06225941){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}toeplitz\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=54]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.78780468,0.09494919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}clk\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=55]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.78497655,0.08713669){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=56]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.77477342,0.07932421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}data_valid\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=57]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.81757816,0.07932421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}qstrobe\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=58]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.78389452,0.07151173){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}reset\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=59]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.81757816,0.08713669){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}q[127:0]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=60]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.89492189,0.04862652){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}valid_o_reg\end{tabular}}}}%
+    \put(0.87668831,0.01929062){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RTL_REG_ASYNC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=61]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88671883,0.03766012){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=62]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88984379,0.04328902){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CLR\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=63]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.88398451,0.02984768){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=64]{neotrng_topelitz_svg-tex.pdf}}%
+    \put(0.90672664,0.03375391){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Q\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=65]{neotrng_topelitz_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%

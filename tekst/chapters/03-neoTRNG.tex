@@ -161,7 +161,7 @@ zapobiec powstaniu możliwym stanom nieustalonym w układzie.
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch3/metastability.png}
     \caption{Metastabilność - stan nieustalony.~\cite{FPGA-metastability}}
-    \label{fig:ch2_model_zrodla_entropii_nist}
+    \label{fig:ch3-metastabilnosc-przyklad}
 \end{figure}
 
 
@@ -185,15 +185,302 @@ Ostatecznie sygnał z drugiego rejestru jest przesówany na wyjście układu
 
 \section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz'a}
 
-Kolejna implementacja generatora wymienia ekstraktor von Neumanna i wielomina CRC 
-na ekstraktor Toeplitz'a. Wykorzystana została otwartoźródłowa implementacja  
-dostępna w repozytrium~\cite{topelitz-rok-zitko}. 
+\noindent Kolejna implementacja generatora wymienia ekstraktor von Neumanna i 
+wielomina CRC na ekstraktor Toeplitz'a. Wykorzystana została otwartoźródłowa 
+implementacja dostępna w repozytrium \url{https://github.com/rokzitko/toeplitz}. 
+Główne cechy charakterystyczne zastosowanego ekstaktora~\cite{topelitz-rok-zitko}:
 
+\begin{itemize}
+  \item dostępne tryby pracy szeregowej i równoległej,
+  \item modyfikowalna szerokość bloku wejściowego i wyjściowego,
+  \item stałe ziarno macierzy zaszyte wewnątrz pliku RTL,
+  \item dynamiczne generowanie kolumn macierzy Toeplitza, pozwala uniknąć 
+  przechowywania całej macierzy naraz w pamięci.
+\end{itemize}
+
+Integracja generatora neoTRNG z nowym modułem wymagała wstępnego 
+przetłumaczenia opisu ekstaktora z języku opisu sprzętu Verilog na VHDL. 
+Poprawność wykonanego tłumaczenia została sprawdzona za pomocą środowiska testowego.
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+Note: Extracted Value (q): 0x6743ABD32AF0540CCEAF400958CD8550
+Note: Expected Value:      0x6743ABD32AF0540CCEAF400958CD8550
+Note: VERIFICATION RESULT: PASS
+    \end{minted}
+    \caption{Wynik symulacji.}
+    \label{fig:ch3_toeplitz_testbench_result}
+\end{figure}
+
+Wynik z symulacji potwierdza poprawne przetłumaczenie modułu. Na poniższych 
+schematach  (Fig.~\ref{fig:ch3_neotrng_toeplitz_architecture} oraz 
+Fig.~\ref{fig:ch3_neotrng_toeplitz}) widać położenie ekstraktora Toeplitza 
+tuż za komórkami entropii. Został on wbudowany wewnątrz modułu neoTRNG w 
+miejscu logiku ekstraktora von Neumanna i wielomianu CRC. 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    font=\sffamily,
+    >=Stealth,
+    node distance=14mm and 18mm,
+    every node/.style={align=center},
+    module/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=blue!55!black,
+        fill=blue!2,
+        line width=1.2pt,
+        inner sep=14pt
+    },
+    group/.style={
+        rectangle,
+        rounded corners=2pt,
+        draw=black!45,
+        fill=black!3,
+        thick,
+        inner sep=10pt
+    },
+    process/.style={
+        rectangle,
+        rounded corners=2pt,
+        draw=blue!55!black,
+        fill=blue!6,
+        line width=0.8pt,
+        minimum width=35mm,
+        minimum height=10mm,
+        font=\sffamily\small,
+        inner sep=4pt
+    },
+    cell/.style={
+        rectangle,
+        rounded corners=2pt,
+        draw=blue!55!black,
+        fill=blue!6,
+        line width=0.8pt,
+        minimum width=35mm,
+        minimum height=12mm,
+        font=\sffamily\small,
+        inner sep=4pt
+    },
+    xorblock/.style={
+        rectangle,
+        rounded corners=2pt,
+        draw=blue!55!black,
+        fill=blue!6,
+        line width=0.8pt,
+        minimum width=36mm,
+        minimum height=12mm,
+        font=\sffamily\small,
+        inner sep=4pt
+    },
+    terminal/.style={
+        ellipse,
+        draw=black!65,
+        fill=black!5,
+        line width=0.8pt,
+        minimum width=25mm,
+        minimum height=9mm,
+        font=\sffamily\small,
+        inner sep=3pt
+    },
+    arrow/.style={->, line width=0.8pt, draw=black!75, shorten >=2pt, shorten <=2pt},
+    label/.style={font=\sffamily\scriptsize, fill=white, inner sep=1.5pt, text=black!85}
+]
+
+% -----------------------------------------------------------------------------
+% Top-level input and flow-control logic
+% -----------------------------------------------------------------------------
+\node[process] (FlowCtrl) {Kontrola przepływu\\\& Sampling};
+\node[terminal, left=22mm of FlowCtrl] (InEn) {enable\_i};
+
+% -----------------------------------------------------------------------------
+% Entropy-cell matrix
+% -----------------------------------------------------------------------------
+\node[cell, below left=18mm and 20mm of FlowCtrl] (Cell0) {neoTRNG\_cell 0\\NUM\_INV\_START};
+\node[cell, right=16mm of Cell0] (Cell1) {neoTRNG\_cell 1\\+2 inwertery};
+\node[cell, right=16mm of Cell1] (CellN) {neoTRNG\_cell N-1\\+2*N inwerterów};
+
+\begin{pgfonlayer}{background}
+    \node[group,
+          fit=(Cell0) (Cell1) (CellN),
+          label={[font=\sffamily\bfseries\small,text=black!70]above:Macierz Komórek Entropii}] (Cells) {};
+\end{pgfonlayer}
+
+% -----------------------------------------------------------------------------
+% XOR aggregation, Toeplitz extractor, and output registration
+% -----------------------------------------------------------------------------
+\node[xorblock, below=22mm of Cell1] (XOR) {Kombinacja sygnałów\\operacją XOR};
+\node[process, below=16mm of XOR] (Toeplitz) {Ekstraktor Toeplitza};
+\node[process, below=16mm of Toeplitz] (OutReg) {Rejestracja Wyjścia};
+\node[terminal, below left=12mm and 18mm of OutReg] (OutData) {data\_o 128-bit};
+\node[terminal, below right=12mm and 18mm of OutReg] (OutVal) {valid\_o};
+
+% -----------------------------------------------------------------------------
+% Connections
+% -----------------------------------------------------------------------------
+\draw[arrow] (InEn) -- (FlowCtrl);
+
+\draw[arrow] (FlowCtrl) -- node[label, right=1mm] {sample\_en} (Cell0.north);
+
+\draw[arrow] (Cell0) -- node[label, above] {en\_o $\to$ en\_i} (Cell1);
+\draw[arrow] (Cell1) -- node[label, above] {\ldots} (CellN);
+
+\draw[arrow] (Cell0.south) |- node[label, pos=0.28, left=1mm] {rnd\_o} (XOR.west);
+\draw[arrow] (Cell1.south) -- node[label, right=1mm] {rnd\_o} (XOR.north);
+\draw[arrow] (CellN.south) |- node[label, pos=0.28, right=1mm] {rnd\_o} (XOR.east);
+
+\draw[arrow] (XOR) -- node[label, right=1mm] {cell\_sum} (Toeplitz);
+
+\draw[arrow] (Toeplitz) -- node[label, right=1mm] {toeplitz\_q / strobe} (OutReg);
+\draw[arrow] (OutReg) -- (OutData);
+\draw[arrow] (OutReg) -- (OutVal);
+
+% -----------------------------------------------------------------------------
+% Main neoTRNG module boundary
+% -----------------------------------------------------------------------------
+\begin{pgfonlayer}{background}
+    \node[module,
+          fit=(InEn) (FlowCtrl) (Cells) (XOR) (Toeplitz) (OutReg) (OutData) (OutVal),
+          label={[font=\sffamily\bfseries,text=blue!55!black]above:Moduł Główny: neoTRNG}] (neoTRNG) {};
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\caption{Diagram ideowy modułu neoTRNG zintegrowanego z ekstraktorem Toeplitza.}
+\label{fig:ch3_neotrng_toeplitz_architecture}
+\end{figure}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth, trim=1.5cm 12cm 1.5cm 12cm, clip]{figures/ch3/neotrng_topelitz.pdf}
+%     \caption{Schemat generatora z ekstraktorem Toeplitza.}
+%     \label{fig:ch3_neotrng_toeplitz}
+% \end{figure}
+
+\begin{figure}[H] % 'p' places it on its own dedicated page, ideal for full-page figures
+    \centering
+    \includegraphics[angle=-90, origin=c, height=0.6\textheight, keepaspectratio, trim=1.5cm 12cm 1.5cm 12cm, clip]{figures/ch3/neotrng_topelitz.pdf}
+    \caption{Schemat generatora z ekstraktorem Toeplitza.}
+    \label{fig:ch3_neotrng_toeplitz}
+\end{figure}
+
+\newpage
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
 
-Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=-90, origin=c, height=0.7\textheight, keepaspectratio]{figures/ch3/aes-ctr-architecture.pdf}
+    \caption{Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}
+    \label{fig:ch3_AES_CTR_architecture}
+\end{figure}
+
+
+\noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
 AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
-silnika szyfru blokowego aes~\cite{AES-opencores}.
+silnika szyfru blokowego AES dostępnego w \url{https://opencores.org/projects/aes}. 
+
+
+Moduł obsługiwany jest przez nadrzędną maszynę stanu, która odpowiada z kontrolę 
+kolejnych operacji:
+
+\begin{figure}[ht]
+\centering
+
+\begin{tikzpicture}[
+    node distance=16mm,
+    >=Stealth,
+    state/.style={
+        draw=blue!55!black,
+        fill=blue!6,
+        rounded corners=2pt,
+        minimum width=35mm,
+        minimum height=9mm,
+        align=center,
+        font=\sffamily\bfseries\small,
+        line width=0.8pt
+    },
+    initialstate/.style={
+        circle,
+        fill=black,
+        draw=black,
+        minimum size=4.5mm,
+        inner sep=0pt
+    },
+    transition/.style={
+        ->,
+        line width=0.8pt,
+        draw=black!75,
+        shorten >=2pt,
+        shorten <=2pt
+    },
+    label/.style={
+        font=\sffamily\scriptsize,
+        fill=white,
+        inner sep=1.5pt,
+        text=black!85,
+        align=center
+    }
+]
+
+% Nodes
+\node[initialstate] (initial) {};
+\node[state, below=of initial] (reset) {RESET};
+\node[state, below=of reset] (waittrng) {WAIT\_TRNG};
+\node[state, below=of waittrng] (startaes) {START\_AES};
+\node[state, below=of startaes] (waitaes) {WAIT\_AES};
+\node[state, below=of waitaes] (loaduart) {LOAD\_UART};
+\node[state, below=of loaduart] (waituart) {WAIT\_UART};
+
+% Main flow
+\draw[transition] (initial) -- (reset);
+\draw[transition] (reset) -- (waittrng);
+\draw[transition] (waittrng) -- node[label, right=2mm] {odebrano 224-bitowy seed} (startaes);
+\draw[transition] (startaes) -- (waitaes);
+\draw[transition] (waitaes) -- node[label, right=2mm] {szyfrogram gotowy} (loaduart);
+\draw[transition] (loaduart) -- node[label, right=2mm] {serializacja bloku danych} (waituart);
+
+% AES waiting loop (improved)
+\draw[transition]
+    (waitaes.north east)
+    .. controls +(12mm,10mm) and +(12mm,-10mm) ..
+    node[label] {AES pracuje}
+    (waitaes.south east);
+
+% UART byte loop
+\draw[transition]
+    (waituart.west) to[out=160, in=-160]
+    node[label, left=4mm] {kolejny bajt}
+    (loaduart.west);
+
+% Next block
+\draw[transition]
+    (waituart.east) to[out=25, in=-25]
+    node[label, right=6mm] {następny blok}
+    (startaes.east);
+
+% Reseed
+\draw[transition]
+    (waituart.west) to[out=205, in=180, looseness=1.15]
+    node[label, pos=0.55, left=7mm, text width=33mm]
+    {po 65536 blokach\\ponowne losowanie klucza}
+    (waittrng.west);
+
+% Self-loop: frame transmission
+\draw[transition]
+    (waituart.south west)
+    .. controls +(-12mm,-10mm) and +(12mm,-10mm) ..
+    node[label] {transmisja ramki}
+    (waituart.south east);
+
+\end{tikzpicture}
+
+\caption{Diagram stanów kontrolera pracy generatora z silnikiem AES-CTR.}
+\label{fig:aes_ctr_fsm}
+
+\end{figure}
+
 
 \section{Wykorzystanie zasobów}
 

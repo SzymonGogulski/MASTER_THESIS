@@ -49,6 +49,10 @@ architecture sim of toeplitz_tb is
     -- You can modify this string pattern to test different data inputs
     constant TEST_DATA_STREAM : std_logic_vector(N_G-1 downto 0) := 
         X"A5A5A5A5B1B2B3B4C1C2C3C4D1D2D3D4E1E2E3E4F1F2F3F40102030405060708";
+        
+    -- Expected output stream for verification (128 bits)
+    constant EXPECTED_Q : std_logic_vector(L_G-1 downto 0) := 
+        X"6743ABD32AF0540CCEAF400958CD8550";
 
 begin
 
@@ -124,6 +128,14 @@ begin
         report "Output Ready (qstrobe high)!" severity note;
         -- Change line 119 to this:
         report "Extracted Value (q): 0x" & to_hstring(to_bitvector(q)) severity note;
+        report "Expected Value:      0x" & to_hstring(to_bitvector(EXPECTED_Q)) severity note;
+        
+        -- Self-checking validation logic
+        if q = EXPECTED_Q then
+            report "VERIFICATION RESULT: PASS" severity note;
+        else
+            report "VERIFICATION RESULT: FAILURE (Mismatched Stream Data)" severity error;
+        end if;
         
         wait for CLK_PERIOD * 100;
         wait;

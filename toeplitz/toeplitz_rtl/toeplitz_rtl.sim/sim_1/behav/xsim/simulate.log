@@ -1,9 +1,13 @@
 Time resolution is 1 ps
 Note: System Reset Released. Starting Data Transmission...
-Time: 40 ns  Iteration: 1  Process: /toeplitz_tb/stim_process  File: /home/szymon/Desktop/magister/toeplitz/project_1.srcs/sim_1/new/toeplitz_tb.vhd
+Time: 40 ns  Iteration: 1  Process: /toeplitz_tb/stim_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
 Note: Output Ready (qstrobe high)!
-Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/project_1.srcs/sim_1/new/toeplitz_tb.vhd
+Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
 Note: Extracted Value (q): 0x6743ABD32AF0540CCEAF400958CD8550
-Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/project_1.srcs/sim_1/new/toeplitz_tb.vhd
+Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
+Note: Expected Value:      0x6743ABD32AF0540CCEAF400958CD8550
+Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
+Note: VERIFICATION RESULT: PASS
+Time: 2605 ns  Iteration: 1  Process: /toeplitz_tb/monitor_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
 Note: Simulation Completed Successfully.
-Time: 2650 ns  Iteration: 0  Process: /toeplitz_tb/stim_process  File: /home/szymon/Desktop/magister/toeplitz/project_1.srcs/sim_1/new/toeplitz_tb.vhd
+Time: 2650 ns  Iteration: 0  Process: /toeplitz_tb/stim_process  File: /home/szymon/Desktop/magister/toeplitz/toeplitz_rtl/toeplitz_rtl.srcs/sim_1/new/toeplitz_tb.vhd
