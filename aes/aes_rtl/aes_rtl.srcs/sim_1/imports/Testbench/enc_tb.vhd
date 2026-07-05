@@ -84,8 +84,8 @@ begin
 		else
 			report "---------- Failed ----------";
 		end if;
-		report "---------- Output must be: -------";
-		report "320b6a19978511dcfb09dc021d842539";
+		report "Expected: 320b6a19978511dcfb09dc021d842539";
+		report "Received: " & to_hstring(to_bitvector(ciphertext));
 		--------------------------------------------
 		-- Initialize Inputs
 		--p = 00000000000000000000000000000000
@@ -104,8 +104,8 @@ begin
 		else
 			report "---------- Failed ----------";
 		end if;
-		report "---------- Output must be: -------";
-		report "2e2b34ca59fa4c883b2c8aefd44be966";
+		report "Expected: 2e2b34ca59fa4c883b2c8aefd44be966";
+		report "Received: " & to_hstring(to_bitvector(ciphertext));
 		--------------------------------------------
 		-- A test vector taken from: https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/AES_Core128.pdf
 		-- Initialize Inputs
@@ -125,8 +125,8 @@ begin
 		else
 			report "---------- Failed ----------";
 		end if;
-		report "---------- Output must be: -------";
-		report "97ef6624f3ca9ea860367a0db47bd73a";
+		report "Expected: 97ef6624f3ca9ea860367a0db47bd73a";
+		report "Received: " & to_hstring(to_bitvector(ciphertext));
 		wait;
 	end process sim_proc;
 	

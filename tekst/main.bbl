@@ -22,6 +22,9 @@ J.~M. Rabaey, B.~Nikolic, and A.~P. Chandrakasan, {\em Digital Integrated Circui
 \bibitem{FPGA-metastability}
 C.~O'Flynn, ``Experimenting with metastability and multiple clocks on fpgas,'' 2020.
 
+\bibitem{NIST-SP-800-22}
+A.~Rukhin, J.~Soto, J.~Nechvatal, M.~Smid, E.~Barker, S.~Leigh, M.~Levenson, M.~Vangel, D.~Banks, N.~Heckert, J.~Dray, S.~Vo, and L.~Bassham, ``Nist sp 800-22: A statistical test suite for random and pseudorandom number generators for cryptographic applications,'' {\em NIST Information Technology Laboratory}, 2010.
+
 \bibitem{2016Sreekumar-Ramesh}
 L.~Sreekumar and P.~Ramesh, ``Selection of an optimum entropy source design for a true random number generator,'' {\em Procedia Technology}, 2016.
 \newblock Random number generators are a vital component in many cryptographic algorithms and systems, such as generation of keys in secret key cryptography and public key cryptography.
@@ -37,9 +40,6 @@ P.~Q. Nguyen and I.~E. Shparlinaki, ``The insecurity of the elliptic curve digit
 \bibitem{NIST-SP-800-38A}
 M.~Dworkin, ``Nist sp 800-38a recommendation for block cipher modes of operation: Methods and techniques,'' {\em NIST}, 2023.
 \newblock The specification of the CTR mode requires a unique counter block for each plaintext block that is ever encrypted under a given key, across all messages. If, contrary to this requirement, a counter block is used repeatedly, then the confidentiality of all of the plaintext blocks corresponding to that counter block may be compromised.
-
-\bibitem{NIST-SP-800-22}
-A.~Rukhin, J.~Soto, J.~Nechvatal, M.~Smid, E.~Barker, S.~Leigh, M.~Levenson, M.~Vangel, D.~Banks, N.~Heckert, J.~Dray, S.~Vo, and L.~Bassham, ``Nist sp 800-22: A statistical test suite for random and pseudorandom number generators for cryptographic applications,'' {\em NIST Information Technology Laboratory}, 2010.
 
 \bibitem{fourmilab-ENT}
 {Fourmilab}, ``Ent: A pseudorandom number sequence test program.''
@@ -69,5 +69,8 @@ M.~Gajdzica, ``Jak działa crc,'' 2017.
 
 \bibitem{topelitz-rok-zitko}
 R.~Zitko, ``Toeplitz entropy extractor,''
+
+\bibitem{AES-vhdl}
+H.~Hadipour, ``Aes-vhdl-hosein,''
 
 \end{thebibliography}

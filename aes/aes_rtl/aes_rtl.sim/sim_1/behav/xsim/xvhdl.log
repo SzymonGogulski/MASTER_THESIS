@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_rtl/aes_rtl.srcs/sim_1/imports/Testbench/enc_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'test_enc'

@@ -8,7 +8,7 @@ badanego generatora to~\cite{neoTRNG}:
 \begin{itemize}
   \item projekt niezależny od technologii konkretnego dostawcy,
   \item niewielkie zużycie zasobów sprzętowych,
-  \item wysoka przespustowość,
+  \item wysoka przepustowość,
   \item w pełni otwarto źródłowy,
   \item cały projekt w postaci jednego pliku VHDL,
   \item wysoka częstotliwość pracy,
@@ -209,7 +209,7 @@ Note: Extracted Value (q): 0x6743ABD32AF0540CCEAF400958CD8550
 Note: Expected Value:      0x6743ABD32AF0540CCEAF400958CD8550
 Note: VERIFICATION RESULT: PASS
     \end{minted}
-    \caption{Wynik symulacji.}
+    \caption{Wynik symulacji ekstrakotra Toeplitza.}
     \label{fig:ch3_toeplitz_testbench_result}
 \end{figure}
 
@@ -218,6 +218,11 @@ schematach  (Fig.~\ref{fig:ch3_neotrng_toeplitz_architecture} oraz
 Fig.~\ref{fig:ch3_neotrng_toeplitz}) widać położenie ekstraktora Toeplitza 
 tuż za komórkami entropii. Został on wbudowany wewnątrz modułu neoTRNG w 
 miejscu logiku ekstraktora von Neumanna i wielomianu CRC. 
+
+System działa w trybie szeregowym. Generator neoTRNG zwraca kolejne bity, które są 
+kolejkowane do ekstraktora. Wynik wymnażamy jest macierzą Toeplitza oraz 
+wyprowadzany na lini \texttt{data\_o} do narzędnego modułu komunikacji o czym 
+sygnalizuje linia \texttt{valid\_o}.  
 
 \begin{figure}[H]
 \centering
@@ -366,24 +371,71 @@ miejscu logiku ekstraktora von Neumanna i wielomianu CRC.
     \label{fig:ch3_neotrng_toeplitz}
 \end{figure}
 
-\newpage
+
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[angle=-90, origin=c, height=0.7\textheight, keepaspectratio]{figures/ch3/aes-ctr-architecture.pdf}
-    \caption{Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}
-    \label{fig:ch3_AES_CTR_architecture}
-\end{figure}
-
 
 \noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
 AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
 silnika szyfru blokowego AES dostępnego w \url{https://opencores.org/projects/aes}. 
 
+Główne cechy zastosowanej implementacji silnika AES~\cite{AES-vhdl}:
 
-Moduł obsługiwany jest przez nadrzędną maszynę stanu, która odpowiada z kontrolę 
-kolejnych operacji:
+\begin{itemize}
+    \item realizuje zarówno szyfrowanie oraz deszyfrowanie AES dla klucza o 
+    długości 128 bitów,
+    \item architektura typu loop-unrolled (round-based) - implementacja realizuje 
+    jedną rundę AES na cykl zegara i wykorzystuje ją wielokrotnie, co zmniejsza zużycie zasobów FPGA,
+    \item obliczenie nowego szyfrogramu co 10 cykli zegara,
+    \item Implementacja w pełni przetestowana i zweryfikowana za pomocą wektorów testowych NIST~\cite{NIST-SP-800-38A}.
+\end{itemize}
+
+Projekt silnika udstępnia również środowisko testowe w celu weryfikacji pracy 
+silnika:
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+Note: ---------- Passed ----------
+Note: Expected: 320b6a19978511dcfb09dc021d842539
+Note: Received: 320B6A19978511DCFB09DC021D842539
+Note: ---------- Passed ----------
+Note: Expected: 2e2b34ca59fa4c883b2c8aefd44be966
+Note: Received: 2E2B34CA59FA4C883B2C8AEFD44BE966
+Note: ---------- Passed ----------
+Note: Expected: 97ef6624f3ca9ea860367a0db47bd73a
+Note: Received: 97EF6624F3CA9EA860367A0DB47BD73A
+    \end{minted}
+    \caption{Wyniki symulacji silnika AES.}
+    \label{fig:ch3_aes_testbench_result}
+\end{figure}
+
+Poniższy diagram blokowy (Fig.~\ref{fig:ch3_AES_CTR_architecture}) przedstawia 
+przepływ sygnałów w komponencie AES-CTR. Sercem układu jest centralna maszyna stanu, 
+która zarządza współpracą generatora, rejestrów, silnika AES i modułu komunikacji. 
+Proces rozpoczyna się w źródle entropii, które dostarcza 224 bity losowe dla 
+\texttt{aes\_key} i nonce w \texttt{nonce\_reg}. Równocześnie nadzorowana jest praca 
+32-bitowego licznika, który kopiowany jest wraz z nonce do \texttt{aes\_plaintext}. 
+W wyniku pracy silnika AES powstaje 128-bitowy blok danych, który trafia do modułu 
+komunikacji i jest przesyłany jako szesnaście 8-bitowych ramek. Po zakończeniu transmisji 
+licznik inkrementuje swoją wartość, a silnik generuje nowy blok dla modułu transmisji. 
+Licznik inkrementowany jest 65536 razy, co łącznie daje 1MB danych loswych, wygenerowany 
+z jednego ziarna pobranego z neoTRNG. Następnie pobierane jest nowe ziarno i cała proces się 
+powtarza.
+
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=-90, origin=c, height=0.75\textheight, keepaspectratio]{figures/ch3/aes-ctr-architecture.pdf}
+    \caption{Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}
+    \label{fig:ch3_AES_CTR_architecture}
+\end{figure}
+
+
+
+Praca maszyny stanu opisana jest siedmioma stanami:
 
 \begin{figure}[ht]
 \centering

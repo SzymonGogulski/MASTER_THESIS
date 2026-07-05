@@ -1,8 +1,41 @@
 \chapter{Wstęp}
 
-\section{Znaczenie losowości w procesie kryptograficznym}
+\section{Znaczenie losowości w systemach brzegowych}
 
-\noindent Generatory liczb losowych stanowią istotną część algorytmów 
+\noindent Rosnąca złożoność systemów informatycznych wymusza na inżynierach 
+wdrażanie nowych rozwiązań technicznych. W odpowiedzi na znaczne 
+uzależnienie systemów informatycznych od usług chmurowych powstała dziedzina 
+przetwarzania brzegowego (ang. \textit{edge computing}). Zakłada ona ograniczenie 
+interakcji z chmurą poprzez rozwój dedykowanych systemów brzegowych. Podejście 
+to opiera się na przetwarzaniu danych oraz podejmowaniu decyzji przez system 
+bezpośrednio w miejscu, w którym te dane są generowane.
+
+Podejście to ogranicza zależność od systemów chmurowych, jednak wprowadza nowe 
+zagrożenia charakterystyczne dla tej klasy systemów. Wiele rozwiązań opartych 
+jest na układach scalonych przeznaczonych do konkretnych zastosowań (ang. \textit{ASIC} --
+ \textit{Application-Specific Integrated Circuit}). Ich główną zaletą jest 
+ znaczna adaptowalność do zadań, które mają wykonywać. Jest to jednak 
+ opłacone dużą złożonością rozwijanego systemu, co otwiera go na nowe podatności. 
+ Jedną ze szczególnych klas zagrożeń, wynikających ze złożonego procesu rozwoju, są trojany 
+ sprzętowe wprowadzane przez atakującego na etapach projektowania i produkcji 
+ układów scalonych.
+
+Ze względu na powagę tego zagrożenia przyjęto, że jedną z metod przeciwdziałania 
+jest promowanie układów scalonych rozwijanych w sposób transparentny i 
+weryfikowalny. Organizacje takie jak OSHWA (ang. \textit{Open-Source Hardware Association}) 
+i projekty takie jak RISC-V stanowią fundament ruchu wspierającego transparentny 
+rozwój otwartoźródłowych rozwiązań technicznych.
+
+OSHWA oraz architektura zestawu instrukcji RISC-V stanowią odpowiedź na kryzys 
+zaufania do zamkniętych i komercyjnych architektur. Znajdują się 
+we wspólnym ekosystemie otwartoźródłowych technologii, choć pełnią różne 
+funkcje. Architektura RISC-V jest jedynie standardem technicznym, który 
+umożliwia rozwój układów scalonych. Z kolei OSHWA jest organem nadzorującym 
+rozpowszechnianie konkretnych, gotowych rozwiązań. Połączenie projektu i ogranizacji 
+poskutkowało powstaniem szerokiego wachlarza transparentnych, otwartoźródłowych 
+i bezpiecznych projektów układów scalonych.
+
+Generatory liczb losowych stanowią istotną część algorytmów 
 współczesnej kryptografii~\cite{2016Sreekumar-Ramesh}. Liczby losowe 
 wykorzystywane są w kryptografii na różnych etapach i w wielu 
 różnych celach.
@@ -33,6 +66,19 @@ umożliwia wydobycie tekstu jawnego~\cite{NIST-SP-800-38A}.
 Przesłanki te stanowią motywację do podjęcia badań nad oceną dostępnych 
 generatorów losowości.
 
+Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHWA i 
+RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa napisana w 
+języku opisu sprzętu VHDL. Rozwiązanie to jest dedykowane inżynierom rozwijającym 
+systemy brzegowe w oparciu o układy FPGA.
+
+W strukturze procesora NEORV32 RISC-V zintegrowano moduł generatora entropii 
+neoTRNG, który stanowi główny przedmiot badań prowadzonych w ramach niniejszej 
+pracy magisterskiej. Podjęcie tematyki weryfikacji oraz analizy zastosowanego 
+generatora pozwala na realny wkład w rozwój bezpieczeństwa 
+technologii otwartoźródłowych.
+
+
+
 
 \section{Cel pracy}
 
@@ -55,58 +101,16 @@ liczba zastosowanych oscylatorów, zastosowanie korekcji źródła
 (np. korektor Von Neumanna), metody przetwarzania końcowego 
 (ang. \textit{post-processing}) oraz fizyczne rozmieszczenie elementów w strukturze FPGA.
 
-\section{Uzasadnienie podjęcia tematu w kontekście systemów brzegowych}
-
-\noindent Rosnąca złożoność systemów informatycznych wymusza na inżynierach 
-wdrażanie nowych rozwiązań technicznych. W odpowiedzi na znaczne 
-uzależnienie systemów informatycznych od usług chmurowych powstała dziedzina 
-przetwarzania brzegowego (ang. \textit{edge computing}). Zakłada ona ograniczenie 
-interakcji z chmurą poprzez rozwój dedykowanych systemów brzegowych. Podejście 
-to opiera się na przetwarzaniu danych oraz podejmowaniu decyzji przez system 
-bezpośrednio w miejscu, w którym te dane są generowane.
-
-Podejście to ogranicza zależność od systemów chmurowych, jednak wprowadza nowe 
-zagrożenia charakterystyczne dla tej klasy systemów. Wiele rozwiązań opartych 
-jest na układach scalonych przeznaczonych do konkretnych zastosowań (ang. \textit{ASIC} --
- \textit{Application-Specific Integrated Circuit}). Ich główną zaletą jest 
- znaczna adaptowalność do zadań, które mają wykonywać. Jest to jednak 
- opłacone dużą złożonością rozwijanego systemu, co otwiera go na nowe podatności. 
- Jedną ze szczególnych klas zagrożeń, wynikających ze złożonego procesu rozwoju, są trojany 
- sprzętowe wprowadzane przez atakującego na etapach projektowania i produkcji 
- układów scalonych.
-
-Ze względu na powagę tego zagrożenia przyjęto, że jedną z metod przeciwdziałania 
-jest promowanie układów scalonych rozwijanych w sposób transparentny i 
-weryfikowalny. Organizacje takie jak OSHWA (ang. \textit{Open-Source Hardware Association}) 
-i projekty takie jak RISC-V stanowią fundament ruchu wspierającego transparentny 
-rozwój otwartoźródłowych rozwiązań technicznych.
-
-OSHWA oraz architektura zestawu instrukcji RISC-V stanowią odpowiedź na kryzys 
-zaufania do zamkniętych i komercyjnych architektur. OSHWA i RISC-V znajdują się 
-we wspólnym ekosystemie otwartoźródłowych technologii, choć pełnią różne 
-funkcje. Architektura RISC-V jest jedynie standardem technicznym, który 
-umożliwia rozwój układów scalonych. Z kolei OSHWA jest organem nadzorującym 
-rozpowszechnianie konkretnych, gotowych rozwiązań. Połączenie OSHWA i RISC-V 
-poskutkowało powstaniem szerokiego wachlarza transparentnych, otwartoźródłowych 
-i bezpiecznych projektów układów scalonych.
-
-Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHWA i 
-RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa napisana w 
-języku opisu sprzętu VHDL. Rozwiązanie to jest dedykowane inżynierom rozwijającym 
-systemy brzegowe w oparciu o układy FPGA.
-
-W strukturze procesora NEORV32 RISC-V zintegrowano moduł generatora entropii 
-neoTRNG, który stanowi główny przedmiot badań prowadzonych w ramach niniejszej 
-pracy magisterskiej. Podjęcie tematyki weryfikacji oraz analizy zastosowanego 
-generatora pozwala na realny wkład w rozwój bezpieczeństwa 
-technologii otwartoźródłowych.
 
 
-\section{Charakterystyka literatury}
 
-\noindent Badania zostaną przeprowadzone na podstawie rekomendacji branżowych 
-dotyczących projektowania źródeł entropii oraz publikacji naukowych związanych 
-z analizowaną tematyką.
+
+
+% \section{Charakterystyka literatury}
+
+% \noindent Badania zostaną przeprowadzone na podstawie rekomendacji branżowych 
+% dotyczących projektowania źródeł entropii oraz publikacji naukowych związanych 
+% z analizowaną tematyką.
 
 \section{Układ pracy}
 

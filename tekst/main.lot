@@ -3,29 +3,30 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {table}{\numberline {2.1}{\ignorespaces Specyfikacja ogólna urządzenia Quantis-USB-4M~\cite {quatis-brouchure}}}{6}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Opis 15 testów statystycznych pakietu NIST SP 800-22 Rev. 1a~\cite {NIST-SP-800-22}}}{10}{table.2.2}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Wpływ konfiguracji parametrów generycznych na rzeczywisty sygnał wyjściowy generatora}}{13}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Compiled Resource Utilization Results across Chapters}}{20}{table.3.2}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Wpływ konfiguracji parametrów generycznych na rzeczywisty sygnał wyjściowy generatora}}{14}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Compiled Resource Utilization Results across Chapters}}{22}{table.3.2}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces NIST 800-22 : 2 RO : 3-5}}{21}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces NIST 800-22 : 3 RO : 3-5-7}}{22}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9}}{22}{table.4.3}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces NIST 800-90 : 3 RO 5-7-9 / 3 RO 3-5-7 / 2 RO 3-5}}{22}{table.4.4}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces ENT : 3 RO 5-7-9 / 3 RO 3-5-7 / 2 RO 3-5}}{23}{table.4.5}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces NIST 800-22 : 2 RO : 3-5 rozproszone}}{23}{table.4.6}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces NIST 800-22 : 2 RO : 3-5 zlokalizowane}}{24}{table.4.7}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9 rozproszone}}{24}{table.4.8}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9 zlokalizowane}}{25}{table.4.9}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces NIST 800-22 : 6 RO : 5-7-9-11-13-15 rozproszone}}{25}{table.4.10}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces NIST 800-22 : 6 RO : 5-7-9-11-13-15 zlokalizowane}}{26}{table.4.11}%
-\contentsline {table}{\numberline {4.12}{\ignorespaces NIST 800-90 : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 rozproszone}}{26}{table.4.12}%
-\contentsline {table}{\numberline {4.13}{\ignorespaces NIST 800-90 : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 zlokalizowane}}{26}{table.4.13}%
-\contentsline {table}{\numberline {4.14}{\ignorespaces ENT : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 rozproszone}}{26}{table.4.14}%
-\contentsline {table}{\numberline {4.15}{\ignorespaces ENT : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 zlokalizowane}}{27}{table.4.15}%
-\contentsline {table}{\numberline {4.16}{\ignorespaces NIST 800-22 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5}}{27}{table.4.16}%
-\contentsline {table}{\numberline {4.17}{\ignorespaces NIST 800-90 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5 (Pivoted)}}{27}{table.4.17}%
-\contentsline {table}{\numberline {4.18}{\ignorespaces ENT : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5}}{28}{table.4.18}%
-\contentsline {table}{\numberline {4.19}{\ignorespaces Porównanie przepustowości dla różnych konfiguracji oraz metod post-processingu.}}{28}{table.4.19}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces NIST 800-22 : 2 RO : 3-5}}{23}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces NIST 800-22 : 3 RO : 3-5-7}}{24}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9}}{24}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces NIST 800-90 : 3 RO 5-7-9 / 3 RO 3-5-7 / 2 RO 3-5}}{24}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces ENT : 3 RO 5-7-9 / 3 RO 3-5-7 / 2 RO 3-5}}{25}{table.4.5}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces NIST 800-22 : 2 RO : 3-5 rozproszone}}{25}{table.4.6}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces NIST 800-22 : 2 RO : 3-5 zlokalizowane}}{26}{table.4.7}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9 rozproszone}}{26}{table.4.8}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces NIST 800-22 : 3 RO : 5-7-9 zlokalizowane}}{27}{table.4.9}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces NIST 800-22 : 6 RO : 5-7-9-11-13-15 rozproszone}}{27}{table.4.10}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces NIST 800-22 : 6 RO : 5-7-9-11-13-15 zlokalizowane}}{28}{table.4.11}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces NIST 800-90 : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 rozproszone}}{28}{table.4.12}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces NIST 800-90 : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 zlokalizowane}}{28}{table.4.13}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces ENT : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 rozproszone}}{28}{table.4.14}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces ENT : 6 RO 5-7-9-11-13-15 / 3 RO 5-7-9 / 3 RO 5-7-9 zlokalizowane}}{29}{table.4.15}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces NIST 800-22 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5}}{29}{table.4.16}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces NIST 800-90 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5 (Pivoted)}}{29}{table.4.17}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces ENT : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5}}{30}{table.4.18}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Porównanie przepustowości dla różnych konfiguracji oraz metod post-processingu.}}{30}{table.4.19}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

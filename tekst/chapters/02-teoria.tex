@@ -235,7 +235,7 @@ naturę zjawisk zachodzących wewnątrz układu RO.
 
 \noindent Sygnał pozyskiwany bezpośrednio ze źródła analogowego charakteryzuje się 
 niejednostajnym rozkładem zer i jedynek oraz występowaniem korelacji. Aby poprawić 
-losowość, sugerowaną praktyką jest odpowiednie przetworzenie sygnału. 
+losowość, sugerowaną praktyką jest odpowiednia korekcja ciągu bitów. 
 
 \subsection{Ekstraktor von Neumanna}
 
@@ -302,9 +302,9 @@ zestawu miar i testów. W ramach badań wykorzystuje się publicznie dostępne
 programy do oceny generowanych ciągów losowych. 
 
 
-\subsection{ENT -- Tester sekwencji losowych Fourmilab}
+\subsection{Program ENT}
 
-\noindent \enquote{Tester sekwencji losowych Fourmilab (ENT) przeprowadza różne testy 
+\noindent \enquote{Program ENT przeprowadza różne testy 
 na sekwencjach bajtów zapisanych w plikach i raportuje wyniki tych testów. Program jest 
 przydatny do oceny generatorów liczb pseudolosowych w zastosowaniach szyfrowania i 
 próbkowania statystycznego, algorytmach kompresji i innych zastosowaniach, w których 
@@ -336,6 +336,35 @@ losowych i pseudolosowych do zastosowań kryptograficznych}
 \noindent Zestaw testowy NIST SP 800-22 jest standardowym kryterium oceny 
 generatorów liczb losowych. Składa się z piętnastu testów odpowiedzialnych za 
 sprawdzenie różnych aspektów wygenerowanego ciągu bitów.
+
+\begin{table}[htbp]
+\centering
+\caption{Opis 15 testów statystycznych pakietu NIST SP 800-22 Rev. 1a~\cite{NIST-SP-800-22}}
+\label{tab:nist_tests}
+\vspace{2mm}
+\footnotesize % Zmniejszenie czcionki, aby tabela zmieściła się na jednej stronie
+\begin{tabularx}{\textwidth}{lX p{9.5cm}}
+\toprule
+\textbf{Lp.} & \textbf{Nazwa testu (ang.)} & \textbf{Krótki opis i cel testu} \\
+\midrule
+1 & Frequency (Monobit) Test & Badanie proporcji jedynek do zer w całym ciągu binarnym. Sprawdza, czy ich liczba jest w przybliżeniu równa. \\
+2 & Frequency Test within a Block & Badanie proporcji jedynek do zer wewnątrz mniejszych, określonych bloków bitów wyciętych z ciągu. \\
+3 & Runs Test & Badanie całkowitej liczby serii (nieprzerwanych ciągów samych jedynek lub samych zer) o różnych długościach. \\
+4 & Test for the Longest Run of Ones in a Block & Test bada długość najdłuższej serii jedynek w blokach $M$-bitowych i sprawdza, czy jest ona zgodna z wartością oczekiwaną dla ciągu losowego. \\
+5 & Binary Matrix Rank Test & Test wyznacza rząd rozłącznych podmacierzy binarnych, aby sprawdzić liniową zależność między podciągami o stałej długości. \\
+6 & Discrete Fourier Transform (Spectral) Test & Test analizuje wysokość szczytów transformaty Fouriera (DFT) ciągu, aby wykryć bliskie, powtarzające się wzorce okresowe przeczące losowości ciągu. \\
+7 & Non-overlapping Template Matching Test & Zliczanie wystąpień określonych, nienakładających się wzorców bitowych (szablonów) w celu wykrycia anomalii struktur. \\
+8 & Overlapping Template Matching Test & Zliczanie wystąpień określonych wzorców bitowych, które mogą się na siebie nakładać (np. szukanie ciągów samych jedynek). \\
+9 & Maurer's "Universal Statistical" Test & Ocena stopnia kompresji ciągu bez utraty informacji. Sprawdza, czy ciąg można znacznie skrócić. \\
+10 & Linear Complexity Test & Badanie długości rejestru przesuwającego z liniowym sprzężeniem zwrotnym (LFSR). Sprawdza przewidywalność ciągu. \\
+11 & Serial Test & Badanie częstotliwości występowania wszystkich możliwych $n$-bitowych nakładających się wzorców w całym ciągu. \\
+12 & Approximate Entropy Test & Test bada częstotliwość występowania nakładających się wzorców o długościach $m$ i $m+1$, porównując ją z rozkładem oczekiwanym dla ciągu losowego. \\
+13 & Cumulative Sums (Cusum) Test & Analiza maksymalnego odchylenia losowego błądzenia wyznaczonego przez skumulowane sumy przekształconych bitów. \\
+14 & Random Excursions Test & Badanie liczby cykli (odwiedzin określonego stanu przed powrotem do zera) w losowym błądzeniu ciągu. \\
+15 & Random Excursions Variant Test & Wariant testu Random Excursions, sprawdzający dokładną liczbę powtórzeń konkretnych stanów w błądzeniu losowym. \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 
 
