@@ -9,17 +9,20 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Propagacja sygnału wewnątrz inwertera CMOS -- symulacja.~\cite {Digital-integraged-circuits-A-design-perspective}}}{8}{figure.2.5}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Przykładowy wynik pakietu ENT.}}{10}{figure.2.6}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Architektura neoTRNG. \cite {neoTRNG}}}{13}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architektura neoTRNG~\cite {neoTRNG}.}}{13}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Parametry generic oraz porty neoTRNG.}}{13}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Parametry generic oraz porty neoTRNG\_cell.}}{15}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Metastabilność - stan nieustalony.~\cite {FPGA-metastability}}}{15}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Wynik symulacji ekstrakotra Toeplitza.}}{16}{figure.3.5}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Metastabilność -- stan nieustalony~\cite {FPGA-metastability}.}}{15}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wynik symulacji ekstraktora Toeplitza.}}{16}{figure.3.5}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram ideowy modułu neoTRNG zintegrowanego z ekstraktorem Toeplitza.}}{17}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Schemat generatora z ekstraktorem Toeplitza.}}{18}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Wyniki symulacji silnika AES.}}{19}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}}{20}{figure.3.9}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanów, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}}{20}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Diagram stanów kontrolera pracy generatora z silnikiem AES-CTR.}}{21}{figure.3.10}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Okno dialogowe po prawej stronie}}{34}{figure.A.1}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Ręczne wyznaczanie granic Pblock}}{35}{figure.A.2}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Wybór elementów układu mających znaleźć się w obrębie Pblock}}{35}{figure.A.3}%
 \addvspace {10pt}

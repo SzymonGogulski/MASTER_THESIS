@@ -1,8 +1,40 @@
 \chapter{Floorplanning}
 
 \noindent Analiza rozmieszczenia została wykonana za pomocą narzędzia do 
-palnowania rozmieszczenia logiki wewnątrz układu scalonego 
+planowania rozmieszczenia logiki wewnątrz układu scalonego 
 (ang. \textit{floorplanning}). 
 
+Możliwość ręcznego modyfikowania położenia fragmentów układu scalonego dostępna
+jest w narzędziu Vivado po wybraniu opcji: RTL Analysis $\rightarrow$ 
+Open Elaborated Design, a następnie po zmianie widoku z Default Layout na 
+Floorplanning.
 
-W narzędziu Vivado
+Po wybraniu opcji Show Pblock Planner View dostępne jest okno dialogowe:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/AB/pblock_planner.png}
+    \caption{Okno dialogowe po prawej stronie}
+    \label{fig:A_pblock_planner}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/AB/draw.png}
+    \caption{Ręczne wyznaczanie granic Pblock}
+    \label{fig:A_pblock_planner_draw}
+\end{figure}    
+
+Okno to umożliwia tworzenie, usuwanie oraz edycję elementów typu Pblock. 
+Pblock jest obiektem definiującym granice obszaru, w którym mogą zostać 
+umieszczone wybrane elementy struktury.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/AB/add_cell.png}
+    \caption{Wybór elementów układu mających znaleźć się w obrębie Pblock}
+    \label{fig:A_pblock_planner_add_cell}
+\end{figure}
+
+Po wyborze elementów należy wybrać opcję Create Pblock. Informacje o utworzonym 
+Pblock znajdują się w Sources/Constrains/constrs\_1/pblocks.xdc

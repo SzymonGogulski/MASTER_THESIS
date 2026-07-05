@@ -1,7 +1,7 @@
 \chapter{Modułowa platforma sprzętowa do oceny losowości generatora neoTRNG}
 
 \noindent Generator liczb losowych neoTRNG stanowi obiekt badań niniejszej pracy. 
-Cały projekt generator jest publicznie dostępny w postaci repozytorium kodu
+Cały projekt generatora jest publicznie dostępny w postaci repozytorium kodu
 (\url{https://github.com/stnolting/neoTRNG}). Główne cechy charakterystyczne 
 badanego generatora to~\cite{neoTRNG}:
 
@@ -9,15 +9,15 @@ badanego generatora to~\cite{neoTRNG}:
   \item projekt niezależny od technologii konkretnego dostawcy,
   \item niewielkie zużycie zasobów sprzętowych,
   \item wysoka przepustowość,
-  \item w pełni otwarto źródłowy,
+  \item w pełni otwartoźródłowy,
   \item cały projekt w postaci jednego pliku VHDL,
   \item wysoka częstotliwość pracy,
-  \item łatwy w integracji,
-  \item w pełni udokumentowany.
+  \item łatwość integracji,
+  \item pełna dokumentacja.
 \end{itemize}
 
 \begin{ostrzezenie}{Ostrzeżenie:}
-  Domyślna implementacja neoTRNG nie gwarantuje generowania całkowicie losowych, 
+  Domyślna implementacja neoTRNG nie gwarantuje generowania całkowicie losowych 
   ani bezpiecznych kryptograficznie ciągów liczb. Ponadto generator nie jest 
   wyposażony w żadne mechanizmy testów zdrowia źródła~\cite{neoTRNG}.
 \end{ostrzezenie}
@@ -27,15 +27,15 @@ badanego generatora to~\cite{neoTRNG}:
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2/neotrng_architecture.png}
-    \caption{Architektura neoTRNG. \cite{neoTRNG}}
+    \caption{Architektura neoTRNG~\cite{neoTRNG}.}
     \label{fig:ch3_architektura}
 \end{figure}
 
-\noindent W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe 
-po klejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
+\noindent W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe, 
+mające kolejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
 operacją $\text{XOR}$. Następnie surowy sygnał losowy trafia do ekstraktora 
-von Neumanna. Ostatecznie próbki z ekstaktora mieszane są wielomianem CRC. 
-Generator zwraca jeden bajt danych, o czym informuje poprzez stanem wysokim na linii 
+von Neumanna. Ostatecznie próbki z ekstraktora są mieszane za pomocą wielomianu CRC. 
+Generator zwraca jeden bajt danych, o czym informuje stanem wysokim na linii 
 \texttt{valid\_o}. 
 
 \begin{figure}[H]
@@ -66,26 +66,26 @@ end entity;
 Bazowy plik RTL zawiera cztery parametry generyczne:
 
 \begin{itemize}
-  \item \texttt{NUM\_CELLS} - ilość zastosowanych RO,
-  \item \texttt{NUM\_INV\_START} - nieparzysta liczba inverterów w pierwszym RO, każdy 
-  kolejny RO zawiera o dwa inwertery więcej,
-  \item \texttt{NUM\_RAW\_BITS} - ilość bitów wejściowych dla wielomianu CRC,
-  \item \texttt{SIM\_MODE} - dodatkowy tryb pracy, wykorzystywany do symulacji układu 
+  \item \texttt{NUM\_CELLS} -- liczba zastosowanych RO,
+  \item \texttt{NUM\_INV\_START} -- nieparzysta liczba inwerterów w pierwszym RO (każdy 
+  kolejny RO zawiera o dwa inwertery więcej),
+  \item \texttt{NUM\_RAW\_BITS} -- liczba bitów wejściowych dla wielomianu CRC,
+  \item \texttt{SIM\_MODE} -- dodatkowy tryb pracy, wykorzystywany do symulacji układu 
   oraz testów (nie generuje sygnału losowego).
 \end{itemize}
 
 \subsection{Modyfikacje wprowadzone w module neoTRNG}
 
-\noindent Dodatkowo zaimplementowane zostały dwa kolejne parametry generyczne, w celu 
-zbadania wpływu obecności ekstaktora von Neumanna oraz wielomianu CRC: 
+\noindent Dodatkowo zaimplementowane zostały dwa kolejne parametry generyczne w celu 
+zbadania wpływu obecności ekstraktora von Neumanna oraz wielomianu CRC: 
 
 \begin{itemize}
-  \item \texttt{ENABLE\_VON\_NEUMANN} - określa czy sygnał ze źródła zostanie przetworzony 
-  ekstraktorem von Neumanna, gdy parametry jest równy \texttt{True}, sygnał jest 
-  kierowany od ekstraktora, w przeciwnym razie jest przekierowany do następnego modułu,
-  \item \texttt{ENABLE\_CRC} - określa czy sygnał z poprzedniego modułu zostanie przetworzony 
-  wielomianem CRC, gdy parametr jest równy \texttt{True} sygnał jest kierowany do CRC, w 
-  przeciwym razie moduł CRC jest omijany.
+  \item \texttt{ENABLE\_VON\_NEUMANN} -- określa, czy sygnał ze źródła zostanie przetworzony 
+  przez ekstraktor von Neumanna; gdy parametr jest równy \texttt{True}, sygnał jest 
+  kierowany do ekstraktora, w przeciwnym razie jest przekierowywany do następnego modułu,
+  \item \texttt{ENABLE\_CRC} -- określa, czy sygnał z poprzedniego modułu zostanie przetworzony 
+  za pomocą wielomianu CRC; gdy parametr jest równy \texttt{True}, sygnał jest kierowany do CRC, w 
+  przeciwnym razie moduł CRC jest omijany.
 \end{itemize}
 
 Pozwala to na zbadanie sygnału na różnych etapach pracy generatora.
@@ -94,7 +94,7 @@ Pozwala to na zbadanie sygnału na różnych etapach pracy generatora.
 \centering
 \caption{Wpływ konfiguracji parametrów generycznych na rzeczywisty sygnał wyjściowy generatora}
 \label{tab:ch3_konfiguracja_parametrow}
-\vspace{2mm} % 
+\vspace{2mm}
 \begin{tabularx}{\textwidth}{ccX}
 \toprule
 \textbf{\makecell{ENABLE\_\\VON\_NEUMANN}} & \textbf{ENABLE\_CRC} & \textbf{Charakterystyka sygnału wyjściowego} \\
@@ -106,13 +106,13 @@ i dodatkowego rozproszenia statystycznego. \\
 Poprawione właściwości statystyczne, lecz ewentualna asymetria źródła może 
 wpływać na wynik końcowy. \\
 \addlinespace
-\texttt{True}  & \texttt{False} & Sygnał poddany ekstrakcji von Neumanna, z pominięciem modułu CRC. 
-Usunięta asymetria, kosztem zmniejszenia przepustowości strumienia danych. \\
+\texttt{True}  & \texttt{False} & Sygnał poddany ekstrakcji von Neumanna z pominięciem modułu CRC. 
+Usunięta asymetria kosztem zmniejszenia przepustowości strumienia danych. \\
 \addlinespace
 \texttt{True}  & \texttt{True}  & Pełna implementacja sprzętowa. Sygnał po ekstrakcji von Neumanna 
 zostaje dodatkowo przetworzony przez wielomian CRC. Sygnał o możliwie najlepszych 
-właściwościach statystycznych, kosztem największego zużycia zasobów oraz najmniejszą 
-przepustowością. \\
+właściwościach statystycznych kosztem największego zużycia zasobów oraz najmniejszej 
+przepustowości. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -135,71 +135,68 @@ entity neoTRNG_cell is
     rnd_o  : out std_ulogic  
   );
 end entity;
-
     \end{minted}
     \caption{Parametry generic oraz porty neoTRNG\_cell.}
     \label{fig:ch3_neotrng_cell_entity_generic_port_map}
 \end{figure}
 
-
-\noindent Bazowym modułem generatora neoTRNG jest neoTRNG\_cell, stanowi on pojedyńczy RO. 
-Rozwiązanie zaimplementowane jest za pomocą instrukcji generowania i dwóch procesów.
+\noindent Bazowym modułem generatora neoTRNG jest neoTRNG\_cell, który stanowi pojedynczy RO. 
+Rozwiązanie to zaimplementowano za pomocą instrukcji generowania oraz dwóch procesów:
 
 \begin{enumerate}
-  \item \texttt{ring\_osc\_gen} - instrukcja generowania, tworzy pętlę inwerterów oraz oraz logikę 
+  \item \texttt{ring\_osc\_gen} -- instrukcja generowania, która tworzy pętlę inwerterów oraz logikę 
   zatrzasków (ang. \textit{latch}) pomiędzy nimi,
-  \item \texttt{en\_shift\_reg} - proces obsługujący rejest przesówny z sygnałami enable dla kolejnych zatrzasków w RO,
-  \item \texttt{synchronizer} - proces obsługujący dwustopniowy rejest przesówny (bufer próbek przed wyjściem).
+  \item \texttt{en\_shift\_reg} -- proces obsługujący rejestr przesuwny z sygnałami enable dla kolejnych zatrzasków w RO,
+  \item \texttt{synchronizer} -- proces obsługujący dwustopniowy rejestr przesuwny (bufor próbek przed wyjściem).
 \end{enumerate}
 
 Zatrzaski pomiędzy inwerterami pozwalają na krokowe łączenie inwerterów z każdym 
-cyklem zegara, dzięku temu urządzenie włączane jest w powtarzalny sposób. Z kolei 
-gdy jest wyłączone, cały układ jest rozłączony. Funkcjonalność ta ma na celu 
-zapobiec powstaniu możliwym stanom nieustalonym w układzie. 
+cyklem zegara, dzięki czemu urządzenie włączane jest w powtarzalny sposób. Z kolei 
+gdy jest wyłączone, cały układ pozostaje rozłączony. Funkcjonalność ta ma na celu 
+zapobieżenie powstaniu metastabilności w układzie. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch3/metastability.png}
-    \caption{Metastabilność - stan nieustalony.~\cite{FPGA-metastability}}
+    \caption{Metastabilność -- stan nieustalony~\cite{FPGA-metastability}.}
     \label{fig:ch3-metastabilnosc-przyklad}
 \end{figure}
 
-
 Metastabilność (ang. \textit{metastability}) to zjawisko w elektronice cyfrowej, 
 w którym przerzutnik nie potrafi w założonym czasie osiągnąć stanu ustalonego 
-'0' lub '1'. Pozostaje wówczas przez pewien moment w stanie nie ustalonym, co może 
+'0' lub '1'. Pozostaje wówczas przez pewien moment w stanie nieustalonym, co może 
 prowadzić do błędów w innych częściach układu. Przyczyną metastabilności może być 
-próbkowanie sygnału w trakcie zmainy stanu.
+próbkowanie sygnału w trakcie zmiany stanu.
 
-Ostateczną metodą uniknięcia metastabilność w układzie jest dwustopniowy rejest 
-przesówny procesu synchronizatora. Jeżeli próbkowane jest wyjście 
+Ostateczną metodą uniknięcia metastabilności w układzie jest dwustopniowy rejestr 
+przesuwny procesu synchronizatora. Jeżeli próbkowane jest wyjście 
 z ostatniego RO i akurat wtedy sygnał znajduje się w stanie nieustalonym, 
 oznacza to propagację wadliwego sygnału do reszty układu. Dodatkowy rejestr 
 spowalnia proces generowania pierwszej próbki o jeden cykl, ale jego 
-obecność w układzie zapobiega propagacji powyższego błędu. Wadliwa sygnał w 
-pierwszym rejestrze ma czas się ustalić. 
+obecność w układzie zapobiega propagacji powyższego błędu. Wadliwy sygnał w 
+pierwszym rejestrze ma czas na to, aby się ustalić. 
 
-Ostatecznie sygnał z drugiego rejestru jest przesówany na wyjście układu 
-\texttt{rnd\_o} oraz podnoszony jest stan wysoki na lini \texttt{en\_o}.
+Ostatecznie sygnał z drugiego rejestru jest przesuwany na wyjście układu 
+\texttt{rnd\_o} oraz podnoszony jest stan wysoki na linii \texttt{en\_o}.
 
 
-\section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz'a}
+\section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitza}
 
 \noindent Kolejna implementacja generatora wymienia ekstraktor von Neumanna i 
-wielomina CRC na ekstraktor Toeplitz'a. Wykorzystana została otwartoźródłowa 
-implementacja dostępna w repozytrium \url{https://github.com/rokzitko/toeplitz}. 
-Główne cechy charakterystyczne zastosowanego ekstaktora~\cite{topelitz-rok-zitko}:
+wielomian CRC na ekstraktor Toeplitza. Wykorzystana została otwartoźródłowa 
+implementacja dostępna w repozytorium \url{https://github.com/rokzitko/toeplitz}. 
+Główne cechy charakterystyczne zastosowanego ekstraktora~\cite{topelitz-rok-zitko}:
 
 \begin{itemize}
   \item dostępne tryby pracy szeregowej i równoległej,
   \item modyfikowalna szerokość bloku wejściowego i wyjściowego,
   \item stałe ziarno macierzy zaszyte wewnątrz pliku RTL,
-  \item dynamiczne generowanie kolumn macierzy Toeplitza, pozwala uniknąć 
+  \item dynamiczne generowanie kolumn macierzy Toeplitza, co pozwala uniknąć 
   przechowywania całej macierzy naraz w pamięci.
 \end{itemize}
 
 Integracja generatora neoTRNG z nowym modułem wymagała wstępnego 
-przetłumaczenia opisu ekstaktora z języku opisu sprzętu Verilog na VHDL. 
+przetłumaczenia opisu ekstraktora z języka opisu sprzętu Verilog na VHDL. 
 Poprawność wykonanego tłumaczenia została sprawdzona za pomocą środowiska testowego.
 
 \begin{figure}[H]
@@ -209,19 +206,19 @@ Note: Extracted Value (q): 0x6743ABD32AF0540CCEAF400958CD8550
 Note: Expected Value:      0x6743ABD32AF0540CCEAF400958CD8550
 Note: VERIFICATION RESULT: PASS
     \end{minted}
-    \caption{Wynik symulacji ekstrakotra Toeplitza.}
+    \caption{Wynik symulacji ekstraktora Toeplitza.}
     \label{fig:ch3_toeplitz_testbench_result}
 \end{figure}
 
 Wynik z symulacji potwierdza poprawne przetłumaczenie modułu. Na poniższych 
-schematach  (Fig.~\ref{fig:ch3_neotrng_toeplitz_architecture} oraz 
+schematach (Fig.~\ref{fig:ch3_neotrng_toeplitz_architecture} oraz 
 Fig.~\ref{fig:ch3_neotrng_toeplitz}) widać położenie ekstraktora Toeplitza 
 tuż za komórkami entropii. Został on wbudowany wewnątrz modułu neoTRNG w 
-miejscu logiku ekstraktora von Neumanna i wielomianu CRC. 
+miejsce logiki ekstraktora von Neumanna i wielomianu CRC. 
 
 System działa w trybie szeregowym. Generator neoTRNG zwraca kolejne bity, które są 
-kolejkowane do ekstraktora. Wynik wymnażamy jest macierzą Toeplitza oraz 
-wyprowadzany na lini \texttt{data\_o} do narzędnego modułu komunikacji o czym 
+kolejkowane do ekstraktora. Wynik jest mnożony przez macierz Toeplitza oraz 
+wyprowadzany na linii \texttt{data\_o} do nadrzędnego modułu komunikacji, o czym 
 sygnalizuje linia \texttt{valid\_o}.  
 
 \begin{figure}[H]
@@ -356,15 +353,7 @@ sygnalizuje linia \texttt{valid\_o}.
 \label{fig:ch3_neotrng_toeplitz_architecture}
 \end{figure}
 
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth, trim=1.5cm 12cm 1.5cm 12cm, clip]{figures/ch3/neotrng_topelitz.pdf}
-%     \caption{Schemat generatora z ekstraktorem Toeplitza.}
-%     \label{fig:ch3_neotrng_toeplitz}
-% \end{figure}
-
-\begin{figure}[H] % 'p' places it on its own dedicated page, ideal for full-page figures
+\begin{figure}[H] 
     \centering
     \includegraphics[angle=-90, origin=c, height=0.6\textheight, keepaspectratio, trim=1.5cm 12cm 1.5cm 12cm, clip]{figures/ch3/neotrng_topelitz.pdf}
     \caption{Schemat generatora z ekstraktorem Toeplitza.}
@@ -376,24 +365,21 @@ sygnalizuje linia \texttt{valid\_o}.
 
 \noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
 AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
-silnika szyfru blokowego AES dostępnego w \url{https://opencores.org/projects/aes}. 
+silnika szyfru blokowego AES, dostępnej w repozytorium \url{https://opencores.org/projects/aes}. 
 
 Główne cechy zastosowanej implementacji silnika AES~\cite{AES-vhdl}:
 
 \begin{itemize}
-    \item realizuje zarówno szyfrowanie oraz deszyfrowanie AES dla klucza o 
+    \item realizuje zarówno szyfrowanie, jak i deszyfrowanie AES dla klucza o 
     długości 128 bitów,
-    \item architektura typu loop-unrolled (round-based) - implementacja realizuje 
+    \item architektura typu loop-unrolled (round-based) -- implementacja realizuje 
     jedną rundę AES na cykl zegara i wykorzystuje ją wielokrotnie, co zmniejsza zużycie zasobów FPGA,
-    \item obliczenie nowego szyfrogramu co 10 cykli zegara,
-    \item Implementacja w pełni przetestowana i zweryfikowana za pomocą wektorów testowych NIST~\cite{NIST-SP-800-38A}.
+    \item obliczanie nowego szyfrogramu co 10 cykli zegara,
+    \item implementacja w pełni przetestowana i zweryfikowana za pomocą wektorów testowych NIST~\cite{NIST-SP-800-38A}.
 \end{itemize}
 
-Projekt silnika udstępnia również środowisko testowe w celu weryfikacji pracy 
+Projekt silnika udostępnia również środowisko testowe w celu weryfikacji pracy 
 silnika:
-
-
-
 
 \begin{figure}[H]
     \centering
@@ -413,29 +399,28 @@ Note: Received: 97EF6624F3CA9EA860367A0DB47BD73A
 \end{figure}
 
 Poniższy diagram blokowy (Fig.~\ref{fig:ch3_AES_CTR_architecture}) przedstawia 
-przepływ sygnałów w komponencie AES-CTR. Sercem układu jest centralna maszyna stanu, 
+przepływ sygnałów w komponencie AES-CTR. Sercem układu jest centralna maszyna stanów, 
 która zarządza współpracą generatora, rejestrów, silnika AES i modułu komunikacji. 
 Proces rozpoczyna się w źródle entropii, które dostarcza 224 bity losowe dla 
 \texttt{aes\_key} i nonce w \texttt{nonce\_reg}. Równocześnie nadzorowana jest praca 
-32-bitowego licznika, który kopiowany jest wraz z nonce do \texttt{aes\_plaintext}. 
+32-bitowego licznika, którego zawartość kopiowana jest wraz z nonce do \texttt{aes\_plaintext}. 
 W wyniku pracy silnika AES powstaje 128-bitowy blok danych, który trafia do modułu 
 komunikacji i jest przesyłany jako szesnaście 8-bitowych ramek. Po zakończeniu transmisji 
 licznik inkrementuje swoją wartość, a silnik generuje nowy blok dla modułu transmisji. 
-Licznik inkrementowany jest 65536 razy, co łącznie daje 1MB danych loswych, wygenerowany 
-z jednego ziarna pobranego z neoTRNG. Następnie pobierane jest nowe ziarno i cała proces się 
+Licznik inkrementowany jest 65536 razy, co łącznie daje 1 MB danych losowych wygenerowanych 
+z jednego ziarna pobranego z neoTRNG. Następnie pobierane jest nowe ziarno i cały proces się 
 powtarza.
 
 \newpage
 \begin{figure}[H]
     \centering
     \includegraphics[angle=-90, origin=c, height=0.75\textheight, keepaspectratio]{figures/ch3/aes-ctr-architecture.pdf}
-    \caption{Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanu, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}
+    \caption{Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanów, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}
     \label{fig:ch3_AES_CTR_architecture}
 \end{figure}
 
-
-
-Praca maszyny stanu opisana jest siedmioma stanami:
+Praca maszyny stanów opisana jest za pomocą siedmiu stanów widocznych 
+na schemacie (Fig.~\ref{fig:aes_ctr_fsm}):
 
 \begin{figure}[ht]
 \centering
@@ -536,11 +521,15 @@ Praca maszyny stanu opisana jest siedmioma stanami:
 
 \section{Wykorzystanie zasobów}
 
+W ramach każdej badanej implementacji oraz konfiguracji zostały zebrane 
+raporty o zajętości sprzętowej układu. Poniżej znajduje się całe zestawienie 
+(Tab.~\ref{tab:resource_utilization})
+
 \begin{table}[H]
   \centering
   \caption{Compiled Resource Utilization Results across Chapters}
   \label{tab:resource_utilization}
-\begin{tabular}{llllccccc} % 9 columns total
+\begin{tabular}{llllccccc} 
     \hline
     \textbf{Algo.} & \textbf{RO} & \textbf{I} & \textbf{VN} & \textbf{CRC} & \textbf{LUTs} & \textbf{Registers} & \textbf{F7 Mux} & \textbf{F8 Mux} \\
     \hline

@@ -25,9 +25,9 @@
 \contentsline {section}{\numberline {3.1}Architektura bazowa neoTRNG opartego na RO}{13}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Modyfikacje wprowadzone w module neoTRNG}{14}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Opis pracy komórki entropii neoTRNG\_cell}{15}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitz'a}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitza}{16}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Projekt i implementacja ekstraktora kryptograficznego AES-CTR}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Wykorzystanie zasobów}{22}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Wykorzystanie zasobów}{21}{section.3.4}%
 \contentsline {chapter}{\chapternumberline {4}Badania eksperymentalne}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}NIST SP 800-22}{23}{subsection.4.1.1}%
@@ -45,5 +45,5 @@
 \contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{31}{chapter.5}%
 \contentsline {chapter}{Literatura}{32}{chapter*.4}%
 \contentsline {appendix}{\chapternumberline {A}Floorplanning}{34}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów}{35}{appendix.B}%
-\contentsline {section}{\numberline {B.1}neoTRNG\_mod\_1.vhd}{35}{section.B.1}%
+\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów}{36}{appendix.B}%
+\contentsline {section}{\numberline {B.1}neoTRNG\_mod\_1.vhd}{36}{section.B.1}%

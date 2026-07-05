@@ -6,7 +6,7 @@ create_pblock pblock_2
 add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst}]]
 resize_pblock [get_pblocks pblock_2] -add {SLICE_X26Y44:SLICE_X31Y46}
 
- DISTIRBUTED 2
+DISTIRBUTED 2
 #create_pblock pblock_1
 #add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
 #resize_pblock [get_pblocks pblock_1] -add {SLICE_X22Y96:SLICE_X25Y99}
@@ -79,3 +79,8 @@ resize_pblock [get_pblocks pblock_2] -add {SLICE_X26Y44:SLICE_X31Y46}
 #resize_pblock [get_pblocks pblock_6] -add {SLICE_X26Y32:SLICE_X31Y34}
 
 
+
+create_pblock pblock_3
+add_cells_to_pblock [get_pblocks pblock_3] [get_cells -quiet [list {uart_cnt_reg[4]}]]
+resize_pblock [get_pblocks pblock_3] -add {SLICE_X26Y75:SLICE_X33Y89}
+resize_pblock [get_pblocks pblock_3] -add {DSP48_X1Y30:DSP48_X1Y35}
