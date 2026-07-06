@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  5 JUL 2026 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  6 JUL 2026 12:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1253,7 +1253,7 @@ Package epstopdf Info: Source file: <wit/sygnet-pp.eps>
 (epstopdf)             Command: <epstopdf --outfile=wit/sygnet-pp-eps-converted-to.pdf wit/sygnet-pp.eps>
 (epstopdf)             \includegraphics on input line 81.
 Package epstopdf Info: Output file is already uptodate.
-<wit/sygnet-pp-eps-converted-to.pdf, id=232, 1391.1975pt x 278.03876pt>
+<wit/sygnet-pp-eps-converted-to.pdf, id=248, 1391.1975pt x 278.03876pt>
 File: wit/sygnet-pp-eps-converted-to.pdf Graphic file (type pdf)
 <use wit/sygnet-pp-eps-converted-to.pdf>
 Package pdftex.def Info: wit/sygnet-pp-eps-converted-to.pdf  used on input line 81.
@@ -1288,7 +1288,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
  [1
 
-]) (./main.lof) (./main.lot [2]) [3] (./chapters/01-wstep.tex [1
+]) (./main.lof [2]) (./main.lot) [3] (./chapters/01-wstep.tex [1
 
 
 
@@ -1297,7 +1297,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 13
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]) (./chapters/02-teoria.tex [3]
-<figures/ch2/nist_source_schematic.png, id=440, 889.3225pt x 611.28375pt>
+<figures/ch2/nist_source_schematic.png, id=470, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
 Package pdftex.def Info: figures/ch2/nist_source_schematic.png  used on input line 48.
@@ -1310,7 +1310,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) h
                                                   \__shipout_drop_firstpage_...
 l.100 
        <./figures/ch2/nist_source_schematic.png>]
-<figures/ch2/Quantis-QRNG-USB.png, id=464, 201.00093pt x 104.64093pt>
+<figures/ch2/Quantis-QRNG-USB.png, id=494, 201.00093pt x 104.64093pt>
 File: figures/ch2/Quantis-QRNG-USB.png Graphic file (type png)
 <use figures/ch2/Quantis-QRNG-USB.png>
 Package pdftex.def Info: figures/ch2/Quantis-QRNG-USB.png  used on input line 129.
@@ -1326,14 +1326,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) ha
                                                   \__shipout_drop_firstpage_...
 l.162 
       {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/ch2/Quantis-QRNG-USB.png>]
-<figures/ch2/319_QNRG.png, id=481, 335.00156pt x 192.72pt>
+<figures/ch2/319_QNRG.png, id=511, 335.00156pt x 192.72pt>
 File: figures/ch2/319_QNRG.png Graphic file (type png)
 <use figures/ch2/319_QNRG.png>
 Package pdftex.def Info: figures/ch2/319_QNRG.png  used on input line 166.
 (pdftex.def)             Requested size: 255.6026pt x 147.04213pt.
 Package svg Info: Last page of `./svg-inkscape/schematic_svg-tex.pdf' is 1 on input line 199.
  (./svg-inkscape/schematic_svg-tex.pdf_tex
-<./svg-inkscape/schematic_svg-tex.pdf, id=485, page=1, 416.71994pt x 111.85147pt>
+<./svg-inkscape/schematic_svg-tex.pdf, id=515, page=1, 416.71994pt x 111.85147pt>
 File: ./svg-inkscape/schematic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/schematic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/schematic_svg-tex.pdf , page1 used on input line 56.
@@ -1349,7 +1349,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) h
                                                   \__shipout_drop_firstpage_...
 l.211 
        <./figures/ch2/319_QNRG.png> <./svg-inkscape/schematic_svg-tex.pdf>]
-<figures/ch2/inverter.png, id=495, 438.63875pt x 367.3725pt>
+<figures/ch2/inverter.png, id=526, 438.63875pt x 367.3725pt>
 File: figures/ch2/inverter.png Graphic file (type png)
 <use figures/ch2/inverter.png>
 Package pdftex.def Info: figures/ch2/inverter.png  used on input line 214.
@@ -1390,7 +1390,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) ha
                                                   \__shipout_drop_firstpage_...
 l.377 
       ]) (./chapters/03-neoTRNG.tex [11]
-<figures/ch2/neotrng_architecture.png, id=534, 519.03pt x 169.506pt>
+<figures/ch2/neotrng_architecture.png, id=564, 519.03pt x 169.506pt>
 File: figures/ch2/neotrng_architecture.png Graphic file (type png)
 <use figures/ch2/neotrng_architecture.png>
 Package pdftex.def Info: figures/ch2/neotrng_architecture.png  used on input line 29.
@@ -1419,7 +1419,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) ha
                                                   \__shipout_drop_firstpage_...
 l.142 
       ]
-<figures/ch3/metastability.png, id=552, 578.16pt x 316.93407pt>
+<figures/ch3/metastability.png, id=582, 578.16pt x 316.93407pt>
 File: figures/ch3/metastability.png Graphic file (type png)
 <use figures/ch3/metastability.png>
 Package pdftex.def Info: figures/ch3/metastability.png  used on input line 160.
@@ -1447,7 +1447,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) h
                                                   \__shipout_drop_firstpage_...
 l.355 
       ]
-<figures/ch3/neotrng_topelitz.pdf, id=572, 614.295pt x 794.97pt>
+<figures/ch3/neotrng_topelitz.pdf, id=602, 614.295pt x 794.97pt>
 File: figures/ch3/neotrng_topelitz.pdf Graphic file (type pdf)
 <use figures/ch3/neotrng_topelitz.pdf>
 Package pdftex.def Info: figures/ch3/neotrng_topelitz.pdf  used on input line 358.
@@ -1478,7 +1478,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) h
                                                   \__shipout_drop_firstpage_...
 l.414 \newpage
               ]
-<figures/ch3/aes-ctr-architecture.pdf, id=601, 2902.845pt x 1676.18213pt>
+<figures/ch3/aes-ctr-architecture.pdf, id=631, 2902.845pt x 1676.18213pt>
 File: figures/ch3/aes-ctr-architecture.pdf Graphic file (type pdf)
 <use figures/ch3/aes-ctr-architecture.pdf>
 Package pdftex.def Info: figures/ch3/aes-ctr-architecture.pdf  used on input line 417.
@@ -1496,17 +1496,40 @@ Overfull \hbox (3.84924pt too wide) in paragraph at lines 514--515
  [][] 
  []
 
-) (./chapters/04-badania.tex [21
+\openout4 = `main.pyg'.
+
+(./_minted-main/6C149CA39ABE86D7FD233E2F9212D653F44F6C4ED06BC6BBC27BF316A372E127.pygtex) [21
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+l.550 
+      ]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/273C65B84383ABEC01BBE5A90AB507FBD3773C8B440B993359565A23D713B17A.pygtex)
+\openout4 = `main.pyg'.
+
+ (./_minted-main/92D6EC19870A6769CE8B12C2BE1AF6C5D3773C8B440B993359565A23D713B17A.pygtex)) (./chapters/04-badania.tex [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
 l.4 
-    ] [22
+    
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.4 
+    
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.4 
+    ] [23
 pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.34 \chapter
-             {Badania eksperymentalne}] [23
+             {Badania eksperymentalne}] [24
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
@@ -1516,7 +1539,7 @@ l.106
       ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 168.
- [24
+ [25
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1531,7 +1554,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.209 
-      ] [25
+      ] [26
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1541,7 +1564,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.283 
-      ] [26
+      ] [27
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1551,7 +1574,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.8}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.341 
-      ] [27
+      ] [28
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1561,7 +1584,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.10}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.399 
-      ] [28
+      ] [29
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1586,7 +1609,7 @@ Overfull \hbox (37.26013pt too wide) in paragraph at lines 571--592
  [][] 
  []
 
-[29
+[30
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.15}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1606,7 +1629,7 @@ Overfull \hbox (15.70633pt too wide) in paragraph at lines 653--698
  [][] 
  []
 
-) (./chapters/05-podsumowanie.tex [30
+) (./chapters/05-podsumowanie.tex [31
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.18}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1616,24 +1639,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.19}) h
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.2 \chapter
-            {Podsumowanie i wnioski}]) (./main.bbl [31
+            {Podsumowanie i wnioski}]) (./main.bbl [32
 
 ]
 bibitemlist
-[32
+[33
 
-]) [33] (./chapters/zalacznik-A.tex
-<figures/AB/pblock_planner.png, id=820, 805.0075pt x 577.15625pt>
+]) [34] (./chapters/zalacznik-A.tex
+<figures/AB/pblock_planner.png, id=855, 805.0075pt x 577.15625pt>
 File: figures/AB/pblock_planner.png Graphic file (type png)
 <use figures/AB/pblock_planner.png>
 Package pdftex.def Info: figures/AB/pblock_planner.png  used on input line 16.
 (pdftex.def)             Requested size: 340.8013pt x 244.34143pt.
-<figures/AB/draw.png, id=821, 796.9775pt x 578.16pt>
+<figures/AB/draw.png, id=856, 796.9775pt x 578.16pt>
 File: figures/AB/draw.png Graphic file (type png)
 <use figures/AB/draw.png>
 Package pdftex.def Info: figures/AB/draw.png  used on input line 23.
 (pdftex.def)             Requested size: 340.8013pt x 247.22772pt.
- [34
+ [35
 
 
 
@@ -1642,33 +1665,61 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.A.1}) h
                                                   \__shipout_drop_firstpage_...
 l.27 
       <./figures/AB/pblock_planner.png>]
-<figures/AB/add_cell.png, id=828, 818.05624pt x 578.16pt>
+<figures/AB/add_cell.png, id=862, 818.05624pt x 578.16pt>
 File: figures/AB/add_cell.png Graphic file (type png)
 <use figures/AB/add_cell.png>
 Package pdftex.def Info: figures/AB/add_cell.png  used on input line 34.
 (pdftex.def)             Requested size: 340.8013pt x 240.86705pt.
-) (./chapters/zalacznik-B.tex [35
+) (./chapters/zalacznik-B.tex [36
 pdfTeX warning (ext4): destination with the same identifier (name{figure.A.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \chapter
-            {Automatyzacja pomiarów}
+            {Automatyzacja pomiarów i testów}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.A.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \chapter
-            {Automatyzacja pomiarów} <./figures/AB/draw.png> <./figures/AB/add_cell.png>]
+            {Automatyzacja pomiarów i testów} <./figures/AB/draw.png> <./figures/AB/add_cell.png>]
+<figures/AB/stacja.jpg, id=869, 8190.6pt x 3782.13pt>
+File: figures/AB/stacja.jpg Graphic file (type jpg)
+<use figures/AB/stacja.jpg>
+Package pdftex.def Info: figures/AB/stacja.jpg  used on input line 15.
+(pdftex.def)             Requested size: 426.0pt x 196.67766pt.
+
+Overfull \hbox (25.2487pt too wide) in paragraph at lines 27--28
+[]
+ []
+
+[37
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.29 ...udo cat /dev/ttyUSB0 | pv -r > /dev/null}]
+                                                   \hfill \\ Licznik baudrat... <./figures/AB/stacja.jpg>]
 \openout4 = `main.pyg'.
 
- (./_minted-main/E1C06D85AE7B8B032BEF47E42E4C08F9F44F6C4ED06BC6BBC27BF316A372E127.pygtex)) [36
+ (./_minted-main/B2ED983EEEADCE2669B6BBC5DC9EB779D3773C8B440B993359565A23D713B17A.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 49.
+ (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))) [38] [39]
+Overfull \vbox (13.59198pt too high) has occurred while \output is active []
 
-]
-<wit/logo-pp.pdf, id=839, 422.57875pt x 422.57875pt>
+ [40
+pdfTeX warning (ext4): destination with the same identifier (name{figure.B.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.136 
+      ]
+<wit/logo-pp.pdf, id=889, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
 Package pdftex.def Info: wit/logo-pp.pdf  used on input line 144.
 (pdftex.def)             Requested size: 42.67946pt x 42.67912pt.
- [37
+ [41
 
  <./wit/logo-pp.pdf>]
 \tf@toc=\write8
@@ -1686,23 +1737,23 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 66C751FE15A015CD751DE2B225349861;11393.
+(rerunfilecheck)             Checksum: B2087AEAE007865C57FF4B54EACE3BAC;12288.
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 42730 strings out of 476074
- 905159 string characters out of 5793136
+ 42827 strings out of 476074
+ 908273 string characters out of 5793136
  1971975 words of memory out of 5000000
- 63841 multiletter control sequences out of 15000+600000
- 664690 words of font info for 94 fonts, out of 8000000 for 9000
+ 63911 multiletter control sequences out of 15000+600000
+ 665637 words of font info for 97 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
  99i,20n,107p,858b,1214s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (42 pages, 1775139 bytes).
+</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (46 pages, 8112306 bytes).
 PDF statistics:
- 1004 PDF objects out of 1200 (max. 8388607)
- 703 compressed objects within 8 object streams
- 159 named destinations out of 1000 (max. 500000)
- 614 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1062 PDF objects out of 1200 (max. 8388607)
+ 753 compressed objects within 8 object streams
+ 172 named destinations out of 1000 (max. 500000)
+ 651 words of extra memory for PDF output out of 10000 (max. 10000000)
 

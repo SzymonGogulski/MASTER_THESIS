@@ -519,6 +519,67 @@ na schemacie (Fig.~\ref{fig:aes_ctr_fsm}):
 \end{figure}
 
 
+
+\section{Parzysta liczba inwerterów}
+
+Poważnym błędem konfiguracyjnym generatora opartego o RO jest ustawienie 
+parzystej liczby inwerterów wewnątrz RO. Nieparzysta liczba wymusza 
+oscylacje wewnątrz układu, w przeciwnym razie sygnał inwerterów się ustala 
+oraz powinien zwracać stały sygnał '1' lub '0'. Stanowi to potęcjalnie 
+nowy wektor ataku, gdzie poprzez modyfikację parametru \texttt{NUM\_INV\_START} 
+możliwe jest wymuszenie paraliżu całego generatora. W rezultacie moduły 
+kryprograficzne pobierające entropię z wadliwego, źródła przestaną być 
+bezpieczne.
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+trng_inst : entity work.neoTRNG
+    generic map (
+        NUM_CELLS           => 2,
+        NUM_INV_START       => 2,
+        NUM_RAW_BITS        => 64,
+        SIM_MODE            => false,
+        ENABLE_VON_NEUMANN  => false,
+        ENABLE_CRC          => false
+    )
+    \end{minted}
+    \caption{Generator z parzystą liczbą RO.}
+    \label{fig:ch3_even_inverter_num}
+\end{figure}
+
+Ważne jest równoczesne wyłączenie ekstraktora von Neumanna, w przeciwnym razie 
+wszystkie próbki sygnału stałego zostaną odrzucone.
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+$ sudo xxd /dev/ttyUSB0
+00000000: ffff ffff ffff ffff ffff ffff ffff ffff  ................
+00000010: ffff ffff ffff ffff ffff ffff ffff ffff  ................
+00000020: ffff ffff ffff ffff ffff ffff ffff ffff  ................
+00000030: ffff ffff ffff ffff ffff ffff ffff ffff  ................
+    \end{minted}
+    \caption{Ciągły sygnał '1' z generatora dla parzystej liczby inwerterów.}
+    \label{fig:ch3_even_inverter_num_ones}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+$ sudo xxd /dev/ttyUSB0
+00000000: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000010: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000020: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+00000030: 0000 0000 0000 0000 0000 0000 0000 0000  ................
+    \end{minted}
+    \caption{Ciągły sygnał '0' z generatora dla parzystej liczby inwerterów.}
+    \label{fig:ch3_even_inverter_num_zeros}
+\end{figure}
+
+
+
+
 \section{Wykorzystanie zasobów}
 
 W ramach każdej badanej implementacji oraz konfiguracji zostały zebrane 

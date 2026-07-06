@@ -19,10 +19,15 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Wyniki symulacji silnika AES.}}{19}{figure.3.8}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Architektura modułu nadrzędnego AES-CTR wyposażonego w maszynę stanów, generator neoTRNG, silnik AES, rejestr licznika oraz moduł komunikacji.}}{20}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Diagram stanów kontrolera pracy generatora z silnikiem AES-CTR.}}{21}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Generator z parzystą liczbą RO.}}{22}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Ciągły sygnał '1' z generatora dla parzystej liczby inwerterów.}}{22}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ciągły sygnał '0' z generatora dla parzystej liczby inwerterów.}}{22}{figure.3.13}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Okno dialogowe po prawej stronie}}{34}{figure.A.1}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Ręczne wyznaczanie granic Pblock}}{35}{figure.A.2}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Wybór elementów układu mających znaleźć się w obrębie Pblock}}{35}{figure.A.3}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Okno dialogowe po prawej stronie}}{35}{figure.A.1}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Ręczne wyznaczanie granic Pblock}}{36}{figure.A.2}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Wybór elementów układu mających znaleźć się w obrębie Pblock}}{36}{figure.A.3}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Aparatura pomiarowa}}{37}{figure.B.1}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Dialog NIST SP 800-22.}}{40}{figure.B.2}%

@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{trng\PYGZus{}inst}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{entity}\PYG{+w}{ }\PYG{n+nc}{work}\PYG{p}{.}\PYG{n}{neoTRNG}
+\PYG{+w}{    }\PYG{k}{generic}\PYG{+w}{ }\PYG{k}{map}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{        }\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{           }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{NUM\PYGZus{}INV\PYGZus{}START}\PYG{+w}{       }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}\PYG{+w}{        }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{64}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{            }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{false}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{  }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{false}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{ENABLE\PYGZus{}CRC}\PYG{+w}{          }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{false}
+\PYG{+w}{    }\PYG{p}{)}
+\end{Verbatim}

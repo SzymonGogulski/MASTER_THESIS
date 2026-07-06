@@ -14,3 +14,8 @@ add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/en
 resize_pblock [get_pblocks pblock_2] -add {SLICE_X26Y44:SLICE_X31Y46}
 set_property src_info {type:XDC file:2 line:9 export:INPUT save:INPUT read:READ} [current_design]
 DISTIRBUTED 2
+set_property src_info {type:XDC file:2 line:83 export:INPUT save:INPUT read:READ} [current_design]
+create_pblock pblock_3
+add_cells_to_pblock [get_pblocks pblock_3] [get_cells -quiet [list {uart_cnt_reg[4]}]]
+resize_pblock [get_pblocks pblock_3] -add {SLICE_X26Y75:SLICE_X33Y89}
+resize_pblock [get_pblocks pblock_3] -add {DSP48_X1Y30:DSP48_X1Y35}

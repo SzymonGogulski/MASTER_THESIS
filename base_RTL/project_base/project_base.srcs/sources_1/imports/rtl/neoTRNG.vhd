@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity neoTRNG is
   generic (
     NUM_CELLS           : natural range 1 to 255;
-    NUM_INV_START       : natural range 3 to 4095;
+    NUM_INV_START       : natural range 2 to 4095;
     NUM_RAW_BITS        : natural range 1 to 4096;
     SIM_MODE            : boolean;
     ENABLE_VON_NEUMANN  : boolean := true;
@@ -80,9 +80,9 @@ begin
     report "[neoTRNG] The neoTRNG (v3.4) - A Tiny and Platform-Independent True Random Number Generator, " & "github.com/stnolting/neoTRNG"
     severity note;
 
-  assert (NUM_INV_START mod 2) /= 0
-    report "[neoTRNG] Number of inverters in first cell [NUM_INV_START] has to be odd!"
-    severity error;
+--  assert (NUM_INV_START mod 2) /= 0
+--    report "[neoTRNG] Number of inverters in first cell [NUM_INV_START] has to be odd!"
+--    severity error;
 
   assert 2 ** clog2_f(NUM_RAW_BITS) = NUM_RAW_BITS
     report "[neoTRNG] Number of pre-processed raw bits [NUM_RAW_BITS] has to be a power of 2!"
