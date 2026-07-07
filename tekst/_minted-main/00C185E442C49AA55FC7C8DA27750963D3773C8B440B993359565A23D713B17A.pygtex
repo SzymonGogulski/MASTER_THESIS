@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}path\PYGZgt{}/data\PYGZdl{}\PYG{+w}{ }python3\PYG{+w}{ }ent\PYGZus{}automation.py\PYG{+w}{ }./1\PYGZus{}testy\PYGZus{}bazowe/2RO\PYGZus{}8I/
+ENT\PYG{+w}{ }processing\PYG{+w}{ }false\PYGZus{}false.bin...
+\PYG{n+nv}{Entropy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{5}.322542\PYG{+w}{ }bits\PYG{+w}{ }per\PYG{+w}{ }byte.
+Saved\PYG{+w}{ }\PYGZhy{}\PYGZgt{}\PYG{+w}{ }\PYGZlt{}path\PYGZgt{}/data/1\PYGZus{}testy\PYGZus{}bazowe/2RO\PYGZus{}8I/tests\PYGZus{}results/ent/false\PYGZus{}false.log
+ENT\PYG{+w}{ }processing\PYG{+w}{ }false\PYGZus{}true.bin...
+\PYG{n+nv}{Entropy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.999742\PYG{+w}{ }bits\PYG{+w}{ }per\PYG{+w}{ }byte.
+Saved\PYG{+w}{ }\PYGZhy{}\PYGZgt{}\PYG{+w}{ }\PYGZlt{}path\PYGZgt{}/data/1\PYGZus{}testy\PYGZus{}bazowe/2RO\PYGZus{}8I/tests\PYGZus{}results/ent/false\PYGZus{}true.log
+ENT\PYG{+w}{ }processing\PYG{+w}{ }true\PYGZus{}false.bin...
+\PYG{n+nv}{Entropy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.168778\PYG{+w}{ }bits\PYG{+w}{ }per\PYG{+w}{ }byte.
+Saved\PYG{+w}{ }\PYGZhy{}\PYGZgt{}\PYG{+w}{ }\PYGZlt{}path\PYGZgt{}/data/1\PYGZus{}testy\PYGZus{}bazowe/2RO\PYGZus{}8I/tests\PYGZus{}results/ent/true\PYGZus{}false.log
+ENT\PYG{+w}{ }processing\PYG{+w}{ }true\PYGZus{}true.bin...
+\PYG{n+nv}{Entropy}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.999997\PYG{+w}{ }bits\PYG{+w}{ }per\PYG{+w}{ }byte.
+Saved\PYG{+w}{ }\PYGZhy{}\PYGZgt{}\PYG{+w}{ }\PYGZlt{}path\PYGZgt{}/data/1\PYGZus{}testy\PYGZus{}bazowe/2RO\PYGZus{}8I/tests\PYGZus{}results/ent/true\PYGZus{}true.log
+\end{Verbatim}

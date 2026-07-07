@@ -1,20 +1,20 @@
 # LOCALIZED 2
-create_pblock pblock_1
-add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
-resize_pblock [get_pblocks pblock_1] -add {SLICE_X26Y47:SLICE_X31Y49}
-create_pblock pblock_2
-add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst}]]
-resize_pblock [get_pblocks pblock_2] -add {SLICE_X26Y44:SLICE_X31Y46}
-
-DISTIRBUTED 2
 #create_pblock pblock_1
 #add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
-#resize_pblock [get_pblocks pblock_1] -add {SLICE_X22Y96:SLICE_X25Y99}
+#resize_pblock [get_pblocks pblock_1] -add {SLICE_X26Y47:SLICE_X31Y49}
 #create_pblock pblock_2
 #add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst}]]
-#resize_pblock [get_pblocks pblock_2] -add {SLICE_X24Y5:SLICE_X25Y9}
-#resize_pblock [get_pblocks pblock_2] -add {RAMB18_X1Y2:RAMB18_X1Y3}
-#resize_pblock [get_pblocks pblock_2] -add {RAMB36_X1Y1:RAMB36_X1Y1}
+#resize_pblock [get_pblocks pblock_2] -add {SLICE_X26Y44:SLICE_X31Y46}
+
+#DISTIRBUTED 2
+create_pblock pblock_1
+add_cells_to_pblock [get_pblocks pblock_1] [get_cells -quiet [list {trng_inst/entropy_cell_gen[0].neoTRNG_cell_inst}]]
+resize_pblock [get_pblocks pblock_1] -add {SLICE_X22Y96:SLICE_X25Y99}
+create_pblock pblock_2
+add_cells_to_pblock [get_pblocks pblock_2] [get_cells -quiet [list {trng_inst/entropy_cell_gen[1].neoTRNG_cell_inst}]]
+resize_pblock [get_pblocks pblock_2] -add {SLICE_X24Y5:SLICE_X25Y9}
+resize_pblock [get_pblocks pblock_2] -add {RAMB18_X1Y2:RAMB18_X1Y3}
+resize_pblock [get_pblocks pblock_2] -add {RAMB36_X1Y1:RAMB36_X1Y1}
 
 # DISTIRBUTED 3
 #create_pblock pblock_1
@@ -80,7 +80,7 @@ DISTIRBUTED 2
 
 
 
-create_pblock pblock_3
-add_cells_to_pblock [get_pblocks pblock_3] [get_cells -quiet [list {uart_cnt_reg[4]}]]
-resize_pblock [get_pblocks pblock_3] -add {SLICE_X26Y75:SLICE_X33Y89}
-resize_pblock [get_pblocks pblock_3] -add {DSP48_X1Y30:DSP48_X1Y35}
+#create_pblock pblock_3
+#add_cells_to_pblock [get_pblocks pblock_3] [get_cells -quiet [list {uart_cnt_reg[4]}]]
+#resize_pblock [get_pblocks pblock_3] -add {SLICE_X26Y75:SLICE_X33Y89}
+#resize_pblock [get_pblocks pblock_3] -add {DSP48_X1Y30:DSP48_X1Y35}

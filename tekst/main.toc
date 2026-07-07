@@ -32,22 +32,28 @@
 \contentsline {chapter}{\chapternumberline {4}Badania eksperymentalne}{24}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}{24}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}NIST SP 800-22}{24}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}NIST SP 800-90B}{25}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.2}NIST SP 800-90B}{26}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}ENT}{26}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}Wpływ rozmieszczenia RO w układzie FPGA na losowość}{26}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}NIST SP 800-22}{26}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}NIST SP 800-90B}{29}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}ENT}{29}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}NIST SP 800-22}{30}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}NIST SP 800-90B}{30}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}ENT}{31}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}{31}{section.4.4}%
-\contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{32}{chapter.5}%
-\contentsline {chapter}{Literatura}{33}{chapter*.4}%
-\contentsline {appendix}{\chapternumberline {A}Floorplanning}{35}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów i testów}{37}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Wymagania sprzętowee}{37}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Zbieranie danych}{37}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Uruchamianie pojedyńczych testów}{38}{section.B.3}%
-\contentsline {section}{\numberline {B.4}Struktura zbioru danych}{40}{section.B.4}%
+\contentsline {subsection}{\numberline {4.2.1}NIST SP 800-22}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}NIST SP 800-90B}{31}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}ENT}{32}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}{32}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}NIST SP 800-22}{33}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}NIST SP 800-90B}{33}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}ENT}{33}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}{34}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Podsumowanie i wnioski}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Wpływ liczby oscylatorów i liczby inwerterów}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Efektywność przetwarzania końcowego von Neumanna oraz CRC}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wpływ rozmieszczenia RO}{35}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Zastosowanie zaawansowanych metod przetwarzania końcowego}{36}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Podsumowanie końcowe}{36}{section.5.5}%
+\contentsline {chapter}{Literatura}{37}{chapter*.4}%
+\contentsline {appendix}{\chapternumberline {A}Floorplanning}{39}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}Automatyzacja pomiarów i testów}{41}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Wymagania sprzętowe}{41}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Zbieranie danych}{41}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Uruchamianie pojedynczych testów}{42}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Struktura zbioru danych}{44}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Automatyzacja testów}{45}{section.B.5}%

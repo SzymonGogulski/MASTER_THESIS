@@ -1,4 +1,3 @@
-
 \chapter{Podsumowanie i wnioski}
 
 % Zakończenie pracy zwane również Uwagami końcowymi lub Podsumowaniem powinno zawierać ustosunkowanie
@@ -8,3 +7,58 @@
 % samodzielnej pracy.
 
 % Integralną częścią pracy są również dodatki, aneksy i załączniki zawierające stworzone w ramach pracy programy, aplikacje i projekty.
+
+\noindent Niniejsza praca poświęcona była analizie sprzętowego generatora liczb 
+losowych neoTRNG. W ramach przeprowadzonych badań eksperymentalnych oceniono 
+wpływ kluczowych parametrów, metod przetwarzania 
+końcowego oraz fizycznego rozmieszczenia elementów w strukturze układu na 
+jakość i charakterystykę statystyczną generowanej losowości. 
+
+Na podstawie analizy danych doświadczalnych uzyskanych z pakietów testowych 
+NIST SP 800-22, NIST SP 800-90B oraz ENT sformułowano następujące wnioski końcowe:
+
+\section{Wpływ liczby oscylatorów i liczby inwerterów}
+
+Skalowanie zasobów sprzętowych poprzez zwiększanie liczby RO oraz 
+liczby inwerterów ma kluczowe znaczenie dla jakości źródła entropii. 
+
+\begin{itemize}
+    \item 
+    \item 
+\end{itemize}
+
+\section{Efektywność przetwarzania końcowego von Neumanna oraz CRC}
+Zastosowanie sprzętowych metod post-processingu w module neoTRNG jest warunkiem 
+koniecznym do uzyskania wysokiej jakości projektowanego generatora. 
+
+\begin{itemize}
+    \item Surowe dane (\textit{FALSE/FALSE}) dyskwalifikują generator w testach 
+statystycznych, wykazując silną asymetrię i korelacje lokalne.
+    \item
+\end{itemize}
+
+\section{Wpływ rozmieszczenia RO}
+Analiza rozmieszczenia RO wykazała istotne znaczenie fizycznej lokalizacji 
+oscylatorów w strukturze FPGA:
+\begin{itemize}
+    \item \textbf{Rozmieszczenie zlokalizowane:} 
+    \item \textbf{Rozmieszczenie rozproszone:}
+\end{itemize}
+
+\section{Zastosowanie zaawansowanych metod przetwarzania końcowego}
+Bazowy post-processing neoTRNG może zostać zastąpiony lub uzupełniony przez 
+zaawansowane ekstraktory:
+\begin{itemize}
+    \item \textbf{AES-CTR:}
+    \item \textbf{Ekstraktor Toeplitza:} 
+\end{itemize}
+
+\section{Podsumowanie końcowe}
+
+Istnieją adekwatne przesłanki do stosowania generatora liczb losowych neoTRNG 
+w systemach przetwarzania brzegowego. Świadczą o tym badania przeprowadzone 
+i udokumentowane w poprzednich rozdziałach. Wykazano, że kluczem do optymalnego 
+zaprojektowania układu TRNG nie jest wyłącznie maksymalizacja liczby 
+oscylatorów, lecz balans pomiędzy: dostrojeniem wykorzystania zasobów, rozmieszczeniem 
+fizycznym elementów w układzie FPGA, odpowiednim doborem ekstraktora oraz 
+rygorystycznym przeprowadzeniem testów.

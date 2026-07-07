@@ -1,8 +1,8 @@
 \chapter{Automatyzacja pomiarów i testów}
 
-\section{Wymagania sprzętowee}
+\section{Wymagania sprzętowe}
 
-Sprzęt konieczny do przeprowadzenia badań:
+\noindent Sprzęt konieczny do przeprowadzenia badań:
 
 \begin{itemize}
     \item dowolna płytka deweloperska z układem FPGA,
@@ -19,18 +19,18 @@ Sprzęt konieczny do przeprowadzenia badań:
 
 \section{Zbieranie danych}
 
-Użyteczne komendy:
+\noindent Użyteczne komendy:
 
 \begin{description}
     \item[\texttt{sudo stty -F /dev/ttyUSB0 921600 raw -echo}] \hfill \\ 
-    Konfiguracja baudrate portu szeregowego.
+    Konfiguracja prędkości (baudrate) portu szeregowego.
     \item[\texttt{sudo dd if=/dev/ttyUSB0 of=<file>.bin bs=1M count=100 status=progress iflag=fullblock}] \hfill Zebranie 100 MiB danych losowych do pliku binarnego.
     \item[\texttt{sudo xxd /dev/ttyUSB0}] \hfill \\ Podgląd danych na żywo.
-    \item[\texttt{sudo cat /dev/ttyUSB0 | pv -r > /dev/null}] \hfill \\ Licznik baudrate na żywo ([x]B/s). 
+    \item[\texttt{sudo cat /dev/ttyUSB0 | pv -r > /dev/null}] \hfill \\ Licznik prędkości (baudrate) na żywo ([x]B/s). 
 \end{description}
 
 
-\section{Uruchamianie pojedyńczych testów}
+\section{Uruchamianie pojedynczych testów}
 
 \begin{description}
     \item[\texttt{<ENT dir>\$ ./ent <file>.bin}] \hfill \\ 
@@ -42,9 +42,6 @@ Użyteczne komendy:
     \item[\texttt{<NIST SP 800-90B dir>\$ ./ea\_non\_iid <file>.bin 8}] \hfill \\ 
     Uruchomienie NIST SP 800-90B.
 \end{description}
-
-\section{Struktura zbioru danych}
-
 
 \begin{figure}[H]
     \centering
@@ -62,7 +59,7 @@ $ ./assess 1000000
    Enter Choice: 0
 
 
-		User Prescribed Input File: /home/szymon/Desktop/magister/data/ch3/2RO_8I/false_false.bin
+        User Prescribed Input File: <file>.bin
 
                 S T A T I S T I C A L   T E S T S
                 _________________________________
@@ -105,4 +102,104 @@ $ ./assess 1000000
     \end{minted}
     \caption{Dialog NIST SP 800-22.}
     \label{fig:B_dialog_nist_22}
+\end{figure}
+
+\section{Struktura zbioru danych}
+
+\begin{figure}[H]
+    \centering
+    % Adjust the width if your paths are very long
+    \begin{minipage}{0.6\textwidth} 
+        \dirtree{%
+        .1 \textbf{data/1\_testy\_bazowe/2RO\_8I}/\$ tree.
+        .2 false\_false.bin.
+        .2 false\_true.bin.
+        .2 true\_false.bin.
+        .2 true\_true.bin.
+        .2 \textbf{tests\_results}.
+        .3 \textbf{ent}.
+        .4 false\_false.log.
+        .4 false\_true.log.
+        .4 true\_false.log.
+        .4 true\_true.log.
+        .3 \textbf{nist22}.
+        .4 false\_false.txt.
+        .4 false\_true.txt.
+        .4 true\_false.txt.
+        .4 true\_true.txt.
+        .4 table.txt.
+        .3 \textbf{nist90}.
+        .4 false\_false.log.
+        .4 false\_true.log.
+        .4 true\_false.log.
+        .4 true\_true.log.
+        .2 \textbf{utilization}.
+        .3 false\_false.rpt.
+        .3 false\_true.rpt.
+        .3 true\_false.rpt.
+        .3 true\_true.rpt.
+        }
+    \end{minipage}
+    \caption{Struktura katalogów dla konfiguracji 2RO\_8I.}
+    \label{fig:B_dir_tree}
+\end{figure}
+
+Dla każdej z badanych konfiguracji RO powstał wynikowy katalog zgodny ze schematem 
+(Fig.~\ref{fig:B_dir_tree}):
+
+\begin{itemize}
+    \item \texttt{root} -- przechowuje pliki binarne z zebranymi danymi,
+    \item \texttt{tests\_results} -- katalog na wyniki wszystkich testów,
+    \item \texttt{ent} -- wyniki testów ENT,
+    \item \texttt{nist22} -- wyniki testów NIST SP 800-22 oraz wygenerowana tabela,
+    \item \texttt{nist90} -- wyniki testów NIST SP 800-90B,
+    \item \texttt{utilization} -- raporty wykorzystania zasobów.
+\end{itemize}
+
+Łącznie w ramach badań zebrano:
+
+\begin{itemize}
+    \item 40 plików .bin (łącznie około 4 GB danych),
+    \item 129 plików z wynikami testów .log i .txt,
+    \item 40 raportów wykorzystania zasobów.
+\end{itemize}
+
+\section{Automatyzacja testów}
+
+Wykonanie testów zostało zautomatyzowane za pomocą skryptów w języku Python:
+
+\begin{itemize}
+    \item \texttt{ent\_automation.py} -- przyjmuje ścieżkę do katalogu \texttt{root} z 
+    badaną konfiguracją, wyszukuje pliki .bin, uruchamia testy i zapisuje wyniki w \texttt{root/tests\_results/ent/},
+    \item \texttt{nist22\_automation.py} -- przyjmuje ścieżkę do katalogu \texttt{root} z 
+    badaną konfiguracją, wyszukuje pliki .bin, uruchamia testy i zapisuje wyniki w \texttt{root/tests\_results/nist22/}, 
+    \item \texttt{nist90\_automation.py} -- przyjmuje ścieżkę do katalogu \texttt{root} z 
+    badaną konfiguracją, wyszukuje pliki .bin, uruchamia testy i zapisuje wyniki w \texttt{root/tests\_results/nist90/},
+    \item \texttt{resource\_automation.py} -- przyjmuje ścieżkę do katalogu \texttt{data} ze 
+    wszystkimi folderami różnych konfiguracji, wyszukuje pliki .rpt i zestawia 
+    wyniki w jedną tabelę \LaTeX,
+    \item \texttt{table\_automation.py} -- przyjmuje ścieżkę do katalogu \texttt{nist22} z 
+    badaną konfiguracją, wyszukuje wyniki testów NIST SP 800-22 i zestawia je w formę 
+    tabeli \LaTeX.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}[linenos, breaklines, breakanywhere]{bash}
+<path>/data$ python3 ent_automation.py ./1_testy_bazowe/2RO_8I/
+ENT processing false_false.bin...
+Entropy = 5.322542 bits per byte.
+Saved -> <path>/data/1_testy_bazowe/2RO_8I/tests_results/ent/false_false.log
+ENT processing false_true.bin...
+Entropy = 7.999742 bits per byte.
+Saved -> <path>/data/1_testy_bazowe/2RO_8I/tests_results/ent/false_true.log
+ENT processing true_false.bin...
+Entropy = 7.168778 bits per byte.
+Saved -> <path>/data/1_testy_bazowe/2RO_8I/tests_results/ent/true_false.log
+ENT processing true_true.bin...
+Entropy = 7.999997 bits per byte.
+Saved -> <path>/data/1_testy_bazowe/2RO_8I/tests_results/ent/true_true.log
+    \end{minted}
+    \caption{Uruchomienie skryptu automatyzacji testów ENT dla /1\_testy\_bazowe/2RO\_8I.}
+    \label{fig:B_automatyzacja_ent_python}
 \end{figure}

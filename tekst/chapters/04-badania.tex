@@ -35,6 +35,26 @@
 
 \section{Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}
 
+\noindent Pierwsza seria badań skupia się na bazowej konfiguracji neoTRNG z ekstraktorem von 
+Neumanna oraz wielomianem CRC. Zbadane zostały następujące konfiguracje:
+
+\begin{itemize}
+    \item 2 RO po 3 i 5 inwerterów, 
+    \item 3 RO po 3, 5 i 7 inwerterów,
+    \item 3 RO po 5, 7 i 9 inwerterów.
+\end{itemize}
+
+Dla każdej z konfiguracji sprawdzono osobno wpływ obecności korektora von Neumanna i 
+wielomianu CRC, co dało łącznie dwanaście różnych konfiguracji generatora. Wyniki testów 
+zostały zestawione w tabelach:
+
+\begin{itemize}
+    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I} -- Wyniki testów NIST SP 800-22 dla 2RO 8I,
+    \item Tab.~\ref{tab:ch4_nist_22_3RO_15I} -- Wyniki testów NIST SP 800-22 dla 3RO 15I,
+    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I} -- Wyniki testów NIST SP 800-22 dla 3RO 21I,
+    \item Tab.~\ref{tab:ch4_NIST_SP_800_90} -- Wyniki testów NIST SP 800-90B dla 2RO 8I, 3RO 15I, 3RO 21I,
+    \item Tab.~\ref{tab:ENT_1} -- Wyniki testów ENT dla 2RO 8I, 3RO 15I, 3RO 21I.
+\end{itemize}
 \subsection{NIST SP 800-22}
 
 \begin{flushleft}
@@ -210,6 +230,91 @@ LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     &  99/10
 %###############################################################################
 \section{Wpływ rozmieszczenia RO w układzie FPGA na losowość}
 
+Narzędzie Vivado umożliwia ręczne planowanie rozmieszczenia RO wewnątrz układu FPGA. 
+Zostało to opisane w załączniku A. Poniżej przedstawiono widoki z narzędzia do 
+planowania rozmieszczenia dla każdej z konfiguracji:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/2D.png}
+        \caption{2 RO rozproszone.}
+        \label{fig:ch4_2RO_distributed_screen}
+    \end{minipage}
+    \hfill % Adds horizontal space between the two figures
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/2L.png}
+        \caption{2 RO zlokalizowane.}
+        \label{fig:ch4_2RO_localized_screen}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/3D.png}
+        \caption{3 RO rozproszone.}
+        \label{fig:ch4_3RO_distributed_screen}
+    \end{minipage}
+    \hfill % Adds horizontal space between the two figures
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/3L.png}
+        \caption{3 RO zlokalizowane.}
+        \label{fig:ch4_3RO_localized_screen}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/6D.png}
+        \caption{6 RO rozproszone.}
+        \label{fig:ch4_6RO_distributed_screen}
+    \end{minipage}
+    \hfill % Adds horizontal space between the two figures
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ch4/6L.png}
+        \caption{6 RO zlokalizowane.}
+        \label{fig:ch4_6RO_localized_screen}
+    \end{minipage}
+\end{figure}
+
+
+\noindent Druga seria badań skupia się na wpływie rozmieszczenia RO wewnątrz układu 
+FPGA bazowego generatora neoTRNG z ekstraktorem von Neumanna i wielomianem CRC. 
+Zbadane zostały następujące konfiguracje:
+
+\begin{itemize}
+    \item 2 RO po 3 i 5 inwerterów -- RO rozproszone, 
+    \item 2 RO po 3 i 5 inwerterów -- RO zlokalizowane, 
+    \item 3 RO po 5, 7 i 9 inwerterów -- RO rozproszone, 
+    \item 3 RO po 5, 7 i 9 inwerterów -- RO zlokalizowane, 
+    \item 6 RO po 5, 7, 9, 11, 13, 15 inwerterów -- RO rozproszone, 
+    \item 6 RO po 5, 7, 9, 11, 13, 15 inwerterów -- RO zlokalizowane. 
+\end{itemize}
+
+Dla każdej z konfiguracji sprawdzono osobno wpływ obecności korektora von Neumanna i 
+wielomianu CRC, co dało łącznie 24 różne konfiguracje generatora. Wyniki testów 
+zostały zestawione w tabelach:
+
+\begin{itemize}
+    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 2RO 8I (rozproszone),
+    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 2RO 8I (zlokalizowane),
+    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 3RO 21I (rozproszone),
+    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 3RO 21I (zlokalizowane),
+    \item Tab.~\ref{tab:ch4_nist_22_6RO_60I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 6RO 60I (rozproszone),
+    \item Tab.~\ref{tab:ch4_nist_22_6RO_60I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 6RO 60I (zlokalizowane),
+    \item Tab.~\ref{tab:ch4_NIST_SP_800_90_D} -- Wyniki testów NIST SP 800-90 dla każdej konfiguracji rozproszonej,
+    \item Tab.~\ref{tab:ch4_NIST_SP_800_90_L} -- Wyniki testów NIST SP 800-90 dla każdej konfiguracji zlokalizowanej,
+    \item Tab.~\ref{tab:ch4_ent_distributed} -- Wyniki testów ENT dla każdej konfiguracji rozproszonej,
+    \item Tab.~\ref{tab:ch4_ent_localized} -- Wyniki testów ENT dla każdej konfiguracji zlokalizowanej.
+\end{itemize}
 \subsection{NIST SP 800-22}
 
 \begin{flushleft}
@@ -550,6 +655,25 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 % ##############################################################################
 \section{Wpływ ekstraktorów AES-CTR i Toeplitz na losowość przy zredukowanej liczbie RO}
 
+\noindent Ostatnia seria badań wprowadza modyfikację generatora w postaci nowych metod post-processingu.
+Wdrożone rozwiązania to ekstraktor Toeplitza oraz szyfr blokowy działający w trybie licznikowym (AES-CTR).
+Zbadane zostały następujące konfiguracje:
+
+\begin{itemize}
+    \item 2 RO po 3 i 5 inwerterów oraz ekstraktor Toeplitza,
+    \item 3 RO po 3, 5 i 7 inwerterów oraz ekstraktor Toeplitza,
+    \item 2 RO po 3 i 5 inwerterów oraz AES-CTR,
+    \item 3 RO po 3, 5 i 7 inwerterów oraz AES-CTR.
+\end{itemize}
+
+Powyższe podejście dało łącznie 4 różne konfiguracje generatora. Wyniki testów zostały zestawione w tabelach:
+
+\begin{itemize}
+    \item Tab.~\ref{tab:ch5_aes-ctr_2RO_8I} -- Wyniki testów NIST SP 800-22 dla każdej konfiguracji,
+    \item Tab.~\ref{tab:ch5_nist_SP_800-90B_pivoted} -- Wyniki testów NIST SP 800-90B dla każdej konfiguracji,
+    \item Tab.~\ref{tab:ch5_ent} -- Wyniki testów ENT dla każdej konfiguracji.
+\end{itemize}
+
 \subsection{NIST SP 800-22}
 
 \begin{flushleft}
@@ -645,6 +769,8 @@ LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     & 100/10
 % ##############################################################################
 \section{Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}
 
+Ostatecznie zbadana została przepustowość każdej z konfiguracji generatora 
+(bez modułu komunikacji UART).
 
 \begin{table}[H]
 \centering
