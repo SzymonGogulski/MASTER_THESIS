@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1783360667.69466 "main.aux" "main.bbl" "main" 1783360670.97472 0
-  "./bibliografia.bib" 1783259675.36207 9326 371793f11ec83a5406e3c5109f27c17e ""
+["bibtex main"] 1783412376.09928 "main.aux" "main.bbl" "main" 1783412398.06196 0
+  "./bibliografia.bib" 1783411347.2384 9642 dd1991a819d4613caa4de069c55e8511 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1783360670.75613 27581 1b30bdf65b66a94e82f447a4aba4cb9f "pdflatex"
+  "main.aux" 1783412397.70441 27609 ae18a3656b59d956c059cb1c235adcd4 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1783360667.71908 "/home/szymon/Desktop/magister/tekst/main.tex" "main.pdf" "main" 1783360670.97493 0
+["pdflatex"] 1783412392.63158 "/home/szymon/Desktop/magister/tekst/main.tex" "main.pdf" "main" 1783412398.06226 0
   "/etc/texmf/web2c/texmf.cnf" 1760713919.23018 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/szymon/Desktop/magister/tekst/main.tex" 1783335420.1023 4041 f394f164d18335b828b337d9496b401d ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -338,11 +338,11 @@
   "_minted-main/D95570E2CB4B4D75563323F19EC917C7D3773C8B440B993359565A23D713B17A.pygtex" 1783338932.70248 6906 2514219df9f140ee304fcf5cc0e01394 ""
   "_minted-main/F1122A59E2697BC71569F2FE9133F06FD3773C8B440B993359565A23D713B17A.pygtex" 1783267152.45071 1142 69c5fdedde75c11fdb8e8d73d39f4dca ""
   "_minted-main/default.pygstyle" 1782672312.08641 6428 74aba51736a5bc6590f8f7dd413c6f27 ""
-  "chapters/01-wstep.tex" 1783253020.64477 7862 63268e84221d4d3d4115f14673df9d2d ""
+  "chapters/01-wstep.tex" 1783412392.33932 14321 3b7c42c788476ba28dcc8edb9260e130 ""
   "chapters/02-teoria.tex" 1783255780.89119 20129 a93b69d7084cb58190e707c94258caed ""
   "chapters/03-neoTRNG.tex" 1783329863.07973 26374 f83d6b90e1f9d3c87615854679a49a4c ""
   "chapters/04-badania.tex" 1783356025.51256 40861 2acf7a1f1d7c267c5ba4f81cf2bfdb22 ""
-  "chapters/05-podsumowanie.tex" 1783360664.22862 2930 3432f591326cfc864fda72c7773448c6 ""
+  "chapters/05-podsumowanie.tex" 1783360730.71145 2930 3432f591326cfc864fda72c7773448c6 ""
   "chapters/zalacznik-A.tex" 1783341640.66258 1532 a6d5f2bf755077f8f276513272e01aea ""
   "chapters/zalacznik-B.tex" 1783340781.27347 7551 acf381c6a841ed4e043f738439931fdb ""
   "figures/AB/add_cell.png" 1783271537.11861 55091 04d1bd34d9d65245943971d61a737254 ""
@@ -364,13 +364,13 @@
   "figures/ch4/3L.png" 1778568506.72884 14093 21659b8a3cea99623f3fd9c1c5c7510f ""
   "figures/ch4/6D.png" 1778840472.4406 17501 5d2351e19feb503031942642d32f180c ""
   "figures/ch4/6L.png" 1778853243.81234 16251 062d6b219ca147e47f9f6b2709ec47b2 ""
-  "main.aux" 1783360670.75613 27581 1b30bdf65b66a94e82f447a4aba4cb9f "pdflatex"
-  "main.bbl" 1783360667.71151 5783 bc30cc5380f36f9948e77c62d1a8df7e "bibtex main"
-  "main.lof" 1783360670.76251 4091 dc20b80ed3052269a0c60b1ef8964160 "pdflatex"
-  "main.lot" 1783360670.76251 3192 c934760643d76d195a76dda3aa195e5a "pdflatex"
-  "main.out" 1783360670.75851 13935 913c1971050c0c9593e3624bdb1da1a4 "pdflatex"
+  "main.aux" 1783412397.70441 27609 ae18a3656b59d956c059cb1c235adcd4 "pdflatex"
+  "main.bbl" 1783412376.12134 5902 db584d53ec96423cbf1c8f08f755725f "bibtex main"
+  "main.lof" 1783412397.71404 4091 dc20b80ed3052269a0c60b1ef8964160 "pdflatex"
+  "main.lot" 1783412397.71404 3192 c934760643d76d195a76dda3aa195e5a "pdflatex"
+  "main.out" 1783412397.70804 13935 913c1971050c0c9593e3624bdb1da1a4 "pdflatex"
   "main.tex" 1783335420.1023 4041 f394f164d18335b828b337d9496b401d ""
-  "main.toc" 1783360670.76251 5546 c0e98b008c33316f667c2516194626c5 "pdflatex"
+  "main.toc" 1783412397.71404 5546 008f433822627622c6c980fae108a2e6 "pdflatex"
   "ppfcmthesis.cls" 1778530311.06978 6968 deea240690c297e05f402507be85cb71 ""
   "svg-inkscape/schematic_svg-tex.pdf" 1777214897.65059 8967 d057d11bfccad739ed12711b2b938cab ""
   "svg-inkscape/schematic_svg-tex.pdf_tex" 1777214897.6509 2089 0042adb89e138dc5cf16854f3f0753b6 ""

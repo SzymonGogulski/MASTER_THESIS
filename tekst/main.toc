@@ -3,7 +3,7 @@
 \contentsline {chapter}{\chapternumberline {1}Wstęp}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Znaczenie losowości w systemach brzegowych}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Cel pracy}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Układ pracy}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Układ pracy}{3}{section.1.3}%
 \contentsline {chapter}{\chapternumberline {2}Teoretyczne aspekty projektowania sprzętowych generatorów liczb losowych}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Źródła losowości}{4}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}TRNG}{4}{subsection.2.1.1}%

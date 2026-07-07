@@ -7,40 +7,41 @@ Warning--empty author in Quantum-randomness-generator-optical-circ
 Warning--empty year in Quantum-randomness-generator-optical-circ
 Warning--empty publisher in Digital-integraged-circuits-A-design-perspective
 Warning--empty journal in FPGA-metastability
+Warning--empty journal in Edge-computing
 Warning--empty journal in topelitz-rok-zitko
 Warning--empty year in topelitz-rok-zitko
 Warning--empty journal in AES-vhdl
 Warning--empty year in AES-vhdl
-You've used 20 entries,
+You've used 21 entries,
             1876 wiz_defined-function locations,
-            592 strings with 9249 characters,
-and the built_in function-call counts, 3287 in all, are:
-= -- 253
-> -- 207
+            596 strings with 9381 characters,
+and the built_in function-call counts, 3474 in all, are:
+= -- 264
+> -- 224
 < -- 0
-+ -- 79
-- -- 59
-* -- 223
-:= -- 555
-add.period$ -- 29
-call.type$ -- 20
-change.case$ -- 19
++ -- 85
+- -- 64
+* -- 239
+:= -- 588
+add.period$ -- 30
+call.type$ -- 21
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 160
-empty$ -- 347
-format.name$ -- 59
-if$ -- 750
+cite$ -- 30
+duplicate$ -- 169
+empty$ -- 364
+format.name$ -- 64
+if$ -- 790
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 17
-newline$ -- 76
-num.names$ -- 19
-pop$ -- 94
+int.to.str$ -- 21
+missing$ -- 18
+newline$ -- 79
+num.names$ -- 20
+pop$ -- 100
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 37
+skip$ -- 38
 stack$ -- 0
 substring$ -- 0
 swap$ -- 13
@@ -48,8 +49,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 8
-while$ -- 19
-width$ -- 22
-write$ -- 173
-(There were 8 warnings)
+warning$ -- 9
+while$ -- 20
+width$ -- 23
+write$ -- 180
+(There were 9 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  6 JUL 2026 19:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  7 JUL 2026 10:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1386,11 +1386,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 131.
+] [2]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 162.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]) (./chapters/02-teoria.tex [3]
+)) (./chapters/02-teoria.tex [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
 <figures/ch2/nist_source_schematic.png, id=520, 889.3225pt x 611.28375pt>
 File: figures/ch2/nist_source_schematic.png Graphic file (type png)
 <use figures/ch2/nist_source_schematic.png>
@@ -1572,7 +1572,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) h
                                                   \__shipout_drop_firstpage_...
 l.414 \newpage
               ]
-<figures/ch3/aes-ctr-architecture.pdf, id=683, 2902.845pt x 1676.18213pt>
+<figures/ch3/aes-ctr-architecture.pdf, id=684, 2902.845pt x 1676.18213pt>
 File: figures/ch3/aes-ctr-architecture.pdf Graphic file (type pdf)
 <use figures/ch3/aes-ctr-architecture.pdf>
 Package pdftex.def Info: figures/ch3/aes-ctr-architecture.pdf  used on input line 417.
@@ -1638,7 +1638,7 @@ l.154
       ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 188.
-<figures/ch4/2D.png, id=864, 1477.52pt x 1150.2975pt>
+<figures/ch4/2D.png, id=865, 1477.52pt x 1150.2975pt>
 File: figures/ch4/2D.png Graphic file (type png)
 <use figures/ch4/2D.png>
 Package pdftex.def Info: figures/ch4/2D.png  used on input line 241.
@@ -1648,7 +1648,7 @@ Overfull \hbox (102.41974pt too wide) in paragraph at lines 242--242
  [][] 
  []
 
-<figures/ch4/2L.png, id=865, 1473.505pt x 1155.31625pt>
+<figures/ch4/2L.png, id=866, 1473.505pt x 1155.31625pt>
 File: figures/ch4/2L.png Graphic file (type png)
 <use figures/ch4/2L.png>
 Package pdftex.def Info: figures/ch4/2L.png  used on input line 248.
@@ -1674,7 +1674,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}) ha
                                                   \__shipout_drop_firstpage_...
 l.253 
       ]
-<figures/ch4/3D.png, id=873, 1477.52pt x 1150.2975pt>
+<figures/ch4/3D.png, id=874, 1477.52pt x 1150.2975pt>
 File: figures/ch4/3D.png Graphic file (type png)
 <use figures/ch4/3D.png>
 Package pdftex.def Info: figures/ch4/3D.png  used on input line 258.
@@ -1684,7 +1684,7 @@ Overfull \hbox (102.41974pt too wide) in paragraph at lines 259--259
  [][] 
  []
 
-<figures/ch4/3L.png, id=874, 1152.305pt x 898.35625pt>
+<figures/ch4/3L.png, id=875, 1152.305pt x 898.35625pt>
 File: figures/ch4/3L.png Graphic file (type png)
 <use figures/ch4/3L.png>
 Package pdftex.def Info: figures/ch4/3L.png  used on input line 265.
@@ -1694,7 +1694,7 @@ Overfull \hbox (102.41974pt too wide) in paragraph at lines 266--266
  [][] 
  []
 
-<figures/ch4/6D.png, id=875, 1166.3575pt x 900.36375pt>
+<figures/ch4/6D.png, id=876, 1166.3575pt x 900.36375pt>
 File: figures/ch4/6D.png Graphic file (type png)
 <use figures/ch4/6D.png>
 Package pdftex.def Info: figures/ch4/6D.png  used on input line 275.
@@ -1704,7 +1704,7 @@ Overfull \hbox (102.41974pt too wide) in paragraph at lines 276--276
  [][] 
  []
 
-<figures/ch4/6L.png, id=876, 1166.3575pt x 900.36375pt>
+<figures/ch4/6L.png, id=877, 1166.3575pt x 900.36375pt>
 File: figures/ch4/6L.png Graphic file (type png)
 <use figures/ch4/6L.png>
 Package pdftex.def Info: figures/ch4/6L.png  used on input line 282.
@@ -1836,12 +1836,12 @@ bibitemlist
 [37
 
 ]) [38] (./chapters/zalacznik-A.tex
-<figures/AB/pblock_planner.png, id=952, 805.0075pt x 577.15625pt>
+<figures/AB/pblock_planner.png, id=953, 805.0075pt x 577.15625pt>
 File: figures/AB/pblock_planner.png Graphic file (type png)
 <use figures/AB/pblock_planner.png>
 Package pdftex.def Info: figures/AB/pblock_planner.png  used on input line 17.
 (pdftex.def)             Requested size: 340.8013pt x 244.34143pt.
-<figures/AB/draw.png, id=953, 796.9775pt x 578.16pt>
+<figures/AB/draw.png, id=954, 796.9775pt x 578.16pt>
 File: figures/AB/draw.png Graphic file (type png)
 <use figures/AB/draw.png>
 Package pdftex.def Info: figures/AB/draw.png  used on input line 24.
@@ -1855,7 +1855,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.A.1}) h
                                                   \__shipout_drop_firstpage_...
 l.28 
       <./figures/AB/pblock_planner.png>]
-<figures/AB/add_cell.png, id=959, 818.05624pt x 578.16pt>
+<figures/AB/add_cell.png, id=960, 818.05624pt x 578.16pt>
 File: figures/AB/add_cell.png Graphic file (type png)
 <use figures/AB/add_cell.png>
 Package pdftex.def Info: figures/AB/add_cell.png  used on input line 35.
@@ -1871,7 +1871,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.A.3}) h
                                                   \__shipout_drop_firstpage_...
 l.1 \chapter
             {Automatyzacja pomiarów i testów} <./figures/AB/draw.png> <./figures/AB/add_cell.png>]
-<figures/AB/stacja.jpg, id=967, 8190.6pt x 3782.13pt>
+<figures/AB/stacja.jpg, id=968, 8190.6pt x 3782.13pt>
 File: figures/AB/stacja.jpg Graphic file (type jpg)
 <use figures/AB/stacja.jpg>
 Package pdftex.def Info: figures/AB/stacja.jpg  used on input line 15.
@@ -1919,7 +1919,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.B.4}) h
                                                   \__shipout_drop_firstpage_...
 l.146 \ppcolophon
                  ]
-<wit/logo-pp.pdf, id=992, 422.57875pt x 422.57875pt>
+<wit/logo-pp.pdf, id=993, 422.57875pt x 422.57875pt>
 File: wit/logo-pp.pdf Graphic file (type pdf)
 <use wit/logo-pp.pdf>
 Package pdftex.def Info: wit/logo-pp.pdf  used on input line 146.
@@ -1947,18 +1947,18 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 51623 strings out of 476074
- 1166300 string characters out of 5793136
+ 51625 strings out of 476074
+ 1166335 string characters out of 5793136
  1971975 words of memory out of 5000000
- 72630 multiletter control sequences out of 15000+600000
+ 72631 multiletter control sequences out of 15000+600000
  664995 words of font info for 95 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
- 99i,20n,107p,1636b,1216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,107p,1636b,1218s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (52 pages, 8340649 bytes).
+Output written on main.pdf (52 pages, 8342539 bytes).
 PDF statistics:
- 1167 PDF objects out of 1200 (max. 8388607)
- 840 compressed objects within 9 object streams
- 192 named destinations out of 1000 (max. 500000)
+ 1169 PDF objects out of 1200 (max. 8388607)
+ 842 compressed objects within 9 object streams
+ 193 named destinations out of 1000 (max. 500000)
  729 words of extra memory for PDF output out of 10000 (max. 10000000)
 
