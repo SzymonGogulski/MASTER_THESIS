@@ -1,123 +1,98 @@
 \chapter{Wstęp}
 
-% \section{Znaczenie losowości w systemach brzegowych}
-
-
-
-% W różnych trybach pracy szyfrów blokowych, takich jak AES, wprowadzane są 
-% dodatkowe wartości losowe, takie jak wektor inicjalizacyjny (IV) czy nonce. Powtarzająca się 
-% wartość nonce w trybie AES-CTR naraża na niebezpieczeństwo całą szyfrowaną wiadomość. 
-% Przechwycenie dwóch różnych szyfrogramów wygnerowanych z tym samym nonce 
-% umożliwia wydobycie tekstu jawnego~\cite{NIST-SP-800-38A}.
-
-% Przesłanki te stanowią motywację do podjęcia badań nad oceną dostępnych 
-% generatorów losowości.
-
-% Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji idei OSHWA i 
-% RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa napisana w 
-% języku opisu sprzętu VHDL. Rozwiązanie to jest dedykowane inżynierom rozwijającym 
-% systemy brzegowe w oparciu o układy FPGA.
-
-% W strukturze procesora NEORV32 RISC-V zintegrowano moduł generatora entropii 
-% neoTRNG, który stanowi główny przedmiot badań prowadzonych w ramach niniejszej 
-% pracy magisterskiej. Podjęcie tematyki weryfikacji oraz analizy zastosowanego 
-% generatora pozwala na realny wkład w rozwój bezpieczeństwa 
-% technologii otwartoźródłowych.
-
-
 \section{Znaczenie losowości w systemach brzegowych}
 
-Rosnąca złożoność systemów informatycznych oraz konieczność przesyłania przez 
+\noindent Rosnąca złożoność systemów informatycznych oraz konieczność przesyłania przez 
 sieć coraz większych wolumenów danych wymuszają na inżynierach poszukiwanie 
 nowych rozwiązań architektonicznych. Odpowiedzią na te wyzwania i uniezależnieniem 
-współczesnych systemów komputerowych od centralnych usług chmurowych, jest 
-rozwój paradygmatu przetwarzania brzegowego (ang. \textit{edge computing}).
-Przetwarzanie brzegowe polega na przeniesieniu procesów obliczeniowych z 
-chmury na dedykowane urządzenia znajdujące się na krawędzi 
-sieci~\cite{Edge-computing}. W tym podejściu zaawansowane etapy analizy 
-danych i podejmowania decyzji realizowane są lokalnie, bezpośrednio w miejscu 
-ich generowania zanim ewentualne wyniki zostaną przesłane do chmury. 
+współczesnych systemów komputerowych od centralnych usług chmurowych jest 
+rozwój paradygmatu przetwarzania brzegowego (ang. edge computing). Przetwarzanie 
+brzegowe polega na przeniesieniu procesów obliczeniowych z chmury na dedykowane 
+urządzenia znajdujące się na krawędzi sieci~\cite{Edge-computing}. W tym 
+podejściu zaawansowane etapy analizy danych i podejmowania decyzji realizowane 
+są lokalnie, bezpośrednio w miejscu ich generowania, zanim ewentualne wyniki 
+zostaną przesłane do chmury.
 
-Choć model ten skutecznie ogranicza zależność od scentralizowanej 
-infrastruktury i odciąża sieć, wprowadza on jednocześnie nowe, specyficzne dla 
-środowisk rozproszonych wektory ataków i zagrożenia bezpieczeństwa. W warstwie 
-sprzętowej architektury systemów brzegowych często opierają się na wykorzystaniu 
-układów FPGA, komputerach przemysłowych lub dedykowanych układach scalonych 
-(ang. \textit{ASIC} -- \textit{Application-Specific Integrated Circuit}). 
-Implementacja z wykorzystaniem układów FPGA, w porównaniu do układów ASIC, 
-zapewnia pełną rekonfigurowalność sprzętową, jednak odbywa się to kosztem 
-stosunkowo wysokiego poboru mocy. Odwrotna sytuacja ma miejsce w przypadku 
-układów ASIC, które po wyprodukowaniu nie dają możliwości rekonfiguracji, 
-ale charakteryzują się minimalnym zapotrzebowaniem na energię. Główną zaletą 
-obu tych architektur jest możliwość ścisłego dostosowania ich do specyfiki 
-realizowanych zadań. Osiągnięcie tej optymalizacji wiąże się jednak z wysokim 
-stopniem skomplikowania procesu projektowego, co otwiera system na nowe 
-podatności. Jedną ze szczególnych klas zagrożeń, bezpośrednio wynikających ze 
-złożoności cyklu rozwoju i rozproszonego łańcucha dostaw, są trojany sprzętowe 
-(ang. \textit{Hardware Trojans}). Atakujący mogą je zaimplementować na etapie 
-projektowania lub fizycznej produkcji w przypadku układów ASIC, albo wprowadzić 
-do źródeł projektowych (np. na poziomie kodu HDL) w układach FPGA. 
+Choć model ten skutecznie ogranicza zależność od scentralizowanej infrastruktury 
+i odciąża sieć, wprowadza on jednocześnie nowe, specyficzne dla środowisk 
+rozproszonych wektory ataków i zagrożenia bezpieczeństwa. W warstwie sprzętowej 
+architektury systemów brzegowych często opierają się na wykorzystaniu układów 
+FPGA, komputerów przemysłowych lub dedykowanych układów scalonych 
+(ang. ASIC -- \textit{Application-Specific Integrated Circuit}). Implementacja z 
+wykorzystaniem układów FPGA, w porównaniu do układów ASIC, zapewnia pełną 
+rekonfigurowalność sprzętową, jednak odbywa się to kosztem stosunkowo wysokiego 
+poboru mocy. Odwrotna sytuacja ma miejsce w przypadku układów ASIC, które po 
+wyprodukowaniu nie dają możliwości rekonfiguracji, ale charakteryzują się 
+minimalnym zapotrzebowaniem na energię. Główną zaletą obu tych architektur 
+jest możliwość ścisłego dostosowania ich do specyfiki realizowanych zadań. 
+Osiągnięcie tej optymalizacji wiąże się jednak z wysokim stopniem skomplikowania 
+procesu projektowego, co otwiera system na nowe podatności. Jedną ze szczególnych 
+klas zagrożeń, bezpośrednio wynikających ze złożoności cyklu rozwoju i 
+rozproszonego łańcucha dostaw, są trojany sprzętowe (ang. \textit{Hardware Trojans}). 
+Atakujący mogą je zaimplementować na etapie projektowania lub fizycznej 
+produkcji w przypadku układów ASIC albo wprowadzić do źródeł projektowych 
+(np. na poziomie kodu HDL) w układach FPGA.
 
 Ze względu na istotność tego typu zagrożenia przyjęto, że jedną z metod 
 przeciwdziałania jest promowanie układów scalonych rozwijanych w sposób 
 transparentny i weryfikowalny. Organizacje takie jak OSHWA 
 (ang. \textit{Open-Source Hardware Association}) i projekty takie jak RISC-V 
-stanowią fundament ruchu wspierającego transparentny rozwój otwart oźródłowych 
-rozwiązań technicznych. OSHWA oraz architektura zestawu instrukcji RISC-V stanowią 
-odpowiedź na kryzys zaufania do zamkniętych i komercyjnych architektur. 
+stanowią fundament ruchu wspierającego transparentny rozwój otwartoźródłowych 
+rozwiązań technicznych. OSHWA oraz architektura zestawu instrukcji RISC-V 
+stanowią odpowiedź na kryzys zaufania do zamkniętych i komercyjnych architektur. 
 Znajdują się we wspólnym ekosystemie otwartoźródłowych technologii, choć 
-pełnią różne funkcje. Architektura RISC-V jest jedynie standardem
-technicznym, który umożliwia rozwój systemów wbudowanych i tym samym samych 
-układów scalonych. Z kolei OSHWA jest organem nadzorującym rozpowszechnianie 
-konkretnych, gotowych rozwiązań. Połączenie projektu i ogranizacji poskutkowało 
-powstaniem szerokiego wachlarza transparentnych, otwartoźródłowych i 
-bezpiecznych projektów układów scalonych.
+pełnią różne funkcje. Architektura RISC-V jest jedynie standardem technicznym, 
+który umożliwia rozwój systemów wbudowanych i tym samym samych układów 
+scalonych. Z kolei OSHWA jest organem nadzorującym rozpowszechnianie konkretnych, 
+gotowych rozwiązań. Połączenie projektu i organizacji poskutkowało powstaniem 
+szerokiego wachlarza transparentnych, otwartoźródłowych i bezpiecznych projektów 
+układów scalonych.
 
 Systemy brzegowe, oprócz jednostek dedykowanych do przetwarzania i transmisji 
 danych, posiadają w swojej architekturze zintegrowane moduły kryptograficzne. 
-W kontekście OSHW budowane są kompletne systemy SoC (ang. \textit{System-on-a-Chip}), 
-zawierające niezbędne urządzenia peryferyjne wspierające bezpieczeństwo. Jednymi 
-z najistotniejszych komponentów wykorzystywanych w procesach kryptograficznych 
-są generatory liczb losowych~\cite{2016Sreekumar-Ramesh}. 
+W kontekście OSHWA budowane są kompletne systemy SoC (ang. \textit{System-on-a-Chip}), 
+zawierające niezbędne urządzenia peryferyjne wspierające bezpieczeństwo. 
+Jednymi z najistotniejszych komponentów wykorzystywanych w procesach 
+kryptograficznych są generatory liczb losowych~\cite{2016Sreekumar-Ramesh}.
 
-Liczby losowe wykorzystywane są na różnych etapach procesu kryptograficznego.
+Liczby losowe wykorzystywane są na różnych etapach procesu kryptograficznego. 
 Bezpieczeństwo komunikacji opartej na algorytmie RSA bazuje na wysokiej złożoności 
 obliczeniowej problemu faktoryzacji iloczynu dwóch dużych liczb 
-pierwszych~\cite{Handbook-of-Applied-Cryptography}. 
-W praktycznych implementacjach sprzętowych i programowych proces wyznaczania 
-tych liczb rozpoczyna się od pobrania wartości z generatora losowego. Na tej 
-podstawie konstruowane są duże liczby całkowite, które następnie poddawane są 
-testom pierwszości. Bezpieczeństwo całej pary kluczy zależy więc bezpośrednio 
-od jakości zastosowanego źródła losowości. Jeżeli wyjściowy ciąg bitów z 
-generatora jest znany lub kontrolowany, wygenerowane na jego podstawie liczby 
-pierwsze stają się częściowo przewidywalne. W takiej sytuacji złożoność 
-problemu faktoryzacji drastycznie spada, czyniąc atak obliczeniowo opłacalnym 
-i prowadząc do całkowitej kompromitacji klucza prywatnego.
+pierwszych~\cite{Handbook-of-Applied-Cryptography}. W praktycznych 
+implementacjach sprzętowych i programowych proces wyznaczania tych liczb 
+rozpoczyna się od pobrania wartości z generatora losowego. Na tej podstawie 
+konstruowane są duże liczby całkowite, które następnie poddawane są testom 
+pierwszości. Bezpieczeństwo całej pary kluczy zależy więc bezpośrednio od 
+jakości zastosowanego źródła losowości. Jeżeli wyjściowy ciąg bitów z generatora 
+jest znany lub kontrolowany, wygenerowane na jego podstawie liczby pierwsze 
+stają się częściowo przewidywalne. W takiej sytuacji złożoność problemu 
+faktoryzacji drastycznie spada, czyniąc atak obliczeniowo opłacalnym i prowadząc 
+do całkowitej kompromitacji klucza prywatnego.
 
 Tworzenie podpisów cyfrowych nie byłoby możliwe bez odpowiednich źródeł 
-losowości. Krypografia krzywych eliptycznych, stosowana przy podpisywaniu 
-plików binarnych, zawiera element losowy w postaci jednorazowej wartości nonce. 
-Sytuacja, w której nonce nie spełnia miar losowości, naraża na niebezpieczeństwo 
-cały klucz prywatny producenta. Gdy kilka kolejnych bitów losowych wartości 
-nonce (używanych przy każdej generacji sygnatury) jest znanych dla pewnej 
-liczby sygnatur cyfrowych, możliwe jest odzyskanie klucza 
+losowości. Kryptografia krzywych eliptycznych, stosowana przy podpisywaniu 
+plików binarnych, zawiera element losowy w postaci jednorazowej wartości 
+nonce. Sytuacja, w której nonce nie spełnia miar losowości, naraża na 
+niebezpieczeństwo cały klucz prywatny producenta. Gdy kilka kolejnych bitów 
+losowych wartości nonce (używanych przy każdej generacji sygnatury) jest 
+znanych dla pewnej liczby sygnatur cyfrowych, możliwe jest odzyskanie klucza 
 prywatnego~\cite{ch1-the-insecurity-of-ECDSA}.
-
-% ---
 
 W różnych trybach pracy szyfrów blokowych, takich jak AES, wprowadzane są 
 dodatkowe wartości losowe, takie jak wektor inicjalizacyjny (IV) czy nonce. 
 Powtarzająca się wartość nonce w trybie AES-CTR naraża na niebezpieczeństwo 
-całą szyfrowaną wiadomość. Przechwycenie dwóch różnych szyfrogramów wygnerowanych 
-z tym samym nonce umożliwia wydobycie tekstu jawnego [11]. Wiarygodność 
-sprzętowych generatorów liczb losowych rozumiana jako implementacja wolna od 
-trojanów sprzętowych, może być zapewniona przez rozwój tego typu układów w 
-koncepcji OSHW. Projekt „The NEORV32 RISC-V Processor” jest jedną z realizacji 
-idei OSHWA i RISC-V. Jest to otwartoźródłowa, modyfikowalna platforma sprzętowa 
-napisana w języku opisu sprzętu VHDL. Rozwiązanie to może być dedykowane 
-inżynierom rozwijającym systemy brzegowe w oparciu o układy FPGA. W strukturze 
-procesora NEORV32RISC-V zintegrowano moduł generatora entropii neoTRNG,
-który stanowi główny przedmiot badań prowadzonych w ramach niniejszej pracy magisterskiej.
+całą szyfrowaną wiadomość. Przechwycenie dwóch różnych szyfrogramów 
+wygenerowanych z tym samym nonce umożliwia wydobycie tekstu jawnego~\cite{NIST-SP-800-38A}.
+
+Wiarygodność sprzętowych generatorów liczb losowych, rozumiana jako 
+implementacja wolna od trojanów sprzętowych, może być zapewniona przez rozwój 
+tego typu układów w koncepcji OSHWA. Projekt „The NEORV32 RISC-V Processor” 
+jest jedną z realizacji idei OSHWA i RISC-V. Jest to otwartoźródłowa, 
+modyfikowalna platforma sprzętowa napisana w języku opisu sprzętu VHDL. 
+Rozwiązanie to może być dedykowane inżynierom rozwijającym systemy brzegowe 
+w oparciu o układy FPGA. W strukturze procesora NEORV32 RISC-V zintegrowano 
+moduł generatora entropii neoTRNG, który stanowi główny przedmiot badań 
+prowadzonych w ramach niniejszej pracy magisterskiej.
 
 \section{Cel pracy}
 
@@ -138,7 +113,9 @@ stanowić modyfikacje bazowego rozwiązania neoTRNG przedstawionego
 w repozytorium~\cite{neoTRNG}. Modyfikacje obejmą aspekty takie jak: 
 liczba zastosowanych oscylatorów, zastosowanie korekcji źródła 
 (np. korektor Von Neumanna), metody przetwarzania końcowego 
-(ang. \textit{post-processing}) oraz fizyczne rozmieszczenie elementów w strukturze FPGA.
+(ang. \textit{post-processing})  będące ekstraktorami 
+losowości ze źródła entropii (np. korektor Von Neumanna) oraz fizyczne 
+rozmieszczenie elementów w strukturze FPGA.
 
 
 
@@ -150,24 +127,23 @@ liczba zastosowanych oscylatorów, zastosowanie korekcji źródła
 Rozdział pierwszy przedstawia motywację podjęcia badań w obszarze generatorów 
 losowości oraz określa założenia i cele pracy. 
 
-Rozdział drugi koncentruje się na podstawach teoretycznych. Omówiono w nim 
+Rozdział drugi koncentruje się na wybranych podstawach teoretycznych. Omówiono w nim 
 definicje związane z tematyką pracy, dostępne ekstraktory entropii oraz metody 
 oceny losowości.
 
 Rozdział trzeci omawia architekturę badanego modułu neoTRNG oraz przedstawia 
-różne modyfikacje badanego generatora wraz z analizą ich zajętości sprzętowej.  
+własne (autorskie) modyfikacje badanego generatora wraz z analizą ich zajętości sprzętowej.  
 
 Rozdział czwarty poświęcono badaniom eksperymentalnym. Zbadane zostaną: 
 \begin{itemize}
-    \item wpływ metod post-processing'u na losowość, 
     \item wpływ skalowania liczby oscylatorów pierścieniowych oraz liczby 
     inwerterów na losowość, 
     \item wpływ zastosowania ekstraktorów AES-CTR i Toeplitza na losowość, 
     \item wpływ rozmieszczenia komórek entropii w układzie FPGA na losowość. 
 \end{itemize}
 
-Wraz z wynikami testów losowości dołączona zostanie informacja o przepustowości 
-każdej z implementacji.
+Wraz z wynikami testów losowości dołączona zostanie informacja o przepustowości  
+(wydajności uzyskiwanego ciągu bitów)
 
 Rozdział piąty kończy pracę i podsumowuje najważniejsze wnioski wynikające z 
 przeprowadzonych badań.
@@ -178,80 +154,3 @@ komórek entropii.
 
 Załącznik B zawiera instrukcję przedstawiającą metodę akwizycji oraz przetworzenia 
 danych testowych.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% \noindent Rosnąca złożoność systemów informatycznych wymusza na inżynierach 
-% wdrażanie nowych rozwiązań technicznych. W odpowiedzi na znaczne 
-% uzależnienie systemów informatycznych od usług chmurowych powstała dziedzina 
-% przetwarzania brzegowego (ang. \textit{edge computing}). Zakłada ona ograniczenie 
-% interakcji z chmurą poprzez rozwój dedykowanych systemów brzegowych. Podejście 
-% to opiera się na przetwarzaniu danych oraz podejmowaniu decyzji przez system 
-% bezpośrednio w miejscu, w którym te dane są generowane.
-
-% Podejście to ogranicza zależność od systemów chmurowych, jednak wprowadza nowe 
-% zagrożenia charakterystyczne dla tej klasy systemów. Wiele rozwiązań opartych 
-% jest na układach scalonych przeznaczonych do konkretnych zastosowań (ang. \textit{ASIC} --
-%  \textit{Application-Specific Integrated Circuit}). Ich główną zaletą jest 
-%  znaczna adaptowalność do zadań, które mają wykonywać. Jest to jednak 
-%  opłacone dużą złożonością rozwijanego systemu, co otwiera go na nowe podatności. 
-%  Jedną ze szczególnych klas zagrożeń, wynikających ze złożonego procesu rozwoju, są trojany 
-%  sprzętowe wprowadzane przez atakującego na etapach projektowania i produkcji 
-%  układów scalonych.
-
-% Ze względu na powagę tego zagrożenia przyjęto, że jedną z metod przeciwdziałania 
-% jest promowanie układów scalonych rozwijanych w sposób transparentny i 
-% weryfikowalny. Organizacje takie jak OSHWA (ang. \textit{Open-Source Hardware Association}) 
-% i projekty takie jak RISC-V stanowią fundament ruchu wspierającego transparentny 
-% rozwój otwartoźródłowych rozwiązań technicznych.
-
-% OSHWA oraz architektura zestawu instrukcji RISC-V stanowią odpowiedź na kryzys 
-% zaufania do zamkniętych i komercyjnych architektur. Znajdują się 
-% we wspólnym ekosystemie otwartoźródłowych technologii, choć pełnią różne 
-% funkcje. Architektura RISC-V jest jedynie standardem technicznym, który 
-% umożliwia rozwój układów scalonych. Z kolei OSHWA jest organem nadzorującym 
-% rozpowszechnianie konkretnych, gotowych rozwiązań. Połączenie projektu i ogranizacji 
-% poskutkowało powstaniem szerokiego wachlarza transparentnych, otwartoźródłowych 
-% i bezpiecznych projektów układów scalonych.
-
-% Generatory liczb losowych stanowią istotną część algorytmów 
-% współczesnej kryptografii~\cite{2016Sreekumar-Ramesh}. Liczby losowe 
-% wykorzystywane są w kryptografii na różnych etapach i w wielu 
-% różnych celach.
-
-% Generowanie par kluczy kryptograficznych algorytmem RSA zapewnia bezpieczeństwo 
-% komunikacji przy założeniu wysokiej złożoności obliczeniowej faktoryzacji iloczynu 
-% dwóch losowych liczb pierwszych. 
-% Dopiero gdy dane liczby pierwsze spełniają kryteria oceny losowości, możemy 
-% stwierdzić, że para kluczy będzie bezpieczna. Oznacza to, że próba 
-% faktoryzacji będzie na tyle wymagająca sprzętowo i czasowo, aby uczynić ją 
-% nieopłacalną dla atakującego.
-
-% Tworzenie podpisów cyfrowych nie byłoby możliwe bez odpowiednich źródeł 
-% losowości. Kryptografia krzywych eliptycznych, stosowana przy podpisywaniu 
-% plików binarnych, zawiera element losowy w postaci jednorazowej wartości nonce. 
-% Sytuacja, w której nonce nie spełnia miar losowości, naraża na niebezpieczeństwo 
-% cały klucz prywatny producenta. Gdy kilka kolejnych bitów losowych wartości nonce 
-% (używanych przy każdej generacji sygnatury) jest znanych dla pewnej liczby 
-% sygnatur cyfrowych, możliwe jest odzyskanie klucza 
-% prywatnego~\cite{ch1-the-insecurity-of-ECDSA}.

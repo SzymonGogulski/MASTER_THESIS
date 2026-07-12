@@ -1,116 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1781001665">
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="aes_ctr_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS" Name="aes_ctr_routed.rqs"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="aes_ctr.vdi"/>
-  <File Type="BG-DRC" Name="aes_ctr.drc"/>
-  <File Type="BG-BGN" Name="aes_ctr.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="aes_ctr.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="aes_ctr.ltx"/>
-  <File Type="PL-LTX-FILE" Name="aes_ctr_pld.ltx"/>
-  <File Type="BOOT-LTX-FILE" Name="aes_ctr_boot.ltx"/>
-  <File Type="LTX-FILE" Name="aes_ctr.ltx"/>
-  <File Type="PL-BIF-FILE" Name="aes_ctr_pld.bif"/>
-  <File Type="BOOT-BIF-FILE" Name="aes_ctr_boot.bif"/>
-  <File Type="BIF-FILE" Name="aes_ctr.bif"/>
-  <File Type="MMI-FILE" Name="aes_ctr.mmi"/>
-  <File Type="RBD_FILE" Name="aes_ctr.rbd"/>
-  <File Type="NPI_FILE" Name="aes_ctr.npi"/>
   <File Type="PL_UNMASK_RCDO_FILE" Name="aes_ctr_pld_unmask.rcdo"/>
   <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="aes_ctr_pld_unmask_markers.rcdo"/>
   <File Type="PL_MASK_RCDO_FILE" Name="aes_ctr_pld_mask.rcdo"/>
   <File Type="PL_MARKER_RCDO_FILE" Name="aes_ctr_pld_markers.rcdo"/>
   <File Type="PL-CLEAR-RCDO-FILE" Name="aes_ctr_pld_clear.rcdo"/>
-  <File Type="PL-RCDO-FILE" Name="aes_ctr_pld.rcdo"/>
   <File Type="PL_UNMASK_RNPI_FILE" Name="aes_ctr_pld_unmask.rnpi"/>
   <File Type="PL_SHUTDOWN_RNPI_FILE" Name="aes_ctr_pld_shutdown.rnpi"/>
   <File Type="PL_MASK_RNPI_FILE" Name="aes_ctr_pld_mask.rnpi"/>
   <File Type="PL_MARKER_RNPI_FILE" Name="aes_ctr_pld_markers.rnpi"/>
-  <File Type="PL_RNPI_FILE" Name="aes_ctr_pld.rnpi"/>
   <File Type="BOOT_MARKER_RNPI_FILE" Name="aes_ctr_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="aes_ctr_pld.rnpi"/>
   <File Type="BOOT_RNPI_FILE" Name="aes_ctr_boot.rnpi"/>
-  <File Type="MARKER-RCDO-FILE" Name="aes_ctr_markers.rcdo"/>
   <File Type="MARKER-RNPI-FILE" Name="aes_ctr_markers.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="aes_ctr_pld.rcdo"/>
+  <File Type="MARKER-RCDO-FILE" Name="aes_ctr_markers.rcdo"/>
   <File Type="RCDO-FILE" Name="aes_ctr.rcdo"/>
-  <File Type="RNPI_FILE" Name="aes_ctr.rnpi"/>
-  <File Type="CFI_FILE" Name="aes_ctr.cfi"/>
-  <File Type="RCFI_FILE" Name="aes_ctr.rcfi"/>
-  <File Type="PL-PDI-FILE" Name="aes_ctr_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="aes_ctr_boot.pdi"/>
-  <File Type="PDI-FILE" Name="aes_ctr.pdi"/>
-  <File Type="BITSTR-MMI" Name="aes_ctr.mmi"/>
-  <File Type="BITSTR-BMM" Name="aes_ctr_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="aes_ctr.nky"/>
-  <File Type="BITSTR-RBT" Name="aes_ctr.rbt"/>
-  <File Type="BITSTR-MSK" Name="aes_ctr.msk"/>
-  <File Type="BG-BIN" Name="aes_ctr.bin"/>
-  <File Type="BG-BIT" Name="aes_ctr.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="aes_ctr_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="aes_ctr_bus_skew_postroute_physopted.rpt"/>
+  <File Type="PL-LTX-FILE" Name="aes_ctr_pld.ltx"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="aes_ctr_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="aes_ctr_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="aes_ctr_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="aes_ctr_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="aes_ctr_postroute_physopt.dcp"/>
-  <File Type="ROUTE-RQS-PB" Name="aes_ctr_rqs_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_routed.rpx"/>
+  <File Type="BITSTR-MSK" Name="aes_ctr.msk"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="aes_ctr_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW" Name="aes_ctr_bus_skew_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="aes_ctr_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-SIMILARITY" Name="aes_ctr_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="aes_ctr_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="aes_ctr_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="aes_ctr_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="aes_ctr_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="aes_ctr_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="aes_ctr_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC" Name="aes_ctr_drc_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="aes_ctr_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="aes_ctr_power_routed.rpx"/>
+  <File Type="ROUTE-PWR" Name="aes_ctr_power_routed.rpt"/>
+  <File Type="BG-DRC" Name="aes_ctr.drc"/>
   <File Type="ROUTE-STATUS-PB" Name="aes_ctr_route_status.pb"/>
   <File Type="ROUTE-STATUS" Name="aes_ctr_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="aes_ctr_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="aes_ctr_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="aes_ctr_power_routed.rpt"/>
+  <File Type="BITSTR-BMM" Name="aes_ctr_bd.bmm"/>
+  <File Type="ROUTE-TIMING-RPX" Name="aes_ctr_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="aes_ctr_timing_summary_routed.rpt"/>
+  <File Type="BG-BGN" Name="aes_ctr.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="aes_ctr_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="aes_ctr_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="aes_ctr_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="aes_ctr_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="aes_ctr_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="aes_ctr_drc_routed.rpt"/>
-  <File Type="ROUTE-UTIL-PB" Name="aes_ctr_utilization_routed.pb"/>
-  <File Type="ROUTE-UTIL" Name="aes_ctr_utilization_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="aes_ctr_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="aes_ctr_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="aes_ctr_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="aes_ctr_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="aes_ctr_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="aes_ctr_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="aes_ctr_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="aes_ctr_postplace_pwropt.dcp"/>
-  <File Type="PLACE-RQA-PB" Name="aes_ctr_rqa_placed.pb"/>
-  <File Type="PLACE-TIMING" Name="aes_ctr_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="aes_ctr_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="aes_ctr_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="aes_ctr_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="aes_ctr_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="aes_ctr_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="aes_ctr_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="aes_ctr_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="aes_ctr_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="aes_ctr_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="aes_ctr_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="aes_ctr_pwropt.dcp"/>
-  <File Type="OPT-RQA-PB" Name="aes_ctr_rqa_opted.pb"/>
-  <File Type="OPT-TIMING" Name="aes_ctr_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="aes_ctr.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="aes_ctr_methodology_drc_opted.rpt"/>
-  <File Type="OPT-UTIL-PB" Name="aes_ctr_utilization_opted.pb"/>
-  <File Type="OPT-UTIL" Name="aes_ctr_utilization_opted.rpt"/>
-  <File Type="OPT-DRC" Name="aes_ctr_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="aes_ctr_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="aes_ctr_timing_summary_init.rpt"/>
   <File Type="REPORTS-TCL" Name="aes_ctr_reports.tcl"/>
   <File Type="PA-TCL" Name="aes_ctr.tcl"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="aes_ctr_methodology_drc_routed.rpt"/>
+  <File Type="PLACE-CTRL" Name="aes_ctr_control_sets_placed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="aes_ctr_timing_summary_postroute_physopted.rpt"/>
+  <File Type="BITSTR-MMI" Name="aes_ctr.mmi"/>
+  <File Type="BITSTR-NKY" Name="aes_ctr.nky"/>
+  <File Type="PLACE-UTIL" Name="aes_ctr_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="aes_ctr_utilization_placed.pb"/>
+  <File Type="OPT-DRC" Name="aes_ctr_drc_opted.rpt"/>
+  <File Type="PLACE-IO" Name="aes_ctr_io_placed.rpt"/>
+  <File Type="BG-BIN" Name="aes_ctr.bin"/>
+  <File Type="BITSTR-RBT" Name="aes_ctr.rbt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="aes_ctr_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="aes_ctr_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="aes_ctr_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="aes_ctr_bus_skew_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="aes_ctr.vdi"/>
+  <File Type="PDI-FILE" Name="aes_ctr.pdi"/>
+  <File Type="BG-BIT" Name="aes_ctr.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="aes_ctr.sysdef"/>
+  <File Type="MMI-FILE" Name="aes_ctr.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="aes_ctr.ltx"/>
+  <File Type="BIF-FILE" Name="aes_ctr.bif"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BOOT-LTX-FILE" Name="aes_ctr_boot.ltx"/>
+  <File Type="OPT-HWDEF" Name="aes_ctr.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="aes_ctr_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="aes_ctr_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="aes_ctr_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="aes_ctr_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="aes_ctr_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="aes_ctr_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="aes_ctr_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="aes_ctr_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="aes_ctr_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="aes_ctr_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="aes_ctr_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="aes_ctr_postroute_physopt_bb.dcp"/>
+  <File Type="BOOT-PDI-FILE" Name="aes_ctr_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="aes_ctr_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="aes_ctr.rcfi"/>
+  <File Type="CFI_FILE" Name="aes_ctr.cfi"/>
+  <File Type="RNPI_FILE" Name="aes_ctr.rnpi"/>
+  <File Type="NPI_FILE" Name="aes_ctr.npi"/>
+  <File Type="RBD_FILE" Name="aes_ctr.rbd"/>
+  <File Type="ROUTE-RQS" Name="aes_ctr_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="aes_ctr_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="BOOT-BIF-FILE" Name="aes_ctr_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="aes_ctr_pld.bif"/>
+  <File Type="LTX-FILE" Name="aes_ctr.ltx"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/RTL/add_round_key.vhd">
@@ -270,5 +252,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

@@ -1,19 +1,19 @@
 Time resolution is 1 ps
 Note: ---------- Passed ----------
-Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: ---------- Output must be: -------
-Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: 320b6a19978511dcfb09dc021d842539
-Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 110 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: ---------- Passed ----------
-Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: ---------- Output must be: -------
-Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: 2e2b34ca59fa4c883b2c8aefd44be966
-Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 220 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: ---------- Passed ----------
-Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: ---------- Output must be: -------
-Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd
 Note: 97ef6624f3ca9ea860367a0db47bd73a
-Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd
+Time: 330 ns  Iteration: 0  Process: /test_enc/sim_proc  File: /home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd

@@ -1,35 +1,3 @@
-% Rozdziały dokumentujące pracę własną studenta: opisujące ideę, sposób lub metodę 
-% rozwiązania postawionego problemu oraz rozdziały opisujące techniczną stronę rozwiązania 
-% --- dokumentacja techniczna, przeprowadzone testy, badania i uzyskane wyniki. 
-
-% Praca musi zawierać elementy pracy własnej autora adekwatne do jego wiedzy praktycznej uzyskanej w
-% okresie studiów. Za pracę własną autora można uznać np.: stworzenie aplikacji informatycznej lub jej
-% fragmentu, zaproponowanie algorytmu rozwiązania problemu szczegółowego, przedstawienie projektu 
-% np.~systemu informatycznego lub sieci komputerowej, analizę i ocenę nowych technologii lub rozwiązań
-% informatycznych wykorzystywanych w przedsiębiorstwach, itp. 
-
-% Autor powinien zadbać o właściwą dokumentację pracy własnej obejmującą specyfikację założeń i 
-% sposób realizacji poszczególnych zadań
-% wraz z ich oceną i opisem napotkanych problemów. W przypadku prac o charakterze 
-% projektowo-implementacyjnym, ta część pracy jest zastępowana dokumentacją techniczną i użytkową systemu. 
-
-% W pracy \textbf{nie należy zamieszczać całego kodu źródłowego} opracowanych programów. Kod źródłowy napisanych
-% programów, wszelkie oprogramowanie wytworzone i wykorzystane w pracy, wyniki przeprowadzonych
-% eksperymentów powinny być umieszczone np. na płycie CD, stanowiącej dodatek do pracy.
-
-% \section*{Styl tekstu}
-
-% Należy\footnote{Uwagi o stylu pochodzą częściowo ze stron prof. Macieja Drozdowskiego~\cite{Drozdowski2006}.} 
-% stosować formę bezosobową, tj.~\emph{w pracy rozważono ......, 
-% w ramach pracy zaprojektowano ....}, a nie: \emph{w pracy rozważyłem, w ramach pracy zaprojektowałem}. 
-% Odwołania do wcześniejszych fragmentów tekstu powinny mieć następującą postać: ,,Jak wspomniano wcześniej, ....'', 
-% ,,Jak wykazano powyżej ....''. Należy unikać długich zdań. 
-
-% Niedopuszczalne są zwroty używane w języku potocznym. W pracy należy używać terminologii informatycznej, która ma 
-% sprecyzowaną treść i znaczenie. 
-
-% Niedopuszczalne jest pisanie pracy metodą \emph{cut\&paste}, bo jest to plagiat i dowód intelektualnej indolencji autora.
-% Dane zagadnienie należy opisać własnymi słowami. Zawsze trzeba powołać się na zewnętrzne źródła. 
 
 \chapter{Badania eksperymentalne}
 
@@ -45,29 +13,30 @@ Neumanna oraz wielomianem CRC. Zbadane zostały następujące konfiguracje:
 \end{itemize}
 
 Dla każdej z konfiguracji sprawdzono osobno wpływ obecności korektora von Neumanna i 
-wielomianu CRC, co dało łącznie dwanaście różnych konfiguracji generatora. Wyniki testów 
-zostały zestawione w tabelach:
+wielomianu CRC, co dało łącznie dwanaście różnych konfiguracji generatora. 
 
-\begin{itemize}
-    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I} -- Wyniki testów NIST SP 800-22 dla 2RO 8I,
-    \item Tab.~\ref{tab:ch4_nist_22_3RO_15I} -- Wyniki testów NIST SP 800-22 dla 3RO 15I,
-    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I} -- Wyniki testów NIST SP 800-22 dla 3RO 21I,
-    \item Tab.~\ref{tab:ch4_NIST_SP_800_90} -- Wyniki testów NIST SP 800-90B dla 2RO 8I, 3RO 15I, 3RO 21I,
-    \item Tab.~\ref{tab:ENT_1} -- Wyniki testów ENT dla 2RO 8I, 3RO 15I, 3RO 21I.
-\end{itemize}
+
 \subsection{NIST SP 800-22}
 
+Analiza losowości przy użyciu testów NIST SP 800-22 dla konfiguracji z 2RO 8I, 
+3RO 15I, 3RO 21I w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
+
 \begin{flushleft}
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
-\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
-\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Legenda:} \textbf{sp} -- liczba zaliczonych podtestów (ang. \textit{subtests passed}). \\
+\small \textbf{Legenda:} \textbf{*} -- test niezaliczony. \\
+\small \textbf{Legenda:} \textbf{\textit{ENABLE\_VON\_NEUMANN} / \textit{ENABLE\_CRC}} – wybrana konfiguracja.
 \end{flushleft}
+
 
 
 \begin{table}[H]
@@ -154,6 +123,10 @@ LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     &  99/10
 
 \subsection{NIST SP 800-90B}
 
+Analiza losowości przy użyciu testów NIST SP 800-90B dla konfiguracji z 2RO 8I, 
+3RO 15I, 3RO 21I w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
 \begin{table}[H]
 \centering
 \caption{NIST 800-90 : 3 RO 5-7-9 / 3 RO 3-5-7 / 2 RO 3-5}
@@ -185,12 +158,17 @@ LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     &  99/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\textbf{Legenda:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
 \end{minipage}
 \end{table}
 
 
 \subsection{ENT}
+
+Analiza losowości przy użyciu testu ENT dla konfiguracji z 2RO 8I, 
+3RO 15I, 3RO 21I w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
 
 \begin{table}[H]
 \centering
@@ -223,7 +201,7 @@ LinearComplexity        &  99/100 &     &  99/100 &     & 100/100 &     &  99/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} Entropy = X bits per byte.
+\textbf{Legenda:} Entropy = X bits per byte.
 \end{minipage}
 \end{table}
 
@@ -300,33 +278,29 @@ Zbadane zostały następujące konfiguracje:
 \end{itemize}
 
 Dla każdej z konfiguracji sprawdzono osobno wpływ obecności korektora von Neumanna i 
-wielomianu CRC, co dało łącznie 24 różne konfiguracje generatora. Wyniki testów 
-zostały zestawione w tabelach:
+wielomianu CRC, co dało łącznie 24 różne konfiguracje generatora. 
 
-\begin{itemize}
-    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 2RO 8I (rozproszone),
-    \item Tab.~\ref{tab:ch4_nist_22_2RO_8I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 2RO 8I (zlokalizowane),
-    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 3RO 21I (rozproszone),
-    \item Tab.~\ref{tab:ch4_nist_22_3RO_21I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 3RO 21I (zlokalizowane),
-    \item Tab.~\ref{tab:ch4_nist_22_6RO_60I_DISTRIBUTED} -- Wyniki testów NIST SP 800-22 dla 6RO 60I (rozproszone),
-    \item Tab.~\ref{tab:ch4_nist_22_6RO_60I_LOCALIZED} -- Wyniki testów NIST SP 800-22 dla 6RO 60I (zlokalizowane),
-    \item Tab.~\ref{tab:ch4_NIST_SP_800_90_D} -- Wyniki testów NIST SP 800-90 dla każdej konfiguracji rozproszonej,
-    \item Tab.~\ref{tab:ch4_NIST_SP_800_90_L} -- Wyniki testów NIST SP 800-90 dla każdej konfiguracji zlokalizowanej,
-    \item Tab.~\ref{tab:ch4_ent_distributed} -- Wyniki testów ENT dla każdej konfiguracji rozproszonej,
-    \item Tab.~\ref{tab:ch4_ent_localized} -- Wyniki testów ENT dla każdej konfiguracji zlokalizowanej.
-\end{itemize}
+
 \subsection{NIST SP 800-22}
 
+Analiza losowości przy użyciu testów NIST SP 800-22 dla konfiguracji z 2RO 8I rozmieszczenie rozproszone, 
+2RO 8I rozmieszczenie zlokalizowane, 3RO 21I rozmieszczenie rozproszone, 3RO 21I rozmieszczenie zlokalizowane, 
+6RO 60I rozmieszczenie rozproszone, 
+6RO 60I rozmieszczenie zlokalizowane w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
 \begin{flushleft}
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
-\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
-\small \textbf{Legend:} \textbf{\textit{ENABLE\_VON\_NEUMANN}/ \textit{ENABLE\_CRC}} - wybrana konfiguracja.
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Legenda:} \textbf{sp} -- liczba zaliczonych podtestów (ang. \textit{subtests passed}). \\
+\small \textbf{Legenda:} \textbf{*} -- test niezaliczony. \\
+\small \textbf{Legenda:} \textbf{\textit{ENABLE\_VON\_NEUMANN} / \textit{ENABLE\_CRC}} – wybrana konfiguracja.
 \end{flushleft}
 
 
@@ -505,6 +479,11 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 
 \subsection{NIST SP 800-90B}
 
+Analiza losowości przy użyciu testów NIST SP 800-90B dla konfiguracji z 2RO 8I rozmieszczenie rozproszone, 
+2RO 8I rozmieszczenie zlokalizowane, 3RO 21I rozmieszczenie rozproszone, 3RO 21I rozmieszczenie zlokalizowane, 
+6RO 60I rozmieszczenie rozproszone, 
+6RO 60I rozmieszczenie zlokalizowane w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
 
 \begin{table}[H]
 \centering
@@ -537,7 +516,7 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\textbf{Legenda:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
 \end{minipage}
 \end{table}
 
@@ -573,11 +552,17 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
+\textbf{Legenda:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$ 
 \end{minipage}
 \end{table}
 
 \subsection{ENT}
+
+Analiza losowości przy użyciu testu ENT dla konfiguracji z 2RO 8I rozmieszczenie rozproszone, 
+2RO 8I rozmieszczenie zlokalizowane, 3RO 21I rozmieszczenie rozproszone, 3RO 21I rozmieszczenie zlokalizowane, 
+6RO 60I rozmieszczenie rozproszone, 
+6RO 60I rozmieszczenie zlokalizowane w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
 
 \begin{table}[H]
 \centering
@@ -610,7 +595,7 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} Entropy = X bits per byte.
+\textbf{Legenda:} Entropy = X bits per byte.
 \end{minipage}
 \end{table}
 
@@ -647,7 +632,7 @@ LinearComplexity        & 100/100 &     &  97/100 &     &  98/100 &     &  97/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} Entropy = X bits per byte.
+\textbf{Legenda:} Entropy = X bits per byte.
 \end{minipage}
 \end{table}
 
@@ -666,26 +651,28 @@ Zbadane zostały następujące konfiguracje:
     \item 3 RO po 3, 5 i 7 inwerterów oraz AES-CTR.
 \end{itemize}
 
-Powyższe podejście dało łącznie 4 różne konfiguracje generatora. Wyniki testów zostały zestawione w tabelach:
-
-\begin{itemize}
-    \item Tab.~\ref{tab:ch5_aes-ctr_2RO_8I} -- Wyniki testów NIST SP 800-22 dla każdej konfiguracji,
-    \item Tab.~\ref{tab:ch5_nist_SP_800-90B_pivoted} -- Wyniki testów NIST SP 800-90B dla każdej konfiguracji,
-    \item Tab.~\ref{tab:ch5_ent} -- Wyniki testów ENT dla każdej konfiguracji.
-\end{itemize}
+Powyższe podejście dało łącznie 4 różne konfiguracje generatora.
 
 \subsection{NIST SP 800-22}
 
+Analiza losowości przy użyciu testów NIST SP 800-22 dla konfiguracji z 2RO 8I z ekstraktorem 
+Toeplitza, 3RO 15I z ekstraktorem Toeplitza, 2RO 8I z ekstraktorem AES-CTR, 3RO 15I z ekstraktorem 
+AES-CTR w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
+
 \begin{flushleft}
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Note:} The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences\cite{NIST-SP-800-22}. \\
-\small \textbf{Legend:} \textbf{sp} - subtests passed (zaliczone podtesty). \\
-\small \textbf{Legend:} \textbf{*} - test niezaliczony. \\
-\small \textbf{Legend:} \textbf{\textit{Tpz}} - Toeplitz.
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Uwaga:} Minimalny wskaźnik zaliczenia dla każdego testu statystycznego, 
+z wyjątkiem testu błądzenia losowego 
+(w wariancie \textit{random excursion / random excursion variant}), wynosi w 
+przybliżeniu 96 dla próby o wielkości 100 sekwencji binarnych~\cite{NIST-SP-800-22}. \\
+\small \textbf{Legenda:} \textbf{sp} -- liczba zaliczonych podtestów (ang. \textit{subtests passed}). \\
+\small \textbf{Legenda:} \textbf{*} -- test niezaliczony. \\
+\small \textbf{Legenda:} \textbf{\textit{Tpz}} - Toeplitz.
 \end{flushleft}
 
 \begin{table}[H]
@@ -718,10 +705,15 @@ LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     & 100/10
 
 \subsection{NIST SP 800-90B}
 
+Analiza losowości przy użyciu testów NIST SP 800-90B dla konfiguracji z 2RO 8I z ekstraktorem 
+Toeplitza, 3RO 15I z ekstraktorem Toeplitza, 2RO 8I z ekstraktorem AES-CTR, 3RO 15I z ekstraktorem 
+AES-CTR w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
 
 \begin{table}[H]
 \centering
-\caption{NIST 800-90 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5 (Pivoted)}
+\caption{NIST 800-90 : AES 3RO 3-5-7 / Toeplitz 3RO 3-5-7 / AES 2RO 3-5 / Toeplitz 2RO 3-5}
 \label{tab:ch5_nist_SP_800-90B_pivoted}
 \begin{tabular}{|l|c|}
 \hline
@@ -734,7 +726,7 @@ LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     & 100/10
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legend:} Entropy = X bits per byte.
+\textbf{Legenda:} Entropy = X bits per byte.
 \end{minipage}
 \end{table}
 
@@ -742,6 +734,12 @@ LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     & 100/10
 
 
 \subsection{ENT}
+
+Analiza losowości przy użyciu testu ENT dla konfiguracji z 2RO 8I z ekstraktorem 
+Toeplitza, 3RO 15I z ekstraktorem Toeplitza, 2RO 8I z ekstraktorem AES-CTR, 3RO 15I z ekstraktorem 
+AES-CTR w neoTRNG. Testy przeprowadzono na płytce deweloperskiej 
+Cora Z7-07S z układem FPGA xc7z007sclg400-1.
+
 
 
 \begin{table}[H]
@@ -767,10 +765,21 @@ LinearComplexity        & 100/100 &     & 100/100 &     &  99/100 &     & 100/10
 
 
 % ##############################################################################
-\section{Szybkość/wydajność działania Von Neumann vs Toeplitz vs AES-CTR}
+\section{Wydajność neoTRNG w zależności od typu ekstrakcji}
 
-Ostatecznie zbadana została przepustowość każdej z konfiguracji generatora 
-(bez modułu komunikacji UART).
+\noindent Ostatecznie została przeprowadzona ocena wydajności każdej z 
+konfiguracji generatora w warunkach eksperymentalnych. W trakcie eksperymentu 
+wykorzystano płytkę deweloperską Cora Z7-07S z układem FPGA xc7z007sclg400-1. 
+W celu wyeliminowania wąskiego gardła, jakim w pierwotnym projekcie była 
+transmisja danych losowych po interfejsie UART, przygotowano zmodyfikowane wersje badanych 
+modułów. Z procesu ekstrakcji danych usunięto standardową transmisję UART, 
+zastępując ją licznikiem inkrementowanym przy każdym wygenerowaniu nowego bloku 
+danych. Licznik ten był odczytywany raz na sekundę za pośrednictwem dedykowanego 
+interfejsu UART, po czym następował jego reset. Rzeczywista wydajność została 
+wyznaczona jako iloczyn wartości odczytanej z 
+licznika oraz szerokości wyjściowego bloku danych.
+
+Poniższa tabela Tab.~\ref{tab:bitrate_complete_analysis} przedstawia zestawienie uzyskanych wyników pomiarowych.
 
 \begin{table}[H]
 \centering
@@ -778,33 +787,32 @@ Ostatecznie zbadana została przepustowość każdej z konfiguracji generatora
 \label{tab:bitrate_complete_analysis}
 \begin{tabular}{|l|c|l|}
 \hline
-\textbf{Konfiguracja / Metoda} & \textbf{bitrate} & \textbf{notatka} \\ \hline
+\textbf{Konfiguracja / Metoda} & \textbf{zmierzona wydajność} & \textbf{notatka} \\ \hline
 
 \textbf{FALSE/FALSE} & 15.625.000 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik zgodny z założeniami \\ 
 $B = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 1 \text{ B}}{8} = 15.625.000 \text{ B/s}$ \\ 
-jeden byte danych na 8 cykli zegara.
+jeden bajt danych na 8 cykli zegara.
 \end{tabular} \\ \hline
 
 \textbf{FALSE/TRUE} & 1.923.077 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik zbliżony do założeń $\rightarrow$ \\ 
 $B = \dfrac{125 \cdot 10^6 \text{ Hz}}{64} = 1.953.125 \text{ B/s}$ \\ 
-$\rightarrow$ jeden byte danych na około 64 cykle zegara.
+$\rightarrow$ jeden bajt danych na 64 cykle zegara.
 \end{tabular} \\ \hline
 
 \textbf{TRUE/FALSE} & $\sim$4.182.200 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik średni z kilku pomiarów  \\ 
-większy niż FALSE/TRUE i mniejszy niż \\FALSE/FALSE  
-pokrywa się z założeniami.
+niedeterministyczne zachowanie vN, \\brak możliwości wyprowadzenia wyniku
 \end{tabular} \\ \hline
 
 \textbf{TRUE/TRUE} & $\sim$471.903 B/s & 
 \begin{tabular}[c]{@{}l@{}}
-Wynik najmniejszy (średnia z kilku pomiarów) $\rightarrow$ \\ 
-pokrywa się z założeniami.
+Wynik średni z kilku pomiarów  \\ 
+niedeterministyczne zachowanie vN, \\brak możliwości wyprowadzenia wyniku
 \end{tabular} \\ \hline
 
 \textbf{Toeplitz} & 7.812.496 B/s & 
@@ -816,15 +824,34 @@ $\rightarrow$ 16 bajtów danych na 256 cykli zegara.
 
 \textbf{AES} & 153.797.440 B/s & 
 \begin{tabular}[c]{@{}l@{}}
-Wynik największy ze wszystkich. \\Powód - ekspansa entropii oraz \\niska liczba cykli 
-zegara bloku AES-CTR.
+Wynik niższy niż oczekiwany $\rightarrow$ \\
+$B = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 16 \text{ B}}{10} = 200.000.000 \text{ B/s}$ \\ 
+16 bitów na 10 cykli zegara.~\cite{AES-vhdl} \\
+Powód: dodatkowe cykle wykorzystane na pracę \\generatora i obsługe maszyny stanu.
 \end{tabular} \\ \hline
 
 \end{tabular}
 \end{table}
 
 
+Kolumna „Notatka” przedstawia deterministyczne obliczenia spodziewanej 
+wydajności oraz stwierdza, czy eksperyment pokrył się z założeniami. Wartość 
+$125 \cdot 10^6$ Hz odnosi się do częstotliwości taktowania układu, natomiast 
+pozostałe parametry (np. 1B/8 cykli czy 16B/256 cykli) wynikają bezpośrednio z 
+architektury danego modułu i liczby cykli zegara wymaganych do przetworzenia 
+bloku danych.
 
+W przypadku ekstraktorów opartych na ekstraktorze Von Neumanna 
+teoretyczne wyliczenie przepustowości jest obarczone dużym marginesem błędu ze 
+względu na jego stratny charakter. Korektor eliminuje pary bitów o tej samej 
+wartości, co sprawia, że faktyczna liczba bitów wyjściowych zależy od 
+charakterystyki statystycznej wejściowego szumu. Z tego względu wiersze 
+zawierające ekstraktor Von Neumanna (TRUE/FALSE) oraz (TRUE/TRUE) nie 
+prezentują konkretnych obliczeń oczekiwanej wydajności.
 
+Należy podkreślić, że ekstrakcja bez ekstraktora Von Neumanna bądź z 
+ekstraktorem Toeplitza oraz AES-CTR ma charakter bezstratny. Można w ich 
+przypadku oczekiwać deterministycznej wydajności na wyjściu, zależnej od 
+rozdzielczości i zaimplementowanego potoku obliczeniowego.
 
 

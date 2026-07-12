@@ -11,7 +11,7 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Architektura neoTRNG~\cite {neoTRNG}.}}{13}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Parametry generic oraz porty neoTRNG.}}{13}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Parametry generic oraz porty neoTRNG\_cell.}}{15}{figure.3.3}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Parametry generic oraz porty neoTRNG\_cell.}}{14}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Metastabilność -- stan nieustalony~\cite {FPGA-metastability}.}}{15}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Wynik symulacji ekstraktora Toeplitza.}}{16}{figure.3.5}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram ideowy modułu neoTRNG zintegrowanego z ekstraktorem Toeplitza.}}{17}{figure.3.6}%
@@ -31,11 +31,11 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces 6 RO zlokalizowane.}}{27}{figure.4.6}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Okno dialogowe po prawej stronie}}{39}{figure.A.1}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Ręczne wyznaczanie granic Pblock}}{40}{figure.A.2}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Wybór elementów układu mających znaleźć się w obrębie Pblock}}{40}{figure.A.3}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Okno dialogowe po prawej stronie}}{41}{figure.A.1}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Ręczne wyznaczanie granic Pblock}}{42}{figure.A.2}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Wybór elementów układu mających znaleźć się w obrębie Pblock}}{42}{figure.A.3}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Aparatura pomiarowa}}{41}{figure.B.1}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Dialog NIST SP 800-22.}}{43}{figure.B.2}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Struktura katalogów dla konfiguracji 2RO\_8I.}}{44}{figure.B.3}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Uruchomienie skryptu automatyzacji testów ENT dla /1\_testy\_bazowe/2RO\_8I.}}{45}{figure.B.4}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Aparatura pomiarowa}}{43}{figure.B.1}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Dialog NIST SP 800-22.}}{45}{figure.B.2}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Struktura katalogów dla konfiguracji 2RO\_8I.}}{46}{figure.B.3}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Uruchomienie skryptu automatyzacji testów ENT dla /1\_testy\_bazowe/2RO\_8I.}}{47}{figure.B.4}%

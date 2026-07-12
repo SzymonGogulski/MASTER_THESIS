@@ -1,2 +1,26 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/project_2/project_2.srcs/sim_1/imports/Testbench/enc_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/add_round_key.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'add_round_key'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/sbox.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sbox'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/sub_byte.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sub_byte'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/shift_rwos.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'shift_rows'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/gfmult_by2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gfmult_by2'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/column_calculator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'column_calculator'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/mix_columns.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mix_columns'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/key_sch_round_function.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'key_sch_round_function'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/key_schedule.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'key_schedule'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sources_1/imports/RTL/aes_enc.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'aes_enc'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/szymon/Desktop/magister/aes/aes_timing/aes_timing.srcs/sim_1/imports/Testbench/enc_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'test_enc'

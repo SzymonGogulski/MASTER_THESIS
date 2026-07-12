@@ -1,64 +1,129 @@
 \chapter{Podsumowanie i wnioski}
 
-% Zakończenie pracy zwane również Uwagami końcowymi lub Podsumowaniem powinno zawierać ustosunkowanie
-% się autora do zadań wskazanych we wstępie do pracy, a w szczególności do celu i zakresu pracy oraz
-% porównanie ich z faktycznymi wynikami pracy. Podejście takie umożliwia jasne określenie stopnia
-% realizacji założonych celów oraz zwrócenie uwagi na wyniki osiągnięte przez autora w ramach jego
-% samodzielnej pracy.
-
-% Integralną częścią pracy są również dodatki, aneksy i załączniki zawierające stworzone w ramach pracy programy, aplikacje i projekty.
-
 \noindent Niniejsza praca poświęcona była analizie sprzętowego generatora liczb 
 losowych neoTRNG. W ramach przeprowadzonych badań eksperymentalnych oceniono 
-wpływ kluczowych parametrów, metod przetwarzania 
-końcowego oraz fizycznego rozmieszczenia elementów w strukturze układu na 
-jakość i charakterystykę statystyczną generowanej losowości. 
+wpływ kluczowych parametrów, metod przetwarzania końcowego oraz fizycznego 
+rozmieszczenia elementów w strukturze układu na jakość i charakterystykę 
+statystyczną generowanej losowości.
 
-Na podstawie analizy danych doświadczalnych uzyskanych z pakietów testowych 
-NIST SP 800-22, NIST SP 800-90B oraz ENT sformułowano następujące wnioski końcowe:
+Analiza danych doświadczalnych uzyskanych z pakietów testowych NIST SP 800-22, 
+NIST SP 800-90B oraz ENT pozwoliła sformułować najistotniejsze wnioski, których 
+uwzględnienie jest kluczowe przed dokonaniem adaptacji generatora neoTRNG w 
+docelowym systemie. Analiza ta została ujęta w czterech kolejnych podrozdziałach.
 
 \section{Wpływ liczby oscylatorów i liczby inwerterów}
 
-Skalowanie zasobów sprzętowych poprzez zwiększanie liczby RO oraz 
-liczby inwerterów ma kluczowe znaczenie dla jakości źródła entropii. 
+\noindent Czy skalowanie zasobów sprzętowych poprzez zwiększanie liczby RO oraz
+liczby inwerterów ma kluczowe znaczenie dla jakości źródła entropii?
 
 \begin{itemize}
-    \item 
-    \item 
+\item Na podstawie Tab.~\ref{tab:ch4_nist_22_2RO_8I},
+Tab.~\ref{tab:ch4_nist_22_3RO_15I}, Tab.~\ref{tab:ch4_nist_22_3RO_21I} nie można
+stwierdzić, że konfiguracja 3RO 21I osiągnęła lepsze wyniki niż
+konfiguracje mniejsze.
+\item Na podstawie Tab.~\ref{tab:ch4_NIST_SP_800_90} oraz Tab.~\ref{tab:ENT_1}
+można stwierdzić, że konfiguracja 3RO 21I osiągnęła lepsze wyniki niż konfiguracje
+mniejsze (przy wyłączonym wielomianie CRC).
 \end{itemize}
+
+Wyniki uzyskane przy użyciu pakietów NIST 800-90 (tab. \ref{tab:ch4_NIST_SP_800_90}) 
+pozwalają uchwycić fakt, że zwiększenie liczby inwerterów w układzie przekłada 
+się na poziom entropii, jaki zapewnia neoTRNG. Zwiększenie entropii układu nie 
+zwalnia jednak projektanta z konieczności zastosowania metod przetwarzania 
+końcowego, co zostało wykazane w tab. \ref{tab:ch4_nist_22_3RO_15I}.
+
 
 \section{Efektywność przetwarzania końcowego von Neumanna oraz CRC}
-Zastosowanie sprzętowych metod post-processingu w module neoTRNG jest warunkiem 
-koniecznym do uzyskania wysokiej jakości projektowanego generatora. 
+\noindent Czy zastosowanie ekstraktora von Neumanna i wielomianu CRC w module neoTRNG
+ma znaczenie dla jakości projektowanego generatora?
 
 \begin{itemize}
-    \item Surowe dane (\textit{FALSE/FALSE}) dyskwalifikują generator w testach 
-statystycznych, wykazując silną asymetrię i korelacje lokalne.
-    \item
+\item Na podstawie tabel Tab.~\ref{tab:ch4_nist_22_2RO_8I},
+Tab.~\ref{tab:ch4_nist_22_3RO_15I}, Tab.~\ref{tab:ch4_nist_22_3RO_21I},
+Tab.~\ref{tab:ch4_nist_22_2RO_8I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_2RO_8I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_3RO_21I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_3RO_21I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_6RO_60I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_6RO_60I_LOCALIZED}
+można stwierdzić, że wyniki zebrane dla konfiguracji (\textit{FALSE/FALSE}) dyskwalifikują
+generator w testach statystycznych NIST SP 800-22.
+\item Na podstawie tabel  Tab.~\ref{tab:ch4_nist_22_2RO_8I},
+Tab.~\ref{tab:ch4_nist_22_3RO_15I}, Tab.~\ref{tab:ch4_nist_22_3RO_21I},
+Tab.~\ref{tab:ch4_nist_22_2RO_8I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_2RO_8I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_3RO_21I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_3RO_21I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_6RO_60I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_6RO_60I_LOCALIZED}
+można stwierdzić, że najlepsze wyniki osiągnęły konfiguracje w kolejności
+(\textit{TRUE/TRUE}), (\textit{FALSE/TRUE}), (\textit{TRUE/FALSE}) oraz (\textit{FALSE/FALSE})
 \end{itemize}
+
+Cenną obserwacją jest fakt, że deaktywacja korektora von Neumanna jako 
+ekstraktora losowości przy jednoczesnym aktywnym CRC zapewnia akceptowalny 
+poziom losowości bitstreamu zwracanego przez neoTRNG.
 
 \section{Wpływ rozmieszczenia RO}
-Analiza rozmieszczenia RO wykazała istotne znaczenie fizycznej lokalizacji 
-oscylatorów w strukturze FPGA:
+\noindent Czy rozmieszczenie RO w strukturze FPGA ma istotne znaczenie dla jakości źródła?
 \begin{itemize}
-    \item \textbf{Rozmieszczenie zlokalizowane:} 
-    \item \textbf{Rozmieszczenie rozproszone:}
+\item Na podstawie tabel
+Tab.~\ref{tab:ch4_nist_22_2RO_8I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_2RO_8I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_3RO_21I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_3RO_21I_LOCALIZED},
+Tab.~\ref{tab:ch4_nist_22_6RO_60I_DISTRIBUTED}, Tab.~\ref{tab:ch4_nist_22_6RO_60I_LOCALIZED},
+Tab.~\ref{tab:ch4_NIST_SP_800_90_D}, Tab.~\ref{tab:ch4_NIST_SP_800_90_L},
+Tab.~\ref{tab:ch4_ent_distributed}, Tab.~\ref{tab:ch4_ent_localized}
+nie można stwierdzić, że rozmieszczenie RO w układzie ma wpływ na losowość.
 \end{itemize}
 
+W celu zarejestrowania istotnych zależności między rozmieszczeniem RO a zmianami 
+w konfiguracji neoTRNG, należałoby w przyszłości podjąć badania nad wpływem 
+bardziej złożonego rozmieszczenia w całej matrycy, niż to zaproponowane w 
+pracy. W przypadku rozproszonego rozmieszczenia RO, deaktywacja korektora 
+von Neumanna przy jednoczesnej aktywacji CRC gwarantuje akceptowalny poziom 
+losowości neoTRNG.
+
 \section{Zastosowanie zaawansowanych metod przetwarzania końcowego}
-Bazowy post-processing neoTRNG może zostać zastąpiony lub uzupełniony przez 
-zaawansowane ekstraktory:
+\noindent Czy zaawansowane metody przetwarzania końcowego mają przewagę nad metodami bazowymi?
 \begin{itemize}
-    \item \textbf{AES-CTR:}
-    \item \textbf{Ekstraktor Toeplitza:} 
+\item Na podstawie Tab.~\ref{tab:ch5_aes-ctr_2RO_8I}, Tab.~\ref{tab:ch5_nist_SP_800-90B_pivoted},
+Tab.~\ref{tab:ch5_ent} nie można stwierdzić przewagi żadnej z konfiguracji
+ekstraktorów AES-CTR czy Toeplitza. Każda z konfiguracji AES-CTR i Toeplitz przeszła
+testy.
+
+\item Na podstawie Tab.~\ref{tab:resource_utilization} oraz Tab.~\ref{tab:bitrate_complete_analysis}
+można stwierdzić, że AES-CTR umożliwia znaczne zwiększenie wydajności kosztem
+zasobów bez utraty jakości źródła.
+\item Na podstawie Tab.~\ref{tab:resource_utilization} oraz Tab.~\ref{tab:bitrate_complete_analysis}
+można stwierdzić, że ekstraktor Toeplitza stanowi kompromis między bazowymi
+metodami a AES-CTR.
+\item Generatory wyposażone w AES-CTR lub ekstraktor Toeplitza osiągnęły o wiele
+większą wydajność w porównaniu z konfiguracją (\textit{TRUE/TRUE}) przy podobnych
+wynikach testów.
 \end{itemize}
+
+Jeżeli w matrycy FPGA zaimplementowany zostanie układ wymagający znacznej 
+ilości zasobów sprzętowych, ekstraktor Toeplitza jest adekwatnym wyborem. 
+Niemniej jednak, ze względu na silny algorytm kryptograficzny będący podstawą 
+ekstraktora AES-CTR, zaleca się taką implementację układu, aby możliwe było 
+zastosowanie właśnie tego ekstraktora losowości.
 
 \section{Podsumowanie końcowe}
 
-Istnieją adekwatne przesłanki do stosowania generatora liczb losowych neoTRNG 
-w systemach przetwarzania brzegowego. Świadczą o tym badania przeprowadzone 
-i udokumentowane w poprzednich rozdziałach. Wykazano, że kluczem do optymalnego 
+\noindent Współczesne systemy brzegowe muszą zapewnić wysoki poziom bezpieczeństwa danych. 
+Konieczne staje się zintegrowanie całego procesu kryptograficznego, którego 
+jednym z podstawowych modułów jest generator liczb losowych. Jego błędna 
+implementacja lub nieumiejętna adaptacja, np. z całkowitym pominięciem 
+ekstraktorów, może skutkować niskim poziomem losowości obserwowanym w wynikach 
+testów NIST. W przypadku celowej implementacji parzystej liczby inwerterów w 
+generatorze neoTRNG można wywołać sytuację zatrzymania procesu kryptograficznego. 
+Sytuacja taka może wystąpić, jeżeli zastosowany został ekstraktor losowości w 
+formie korektora von Neumanna. Jest to istotna obserwacja, na którą dokumentacja 
+projektu w serwisie GitHub nie zwraca uwagi.
+
+Projektowanie systemów brzegowych realizowanych z użyciem matryc FPGA wymaga 
+często wykorzystania większości ich zasobów. Tym samym może pojawić się 
+konieczność redukcji nadmiarowych zasobów sprzętowych w tych modułach, w 
+których jest to potencjalnie możliwe. Naturalnie takim modułem może być 
+generator liczb losowych oparty na RO. Wykazano, że kluczem do optymalnego 
 zaprojektowania układu TRNG nie jest wyłącznie maksymalizacja liczby 
-oscylatorów, lecz balans pomiędzy: dostrojeniem wykorzystania zasobów, rozmieszczeniem 
-fizycznym elementów w układzie FPGA, odpowiednim doborem ekstraktora oraz 
-rygorystycznym przeprowadzeniem testów.
+oscylatorów, lecz balans pomiędzy: dostrojeniem wykorzystania zasobów, 
+rozmieszczeniem fizycznym elementów w układzie FPGA, odpowiednim doborem 
+ekstraktora oraz rygorystycznym przeprowadzeniem testów. Przedstawione w 
+ramach pracy wyniki eksperymentalne oraz wnioski końcowe stanowią pogłębione 
+studium nad adaptacją generatora neoTRNG w rozwiązaniach OSHW, cechujących się 
+dużym wykorzystaniem zasobów sprzętowych podczas implementacji.

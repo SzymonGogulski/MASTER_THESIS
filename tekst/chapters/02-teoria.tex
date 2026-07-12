@@ -23,14 +23,10 @@ generowanych danych.
 od mechanizmu powstawania losowości. Dwie główne klasy generatorów stanowią 
 generatory liczb prawdziwie losowych (ang. \textit{TRNG} -- \textit{True Random Number Generator}) 
 oraz generatory liczb pseudolosowych (ang. \textit{PRNG} -- \textit{Pseudorandom Number Generator}). 
-
 Spośród generatorów liczb prawdziwie losowych można wyróżnić podklasę 
 kwantowych generatorów liczb prawdziwie losowych (ang. \textit{QRNG} -- \textit{Quantum Random Number 
-Generator})~\cite{2025QRNG-zeshan}.
-
-Podklasą generatorów pseudolosowych są generatory pseudolosowe kryptograficznie 
+Generator})~\cite{2025QRNG-zeshan}.Podklasą generatorów pseudolosowych są generatory pseudolosowe kryptograficznie 
 bezpieczne (ang. \textit{CSPRNG} -- \textit{Cryptographically Secure Pseudorandom Number Generator}). 
-
 Kryterium podziału generatorów na TRNG i PRNG jest źródło pochodzenia losowości. 
 
 
@@ -79,14 +75,12 @@ bitów, zaczynając od małej, najlepiej prawdziwie losowej wartości początkow
 zwanej ziarnem}~\cite{2023anstasios-panagiotis-georgis-yannis}. Główną wadą 
 takich generatorów jest przewidywalność całego ciągu losowego po poznaniu 
 wykorzystanego ziarna. 
-
 Bazują one na podstawowych operacjach algebraicznych, generując kolejne 
 wartości na podstawie wyników powtarzających się obliczeń. Z tego względu 
 klasyczne algorytmy PRNG (LCG, Mersenne Twister) nie są uważane za generatory 
 bezpieczne kryptograficznie. Są one podatne na analizę sekwencji ciągu, co 
 umożliwia przewidzenie kolejnych wygenerowanych 
 wartości~\cite{2024-predicting-prngs}.
-
 Ze względu na ich prostotę znajdują one zastosowanie w systemach niekrytycznych. 
 Są stosowane przy generowaniu proceduralnym bądź w symulacjach naukowych.
 
@@ -97,7 +91,6 @@ w sposób analityczny jak generatory PRNG, z jedną szczególną różnicą:
 wykorzystują nieodwracalne funkcje kryptograficzne. Tego typu generatory 
 muszą spełniać dwa wymagania: test następnego bitu (ang. \textit{next-bit test}) oraz odporność na kompromitację 
 stanu~\cite{2023Analisis-of-CSPRNG}. 
-
 Oznacza to, że poprzez znajomość ciągu $N$ bitów losowych atakujący nie jest 
 w stanie przewidzieć bitu $N+1$ z prawdopodobieństwem większym niż 50\% oraz, 
 znając część lub całość stanu generatora, nie jest w stanie odtworzyć 
@@ -108,20 +101,17 @@ poprzednich wygenerowanych wartości~\cite{2023Analisis-of-CSPRNG}.
 \noindent Kwantowe generatory liczb losowych stanowią szczególny przypadek 
 generatora prawdziwie losowego. Zamiast pobierać entropię ze zjawisk fizyki 
 klasycznej, wykorzystują zjawiska mechaniki kwantowej. 
-
 Ich główną przewagą jest probabilistyczna natura zjawisk kwantowych. Zjawiska 
 fizyki klasycznej, takie jak zmiany temperatury, można zamodelować za pomocą cząstkowych 
 równań różniczkowych, co może dać niepożądany wgląd do wnętrza mechanizmu 
 generującego losowość. W przypadku zjawisk kwantowych modele takie nie 
 istnieją -- obserwowany układ kwantowy zawsze będzie działał z określonym 
 rozkładem prawdopodobieństwa~\cite{Quantum-physics-peter-kok}. 
-
 Wadą kwantowych generatorów jest ich cena. Zazwyczaj rozwiązania kwantowe są 
 znacznie droższe niż generatory klasyczne.
 
-\subsection{Zasada działania Quantis USB 4M}
 
-\noindent Komercyjnie dostępny jest kwantowy generator Quantis-USB-4M firmy IDQ. 
+Komercyjnie dostępny jest kwantowy generator Quantis-USB-4M firmy IDQ. 
 Urządzenie to dostępne w obudowie z interfejsem USB 2.0.
 
 \begin{figure}[H]
@@ -182,7 +172,6 @@ wiązki. W przypadku idealnym 50\% fotonów zostaje odbitych, a 50\% zostaje
 przepuszczonych. Oznacza to, że prawdopodobieństwo detekcji fotonu w każdym 
 z detektorów jest rozłożone równo po 50\%. W ten sposób generator kwantowy 
 wytwarza ciąg bitów niedeterministycznych z jednostajnym rozkładem bitu '1' i '0'.
-
 Jednak w rzeczywistości dzielnik wiązki nie jest elementem idealnym. Oznacza 
 to, że prawdopodobieństwo wystąpienia bitu '1' lub '0' nie będzie równe idealnie 50\%. 
 
@@ -242,7 +231,7 @@ losowość, sugerowaną praktyką jest odpowiednia korekcja ciągu bitów.
 \noindent Ekstraktor von Neumanna jest nieskomplikowanym układem cyfrowym. 
 Jego zadaniem jest zapewnienie jednostajnego rozkładu generowanych liczb losowych. 
 Zasada działania tego ekstraktora opiera się na pobraniu dwóch próbek sygnału ze 
-źródła oraz sprawdzeniu zestawu trzech instrukcji:
+źródła oraz sprawdzeniu zestawu trzech instrukcji~\cite{ch2-randomness-extractor-von-neumann}:
 
 \begin{itemize}
     \item pobrano próbki $(0;0)$ lub $(1;1)$ $\rightarrow$ próbki zostają odrzucone,
@@ -251,7 +240,7 @@ Zasada działania tego ekstraktora opiera się na pobraniu dwóch próbek sygna�
 \end{itemize}
 
 Ekstraktor zapewnia jednostajny rozkład prawdopodobieństwa wystąpienia 
-każdego z bitów, ale znacznie ogranicza przepustowość generatora. Jednocześnie 
+każdego z bitów, ale znacznie ogranicza wydajność generatora. Jednocześnie 
 nie pozbywa się on korelacji z generowanego sygnału. 
 
 \subsection{Wielomian CRC}
@@ -260,10 +249,9 @@ nie pozbywa się on korelacji z generowanego sygnału.
 pierwotnie stosowana w celu zapewnienia integralności przesyłanych danych w 
 interfejsach komunikacyjnych~\cite{ucgosu-CRC}. Znajduje jednak również 
 zastosowanie w korekcji źródła losowości. 
-
 Zaimplementowana jest w postaci liniowego rejestru przesuwającego ze 
 sprzężeniem zwrotnym (LFSR). Posiada właściwości rozpraszające, co oznacza, że każdy nowy 
-bit ma wpływ jednocześnie na wszystkie bity wyjściowe. W ten sposób eliminuje 
+bit ma wpływ jednocześnie na wszystkie bity wyjściowe~\cite{neoTRNG}. W ten sposób eliminuje 
 korelacje między wyjściowymi bitami.
 
 
@@ -278,7 +266,7 @@ Toeplitza $M$ o wymiarach $m \times n$ (gdzie $m < n$):
 \end{equation}
 Macierz Toeplitza ma tę właściwość, że każdy jej ukośny rząd ma stałą wartość, 
 co pozwala na jej jednoznaczne zdefiniowanie za pomocą jedynie $n + m - 1$ 
-bitów ziarna.
+bitów ziarna~\cite{ch2-Toeplitz}.
 
 \subsection{Szyfr strumieniowy AES-CTR}
 
@@ -286,14 +274,12 @@ bitów ziarna.
 systemów generowania liczb losowych. Konfiguracja AES-CTR polega na ciągłym generowaniu 
 losowego szyfrogramu na podstawie wstępnej wartości ziarna pobranej ze źródła 
 losowości. 
-
 Na początku pracy AES-CTR pobierane są losowe wartości klucza oraz nonce. Tekst jawny jest 
 połączeniem nonce oraz wartości z licznika. Taka konfiguracja pozwala 
-wygenerować spore ilości danych losowych dla kolejnym wartości z licznika 
+wygenerować spore ilości danych losowych dla kolejnych wartości z licznika 
 przy niewielkim wykorzystaniu źródła losowości. 
-
 Wadą tego podejścia jest cykliczna konieczność odświeżania ziarna wykorzystanego 
-na początku procesu.  
+na początku procesu~\cite{NIST-IR-6390}.  
 
 \section{Metody oceny losowości}
 
@@ -374,7 +360,6 @@ używanych do generowania losowych bitów}
 \noindent NIST SP 800-90B to publikacja stanowiąca zbiór 
 rekomendacji związanych z projektowaniem źródeł entropii. Równocześnie razem z 
 publikacją dostępny jest program do oceny entropii minimalnej badanego źródła. 
-
 W skład publikacji wchodzą zalecenia odnośnie: 
 
 \begin{itemize}

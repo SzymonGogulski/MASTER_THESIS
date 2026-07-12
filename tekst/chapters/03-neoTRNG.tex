@@ -9,8 +9,7 @@ badanego generatora to~\cite{neoTRNG}:
   \item projekt niezależny od technologii konkretnego dostawcy,
   \item niewielkie zużycie zasobów sprzętowych,
   \item wysoka przepustowość,
-  \item w pełni otwartoźródłowy,
-  \item cały projekt w postaci jednego pliku VHDL,
+  \item projekt otwartoźródłowy w postaci jednego pliku VHDL,
   \item wysoka częstotliwość pracy,
   \item łatwość integracji,
   \item pełna dokumentacja.
@@ -24,6 +23,13 @@ badanego generatora to~\cite{neoTRNG}:
 
 \section{Architektura bazowa neoTRNG opartego na RO}
 
+\noindent W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe, 
+mające kolejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
+operacją $\text{XOR}$. Następnie surowy sygnał losowy trafia do ekstraktora 
+von Neumanna. Ostatecznie próbki z ekstraktora są mieszane za pomocą wielomianu CRC. 
+Generator zwraca jeden bajt danych, o czym informuje stanem wysokim na linii 
+\texttt{valid\_o}. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/ch2/neotrng_architecture.png}
@@ -31,12 +37,16 @@ badanego generatora to~\cite{neoTRNG}:
     \label{fig:ch3_architektura}
 \end{figure}
 
-\noindent W domyślnej konfiguracji generator jest wyposażony w trzy oscylatory pierścieniowe, 
-mające kolejno pięć, siedem i dziewięć inwerterów. Sygnały wyjściowe z RO są łączone 
-operacją $\text{XOR}$. Następnie surowy sygnał losowy trafia do ekstraktora 
-von Neumanna. Ostatecznie próbki z ekstraktora są mieszane za pomocą wielomianu CRC. 
-Generator zwraca jeden bajt danych, o czym informuje stanem wysokim na linii 
-\texttt{valid\_o}. 
+Bazowy plik RTL zawiera cztery parametry generyczne:
+
+\begin{itemize}
+  \item \texttt{NUM\_CELLS} -- liczba zastosowanych RO,
+  \item \texttt{NUM\_INV\_START} -- nieparzysta liczba inwerterów w pierwszym RO (każdy 
+  kolejny RO zawiera o dwa inwertery więcej),
+  \item \texttt{NUM\_RAW\_BITS} -- liczba bitów wejściowych dla wielomianu CRC,
+  \item \texttt{SIM\_MODE} -- dodatkowy tryb pracy, wykorzystywany do symulacji układu 
+  oraz testów (nie generuje sygnału losowego).
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -63,16 +73,7 @@ end entity;
     \label{fig:ch3_neotrng_entity_generic_port_map}
 \end{figure}
 
-Bazowy plik RTL zawiera cztery parametry generyczne:
 
-\begin{itemize}
-  \item \texttt{NUM\_CELLS} -- liczba zastosowanych RO,
-  \item \texttt{NUM\_INV\_START} -- nieparzysta liczba inwerterów w pierwszym RO (każdy 
-  kolejny RO zawiera o dwa inwertery więcej),
-  \item \texttt{NUM\_RAW\_BITS} -- liczba bitów wejściowych dla wielomianu CRC,
-  \item \texttt{SIM\_MODE} -- dodatkowy tryb pracy, wykorzystywany do symulacji układu 
-  oraz testów (nie generuje sygnału losowego).
-\end{itemize}
 
 \subsection{Modyfikacje wprowadzone w module neoTRNG}
 
@@ -81,10 +82,10 @@ zbadania wpływu obecności ekstraktora von Neumanna oraz wielomianu CRC:
 
 \begin{itemize}
   \item \texttt{ENABLE\_VON\_NEUMANN} -- określa, czy sygnał ze źródła zostanie przetworzony 
-  przez ekstraktor von Neumanna; gdy parametr jest równy \texttt{True}, sygnał jest 
+  przez ekstraktor von Neumanna. Gdy parametr jest równy \texttt{True}, sygnał jest 
   kierowany do ekstraktora, w przeciwnym razie jest przekierowywany do następnego modułu,
   \item \texttt{ENABLE\_CRC} -- określa, czy sygnał z poprzedniego modułu zostanie przetworzony 
-  za pomocą wielomianu CRC; gdy parametr jest równy \texttt{True}, sygnał jest kierowany do CRC, w 
+  za pomocą wielomianu CRC. Gdy parametr jest równy \texttt{True}, sygnał jest kierowany do CRC, w 
   przeciwnym razie moduł CRC jest omijany.
 \end{itemize}
 
@@ -119,6 +120,10 @@ przepustowości. \\
 
 \subsection{Opis pracy komórki entropii neoTRNG\_cell}
 
+\noindent Bazowym modułem generatora neoTRNG jest neoTRNG\_cell, który stanowi pojedynczy RO. 
+Rozwiązanie to zaimplementowano za pomocą instrukcji generowania oraz dwóch procesów:
+
+
 \begin{figure}[H]
     \centering
     \begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
@@ -140,13 +145,11 @@ end entity;
     \label{fig:ch3_neotrng_cell_entity_generic_port_map}
 \end{figure}
 
-\noindent Bazowym modułem generatora neoTRNG jest neoTRNG\_cell, który stanowi pojedynczy RO. 
-Rozwiązanie to zaimplementowano za pomocą instrukcji generowania oraz dwóch procesów:
 
 \begin{enumerate}
   \item \texttt{ring\_osc\_gen} -- instrukcja generowania, która tworzy pętlę inwerterów oraz logikę 
   zatrzasków (ang. \textit{latch}) pomiędzy nimi,
-  \item \texttt{en\_shift\_reg} -- proces obsługujący rejestr przesuwny z sygnałami enable dla kolejnych zatrzasków w RO,
+  \item \texttt{en\_shift\_reg} -- proces obsługujący rejestr przesuwny z sygnałami \texttt{enable} dla kolejnych zatrzasków w RO,
   \item \texttt{synchronizer} -- proces obsługujący dwustopniowy rejestr przesuwny (bufor próbek przed wyjściem).
 \end{enumerate}
 
@@ -182,9 +185,9 @@ Ostatecznie sygnał z drugiego rejestru jest przesuwany na wyjście układu
 
 \section{Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitza}
 
-\noindent Kolejna implementacja generatora wymienia ekstraktor von Neumanna i 
-wielomian CRC na ekstraktor Toeplitza. Wykorzystana została otwartoźródłowa 
-implementacja dostępna w repozytorium \url{https://github.com/rokzitko/toeplitz}. 
+\noindent Kolejna implementacja generatora zastępuje ekstraktor von Neumanna 
+i wielomian CRC ekstraktorem Toeplitza. Wykorzystana została otwartoźródłowa 
+implementacja dostępna w repozytorium (\url{https://github.com/rokzitko/toeplitz}). 
 Główne cechy charakterystyczne zastosowanego ekstraktora~\cite{topelitz-rok-zitko}:
 
 \begin{itemize}
@@ -195,9 +198,13 @@ Główne cechy charakterystyczne zastosowanego ekstraktora~\cite{topelitz-rok-zi
   przechowywania całej macierzy naraz w pamięci.
 \end{itemize}
 
-Integracja generatora neoTRNG z nowym modułem wymagała wstępnego 
-przetłumaczenia opisu ekstraktora z języka opisu sprzętu Verilog na VHDL. 
-Poprawność wykonanego tłumaczenia została sprawdzona za pomocą środowiska testowego.
+Integracja generatora neoTRNG z nowym modułem wymagała wstępnego przetłumaczenia 
+opisu ekstraktora z języka Verilog na VHDL. Poprawność wykonanego tłumaczenia 
+została zweryfikowana za pomocą środowiska testowego (ang. \textit{testbench}) 
+zaimplementowanego w narzędzi Vivado. W ramach przeprowadzonej procedury 
+testowej dla ekstraktora Toeplitza, dla zadanych danych wejściowych generowane 
+były wartości wyjściowe, które następnie automatycznie porównywano z 
+wartościami oczekiwanymi, co potwierdziło poprawność działania modułu.
 
 \begin{figure}[H]
     \centering
@@ -365,7 +372,7 @@ sygnalizuje linia \texttt{valid\_o}.
 
 \noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
 AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
-silnika szyfru blokowego AES, dostępnej w repozytorium \url{https://opencores.org/projects/aes}. 
+silnika szyfru blokowego AES, dostępnej w repozytorium (\url{https://opencores.org/projects/aes}). 
 
 Główne cechy zastosowanej implementacji silnika AES~\cite{AES-vhdl}:
 
@@ -378,8 +385,8 @@ Główne cechy zastosowanej implementacji silnika AES~\cite{AES-vhdl}:
     \item implementacja w pełni przetestowana i zweryfikowana za pomocą wektorów testowych NIST~\cite{NIST-SP-800-38A}.
 \end{itemize}
 
-Projekt silnika udostępnia również środowisko testowe w celu weryfikacji pracy 
-silnika:
+Projekt silnika udostępnia również środowisko testowe, który automatycznie porównuje otrzymane wyniki operacji 
+szyfrowania z wartościami referencyjnymi, w celu potwierdzenia poprawność pracy szyfru.
 
 \begin{figure}[H]
     \centering
@@ -401,7 +408,7 @@ Note: Received: 97EF6624F3CA9EA860367A0DB47BD73A
 Poniższy diagram blokowy (Fig.~\ref{fig:ch3_AES_CTR_architecture}) przedstawia 
 przepływ sygnałów w komponencie AES-CTR. Sercem układu jest centralna maszyna stanów, 
 która zarządza współpracą generatora, rejestrów, silnika AES i modułu komunikacji. 
-Proces rozpoczyna się w źródle entropii, które dostarcza 224 bity losowe dla 
+Proces rozpoczyna się w źródle entropii, które dostarcza 224 bity losowe dla klucza w 
 \texttt{aes\_key} i nonce w \texttt{nonce\_reg}. Równocześnie nadzorowana jest praca 
 32-bitowego licznika, którego zawartość kopiowana jest wraz z nonce do \texttt{aes\_plaintext}. 
 W wyniku pracy silnika AES powstaje 128-bitowy blok danych, który trafia do modułu 
@@ -528,7 +535,7 @@ oscylacje wewnątrz układu, w przeciwnym razie sygnał inwerterów się ustala
 oraz powinien zwracać stały sygnał '1' lub '0'. Stanowi to potęcjalnie 
 nowy wektor ataku, gdzie poprzez modyfikację parametru \texttt{NUM\_INV\_START} 
 możliwe jest wymuszenie paraliżu całego generatora. W rezultacie moduły 
-kryprograficzne pobierające entropię z wadliwego, źródła przestaną być 
+kryprograficzne pobierające entropię z wadliwego źródła przestaną być 
 bezpieczne.
 
 \begin{figure}[H]
@@ -548,8 +555,11 @@ trng_inst : entity work.neoTRNG
     \label{fig:ch3_even_inverter_num}
 \end{figure}
 
-Ważne jest równoczesne wyłączenie ekstraktora von Neumanna, w przeciwnym razie 
-wszystkie próbki sygnału stałego zostaną odrzucone.
+Aby możliwe było wykorzystanie parzystej liczby RO w planowaniu ataku, należy 
+zapewnić dezaktywację ekstraktora Von Neumanna. Jeżeli pozostanie on aktywny, 
+wówczas wartości pobierane ze źródła entropii zostaną odrzucone i cały proces 
+generacji liczby losowej zostanie zatrzymany. Przykłady takiego wektora ataków 
+są widoczne na Fig.~\ref{fig:ch3_even_inverter_num_ones} i Fig.~\ref{fig:ch3_even_inverter_num_zeros}.
 
 \begin{figure}[H]
     \centering
@@ -582,7 +592,7 @@ $ sudo xxd /dev/ttyUSB0
 
 \section{Wykorzystanie zasobów}
 
-W ramach każdej badanej implementacji oraz konfiguracji zostały zebrane 
+Dla każdej  badanej implementacji oraz konfiguracji zostały zebrane 
 raporty o zajętości sprzętowej układu. Poniżej znajduje się całe zestawienie 
 (Tab.~\ref{tab:resource_utilization})
 
@@ -592,7 +602,7 @@ raporty o zajętości sprzętowej układu. Poniżej znajduje się całe zestawie
   \label{tab:resource_utilization}
 \begin{tabular}{llllccccc} 
     \hline
-    \textbf{Algo.} & \textbf{RO} & \textbf{I} & \textbf{VN} & \textbf{CRC} & \textbf{LUTs} & \textbf{Registers} & \textbf{F7 Mux} & \textbf{F8 Mux} \\
+    \textbf{post. proc.} & \textbf{RO} & \textbf{I} & \textbf{VN} & \textbf{CRC} & \textbf{LUTs} & \textbf{Registers} & \textbf{F7 Mux} & \textbf{F8 Mux} \\
     \hline
     VN-CRC   & 2 & 8I    & False & False & 39    & 39   & 0   & 0 \\
     VN-CRC   & 2 & 8I    & False & True  & 37    & 41   & 0   & 0 \\
@@ -606,34 +616,52 @@ raporty o zajętości sprzętowej układu. Poniżej znajduje się całe zestawie
     VN-CRC   & 3 & 21I   & False & True  & 72    & 43   & 0   & 0 \\
     VN-CRC   & 3 & 21I   & True  & False & 65    & 44   & 0   & 0 \\
     VN-CRC   & 3 & 21I   & True  & True  & 69    & 46   & 0   & 0 \\
-    VN-CRC   & 2 & 8I D  & False & False & 46    & 39   & 0   & 0 \\
-    VN-CRC   & 2 & 8I D  & False & True  & 42    & 41   & 0   & 0 \\
-    VN-CRC   & 2 & 8I D  & True  & False & 47    & 42   & 0   & 0 \\
-    VN-CRC   & 2 & 8I D  & True  & True  & 43    & 44   & 0   & 0 \\
-    VN-CRC   & 2 & 8I L  & False & False & 37    & 39   & 0   & 0 \\
-    VN-CRC   & 2 & 8I L  & False & True  & 40    & 41   & 0   & 0 \\
-    VN-CRC   & 2 & 8I L  & True  & False & 38    & 42   & 0   & 0 \\
-    VN-CRC   & 2 & 8I L  & True  & True  & 42    & 44   & 0   & 0 \\
-    VN-CRC   & 3 & 21I D & False & False & 62    & 41   & 0   & 0 \\
-    VN-CRC   & 3 & 21I D & False & True  & 77    & 43   & 0   & 0 \\
-    VN-CRC   & 3 & 21I D & True  & False & 66    & 44   & 0   & 0 \\
-    VN-CRC   & 3 & 21I D & True  & True  & 69    & 46   & 0   & 0 \\
-    VN-CRC   & 3 & 21I L & False & False & 67    & 41   & 0   & 0 \\
-    VN-CRC   & 3 & 21I L & False & True  & 79    & 43   & 0   & 0 \\
-    VN-CRC   & 3 & 21I L & True  & False & 62    & 44   & 0   & 0 \\
-    VN-CRC   & 3 & 21I L & True  & True  & 70    & 46   & 0   & 0 \\
-    VN-CRC   & 6 & 60I D & False & False & 150   & 47   & 0   & 0 \\
-    VN-CRC   & 6 & 60I D & False & True  & 162   & 49   & 0   & 0 \\
-    VN-CRC   & 6 & 60I D & True  & False & 153   & 50   & 0   & 0 \\
-    VN-CRC   & 6 & 60I D & True  & True  & 162   & 52   & 0   & 0 \\
-    VN-CRC   & 6 & 60I L & False & False & 142   & 47   & 0   & 0 \\
-    VN-CRC   & 6 & 60I L & False & True  & 145   & 49   & 0   & 0 \\
-    VN-CRC   & 6 & 60I L & True  & False & 167   & 50   & 0   & 0 \\
-    VN-CRC   & 6 & 60I L & True  & True  & 169   & 52   & 0   & 0 \\
+    VN-CRC   & 2 D & 8I   & False & False & 46    & 39   & 0   & 0 \\
+    VN-CRC   & 2 D & 8I   & False & True  & 42    & 41   & 0   & 0 \\
+    VN-CRC   & 2 D & 8I   & True  & False & 47    & 42   & 0   & 0 \\
+    VN-CRC   & 2 D & 8I   & True  & True  & 43    & 44   & 0   & 0 \\
+    VN-CRC   & 2 L & 8I   & False & False & 37    & 39   & 0   & 0 \\
+    VN-CRC   & 2 L & 8I   & False & True  & 40    & 41   & 0   & 0 \\
+    VN-CRC   & 2 L & 8I   & True  & False & 38    & 42   & 0   & 0 \\
+    VN-CRC   & 2 L & 8I   & True  & True  & 42    & 44   & 0   & 0 \\
+    VN-CRC   & 3 D & 21I  & False & False & 62    & 41   & 0   & 0 \\
+    VN-CRC   & 3 D & 21I  & False & True  & 77    & 43   & 0   & 0 \\
+    VN-CRC   & 3 D & 21I  & True  & False & 66    & 44   & 0   & 0 \\
+    VN-CRC   & 3 D & 21I  & True  & True  & 69    & 46   & 0   & 0 \\
+    VN-CRC   & 3 L & 21I  & False & False & 67    & 41   & 0   & 0 \\
+    VN-CRC   & 3 L & 21I  & False & True  & 79    & 43   & 0   & 0 \\
+    VN-CRC   & 3 L & 21I  & True  & False & 62    & 44   & 0   & 0 \\
+    VN-CRC   & 3 L & 21I  & True  & True  & 70    & 46   & 0   & 0 \\
+    VN-CRC   & 6 D & 60I  & False & False & 150   & 47   & 0   & 0 \\
+    VN-CRC   & 6 D & 60I  & False & True  & 162   & 49   & 0   & 0 \\
+    VN-CRC   & 6 D & 60I  & True  & False & 153   & 50   & 0   & 0 \\
+    VN-CRC   & 6 D & 60I  & True  & True  & 162   & 52   & 0   & 0 \\
+    VN-CRC   & 6 L & 60I  & False & False & 142   & 47   & 0   & 0 \\
+    VN-CRC   & 6 L & 60I  & False & True  & 145   & 49   & 0   & 0 \\
+    VN-CRC   & 6 L & 60I  & True  & False & 167   & 50   & 0   & 0 \\
+    VN-CRC   & 6 L & 60I  & True  & True  & 169   & 52   & 0   & 0 \\
     AES-CTR  & 2 & 8I    & N/A   & N/A   & 1276  & 1317 & 272 & 136 \\
     AES-CTR  & 3 & 15I   & N/A   & N/A   & 1284  & 1333 & 272 & 136 \\
     Toeplitz & 2 & 8I    & N/A   & N/A   & 261   & 926  & 0   & 0 \\
     Toeplitz & 3 & 15I   & N/A   & N/A   & 263   & 928  & 0   & 0 \\
     \hline
   \end{tabular}
+
+\par\vspace{2mm}
+\begin{minipage}{0.9\textwidth}
+\small
+\textbf{Legenda:}\\
+post. proc. -- zastosowana forma przetwarzania końcowego. \\
+RO -- liczba oscylatorów pierścieniowych w układzie.\\
+D -- rozproszone rozmieszczenie oscylatorów. \\
+L -- zlokalizowane rozmieszczenie oscylatorów. \\
+I -- suma inwerterów we wszystkich oscylatorach łącznie.\\
+VN -- obecność (True) bądź brak (False) ekstraktora von Neumanna. \\
+CRC -- obecność (True) bądź brak (False) wielomianu CRC. \\
+LUTs -- liczba wykorzystanych tablic look-up. \\
+Registers -- liczba wykorzystanych rejestrów przerzutnikowych. \\
+F7 Mux -- liczba wykorzystanych multiplekserów strukturalnych F7. \\
+F8 Mux -- liczba wykorzystanych multiplekserów strukturalnych F8.
+\end{minipage}
+
 \end{table}
