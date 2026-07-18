@@ -693,6 +693,7 @@ INPUT chapters/05-podsumowanie.tex
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt9.tfm
 INPUT ./chapters/zalacznik-A.tex
 INPUT ./chapters/zalacznik-A.tex
 INPUT chapters/zalacznik-A.tex
@@ -771,3 +772,4 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb

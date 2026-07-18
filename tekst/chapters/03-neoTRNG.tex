@@ -195,7 +195,7 @@ Główne cechy charakterystyczne zastosowanego ekstraktora~\cite{topelitz-rok-zi
   \item modyfikowalna szerokość bloku wejściowego i wyjściowego,
   \item stałe ziarno macierzy zaszyte wewnątrz pliku RTL,
   \item dynamiczne generowanie kolumn macierzy Toeplitza, co pozwala uniknąć 
-  przechowywania całej macierzy naraz w pamięci.
+  przechowywania całej macierzy naraz w układzie.
 \end{itemize}
 
 Integracja generatora neoTRNG z nowym modułem wymagała wstępnego przetłumaczenia 
@@ -370,7 +370,7 @@ sygnalizuje linia \texttt{valid\_o}.
 
 \section{Projekt i implementacja ekstraktora kryptograficznego AES-CTR}
 
-\noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru blokowego 
+\noindent Ostatnia implementacja wprowadza postprocessing z wykorzystaniem szyfru strumieniowego  
 AES-CTR. Blok AES-CTR został opracowany na podstawie otwartoźródłowej implementacji 
 silnika szyfru blokowego AES, dostępnej w repozytorium (\url{https://opencores.org/projects/aes}). 
 
@@ -508,7 +508,7 @@ na schemacie (Fig.~\ref{fig:aes_ctr_fsm}):
 \draw[transition]
     (waituart.west) to[out=205, in=180, looseness=1.15]
     node[label, pos=0.55, left=7mm, text width=33mm]
-    {po 65536 blokach\\ponowne losowanie klucza}
+    {po 65536 blokach\\ponowne losowanie seed}
     (waittrng.west);
 
 % Self-loop: frame transmission
@@ -590,7 +590,7 @@ $ sudo xxd /dev/ttyUSB0
 
 
 
-\section{Wykorzystanie zasobów}
+\section{Wykorzystanie zasobów sprzętowych matrycy FPGA}
 
 Dla każdej  badanej implementacji oraz konfiguracji zostały zebrane 
 raporty o zajętości sprzętowej układu. Poniżej znajduje się całe zestawienie 

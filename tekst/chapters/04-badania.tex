@@ -726,7 +726,7 @@ Cora Z7-07S z układem FPGA xc7z007sclg400-1.
 \par\vspace{2mm}    
 \begin{minipage}{0.5\textwidth} 
 \small
-\textbf{Legenda:} Entropy = X bits per byte.
+\textbf{Legenda:} $H_{min} = Min(H_{original}, 8 X H_{bitstring})$.
 \end{minipage}
 \end{table}
 
@@ -792,14 +792,14 @@ Poniższa tabela Tab.~\ref{tab:bitrate_complete_analysis} przedstawia zestawieni
 \textbf{FALSE/FALSE} & 15.625.000 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik zgodny z założeniami \\ 
-$B = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 1 \text{ B}}{8} = 15.625.000 \text{ B/s}$ \\ 
+$B_{\mathrm{rate}} = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 1 \text{ B}}{8} = 15.625.000 \text{ B/s}$ \\ 
 jeden bajt danych na 8 cykli zegara.
 \end{tabular} \\ \hline
 
 \textbf{FALSE/TRUE} & 1.923.077 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik zbliżony do założeń $\rightarrow$ \\ 
-$B = \dfrac{125 \cdot 10^6 \text{ Hz}}{64} = 1.953.125 \text{ B/s}$ \\ 
+$B_{\mathrm{rate}} = \dfrac{125 \cdot 10^6 \text{ Hz}\cdot 1 \text{ B}}{64} = 1.953.125 \text{ B/s}$ \\ 
 $\rightarrow$ jeden bajt danych na 64 cykle zegara.
 \end{tabular} \\ \hline
 
@@ -818,15 +818,15 @@ niedeterministyczne zachowanie vN, \\brak możliwości wyprowadzenia wyniku
 \textbf{Toeplitz} & 7.812.496 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik zgodny z założeniami $\rightarrow$ \\ 
-$B = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 16 \text{ B}}{256} = 7.812.496 \text{ B/s}$ \\ 
+$B_{\mathrm{rate}} = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 16 \text{ B}}{256} = 7.812.496 \text{ B/s}$ \\ 
 $\rightarrow$ 16 bajtów danych na 256 cykli zegara.
 \end{tabular} \\ \hline
 
 \textbf{AES} & 153.797.440 B/s & 
 \begin{tabular}[c]{@{}l@{}}
 Wynik niższy niż oczekiwany $\rightarrow$ \\
-$B = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 16 \text{ B}}{10} = 200.000.000 \text{ B/s}$ \\ 
-16 bitów na 10 cykli zegara.~\cite{AES-vhdl} \\
+$B_{\mathrm{rate}} = \dfrac{125 \cdot 10^6 \text{ Hz} \cdot 16 \text{ B}}{10} = 200.000.000 \text{ B/s}$ \\ 
+16 bajtów na 10 cykli zegara.~\cite{AES-vhdl} \\
 Powód: dodatkowe cykle wykorzystane na pracę \\generatora i obsługe maszyny stanu.
 \end{tabular} \\ \hline
 
@@ -834,7 +834,7 @@ Powód: dodatkowe cykle wykorzystane na pracę \\generatora i obsługe maszyny s
 \end{table}
 
 
-Kolumna „Notatka” przedstawia deterministyczne obliczenia spodziewanej 
+W ostatniej kolumnie tabeli Tab.~\ref{tab:bitrate_complete_analysis} przedstawiono obliczenia spodziewanej 
 wydajności oraz stwierdza, czy eksperyment pokrył się z założeniami. Wartość 
 $125 \cdot 10^6$ Hz odnosi się do częstotliwości taktowania układu, natomiast 
 pozostałe parametry (np. 1B/8 cykli czy 16B/256 cykli) wynikają bezpośrednio z 

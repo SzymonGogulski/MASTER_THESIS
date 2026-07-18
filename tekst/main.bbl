@@ -1,9 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Quantum-randomness-generator-optical-circ}
-Quantum random numbers generator.
-\newblock {\em Quantum Flagship}.
-
 \bibitem{2023anstasios-panagiotis-georgis-yannis}
 Anastasios Bikos, Panagiotis~E. Nastou, Georgios Petroudis, and Yannis~C. Stamatiou.
 \newblock Random number generators: Principles and applications.
@@ -14,17 +10,25 @@ Morris Dworkin.
 \newblock Nist sp 800-38a recommendation for block cipher modes of operation: Methods and techniques.
 \newblock {\em NIST}, 2023.
 
+\bibitem{Quantum-randomness-generator-optical-circ}
+Quantum Flagship.
+\newblock Quantum random numbers generator.
+\newblock \url{https://qt.eu/quantum-principles/sensing-and-metrology/qrng}.
+
 \bibitem{fourmilab-ENT}
 {Fourmilab}.
 \newblock Ent: A pseudorandom number sequence test program.
+\newblock \url{https://www.fourmilab.ch/random/}.
 
 \bibitem{ucgosu-CRC}
 Maciej Gajdzica.
-\newblock Jak działa crc, 2017.
+\newblock Jak działa crc.
+\newblock \url{https://ucgosu.pl/2017/01/jak-dziala-crc/}, 2017.
 
 \bibitem{AES-vhdl}
 Hosein Hadipour.
 \newblock Aes-vhdl-hosein.
+\newblock \url{https://hoseinhadipour.com/AES-VHDL/}.
 
 \bibitem{2025QRNG-zeshan}
 Zeshan Haider, Muhammad~Haroon Saeed, Muhammad~Ehsan ul~Haq~Zaheer, Zeeshan~Ahmed Alvi, Muhammad Ilyas, Tahira Nasreen, Muhammad Imran, Rameez~Ul Islam, and Manzoor Ikram.
@@ -54,6 +58,7 @@ Dmytro Proskurin, Maksim Iavich, Tetiana Okhrimenko1, Okoro Chukwukaelonma1, and
 \bibitem{quatis-brouchure}
 ID~Quantique.
 \newblock Quantis when random numbers cannot be left to chance.
+\newblock \url{https://lenlasers.ru/upload/iblock/c27/Quantis-QRNG_Brochure.pdf}.
 
 \bibitem{Digital-integraged-circuits-A-design-perspective}
 Jan~M. Rabaey, Borivoje Nikolic, and Anantha~P. Chandrakasan.
@@ -82,7 +87,8 @@ Lakshmi Sreekumar and P.~Ramesh.
 
 \bibitem{neoTRNG}
 {stnolting}.
-\newblock neotrng: A true random number generator for fpgas, 2016.
+\newblock neotrng: A true random number generator for fpgas.
+\newblock \url{https://github.com/stnolting/neoTRNG}, 2016.
 
 \bibitem{NIST-SP-800-90B}
 Meltem~S{\"o}nmez Turan, Elaine Barker, John Kelsey, Kerry McKay, Mary Baish, and Michael Boyle.
@@ -112,5 +118,6 @@ Xiaoguang Zhang, You-Qi Nie, Hao Liang, and Jun Zhang.
 \bibitem{topelitz-rok-zitko}
 Rok Zitko.
 \newblock Toeplitz entropy extractor.
+\newblock \url{https://github.com/rokzitko/toeplitz}.
 
 \end{thebibliography}

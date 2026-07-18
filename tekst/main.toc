@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {3.2}Projekt i implementacja macierzowego ekstraktora algebraicznego Toeplitza}{15}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Projekt i implementacja ekstraktora kryptograficznego AES-CTR}{19}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Parzysta liczba inwerterów}{21}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Wykorzystanie zasobów}{22}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Wykorzystanie zasobów sprzętowych matrycy FPGA}{22}{section.3.5}%
 \contentsline {chapter}{\chapternumberline {4}Badania eksperymentalne}{24}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Wpływ obecności post-processingu oraz liczby oscylatorów RO na losowość}{24}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}NIST SP 800-22}{24}{subsection.4.1.1}%

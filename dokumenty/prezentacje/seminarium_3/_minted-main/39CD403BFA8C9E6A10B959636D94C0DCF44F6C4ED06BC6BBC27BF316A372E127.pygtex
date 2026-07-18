@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{entity}\PYG{+w}{ }\PYG{n+nc}{neoTRNG}\PYG{+w}{ }\PYG{k}{is}
+\PYG{+w}{  }\PYG{k}{generic}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}CELLS}\PYG{+w}{           }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{255}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}INV\PYGZus{}START}\PYG{+w}{       }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{4095}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{NUM\PYGZus{}RAW\PYGZus{}BITS}\PYG{+w}{        }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{natural}\PYG{+w}{ }\PYG{k}{range}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{to}\PYG{+w}{ }\PYG{l+m+mi}{4096}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{SIM\PYGZus{}MODE}\PYG{+w}{            }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ENABLE\PYGZus{}VON\PYGZus{}NEUMANN}\PYG{+w}{  }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{true}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ENABLE\PYGZus{}CRC}\PYG{+w}{          }\PYG{o}{:}\PYG{+w}{ }\PYG{k+kt}{boolean}\PYG{+w}{ }\PYG{o}{:=}\PYG{+w}{ }\PYG{n}{true}
+\PYG{+w}{  }\PYG{p}{);}
+\PYG{k}{end}\PYG{+w}{ }\PYG{k}{entity}\PYG{p}{;}
+\end{Verbatim}

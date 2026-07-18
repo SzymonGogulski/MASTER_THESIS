@@ -5,7 +5,6 @@
 \usepackage{svg}
 \usepackage{animate}
 \usepackage{graphicx}
-\usepackage{svg}
 \usepackage{xcolor}
 \usepackage{minted}
 \usetheme{Madrid}
@@ -14,21 +13,21 @@
 %This block of code defines the information to appear in the
 %Title page
 \title[Praca dyplomowa magisterska] %optional
-{Analiza wykorzystania oscylatorów pierścieniowych jako źródła losowości w układach FPGA}
+{Ocena jakości i wydajności generatora liczb losowych neoTRNG w układzie FPGA w zależności od konfiguracji oscylatorów pierścieniowych oraz zastosowanych ekstraktorów losowości}
 \subtitle{}
 \author[Szymon Gogulski] % (optional)
-{Szymon~Gogulski
+{Szymon~Krzysztof~Gogulski
 \newline
 \newline
 Promotor: dr inż. Michał Melosik
 \newline
 \newline
-Informatyka - Przetwarzanie Brzegowe
+Informatyka – Przetwarzanie Brzegowe
 }
 \institute[PP] % (optional)
 {Politechnika Poznańska}
 \date[Poznań 2026] % (optional)
-{Praca dyplomowa Magisterska
+{Praca dyplomowa magisterska
 \newline
 Poznań 2026}
 \logo{\includegraphics[height=0.6cm]{pp_logo.pdf}}
@@ -45,9 +44,11 @@ Poznań 2026}
 \begin{frame}
 \frametitle{Cel pracy}
 
-\Large
+\LARGE
+
 \begin{itemize}
-    \item Zbadać możliwości zastosowania oscylatorów pierścieniowych, jako źródło entropii.
+    \item adaptacja oraz implementacja otwartoźródłowego generatora losowości neoTRNG,
+    \item przeprowadzenie badań nad wpływem modyfikacji generatora na losowość.
 \end{itemize}
 
 \end{frame}
@@ -55,7 +56,36 @@ Poznań 2026}
 \section{Wprowadzenie}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Wprowadzenie}
+\frametitle{Wprowadzone modyfikacje}
+
+\LARGE
+
+Aspekty generatora objęte modyfikacjami i badaniami:
+
+\begin{itemize}
+    \item liczba zastosowanych oscylatorów pierścieniowych (RO),
+    \item zastosowanie korekcji źródła,
+    \item metody przetwarzania końcowego,
+    \item rozmieszczenie oscylatorów w strukturze FPGA.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Kryteria oceny generatora}
+
+\LARGE
+
+\begin{itemize}
+    \item zestaw testów statystycznych NIST SP 800-22,
+    \item zestaw testów do oceny entropii minimalnej NIST SP 800-90B,
+    \item program ENT.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Model źródła}
 
 
     \begin{figure}[H]
@@ -68,215 +98,227 @@ Poznań 2026}
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Wprowadzenie}
-
+\frametitle{Oscylator pierścieniowy}
 
     \begin{figure}[H]
       \includegraphics[width=\textwidth]{figures/oscylator.png}
       \caption{Prosty oscylator pierścieniowy}
     \end{figure}
 
-\stepcounter{footnote}\footnotetext[\value{footnote}]{\href{https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf}{NIST SP 800-90B}}
 
 \end{frame}
 %---------------------------------------------------------
-\section{Testy bazowe}
-%---------------------------------------------------------
 \begin{frame}
-\frametitle{Testy bazowe}
+\frametitle{Architektura neoTRNG}
 
     \begin{figure}[H]
       \includegraphics[width=\textwidth]{mermaid/png/2.png}
       \caption{Architektura modułu neoTRNG}
     \end{figure}
 
-    \textbf{Jak ilość RO, inwerterów, zastosowanie korektora von Neumanna i wielomianu CRC wpłynie na entropię źródła?}
+\end{frame}
+
+
+
+%---------------------------------------------------------
+\section{Wpływ liczby oscylatorów i liczby inwerterów}
+%---------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Wpływ liczby oscylatorów i liczby inwerterów}
+
+\begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+entity neoTRNG is
+  generic (
+    NUM_CELLS           : natural range 1 to 255;
+    NUM_INV_START       : natural range 3 to 4095;
+    NUM_RAW_BITS        : natural range 1 to 4096;
+    SIM_MODE            : boolean;
+    ENABLE_VON_NEUMANN  : boolean := true;
+    ENABLE_CRC          : boolean := true
+  );
+end entity;
+\end{minted}
+
+
+
+\textbf{Czy skalowanie zasobów sprzętowych poprzez zwiększanie liczby RO oraz liczby inwerterów ma
+kluczowe znaczenie dla jakości źródła entropii?}
 
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Testy bazowe}
+\frametitle{Wnioski}
 
 \Large
 
-  \textbf{Konfiguracje RO:}
+\begin{itemize}
+    \item zwiększenie liczby inwerterów przekłada się na poziom entropii,
+    \item konfiguracje z większą liczbą RO/inwerterów nie zawsze gwarantują lepsze wyniki w testach NIST SP 800-22,
+    \item zwiększenie entropii nie zwalnia z konieczności stosowania przetwarzania końcowego.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+%---------------------------------------------------------
+\section{Efektywność przetwarzania końcowego von Neumanna oraz CRC}
+%---------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Efektywność przetwarzania końcowego von Neumanna oraz CRC}
+
+\begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+entity neoTRNG is
+  generic (
+    NUM_CELLS           : natural range 1 to 255;
+    NUM_INV_START       : natural range 3 to 4095;
+    NUM_RAW_BITS        : natural range 1 to 4096;
+    SIM_MODE            : boolean;
+    ENABLE_VON_NEUMANN  : boolean := true;
+    ENABLE_CRC          : boolean := true
+  );
+end entity;
+\end{minted}
+
+
+
+    \textbf{Czy zastosowanie ekstraktora von Neumanna i wielomianu CRC w module neoTRNG ma znaczenie
+dla jakości projektowanego generatora?}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wnioski}
+
+\Large
+
+\begin{itemize}
+    \item wyłączenie zarówno korektora von Neumanna, jak i CRC, dyskwalifikuje generator w testach NIST SP 800-22,
+    \item deaktywacja korektora von Neumanna przy aktywnym CRC zapewnia akceptowalną losowość.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+%---------------------------------------------------------
+\section{Wpływ rozmieszczenia RO}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wpływ rozmieszczenia RO}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+      \includegraphics[width=\textwidth]{figures/ch4/6D2.png}
+      \caption{Oscylatory rozproszone}
+        \label{fig:ch4_2RO_distributed_screen}
+    \end{minipage}
+    \hfill % Adds horizontal space between the two figures
+    \begin{minipage}{0.48\textwidth}
+        \centering
+      \includegraphics[width=\textwidth]{figures/ch4/6DL.png}
+      \caption{Oscylatory zlokalizowane}
+        \label{fig:ch4_2RO_localized_screen}
+    \end{minipage}
+\end{figure}
+
+\textbf{Czy rozmieszczenie RO w strukturze FPGA ma istotne znaczenie dla jakości źródła?}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Wnioski}
+
+\Large
+
+\begin{itemize}
+    \item w ramach przeprowadzonych badań nie stwierdzono istotnego wpływu rozmieszczenia RO na losowość,
+    \item sugerowane dalsze badania nad bardziej złożonym rozmieszczeniem w matrycy FPGA,
+    \item przy rozmieszczeniu rozproszonym konfiguracja bez korektora von Neumanna (z aktywnym CRC) pozostaje efektywna.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+%---------------------------------------------------------
+\section{Zastosowanie zaawansowanych metod przetwarzania końcowego}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Zastosowanie zaawansowanych metod przetwarzania końcowego}
+
+\LARGE
+
+  Zbadane metody przetwarzania końcowego:
   \begin{itemize}
-    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów, 
-    \item 3 RO $\Rightarrow$ 3,5 i 7 inwerterów,
-    \item 3 RO $\Rightarrow$ 5,7 i 9 inwerterów.
+    \item ekstraktor Toeplitza,
+    \item szyfr strumieniowy AES-CTR.
   \end{itemize}
 
-  \vspace{5mm}
-
-  \textbf{dla każdej konfiguracji zebrano dane:}
-  \begin{itemize}
-    \item bezpośrednio ze źdródła,
-    \item po korekcji korektorem von Neumanna,
-    \item po kompresji entropii wielomianem CRC,
-    \item po korekcji korektorem von Neumanna i kompresji entropii wielomianem CRC.
-  \end{itemize}
+\vspace{1cm}
+\normalsize
+\textbf{Czy zaawansowane metody przetwarzania końcowego mają przewagę nad metodami bazowymi?}
 
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Testy bazowe}
+\frametitle{Zaawansowane metody przetwarzania końcowego – wnioski}
 
 \Large
 
-\textbf{Łącznie 12 zestawów danych po 100 MB}
+\begin{itemize}
+    \item AES-CTR i Toeplitz przeszły pomyślnie testy statystyczne,
+    \item AES-CTR zwiększa wydajność kosztem zasobów bez utraty jakości,
+    \item ekstraktor Toeplitza stanowi optymalny kompromis wydajnościowy,
+    \item ze względu na silne algorytmy kryptograficzne zaleca się implementację z użyciem AES-CTR.
+\end{itemize}
 
 \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
 %---------------------------------------------------------
-\section{Analiza rozmieszczenia}
+\section{Podsumowanie}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Analiza rozmieszczenia}
-
-    \begin{figure}[H]
-      \includegraphics[width=\textwidth]{mermaid/png/2.png}
-      \caption{Architektura modułu neoTRNG}
-    \end{figure}
-
+\frametitle{Podsumowanie}
 
 \Large
 
-\textbf{Jak rozmieszczenie komórek entropii w fizycznym układzie (floorplan) wpłynie na entropię?}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Analiza rozmieszczenia}
-
-    \begin{figure}[H]
-      \includegraphics[width=0.75\textwidth]{figures/ch4/6DL.png}
-      \caption{Zlokalizowanie komórki entropii}
-    \end{figure}
-
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Analiza rozmieszczenia}
-
-    \begin{figure}[H]
-      \includegraphics[width=0.75\textwidth]{figures/ch4/6D2.png}
-      \caption{Rozproszone komórki entropii}
-    \end{figure}
-
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Analiza rozmieszczenia}
-
-  \textbf{Konfiguracje RO:}
-  \begin{itemize} 
-    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów,
-    \item 3 RO $\Rightarrow$ 5, 7 i 9 inwerterów,
-    \item 6 RO $\Rightarrow$ 5 ,7, 9, 11, 13 i 15 inwerterów.
-  \end{itemize}
-
-  \vspace{5mm}
-
-  \textbf{W ramach każdej konfiguracji rozpatrzono przypadek zlokalizowany i rozproszony.}
-
-  \vspace{5mm}
-
-  \textbf{dla każdego przypadku zebrano dane:}
-  \begin{itemize}
-    \item bezpośrednio ze źdródła,
-    \item po korekcji korektorem von Neumanna,
-    \item po kompresji entropii wielomianem CRC,
-    \item po korekcji korektorem von Neumanna i kompresji entropii wielomianem CRC.
-  \end{itemize}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Analiza rozmieszczenia}
-
-  \Large
-  \textbf{Łącznie 24 zestawy danych po 100MB.}
-
-
-\end{frame}
-%---------------------------------------------------------
-\section{Faza algorytmiczna i optymalizacja ekstrakcji}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
-
-\Large
-    \begin{figure}[H]
-      \includegraphics[width=\textwidth]{mermaid/png/2.png}
-      \caption{Architektura modułu neoTRNG}
-    \end{figure}
-
-\textbf{Jak inne metody post-processing'u wpłytną na źródło entropii?}
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
-
-\Large
-
-  \textbf{Zbadane metody post-processing'u:}
-  \begin{itemize}
-    \item ekstraktor Toeplitz'a,
-    \item AES-CTR.
-  \end{itemize}
-
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
-
-\Large
-
-\textbf{Konfiguracje RO:}
-  \begin{itemize} 
-    \item 2 RO $\Rightarrow$ 3 i 5 inwerterów,
-    \item 3 RO $\Rightarrow$ 3, 5 i 7 inwerterów,
-  \end{itemize}
-
-  \vspace{5mm}
-  \textbf{Każdą konfigurację zbadano dla post-processing'u ekstaktorem Toeplitz'a i AES-CTR}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Faza algorytmiczna i optymalizacja ekstrakcji}
-
-\Large
-
-\textbf{Łącznie 4 zestawy po 100MB}
-
-\end{frame}
-%---------------------------------------------------------
-\begin{frame}
-\frametitle{Podsumowując}
-
-\Large
-
-\textbf{Łącznie około 4GB danych}
-
-\vspace{5mm}
-
-\begin{table}[H]
-\centering
-\Large % Zapewnia dobrą widoczność na slajdzie
-\begin{tabular}{l | c}
-\textbf{Etap projektu} & \textbf{Stan realizacji / Wynik} \\ 
-\hline \hline
-Implementacja          & 100\% \\ 
-Zbieranie danych       & 100\% \\ 
-Testy NIST             & 28/40 \\ 
-Treść pracy            & 40\% \\ 
-\hline
-\end{tabular}
-\caption{Aktualny status realizacji projektu}
-\end{table}
+\begin{itemize}
+    \item kluczem do optymalnego TRNG jest balans między wykorzystaniem zasobów, rozmieszczeniem RO, doborem ekstraktora i przeprowadzeniem testów,
+    \item błędna adaptacja (pominięcie ekstraktorów) prowadzi do niskiej jakości losowości,
+    \item implementacja parzystej liczby inwerterów z korektorem von Neumanna może zatrzymać proces kryptograficzny.
+\end{itemize}
 
 \end{frame}
 %---------------------------------------------------------

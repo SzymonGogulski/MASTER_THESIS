@@ -1,18 +1,20 @@
-\frametitle{NIST SP 800-90B}
+\frametitle{Efektywność przetwarzania końcowego von Neumanna oraz CRC}
 
-
-\begin{minted}[highlightlines={2, 5, 8, 11}, linenos, breaklines, breakanywhere]{bash}
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_CRC.bin 8
-H_original: 7.487619
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_CRC.bin 8
-H_original: 7.487620
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_VN_nCRC.bin 8
-H_original: 6.738274
-
-~/tools/SP800-90B_EntropyAssessment/cpp$ ./ea_non_iid ~/Desktop/magister/data/ch3_nVN_nCRC.bin 8
-H_original: 5.623910
+\begin{minted}[linenos, breaklines, breakanywhere]{vhdl}
+entity neoTRNG is
+  generic (
+    NUM_CELLS           : natural range 1 to 255;
+    NUM_INV_START       : natural range 3 to 4095;
+    NUM_RAW_BITS        : natural range 1 to 4096;
+    SIM_MODE            : boolean;
+    ENABLE_VON_NEUMANN  : boolean := true;
+    ENABLE_CRC          : boolean := true
+  );
+end entity;
 \end{minted}
 
+
+
+    \textbf{Czy zastosowanie ekstraktora von Neumanna i wielomianu CRC w module neoTRNG ma znaczenie
+dla jakości projektowanego generatora?}
 
