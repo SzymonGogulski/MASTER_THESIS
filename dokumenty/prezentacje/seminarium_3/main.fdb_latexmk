@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1784381470.31301 "/home/szymon/Desktop/magister/dokumenty/prezentacje/seminarium_3/main.tex" "main.pdf" "main" 1784381473.27042 0
+["pdflatex"] 1784628771.89898 "/home/szymon/Desktop/magister/dokumenty/prezentacje/seminarium_3/main.tex" "main.pdf" "main" 1784628774.07313 0
   "/etc/texmf/web2c/texmf.cnf" 1760713919.23018 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk" 1777036302.19749 14860 8976d5472e3501cb3c6e7b8074f855f7 ""
   "/home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk" 1765723474.69465 12316 ae79c3a0408f43e2b45c774b81056c58 ""
@@ -12,7 +12,7 @@
   "/home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk" 1765723477.79746 24004 a8a6b76e54d8d8129f3d29c6d15e8e61 ""
   "/home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx2488.600pk" 1765723474.26864 64008 39a7d56b3885f6b83b051b91850625a9 ""
   "/home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk" 1765966076.92308 21952 20f0ef79c0ad4d5553b0a8e8658e59dd ""
-  "/home/szymon/Desktop/magister/dokumenty/prezentacje/seminarium_3/main.tex" 1784381470.06958 9085 0cf3c68c2acb22a96b31bb197f5cceb1 ""
+  "/home/szymon/Desktop/magister/dokumenty/prezentacje/seminarium_3/main.tex" 1784628771.69883 10398 a92e12551742077a52c48e76a6223250 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -261,12 +261,14 @@
   "figures/ch4/6DL.png" 1778853243.81234 16251 062d6b219ca147e47f9f6b2709ec47b2 ""
   "figures/modle_zrodla.png" 1776610536.99311 92729 e5d436356da8170fcfaeb166cc32fe8d ""
   "figures/oscylator.png" 1777290170.59844 21399 391f065cd071ca1053807b6bdaf78fbc ""
-  "main.aux" 1784381473.10181 5953 07400a552e3946fe2c7fbcb36b55a199 "pdflatex"
-  "main.nav" 1784381473.10881 3232 5037aaeab42404aec2d7649e78915604 "pdflatex"
-  "main.out" 1784381473.10381 1449 1a7f5f4b2b24e8792f96f9ce6711e9db "pdflatex"
-  "main.tex" 1784381470.06958 9085 0cf3c68c2acb22a96b31bb197f5cceb1 ""
-  "main.toc" 1784381473.10981 507 cd4003f9be76e6c98e0bd0766b5f39d4 "pdflatex"
-  "main.vrb" 1784381472.25238 610 b34c4e54e89c9c1e43ffb4f75c942b77 "pdflatex"
+  "figures/wynik.png" 1784626799.02948 181369 8db2f42651c71a55b5e371716cf23c97 ""
+  "figures/wyniki2.png" 1784627794.88612 119228 3228c89cf6d87c3ec0e062c94b2a2f42 ""
+  "main.aux" 1784628773.96594 6471 62bd564ba6dae1bf0f6e60eabd7cf505 "pdflatex"
+  "main.nav" 1784628773.97094 3605 f98080e32778b40c1f4e29bcc6c3ae29 "pdflatex"
+  "main.out" 1784628773.96694 1449 1a7f5f4b2b24e8792f96f9ce6711e9db "pdflatex"
+  "main.tex" 1784628771.69883 10398 a92e12551742077a52c48e76a6223250 ""
+  "main.toc" 1784628773.97094 508 60370746b33064877af64eb34e1ec2a0 "pdflatex"
+  "main.vrb" 1784628773.3335 610 b34c4e54e89c9c1e43ffb4f75c942b77 "pdflatex"
   "mermaid/png/2.png" 1776623794.74438 51777 efe6428c2756e7de07bfc69d51395828 ""
   "pp_logo.pdf" 1768163350 18283 2b22adb078941541d6ee28ac6d39df18 ""
   (generated)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  18 JUL 2026 15:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.14)  21 JUL 2026 12:12
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -924,14 +924,14 @@ Package pdftex.def Info: pp_logo.pdf  used on input line 54.
 ]
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 72.
+Package pdftex.def Info: pp_logo.pdf  used on input line 71.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [4
 
 ]
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 85.
+Package pdftex.def Info: pp_logo.pdf  used on input line 83.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [5
 
@@ -939,19 +939,19 @@ Package pdftex.def Info: pp_logo.pdf  used on input line 85.
 <figures/modle_zrodla.png, id=223, 826.08624pt x 577.15625pt>
 File: figures/modle_zrodla.png Graphic file (type png)
 <use figures/modle_zrodla.png>
-Package pdftex.def Info: figures/modle_zrodla.png  used on input line 98.
+Package pdftex.def Info: figures/modle_zrodla.png  used on input line 96.
 (pdftex.def)             Requested size: 256.82648pt x 179.43617pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 98.
+Package pdftex.def Info: pp_logo.pdf  used on input line 96.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [6
 
@@ -959,27 +959,41 @@ Package pdftex.def Info: pp_logo.pdf  used on input line 98.
 <figures/oscylator.png, id=257, 1035.87pt x 259.97125pt>
 File: figures/oscylator.png Graphic file (type png)
 <use figures/oscylator.png>
-Package pdftex.def Info: figures/oscylator.png  used on input line 109.
+Package pdftex.def Info: figures/oscylator.png  used on input line 107.
 (pdftex.def)             Requested size: 342.43532pt x 85.94151pt.
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 109.
+Package pdftex.def Info: pp_logo.pdf  used on input line 107.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [7
 
  <./figures/oscylator.png>]
-<mermaid/png/2.png, id=288, 1341.01pt x 305.14pt>
+<mermaid/png/2.png, id=289, 1341.01pt x 305.14pt>
 File: mermaid/png/2.png Graphic file (type png)
 <use mermaid/png/2.png>
-Package pdftex.def Info: mermaid/png/2.png  used on input line 119.
+Package pdftex.def Info: mermaid/png/2.png  used on input line 117.
 (pdftex.def)             Requested size: 342.43532pt x 77.91908pt.
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 119.
+Package pdftex.def Info: pp_logo.pdf  used on input line 117.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [8
 
  <./mermaid/png/2.png>]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 133.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [9
+
+]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 146.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [10
+
+]
 \openout4 = `main.vrb'.
 
  (./main.vrb
@@ -995,16 +1009,32 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
 ))
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 147.
+Package pdftex.def Info: pp_logo.pdf  used on input line 176.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
- [9
+ [11
 
 ]
+<figures/wynik.png, id=407, 1176.395pt x 690.58pt>
+File: figures/wynik.png Graphic file (type png)
+<use figures/wynik.png>
+Package pdftex.def Info: figures/wynik.png  used on input line 188.
+(pdftex.def)             Requested size: 342.43532pt x 201.02176pt.
+
+Overfull \vbox (9.8018pt too high) detected at line 188
+ []
+
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 160.
+Package pdftex.def Info: pp_logo.pdf  used on input line 188.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
- [10
+[12
+
+ <./figures/wynik.png>]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 201.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [13
 
 ]
 \openout4 = `main.vrb'.
@@ -1015,68 +1045,80 @@ Package pdftex.def Info: pp_logo.pdf  used on input line 160.
  (./_minted-main/39CD403BFA8C9E6A10B959636D94C0DCF44F6C4ED06BC6BBC27BF316A372E127.pygtex))
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 189.
-(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
- [11
-
-]
-File: pp_logo.pdf Graphic file (type pdf)
-<use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 201.
-(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
- [12
-
-]
-<figures/ch4/6D2.png, id=433, 1166.3575pt x 900.36375pt>
-File: figures/ch4/6D2.png Graphic file (type png)
-<use figures/ch4/6D2.png>
-Package pdftex.def Info: figures/ch4/6D2.png  used on input line 240.
-(pdftex.def)             Requested size: 164.36748pt x 126.87436pt.
-<figures/ch4/6DL.png, id=434, 1166.3575pt x 900.36375pt>
-File: figures/ch4/6DL.png Graphic file (type png)
-<use figures/ch4/6DL.png>
-Package pdftex.def Info: figures/ch4/6DL.png  used on input line 240.
-(pdftex.def)             Requested size: 164.36748pt x 126.87436pt.
-File: pp_logo.pdf Graphic file (type pdf)
-<use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 240.
-(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
- [13
-
- <./figures/ch4/6D2.png> <./figures/ch4/6DL.png>]
-File: pp_logo.pdf Graphic file (type pdf)
-<use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 253.
+Package pdftex.def Info: pp_logo.pdf  used on input line 230.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [14
 
 ]
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 282.
+Package pdftex.def Info: pp_logo.pdf  used on input line 242.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [15
 
 ]
+<figures/ch4/6D2.png, id=521, 1166.3575pt x 900.36375pt>
+File: figures/ch4/6D2.png Graphic file (type png)
+<use figures/ch4/6D2.png>
+Package pdftex.def Info: figures/ch4/6D2.png  used on input line 281.
+(pdftex.def)             Requested size: 164.36748pt x 126.87436pt.
+<figures/ch4/6DL.png, id=522, 1166.3575pt x 900.36375pt>
+File: figures/ch4/6DL.png Graphic file (type png)
+<use figures/ch4/6DL.png>
+Package pdftex.def Info: figures/ch4/6DL.png  used on input line 281.
+(pdftex.def)             Requested size: 164.36748pt x 126.87436pt.
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 296.
+Package pdftex.def Info: pp_logo.pdf  used on input line 281.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [16
 
-]
+ <./figures/ch4/6D2.png> <./figures/ch4/6DL.png>]
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 323.
+Package pdftex.def Info: pp_logo.pdf  used on input line 294.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [17
 
 ]
 File: pp_logo.pdf Graphic file (type pdf)
 <use pp_logo.pdf>
-Package pdftex.def Info: pp_logo.pdf  used on input line 328.
+Package pdftex.def Info: pp_logo.pdf  used on input line 323.
 (pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
  [18
+
+]
+<figures/wyniki2.png, id=612, 918.43124pt x 494.84875pt>
+File: figures/wyniki2.png Graphic file (type png)
+<use figures/wyniki2.png>
+Package pdftex.def Info: figures/wyniki2.png  used on input line 335.
+(pdftex.def)             Requested size: 342.43532pt x 184.50316pt.
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 335.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [19
+
+ <./figures/wyniki2.png>]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 349.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [20
+
+]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 376.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [21
+
+]
+File: pp_logo.pdf Graphic file (type pdf)
+<use pp_logo.pdf>
+Package pdftex.def Info: pp_logo.pdf  used on input line 381.
+(pdftex.def)             Requested size: 17.07195pt x 17.07182pt.
+ [22
 
 ]
 \tf@nav=\write8
@@ -1099,18 +1141,18 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 28308 strings out of 476074
- 555926 string characters out of 5793136
+ 28338 strings out of 476074
+ 556414 string characters out of 5793136
  1938975 words of memory out of 5000000
- 49666 multiletter control sequences out of 15000+600000
+ 49688 multiletter control sequences out of 15000+600000
  580728 words of font info for 85 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
  101i,15n,107p,470b,742s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx2488.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0900.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1000.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1728.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.600pk> </home/szymon/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1440.600pk>
-Output written on main.pdf (18 pages, 336875 bytes).
+Output written on main.pdf (22 pages, 570490 bytes).
 PDF statistics:
- 1024 PDF objects out of 1200 (max. 8388607)
- 582 compressed objects within 6 object streams
- 46 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1157 PDF objects out of 1200 (max. 8388607)
+ 688 compressed objects within 7 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

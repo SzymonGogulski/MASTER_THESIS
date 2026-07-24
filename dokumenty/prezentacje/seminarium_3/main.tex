@@ -56,31 +56,29 @@ Poznań 2026}
 \section{Wprowadzenie}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Wprowadzone modyfikacje}
+\frametitle{Wprowadzenie: Rola OSHWA}
 
 \LARGE
 
-Aspekty generatora objęte modyfikacjami i badaniami:
+Rola OSHWA w Bezpieczeństwie Systemów Brzegowych
 
 \begin{itemize}
-    \item liczba zastosowanych oscylatorów pierścieniowych (RO),
-    \item zastosowanie korekcji źródła,
-    \item metody przetwarzania końcowego,
-    \item rozmieszczenie oscylatorów w strukturze FPGA.
+\item odpowiedź na kryzys zaufania do technologii zamkniętoźródłowych,
+\item weryfikowalność i transparentność dostępnych rozwiązań,
+\item rozpowszechnianie gotowych rozwiązań.
 \end{itemize}
 
 \end{frame}
 %---------------------------------------------------------
 \begin{frame}
-\frametitle{Kryteria oceny generatora}
+\frametitle{Znaczenie dla Systemów Brzegowych}
 
 \LARGE
 
-\begin{itemize}
-    \item zestaw testów statystycznych NIST SP 800-22,
-    \item zestaw testów do oceny entropii minimalnej NIST SP 800-90B,
-    \item program ENT.
-\end{itemize}
+
+
+Jest to szczególnie ważne dla systemów brzegowych, które wymagają 
+sprawdzonych i bezpiecznych modułów kryptograficznych.
 
 \end{frame}
 %---------------------------------------------------------
@@ -117,6 +115,37 @@ Aspekty generatora objęte modyfikacjami i badaniami:
     \end{figure}
 
 \end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Aspekty generatora objęte modyfikacjami}
+
+\LARGE
+
+Aspekty generatora objęte modyfikacjami i badaniami:
+
+\begin{itemize}
+    \item liczba zastosowanych oscylatorów pierścieniowych (RO),
+    \item zastosowanie korekcji źródła,
+    \item metody przetwarzania końcowego,
+    \item rozmieszczenie oscylatorów w strukturze FPGA.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Kryteria oceny generatora}
+
+\LARGE
+
+\begin{itemize}
+    \item zestaw testów statystycznych NIST SP 800-22,
+    \item zestaw testów do oceny entropii minimalnej NIST SP 800-90B,
+    \item program ENT.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+
 
 
 
@@ -143,6 +172,18 @@ end entity;
 
 \textbf{Czy skalowanie zasobów sprzętowych poprzez zwiększanie liczby RO oraz liczby inwerterów ma
 kluczowe znaczenie dla jakości źródła entropii?}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Przykładowe wyniki}
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{figures/wynik.png}
+      \caption{Przykładowy wynik testu NIST SP 800-22}
+    \end{figure}
+
+
 
 \end{frame}
 %---------------------------------------------------------
@@ -278,6 +319,18 @@ dla jakości projektowanego generatora?}
 \vspace{1cm}
 \normalsize
 \textbf{Czy zaawansowane metody przetwarzania końcowego mają przewagę nad metodami bazowymi?}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Przykładowe wyniki}
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{figures/wyniki2.png}
+      \caption{Przykładowy wynik testu NIST SP 800-22}
+    \end{figure}
+
+
 
 \end{frame}
 %---------------------------------------------------------

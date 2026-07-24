@@ -1,8 +1,8 @@
 \babel@toc {polish}{}\relax 
 \beamer@sectionintoc {1}{Cel pracy}{3}{0}{1}
 \beamer@sectionintoc {2}{Wprowadzenie}{4}{0}{2}
-\beamer@sectionintoc {3}{Wpływ liczby oscylatorów i liczby inwerterów}{9}{0}{3}
-\beamer@sectionintoc {4}{Efektywność przetwarzania końcowego von Neumanna oraz CRC}{11}{0}{4}
-\beamer@sectionintoc {5}{Wpływ rozmieszczenia RO}{13}{0}{5}
-\beamer@sectionintoc {6}{Zastosowanie zaawansowanych metod przetwarzania końcowego}{15}{0}{6}
-\beamer@sectionintoc {7}{Podsumowanie}{17}{0}{7}
+\beamer@sectionintoc {3}{Wpływ liczby oscylatorów i liczby inwerterów}{11}{0}{3}
+\beamer@sectionintoc {4}{Efektywność przetwarzania końcowego von Neumanna oraz CRC}{14}{0}{4}
+\beamer@sectionintoc {5}{Wpływ rozmieszczenia RO}{16}{0}{5}
+\beamer@sectionintoc {6}{Zastosowanie zaawansowanych metod przetwarzania końcowego}{18}{0}{6}
+\beamer@sectionintoc {7}{Podsumowanie}{21}{0}{7}
